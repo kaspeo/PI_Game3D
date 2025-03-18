@@ -1,0 +1,24 @@
+[gd_scene load_steps=4 format=3 uid="uid://bbhdj863japaw"]
+
+[ext_resource type="Script" uid="uid://wsc1s6qxv1kb" path="res://Player/player.gd" id="1_4ntmi"]
+[ext_resource type="PackedScene" uid="uid://cy44pgcq6vbvs" path="res://Player/Assets/Character.gltf" id="2_4ntmi"]
+
+[sub_resource type="SphereShape3D" id="SphereShape3D_l8h54"]
+
+[node name="Player" type="CharacterBody3D"]
+script = ExtResource("1_4ntmi")
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="."]
+visible = false
+shape = SubResource("SphereShape3D_l8h54")
+
+[node name="Pivot" type="Node3D" parent="."]
+
+[node name="Character" parent="Pivot" instance=ExtResource("2_4ntmi")]
+transform = Transform3D(-1, 0, -8.74228e-08, 0, 1, 0, 8.74228e-08, 0, -1, 0.00942993, 0, -0.184805)
+
+[node name="Camera_mount" type="Node3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1.97737, 0)
+
+[node name="Camera3D" type="Camera3D" parent="Camera_mount"]
+transform = Transform3D(1, 0, 0, 0, 0.896726, 0.442586, 0, -0.442586, 0.896726, 0, 6.02234, 11.3973)
