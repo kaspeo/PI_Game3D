@@ -1,12 +1,22 @@
-[gd_scene load_steps=4 format=3 uid="uid://djwqiokapiyg5"]
+[gd_scene load_steps=10 format=3 uid="uid://djwqiokapiyg5"]
 
+[ext_resource type="Texture2D" uid="uid://cqujtlsiet3gl" path="res://Texture/greybox_grey_grid.png" id="1_togfq"]
 [ext_resource type="PackedScene" uid="uid://bbhdj863japaw" path="res://Player/player.tscn" id="1_xhtwi"]
+[ext_resource type="PackedScene" uid="uid://bhr20v036qfi8" path="res://Objects/Cloud_1.gltf" id="3_djkur"]
+[ext_resource type="PackedScene" uid="uid://cklqfq6fa6g4c" path="res://Objects/Cube_Question.gltf" id="3_h175a"]
+[ext_resource type="PackedScene" uid="uid://cpb4ip8xk4wj5" path="res://Objects/Goal_Flag.glb" id="4_h175a"]
+[ext_resource type="PackedScene" uid="uid://di8w1cu7ciavm" path="res://UI/PauseMenu/pause_menu.tscn" id="6_aan6j"]
 
 [sub_resource type="BoxShape3D" id="BoxShape3D_wr7s0"]
-size = Vector3(60, 2, 60)
+size = Vector3(240, 2, 240)
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_aan6j"]
+albedo_texture = ExtResource("1_togfq")
+uv1_scale = Vector3(64, 64, 64)
 
 [sub_resource type="BoxMesh" id="BoxMesh_xhtwi"]
-size = Vector3(60, 2, 60)
+material = SubResource("StandardMaterial3D_aan6j")
+size = Vector3(240, 2, 240)
 
 [node name="Main" type="Node3D"]
 
@@ -20,9 +30,30 @@ shape = SubResource("BoxShape3D_wr7s0")
 mesh = SubResource("BoxMesh_xhtwi")
 
 [node name="DirectionalLight3D" type="DirectionalLight3D" parent="."]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 19, 0)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 19, -29)
 shadow_enabled = true
 
-[node name="CharacterBody3D" type="Node3D" parent="."]
+[node name="Cloud_12" parent="." instance=ExtResource("3_djkur")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -12, 13, -18)
 
-[node name="Player" parent="CharacterBody3D" instance=ExtResource("1_xhtwi")]
+[node name="Cloud_13" parent="." instance=ExtResource("3_djkur")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 12, 13, -28)
+
+[node name="Cloud_14" parent="." instance=ExtResource("3_djkur")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 19, 14, -9)
+
+[node name="Cube_Question3" parent="." instance=ExtResource("3_h175a")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -9, 1, -11)
+
+[node name="CSGBox3D" type="CSGBox3D" parent="."]
+transform = Transform3D(1, 0, -0.000942478, 0, 1, 0, 0.000942478, 0, 1, 11.581, 1, -22.217)
+use_collision = true
+size = Vector3(10, 10, 2)
+
+[node name="Goal_Flag2" parent="." instance=ExtResource("4_h175a")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, -16)
+
+[node name="Player" parent="." instance=ExtResource("1_xhtwi")]
+
+[node name="PauseMenu" parent="." instance=ExtResource("6_aan6j")]
+visible = false

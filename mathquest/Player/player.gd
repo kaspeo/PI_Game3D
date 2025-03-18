@@ -1,15 +1,15 @@
 extends CharacterBody3D
 
-@export var speed = 14
+@export var speed = 8
 @export var fall_acceleration = 75
 @export var jump_speed = 20
 @onready var pivot: Node3D = $Pivot
 
 @onready var camera_mount: Node3D = $Camera_mount
 
-var sens_horizontal = 0.5
+var sens_horizontal = 0.2
 
-var sens_vertical = 0.5
+var sens_vertical = 0.2
 
 var target_velocity = Vector3.ZERO
 
@@ -25,7 +25,6 @@ func _input(event: InputEvent) -> void:
 func _physics_process(delta):
 	var direction = Vector3.ZERO
 	
-	# Pobieranie wejścia ruchu
 	if Input.is_action_pressed("move_right"):
 		$Pivot/Character/AnimationPlayer.play("Walk")
 		direction.x += 1
@@ -39,27 +38,22 @@ func _physics_process(delta):
 		$Pivot/Character/AnimationPlayer.play("Walk")
 		direction.z -= 1
 
-	# Jeśli brak ruchu, odtwarzaj animację Idle
 	if direction == Vector3.ZERO:
 		$Pivot/Character/AnimationPlayer.play("Idle")
 
-	# Przekształcenie kierunku ruchu na układ współrzędnych gracza
 	if direction != Vector3.ZERO:
 		direction = direction.normalized()
-		direction = global_transform.basis * direction  # Ruch względem kierunku gracza
+		direction = global_transform.basis * direction  
 
-	# Ustawianie prędkości na podstawie kierunku
 	target_velocity.x = direction.x * speed
 	target_velocity.z = direction.z * speed
 
-	# Skakanie
 	if Input.is_action_just_pressed("jump") and is_on_floor():
 		target_velocity.y = jump_speed
+		$Pivot/Character/AnimationPlayer.play("Jump")
 
-	# Grawitacja
 	if not is_on_floor():
 		target_velocity.y -= fall_acceleration * delta
 
-	# Przesunięcie postaci
 	velocity = target_velocity
 	move_and_slide()
