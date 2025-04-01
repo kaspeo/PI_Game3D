@@ -1,0 +1,439 @@
+[gd_scene load_steps=146 format=3 uid="uid://dqwayitqqoyi4"]
+
+[ext_resource type="PackedScene" uid="uid://1e6ygh73f524" path="res://Objects/prototype-kit/Models/GLB format/animal-bison.glb" id="1_qk3sw"]
+[ext_resource type="PackedScene" uid="uid://w7klhra3djlv" path="res://Objects/prototype-kit/Models/GLB format/animal-dog.glb" id="2_p1p70"]
+[ext_resource type="PackedScene" uid="uid://bva1te0eojhap" path="res://Objects/prototype-kit/Models/GLB format/animal-horse.glb" id="3_i1co0"]
+[ext_resource type="PackedScene" uid="uid://6psuixgl1q55" path="res://Objects/prototype-kit/Models/GLB format/button-floor-round-small.glb" id="4_erbhk"]
+[ext_resource type="PackedScene" uid="uid://c8p723w7xxiv4" path="res://Objects/prototype-kit/Models/GLB format/button-floor-round.glb" id="5_rwthf"]
+[ext_resource type="PackedScene" uid="uid://12yhhwwv8rxn" path="res://Objects/prototype-kit/Models/GLB format/button-floor-square-small.glb" id="6_qtr58"]
+[ext_resource type="PackedScene" uid="uid://ili7f7uxo3cd" path="res://Objects/prototype-kit/Models/GLB format/button-floor-square.glb" id="7_w0pnf"]
+[ext_resource type="PackedScene" uid="uid://2yp32vqotypm" path="res://Objects/prototype-kit/Models/GLB format/coin.glb" id="8_710fh"]
+[ext_resource type="PackedScene" uid="uid://bo34v1xif42kl" path="res://Objects/prototype-kit/Models/GLB format/column-low.glb" id="9_arm64"]
+[ext_resource type="PackedScene" uid="uid://gjoht3pr35oj" path="res://Objects/prototype-kit/Models/GLB format/column-rounded-low.glb" id="10_x4syd"]
+[ext_resource type="PackedScene" uid="uid://xkgweihd20rq" path="res://Objects/prototype-kit/Models/GLB format/column-rounded.glb" id="11_eijs8"]
+[ext_resource type="PackedScene" uid="uid://b7ybee0nckgrt" path="res://Objects/prototype-kit/Models/GLB format/column-triangle-low.glb" id="12_kj58p"]
+[ext_resource type="PackedScene" uid="uid://75fmbv0aadny" path="res://Objects/prototype-kit/Models/GLB format/column-triangle.glb" id="13_ms2mx"]
+[ext_resource type="PackedScene" uid="uid://bhg1de1t1elr" path="res://Objects/prototype-kit/Models/GLB format/column.glb" id="14_3e0t6"]
+[ext_resource type="PackedScene" uid="uid://b42eqdve6k5po" path="res://Objects/prototype-kit/Models/GLB format/crate-color.glb" id="15_mck2q"]
+[ext_resource type="PackedScene" uid="uid://d24lmr0qgkm61" path="res://Objects/prototype-kit/Models/GLB format/crate.glb" id="16_eopls"]
+[ext_resource type="PackedScene" uid="uid://cpak1c4lsdruj" path="res://Objects/prototype-kit/Models/GLB format/door-garage.glb" id="17_sqplo"]
+[ext_resource type="PackedScene" uid="uid://dyrb5c1jqetva" path="res://Objects/prototype-kit/Models/GLB format/door-rotate.glb" id="18_73g51"]
+[ext_resource type="PackedScene" uid="uid://b738umjw43jcu" path="res://Objects/prototype-kit/Models/GLB format/door-sliding-double-round.glb" id="19_dcqf0"]
+[ext_resource type="PackedScene" uid="uid://cu8daay7s2v7k" path="res://Objects/prototype-kit/Models/GLB format/door-sliding-double-wide.glb" id="20_hphcj"]
+[ext_resource type="PackedScene" uid="uid://bp6v5igjvwghu" path="res://Objects/prototype-kit/Models/GLB format/door-sliding-double.glb" id="21_yum83"]
+[ext_resource type="PackedScene" uid="uid://bfg2sl2px3lw3" path="res://Objects/prototype-kit/Models/GLB format/door-sliding.glb" id="22_lsg85"]
+[ext_resource type="PackedScene" uid="uid://dwi41j4ilbjcf" path="res://Objects/prototype-kit/Models/GLB format/figurine-cube-detailed.glb" id="23_qytfp"]
+[ext_resource type="PackedScene" uid="uid://ck7q2xg0mlx3d" path="res://Objects/prototype-kit/Models/GLB format/figurine-cube.glb" id="24_7bdbh"]
+[ext_resource type="PackedScene" uid="uid://cfp8q361rsf45" path="res://Objects/prototype-kit/Models/GLB format/figurine-large.glb" id="25_lm1y5"]
+[ext_resource type="PackedScene" uid="uid://by8ljmaotv85a" path="res://Objects/prototype-kit/Models/GLB format/figurine.glb" id="26_diqka"]
+[ext_resource type="PackedScene" uid="uid://cq8l6evu4san5" path="res://Objects/prototype-kit/Models/GLB format/flag.glb" id="27_dg1w7"]
+[ext_resource type="PackedScene" uid="uid://cimdyh06aubgv" path="res://Objects/prototype-kit/Models/GLB format/floor-diagonal.glb" id="28_nrhgu"]
+[ext_resource type="PackedScene" uid="uid://dr6t1n068r4o0" path="res://Objects/prototype-kit/Models/GLB format/floor-small-diagonal.glb" id="29_tk2jy"]
+[ext_resource type="PackedScene" uid="uid://jnqd6d38nt1x" path="res://Objects/prototype-kit/Models/GLB format/floor-small-square.glb" id="30_pouk6"]
+[ext_resource type="PackedScene" uid="uid://vxmg034c3rjv" path="res://Objects/prototype-kit/Models/GLB format/floor-square.glb" id="31_q61k4"]
+[ext_resource type="PackedScene" uid="uid://dfem6r0c1edm2" path="res://Objects/prototype-kit/Models/GLB format/floor-thick-corner-diagonal.glb" id="32_7i0gp"]
+[ext_resource type="PackedScene" uid="uid://xrm47td6en5j" path="res://Objects/prototype-kit/Models/GLB format/floor-thick-corner-round.glb" id="33_50kxx"]
+[ext_resource type="PackedScene" uid="uid://ccudpm5nocoel" path="res://Objects/prototype-kit/Models/GLB format/floor-thick-corner-rounded.glb" id="34_pvjrw"]
+[ext_resource type="PackedScene" uid="uid://upk1lom428v7" path="res://Objects/prototype-kit/Models/GLB format/floor-thick.glb" id="35_doyx1"]
+[ext_resource type="PackedScene" uid="uid://cmxipfjllvo5k" path="res://Objects/prototype-kit/Models/GLB format/hat-cap.glb" id="36_npneb"]
+[ext_resource type="PackedScene" uid="uid://dxifur0p27ftn" path="res://Objects/prototype-kit/Models/GLB format/hat-hard.glb" id="37_b1db1"]
+[ext_resource type="PackedScene" uid="uid://bokbviqhvqdsk" path="res://Objects/prototype-kit/Models/GLB format/indicator-doorway.glb" id="38_552c7"]
+[ext_resource type="PackedScene" uid="uid://ct0q0hgx7jmpf" path="res://Objects/prototype-kit/Models/GLB format/indicator-round-a.glb" id="39_fqsbe"]
+[ext_resource type="PackedScene" uid="uid://jajc3vn5fvlo" path="res://Objects/prototype-kit/Models/GLB format/indicator-round-b.glb" id="40_10cbc"]
+[ext_resource type="PackedScene" uid="uid://gof2ltgjc1lb" path="res://Objects/prototype-kit/Models/GLB format/indicator-round-c.glb" id="41_okipi"]
+[ext_resource type="PackedScene" uid="uid://t4te8e56q4eb" path="res://Objects/prototype-kit/Models/GLB format/indicator-round-d.glb" id="42_x5i74"]
+[ext_resource type="PackedScene" uid="uid://21iqk73yrisk" path="res://Objects/prototype-kit/Models/GLB format/indicator-round-e.glb" id="43_broqf"]
+[ext_resource type="PackedScene" uid="uid://x6pim7gugmxd" path="res://Objects/prototype-kit/Models/GLB format/indicator-round-f.glb" id="44_pww86"]
+[ext_resource type="PackedScene" uid="uid://djbcx6aigis64" path="res://Objects/prototype-kit/Models/GLB format/indicator-special-area.glb" id="45_h10hn"]
+[ext_resource type="PackedScene" uid="uid://c44svc15mofxw" path="res://Objects/prototype-kit/Models/GLB format/indicator-special-arrow.glb" id="46_2526m"]
+[ext_resource type="PackedScene" uid="uid://d15iniqao5bn0" path="res://Objects/prototype-kit/Models/GLB format/indicator-special-cross.glb" id="47_jxe28"]
+[ext_resource type="PackedScene" uid="uid://csw8tgwhjag50" path="res://Objects/prototype-kit/Models/GLB format/indicator-special-lines.glb" id="48_w15y1"]
+[ext_resource type="PackedScene" uid="uid://ddtmo1geflx5v" path="res://Objects/prototype-kit/Models/GLB format/indicator-square-a.glb" id="49_ucwki"]
+[ext_resource type="PackedScene" uid="uid://dt8d00oc4x3y7" path="res://Objects/prototype-kit/Models/GLB format/indicator-square-b.glb" id="50_vtblv"]
+[ext_resource type="PackedScene" uid="uid://dglnxm1e1fdc7" path="res://Objects/prototype-kit/Models/GLB format/indicator-square-c.glb" id="51_sabu6"]
+[ext_resource type="PackedScene" uid="uid://dfns3m5r5xals" path="res://Objects/prototype-kit/Models/GLB format/indicator-square-d.glb" id="52_bvmt1"]
+[ext_resource type="PackedScene" uid="uid://cmb370kgte1wr" path="res://Objects/prototype-kit/Models/GLB format/indicator-square-e.glb" id="53_7g4v6"]
+[ext_resource type="PackedScene" uid="uid://bmeu3mb116oh5" path="res://Objects/prototype-kit/Models/GLB format/indicator-square-f.glb" id="54_mhuyr"]
+[ext_resource type="PackedScene" uid="uid://dwyv1kc6kb6vw" path="res://Objects/prototype-kit/Models/GLB format/ladder-color.glb" id="55_1jrjr"]
+[ext_resource type="PackedScene" uid="uid://ctgpgth0jy04k" path="res://Objects/prototype-kit/Models/GLB format/ladder-top.glb" id="56_lyba0"]
+[ext_resource type="PackedScene" uid="uid://i3856elv30wa" path="res://Objects/prototype-kit/Models/GLB format/ladder.glb" id="57_filw8"]
+[ext_resource type="PackedScene" uid="uid://dsda06k73bodf" path="res://Objects/prototype-kit/Models/GLB format/lever-double.glb" id="58_qbo7p"]
+[ext_resource type="PackedScene" uid="uid://brgiu26vvxidr" path="res://Objects/prototype-kit/Models/GLB format/lever-single.glb" id="59_nydtk"]
+[ext_resource type="PackedScene" uid="uid://b68ghdiwsqm7o" path="res://Objects/prototype-kit/Models/GLB format/number-0.glb" id="60_2aj1w"]
+[ext_resource type="PackedScene" uid="uid://kcbv01ys83ry" path="res://Objects/prototype-kit/Models/GLB format/number-1.glb" id="61_fjjaf"]
+[ext_resource type="PackedScene" uid="uid://bvkkpolak3ape" path="res://Objects/prototype-kit/Models/GLB format/number-2.glb" id="62_5qgnl"]
+[ext_resource type="PackedScene" uid="uid://6fbussxckfer" path="res://Objects/prototype-kit/Models/GLB format/number-3.glb" id="63_fpvlw"]
+[ext_resource type="PackedScene" uid="uid://ckgf1gls7fkeu" path="res://Objects/prototype-kit/Models/GLB format/number-4.glb" id="64_bp4pv"]
+[ext_resource type="PackedScene" uid="uid://bx8j7u6xp7eoo" path="res://Objects/prototype-kit/Models/GLB format/number-5.glb" id="65_cv7ev"]
+[ext_resource type="PackedScene" uid="uid://clb3yrr4pcnnh" path="res://Objects/prototype-kit/Models/GLB format/number-6.glb" id="66_35rt5"]
+[ext_resource type="PackedScene" uid="uid://bn882amutmjxn" path="res://Objects/prototype-kit/Models/GLB format/number-7.glb" id="67_82whl"]
+[ext_resource type="PackedScene" uid="uid://btvblinwy5xvw" path="res://Objects/prototype-kit/Models/GLB format/number-8.glb" id="68_2fq32"]
+[ext_resource type="PackedScene" uid="uid://bvvcy716yiukx" path="res://Objects/prototype-kit/Models/GLB format/number-9.glb" id="69_vs2bh"]
+[ext_resource type="PackedScene" uid="uid://dxpg7cnqwirb7" path="res://Objects/prototype-kit/Models/GLB format/number-double-0.glb" id="70_e1gq5"]
+[ext_resource type="PackedScene" uid="uid://ccr5edikmpwkc" path="res://Objects/prototype-kit/Models/GLB format/number-double-1.glb" id="71_kfsbu"]
+[ext_resource type="PackedScene" uid="uid://bxx6v5g2vgmaf" path="res://Objects/prototype-kit/Models/GLB format/number-double-2.glb" id="72_yhyyx"]
+[ext_resource type="PackedScene" uid="uid://do4ta6dh6qclo" path="res://Objects/prototype-kit/Models/GLB format/number-double-3.glb" id="73_nuf0e"]
+[ext_resource type="PackedScene" uid="uid://2rkvpglsbfew" path="res://Objects/prototype-kit/Models/GLB format/number-double-4.glb" id="74_4mjao"]
+[ext_resource type="PackedScene" uid="uid://wvyq16cglvrp" path="res://Objects/prototype-kit/Models/GLB format/number-double-5.glb" id="75_ujm6l"]
+[ext_resource type="PackedScene" uid="uid://d0p2rr10qva3s" path="res://Objects/prototype-kit/Models/GLB format/number-double-6.glb" id="76_76y1b"]
+[ext_resource type="PackedScene" uid="uid://cv0np7ruc01pl" path="res://Objects/prototype-kit/Models/GLB format/number-double-7.glb" id="77_81am4"]
+[ext_resource type="PackedScene" uid="uid://bomr4kf3bdul7" path="res://Objects/prototype-kit/Models/GLB format/number-double-8.glb" id="78_bsp3u"]
+[ext_resource type="PackedScene" uid="uid://k845rb3ew1d0" path="res://Objects/prototype-kit/Models/GLB format/number-double-9.glb" id="79_4wntj"]
+[ext_resource type="PackedScene" uid="uid://bsb3fvlahp005" path="res://Objects/prototype-kit/Models/GLB format/pipe-corner.glb" id="80_euofe"]
+[ext_resource type="PackedScene" uid="uid://deprobjr5xhk7" path="res://Objects/prototype-kit/Models/GLB format/pipe-half-section.glb" id="81_wnapi"]
+[ext_resource type="PackedScene" uid="uid://fihqmoxkc2ap" path="res://Objects/prototype-kit/Models/GLB format/pipe-half.glb" id="82_wslx1"]
+[ext_resource type="PackedScene" uid="uid://das0oxp5iuaky" path="res://Objects/prototype-kit/Models/GLB format/pipe-section.glb" id="83_m577o"]
+[ext_resource type="PackedScene" uid="uid://dw6xwd7hthg14" path="res://Objects/prototype-kit/Models/GLB format/pipe-split.glb" id="84_rh4th"]
+[ext_resource type="PackedScene" uid="uid://ck2noj57fwoe2" path="res://Objects/prototype-kit/Models/GLB format/pipe.glb" id="85_bdmfo"]
+[ext_resource type="PackedScene" uid="uid://ddsdok6b4nifw" path="res://Objects/prototype-kit/Models/GLB format/shape-cube-half.glb" id="86_h56tw"]
+[ext_resource type="PackedScene" uid="uid://dpdfemameq441" path="res://Objects/prototype-kit/Models/GLB format/shape-cube-rounded.glb" id="87_kf4fe"]
+[ext_resource type="PackedScene" uid="uid://wfl7u4q68c4x" path="res://Objects/prototype-kit/Models/GLB format/shape-cube.glb" id="88_01a41"]
+[ext_resource type="PackedScene" uid="uid://n7wotoqjrt74" path="res://Objects/prototype-kit/Models/GLB format/shape-cylinder-detailed.glb" id="89_frdyc"]
+[ext_resource type="PackedScene" uid="uid://cbowrry4eaj6w" path="res://Objects/prototype-kit/Models/GLB format/shape-cylinder-half-detailed.glb" id="90_5mmjo"]
+[ext_resource type="PackedScene" uid="uid://cbe4q055vwkes" path="res://Objects/prototype-kit/Models/GLB format/shape-cylinder-half.glb" id="91_hgefa"]
+[ext_resource type="PackedScene" uid="uid://81f8n0myvgq1" path="res://Objects/prototype-kit/Models/GLB format/shape-cylinder.glb" id="92_htw64"]
+[ext_resource type="PackedScene" uid="uid://b0yg64rf6utfe" path="res://Objects/prototype-kit/Models/GLB format/shape-hexagon-half.glb" id="93_whahq"]
+[ext_resource type="PackedScene" uid="uid://cfq8nswuq0pxu" path="res://Objects/prototype-kit/Models/GLB format/shape-hexagon.glb" id="94_q71sw"]
+[ext_resource type="PackedScene" uid="uid://duvllw8qq45cn" path="res://Objects/prototype-kit/Models/GLB format/shape-hollow-cylinder-detailed.glb" id="95_nxpvp"]
+[ext_resource type="PackedScene" uid="uid://ch7e2ojegng37" path="res://Objects/prototype-kit/Models/GLB format/shape-hollow-cylinder-half-detailed.glb" id="96_gq021"]
+[ext_resource type="PackedScene" uid="uid://ggcjsueiqdpc" path="res://Objects/prototype-kit/Models/GLB format/shape-hollow-cylinder-half.glb" id="97_m7gn2"]
+[ext_resource type="PackedScene" uid="uid://hacmnk3ljunk" path="res://Objects/prototype-kit/Models/GLB format/shape-hollow-cylinder.glb" id="98_oyk2f"]
+[ext_resource type="PackedScene" uid="uid://blnum4dsbyx3v" path="res://Objects/prototype-kit/Models/GLB format/shape-hollow-hexagon-half.glb" id="99_x0vf2"]
+[ext_resource type="PackedScene" uid="uid://bqt100m4kis4d" path="res://Objects/prototype-kit/Models/GLB format/shape-hollow-hexagon.glb" id="100_l26iy"]
+[ext_resource type="PackedScene" uid="uid://1c44ghfeaxp3" path="res://Objects/prototype-kit/Models/GLB format/shape-slope.glb" id="101_y6600"]
+[ext_resource type="PackedScene" uid="uid://cqw44p8viu6ei" path="res://Objects/prototype-kit/Models/GLB format/shape-triangular-prism-low.glb" id="102_mo10d"]
+[ext_resource type="PackedScene" uid="uid://ce1iqld6w1w5q" path="res://Objects/prototype-kit/Models/GLB format/shape-triangular-prism.glb" id="103_h1sil"]
+[ext_resource type="PackedScene" uid="uid://cbnn8gs1mtgm2" path="res://Objects/prototype-kit/Models/GLB format/stairs-diagonal-narrow.glb" id="104_l2q82"]
+[ext_resource type="PackedScene" uid="uid://33pbr7lfmxc5" path="res://Objects/prototype-kit/Models/GLB format/stairs-diagonal-small-narrow.glb" id="105_aem3x"]
+[ext_resource type="PackedScene" uid="uid://bdbmv6yg6w2t4" path="res://Objects/prototype-kit/Models/GLB format/stairs-diagonal-small.glb" id="106_lmsrk"]
+[ext_resource type="PackedScene" uid="uid://cjn8rg2e8pi55" path="res://Objects/prototype-kit/Models/GLB format/stairs-diagonal.glb" id="107_856ht"]
+[ext_resource type="PackedScene" uid="uid://chya8rm7oe56q" path="res://Objects/prototype-kit/Models/GLB format/stairs-narrow.glb" id="108_uuatr"]
+[ext_resource type="PackedScene" uid="uid://cfly4oqk4nap2" path="res://Objects/prototype-kit/Models/GLB format/stairs-small-narrow.glb" id="109_0peft"]
+[ext_resource type="PackedScene" uid="uid://gcu80o83lws8" path="res://Objects/prototype-kit/Models/GLB format/stairs-small.glb" id="110_0noeu"]
+[ext_resource type="PackedScene" uid="uid://dhan4bn0m6wmj" path="res://Objects/prototype-kit/Models/GLB format/stairs.glb" id="111_u3xom"]
+[ext_resource type="PackedScene" uid="uid://dt6kl4v5j8wq7" path="res://Objects/prototype-kit/Models/GLB format/target-a-round.glb" id="112_t6ilf"]
+[ext_resource type="PackedScene" uid="uid://cqdgbw26hwsw4" path="res://Objects/prototype-kit/Models/GLB format/target-a-square.glb" id="113_x57kw"]
+[ext_resource type="PackedScene" uid="uid://baife1jvatjoo" path="res://Objects/prototype-kit/Models/GLB format/target-b-round.glb" id="114_7dsg8"]
+[ext_resource type="PackedScene" uid="uid://cbw033a8leeu2" path="res://Objects/prototype-kit/Models/GLB format/target-b-square.glb" id="115_nw5fe"]
+[ext_resource type="PackedScene" uid="uid://ttyli35ndr8s" path="res://Objects/prototype-kit/Models/GLB format/vehicle-convertible.glb" id="116_diru4"]
+[ext_resource type="PackedScene" uid="uid://dgtep06t4yrhk" path="res://Objects/prototype-kit/Models/GLB format/vehicle.glb" id="117_euero"]
+[ext_resource type="PackedScene" uid="uid://dgc2dru2cnk3q" path="res://Objects/prototype-kit/Models/GLB format/wall-corner-low.glb" id="118_hbsx1"]
+[ext_resource type="PackedScene" uid="uid://cxq3ocq166xla" path="res://Objects/prototype-kit/Models/GLB format/wall-corner-rounded-low.glb" id="119_b3lgk"]
+[ext_resource type="PackedScene" uid="uid://cxxqxnnkauj6h" path="res://Objects/prototype-kit/Models/GLB format/wall-corner-rounded.glb" id="120_vgg74"]
+[ext_resource type="PackedScene" uid="uid://c3a7iyympq5ty" path="res://Objects/prototype-kit/Models/GLB format/wall-corner.glb" id="121_jv88k"]
+[ext_resource type="PackedScene" uid="uid://doen2g31tnjh0" path="res://Objects/prototype-kit/Models/GLB format/wall-diagonal-low.glb" id="122_se51y"]
+[ext_resource type="PackedScene" uid="uid://733qa53nb7qb" path="res://Objects/prototype-kit/Models/GLB format/wall-diagonal.glb" id="123_goy74"]
+[ext_resource type="PackedScene" uid="uid://cbw3mhe7y1ono" path="res://Objects/prototype-kit/Models/GLB format/wall-doorway-garage.glb" id="124_5oim8"]
+[ext_resource type="PackedScene" uid="uid://dlnvpq6m11j3w" path="res://Objects/prototype-kit/Models/GLB format/wall-doorway-round.glb" id="125_tf7do"]
+[ext_resource type="PackedScene" uid="uid://cx7u5cvcior28" path="res://Objects/prototype-kit/Models/GLB format/wall-doorway-sliding.glb" id="126_pxt2a"]
+[ext_resource type="PackedScene" uid="uid://b8db5sdgb2dms" path="res://Objects/prototype-kit/Models/GLB format/wall-doorway-wide-sliding.glb" id="127_lhkab"]
+[ext_resource type="PackedScene" uid="uid://dlwd5dng36ioe" path="res://Objects/prototype-kit/Models/GLB format/wall-doorway-wide.glb" id="128_ommi3"]
+[ext_resource type="PackedScene" uid="uid://c5ib1juheaohf" path="res://Objects/prototype-kit/Models/GLB format/wall-doorway.glb" id="129_61fnv"]
+[ext_resource type="PackedScene" uid="uid://b3nitau73a3te" path="res://Objects/prototype-kit/Models/GLB format/wall-low.glb" id="130_vgb7x"]
+[ext_resource type="PackedScene" uid="uid://d1ysior2ahmss" path="res://Objects/prototype-kit/Models/GLB format/wall-round-low.glb" id="131_wbun8"]
+[ext_resource type="PackedScene" uid="uid://cha31dyg4bna3" path="res://Objects/prototype-kit/Models/GLB format/wall-round.glb" id="132_vrk50"]
+[ext_resource type="PackedScene" uid="uid://p214n830pu1w" path="res://Objects/prototype-kit/Models/GLB format/wall-window-barred-large.glb" id="133_6uaha"]
+[ext_resource type="PackedScene" uid="uid://t2trigury1mg" path="res://Objects/prototype-kit/Models/GLB format/wall-window-barred-medium.glb" id="134_wfcce"]
+[ext_resource type="PackedScene" uid="uid://cts5fw5jmyeur" path="res://Objects/prototype-kit/Models/GLB format/wall-window-barred-small.glb" id="135_mvhg7"]
+[ext_resource type="PackedScene" uid="uid://bu0rfqbxcg32j" path="res://Objects/prototype-kit/Models/GLB format/wall-window-cutout-large.glb" id="136_haqvo"]
+[ext_resource type="PackedScene" uid="uid://b62kteyxs8hg0" path="res://Objects/prototype-kit/Models/GLB format/wall-window-cutout-medium.glb" id="137_xflh4"]
+[ext_resource type="PackedScene" uid="uid://cjjsdvf81f4ov" path="res://Objects/prototype-kit/Models/GLB format/wall-window-cutout-small.glb" id="138_thgw6"]
+[ext_resource type="PackedScene" uid="uid://exurv6yytpai" path="res://Objects/prototype-kit/Models/GLB format/wall-window-large.glb" id="139_0twh4"]
+[ext_resource type="PackedScene" uid="uid://cmpypsp4qwaep" path="res://Objects/prototype-kit/Models/GLB format/wall-window-medium.glb" id="140_k2h2p"]
+[ext_resource type="PackedScene" uid="uid://4u2x21w34qfd" path="res://Objects/prototype-kit/Models/GLB format/wall-window-small.glb" id="141_nglon"]
+[ext_resource type="PackedScene" uid="uid://cjgjwmxecga8s" path="res://Objects/prototype-kit/Models/GLB format/wall.glb" id="142_vbg8y"]
+[ext_resource type="PackedScene" uid="uid://8gcdvlndrvx8" path="res://Objects/prototype-kit/Models/GLB format/weapon-shield.glb" id="143_t8w5v"]
+[ext_resource type="PackedScene" uid="uid://m0hmlmyrfd6m" path="res://Objects/prototype-kit/Models/GLB format/weapon-sword.glb" id="144_tcusc"]
+[ext_resource type="PackedScene" uid="uid://40egvnxedoe5" path="res://Objects/prototype-kit/Models/GLB format/wheelchair.glb" id="145_hkgqs"]
+
+[node name="Tiles" type="Node3D"]
+
+[node name="animal-bison2" parent="." instance=ExtResource("1_qk3sw")]
+
+[node name="animal-dog2" parent="." instance=ExtResource("2_p1p70")]
+
+[node name="animal-horse2" parent="." instance=ExtResource("3_i1co0")]
+
+[node name="button-floor-round-small2" parent="." instance=ExtResource("4_erbhk")]
+
+[node name="button-floor-round2" parent="." instance=ExtResource("5_rwthf")]
+
+[node name="button-floor-square-small2" parent="." instance=ExtResource("6_qtr58")]
+
+[node name="button-floor-square2" parent="." instance=ExtResource("7_w0pnf")]
+
+[node name="coin2" parent="." instance=ExtResource("8_710fh")]
+
+[node name="column-low2" parent="." instance=ExtResource("9_arm64")]
+
+[node name="column-rounded-low2" parent="." instance=ExtResource("10_x4syd")]
+
+[node name="column-rounded2" parent="." instance=ExtResource("11_eijs8")]
+
+[node name="column-triangle-low2" parent="." instance=ExtResource("12_kj58p")]
+
+[node name="column-triangle2" parent="." instance=ExtResource("13_ms2mx")]
+
+[node name="column2" parent="." instance=ExtResource("14_3e0t6")]
+
+[node name="crate-color2" parent="." instance=ExtResource("15_mck2q")]
+
+[node name="crate2" parent="." instance=ExtResource("16_eopls")]
+
+[node name="door-garage2" parent="." instance=ExtResource("17_sqplo")]
+
+[node name="door-rotate2" parent="." instance=ExtResource("18_73g51")]
+
+[node name="door-sliding-double-round2" parent="." instance=ExtResource("19_dcqf0")]
+
+[node name="door-sliding-double-wide2" parent="." instance=ExtResource("20_hphcj")]
+
+[node name="door-sliding-double2" parent="." instance=ExtResource("21_yum83")]
+
+[node name="door-sliding2" parent="." instance=ExtResource("22_lsg85")]
+
+[node name="figurine-cube-detailed2" parent="." instance=ExtResource("23_qytfp")]
+
+[node name="figurine-cube2" parent="." instance=ExtResource("24_7bdbh")]
+
+[node name="figurine-large2" parent="." instance=ExtResource("25_lm1y5")]
+
+[node name="figurine2" parent="." instance=ExtResource("26_diqka")]
+
+[node name="flag2" parent="." instance=ExtResource("27_dg1w7")]
+
+[node name="floor-diagonal2" parent="." instance=ExtResource("28_nrhgu")]
+
+[node name="floor-small-diagonal2" parent="." instance=ExtResource("29_tk2jy")]
+
+[node name="floor-small-square2" parent="." instance=ExtResource("30_pouk6")]
+
+[node name="floor-square2" parent="." instance=ExtResource("31_q61k4")]
+
+[node name="floor-thick-corner-diagonal2" parent="." instance=ExtResource("32_7i0gp")]
+
+[node name="floor-thick-corner-round2" parent="." instance=ExtResource("33_50kxx")]
+
+[node name="floor-thick-corner-rounded2" parent="." instance=ExtResource("34_pvjrw")]
+
+[node name="floor-thick2" parent="." instance=ExtResource("35_doyx1")]
+
+[node name="hat-cap2" parent="." instance=ExtResource("36_npneb")]
+
+[node name="hat-hard2" parent="." instance=ExtResource("37_b1db1")]
+
+[node name="indicator-doorway2" parent="." instance=ExtResource("38_552c7")]
+
+[node name="indicator-round-a2" parent="." instance=ExtResource("39_fqsbe")]
+
+[node name="indicator-round-b2" parent="." instance=ExtResource("40_10cbc")]
+
+[node name="indicator-round-c2" parent="." instance=ExtResource("41_okipi")]
+
+[node name="indicator-round-d2" parent="." instance=ExtResource("42_x5i74")]
+
+[node name="indicator-round-e2" parent="." instance=ExtResource("43_broqf")]
+
+[node name="indicator-round-f2" parent="." instance=ExtResource("44_pww86")]
+
+[node name="indicator-special-area2" parent="." instance=ExtResource("45_h10hn")]
+
+[node name="indicator-special-arrow2" parent="." instance=ExtResource("46_2526m")]
+
+[node name="indicator-special-cross2" parent="." instance=ExtResource("47_jxe28")]
+
+[node name="indicator-special-lines2" parent="." instance=ExtResource("48_w15y1")]
+
+[node name="indicator-square-a2" parent="." instance=ExtResource("49_ucwki")]
+
+[node name="indicator-square-b2" parent="." instance=ExtResource("50_vtblv")]
+
+[node name="indicator-square-c2" parent="." instance=ExtResource("51_sabu6")]
+
+[node name="indicator-square-d2" parent="." instance=ExtResource("52_bvmt1")]
+
+[node name="indicator-square-e2" parent="." instance=ExtResource("53_7g4v6")]
+
+[node name="indicator-square-f2" parent="." instance=ExtResource("54_mhuyr")]
+
+[node name="ladder-color2" parent="." instance=ExtResource("55_1jrjr")]
+
+[node name="ladder-top2" parent="." instance=ExtResource("56_lyba0")]
+
+[node name="ladder2" parent="." instance=ExtResource("57_filw8")]
+
+[node name="lever-double2" parent="." instance=ExtResource("58_qbo7p")]
+
+[node name="lever-single2" parent="." instance=ExtResource("59_nydtk")]
+
+[node name="number-02" parent="." instance=ExtResource("60_2aj1w")]
+
+[node name="number-12" parent="." instance=ExtResource("61_fjjaf")]
+
+[node name="number-22" parent="." instance=ExtResource("62_5qgnl")]
+
+[node name="number-32" parent="." instance=ExtResource("63_fpvlw")]
+
+[node name="number-42" parent="." instance=ExtResource("64_bp4pv")]
+
+[node name="number-52" parent="." instance=ExtResource("65_cv7ev")]
+
+[node name="number-62" parent="." instance=ExtResource("66_35rt5")]
+
+[node name="number-72" parent="." instance=ExtResource("67_82whl")]
+
+[node name="number-82" parent="." instance=ExtResource("68_2fq32")]
+
+[node name="number-92" parent="." instance=ExtResource("69_vs2bh")]
+
+[node name="number-double-02" parent="." instance=ExtResource("70_e1gq5")]
+
+[node name="number-double-12" parent="." instance=ExtResource("71_kfsbu")]
+
+[node name="number-double-22" parent="." instance=ExtResource("72_yhyyx")]
+
+[node name="number-double-32" parent="." instance=ExtResource("73_nuf0e")]
+
+[node name="number-double-42" parent="." instance=ExtResource("74_4mjao")]
+
+[node name="number-double-52" parent="." instance=ExtResource("75_ujm6l")]
+
+[node name="number-double-62" parent="." instance=ExtResource("76_76y1b")]
+
+[node name="number-double-72" parent="." instance=ExtResource("77_81am4")]
+
+[node name="number-double-82" parent="." instance=ExtResource("78_bsp3u")]
+
+[node name="number-double-92" parent="." instance=ExtResource("79_4wntj")]
+
+[node name="pipe-corner2" parent="." instance=ExtResource("80_euofe")]
+
+[node name="pipe-half-section2" parent="." instance=ExtResource("81_wnapi")]
+
+[node name="pipe-half2" parent="." instance=ExtResource("82_wslx1")]
+
+[node name="pipe-section2" parent="." instance=ExtResource("83_m577o")]
+
+[node name="pipe-split2" parent="." instance=ExtResource("84_rh4th")]
+
+[node name="pipe2" parent="." instance=ExtResource("85_bdmfo")]
+
+[node name="shape-cube-half2" parent="." instance=ExtResource("86_h56tw")]
+
+[node name="shape-cube-rounded2" parent="." instance=ExtResource("87_kf4fe")]
+
+[node name="shape-cube2" parent="." instance=ExtResource("88_01a41")]
+
+[node name="shape-cylinder-detailed2" parent="." instance=ExtResource("89_frdyc")]
+
+[node name="shape-cylinder-half-detailed2" parent="." instance=ExtResource("90_5mmjo")]
+
+[node name="shape-cylinder-half2" parent="." instance=ExtResource("91_hgefa")]
+
+[node name="shape-cylinder2" parent="." instance=ExtResource("92_htw64")]
+
+[node name="shape-hexagon-half2" parent="." instance=ExtResource("93_whahq")]
+
+[node name="shape-hexagon2" parent="." instance=ExtResource("94_q71sw")]
+
+[node name="shape-hollow-cylinder-detailed2" parent="." instance=ExtResource("95_nxpvp")]
+
+[node name="shape-hollow-cylinder-half-detailed2" parent="." instance=ExtResource("96_gq021")]
+
+[node name="shape-hollow-cylinder-half2" parent="." instance=ExtResource("97_m7gn2")]
+
+[node name="shape-hollow-cylinder2" parent="." instance=ExtResource("98_oyk2f")]
+
+[node name="shape-hollow-hexagon-half2" parent="." instance=ExtResource("99_x0vf2")]
+
+[node name="shape-hollow-hexagon2" parent="." instance=ExtResource("100_l26iy")]
+
+[node name="shape-slope2" parent="." instance=ExtResource("101_y6600")]
+
+[node name="shape-triangular-prism-low2" parent="." instance=ExtResource("102_mo10d")]
+
+[node name="shape-triangular-prism2" parent="." instance=ExtResource("103_h1sil")]
+
+[node name="stairs-diagonal-narrow2" parent="." instance=ExtResource("104_l2q82")]
+
+[node name="stairs-diagonal-small-narrow2" parent="." instance=ExtResource("105_aem3x")]
+
+[node name="stairs-diagonal-small2" parent="." instance=ExtResource("106_lmsrk")]
+
+[node name="stairs-diagonal2" parent="." instance=ExtResource("107_856ht")]
+
+[node name="stairs-narrow2" parent="." instance=ExtResource("108_uuatr")]
+
+[node name="stairs-small-narrow2" parent="." instance=ExtResource("109_0peft")]
+
+[node name="stairs-small2" parent="." instance=ExtResource("110_0noeu")]
+
+[node name="stairs2" parent="." instance=ExtResource("111_u3xom")]
+
+[node name="target-a-round2" parent="." instance=ExtResource("112_t6ilf")]
+
+[node name="target-a-square2" parent="." instance=ExtResource("113_x57kw")]
+
+[node name="target-b-round2" parent="." instance=ExtResource("114_7dsg8")]
+
+[node name="target-b-square2" parent="." instance=ExtResource("115_nw5fe")]
+
+[node name="vehicle-convertible" parent="." instance=ExtResource("116_diru4")]
+
+[node name="vehicle" parent="." instance=ExtResource("117_euero")]
+
+[node name="wall-corner-low2" parent="." instance=ExtResource("118_hbsx1")]
+
+[node name="wall-corner-rounded-low2" parent="." instance=ExtResource("119_b3lgk")]
+
+[node name="wall-corner-rounded2" parent="." instance=ExtResource("120_vgg74")]
+
+[node name="wall-corner2" parent="." instance=ExtResource("121_jv88k")]
+
+[node name="wall-diagonal-low2" parent="." instance=ExtResource("122_se51y")]
+
+[node name="wall-diagonal2" parent="." instance=ExtResource("123_goy74")]
+
+[node name="wall-doorway-garage2" parent="." instance=ExtResource("124_5oim8")]
+
+[node name="wall-doorway-round2" parent="." instance=ExtResource("125_tf7do")]
+
+[node name="wall-doorway-sliding2" parent="." instance=ExtResource("126_pxt2a")]
+
+[node name="wall-doorway-wide-sliding2" parent="." instance=ExtResource("127_lhkab")]
+
+[node name="wall-doorway-wide2" parent="." instance=ExtResource("128_ommi3")]
+
+[node name="wall-doorway2" parent="." instance=ExtResource("129_61fnv")]
+
+[node name="wall-low2" parent="." instance=ExtResource("130_vgb7x")]
+
+[node name="wall-round-low2" parent="." instance=ExtResource("131_wbun8")]
+
+[node name="wall-round2" parent="." instance=ExtResource("132_vrk50")]
+
+[node name="wall-window-barred-large2" parent="." instance=ExtResource("133_6uaha")]
+
+[node name="wall-window-barred-medium2" parent="." instance=ExtResource("134_wfcce")]
+
+[node name="wall-window-barred-small2" parent="." instance=ExtResource("135_mvhg7")]
+
+[node name="wall-window-cutout-large2" parent="." instance=ExtResource("136_haqvo")]
+
+[node name="wall-window-cutout-medium2" parent="." instance=ExtResource("137_xflh4")]
+
+[node name="wall-window-cutout-small2" parent="." instance=ExtResource("138_thgw6")]
+
+[node name="wall-window-large2" parent="." instance=ExtResource("139_0twh4")]
+
+[node name="wall-window-medium2" parent="." instance=ExtResource("140_k2h2p")]
+
+[node name="wall-window-small2" parent="." instance=ExtResource("141_nglon")]
+
+[node name="wall2" parent="." instance=ExtResource("142_vbg8y")]
+
+[node name="weapon-shield2" parent="." instance=ExtResource("143_t8w5v")]
+
+[node name="weapon-sword2" parent="." instance=ExtResource("144_tcusc")]
+
+[node name="wheelchair2" parent="." instance=ExtResource("145_hkgqs")]
