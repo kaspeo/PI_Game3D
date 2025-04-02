@@ -1,0 +1,15 @@
+[gd_scene load_steps=3 format=3 uid="uid://c12u2istqfwtt"]
+
+[ext_resource type="PackedScene" uid="uid://vxmg034c3rjv" path="res://Objects/prototype-kit/Models/GLB format/floor-square.glb" id="1_evpg4"]
+
+[sub_resource type="ConcavePolygonShape3D" id="ConcavePolygonShape3D_evpg4"]
+data = PackedVector3Array(0, 0, 0, 0.5, 0, 0, 0.5, 0, 0.5, 0.5, 0, 0.5, 0, 0, 0.5, 0, 0, 0, 0, 0, 0, -0.5, 0, 0, -0.5, 0, -0.5, -0.5, 0, -0.5, 0, 0, -0.5, 0, 0, 0, 0, 0, -0.5, 0.5, 0, -0.5, 0.5, 0, 0, 0.5, 0, 0, 0, 0, 0, 0, 0, -0.5, -0.5, 0, 0, 0, 0, 0, 0, 0, 0.5, 0, 0, 0.5, -0.5, 0, 0.5, -0.5, 0, 0)
+
+[node name="floor" type="Node3D"]
+
+[node name="floor-square2" parent="." instance=ExtResource("1_evpg4")]
+
+[node name="StaticBody3D" type="StaticBody3D" parent="floor-square2"]
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="floor-square2/StaticBody3D"]
+shape = SubResource("ConcavePolygonShape3D_evpg4")

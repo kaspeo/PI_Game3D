@@ -1,0 +1,48 @@
+[gd_scene load_steps=8 format=3 uid="uid://di80n2exvk435"]
+
+[ext_resource type="Script" uid="uid://db3xn5rq5a6ak" path="res://Player/script/player.gd" id="1_4ntmi"]
+[ext_resource type="PackedScene" uid="uid://b8g7vufbop8ih" path="res://Player/Assets/mini-characters/Models/GLB format/character-male-e.glb" id="1_l8h54"]
+[ext_resource type="AnimationLibrary" uid="uid://77yguxsp2qsp" path="res://Player/Assets/animation.res" id="3_btcbx"]
+[ext_resource type="Script" uid="uid://bfm7akipr1lio" path="res://Player/camera_spring_arm.gd" id="4_gwnis"]
+[ext_resource type="Script" uid="uid://c0vhumvv4808v" path="res://Player/camera_follow.gd" id="5_k53q1"]
+
+[sub_resource type="CapsuleShape3D" id="CapsuleShape3D_gwnis"]
+radius = 0.2
+height = 0.8
+
+[sub_resource type="SeparationRayShape3D" id="SeparationRayShape3D_k53q1"]
+
+[node name="Player" type="CharacterBody3D"]
+collision_layer = 2
+script = ExtResource("1_4ntmi")
+
+[node name="character-male-e2" parent="." instance=ExtResource("1_l8h54")]
+unique_name_in_owner = true
+
+[node name="AnimationPlayer" parent="character-male-e2" index="1"]
+libraries = {
+&"": ExtResource("3_btcbx")
+}
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.4, 0)
+shape = SubResource("CapsuleShape3D_gwnis")
+
+[node name="SpringArmPivot" type="Node3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.6, 0)
+script = ExtResource("4_gwnis")
+
+[node name="SpringArm3D" type="SpringArm3D" parent="SpringArmPivot"]
+transform = Transform3D(1, 0, 0, 0, -0.866026, 0.5, 0, -0.5, -0.866026, 0, 0, 0.1)
+shape = SubResource("SeparationRayShape3D_k53q1")
+spring_length = 3.0
+
+[node name="SpringPosition" type="Node3D" parent="SpringArmPivot/SpringArm3D"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.95718, 3.25788)
+
+[node name="Camera3D" type="Camera3D" parent="SpringArmPivot/SpringArm3D" node_paths=PackedStringArray("spring_arm")]
+transform = Transform3D(-1, -1.24345e-14, 8.74227e-08, 1.51808e-08, -0.984808, 0.173648, 8.60946e-08, 0.173648, 0.984808, 0, 0.36436, 3.83109)
+script = ExtResource("5_k53q1")
+spring_arm = NodePath("../SpringPosition")
+
+[editable path="character-male-e2"]
