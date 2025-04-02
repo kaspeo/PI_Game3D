@@ -1,0 +1,48 @@
+[gd_scene load_steps=9 format=3 uid="uid://bc2e0obqkdpcs"]
+
+[ext_resource type="MeshLibrary" uid="uid://tf2sba2wnl7m" path="res://Objects/Room/tiles.tres" id="1_8ko5r"]
+[ext_resource type="PackedScene" uid="uid://di80n2exvk435" path="res://Player/player.tscn" id="2_au1pm"]
+[ext_resource type="PackedScene" uid="uid://di8w1cu7ciavm" path="res://UI/PauseMenu/pause_menu.tscn" id="3_5exfe"]
+[ext_resource type="PackedScene" uid="uid://c12u2istqfwtt" path="res://Objects/Room/floor.tscn" id="5_poeaa"]
+[ext_resource type="MeshLibrary" uid="uid://5aqmtwwp004s" path="res://Objects/Room/floortiles.tres" id="5_ufara"]
+
+[sub_resource type="Environment" id="Environment_poeaa"]
+
+[sub_resource type="CameraAttributesPractical" id="CameraAttributesPractical_ufara"]
+
+[sub_resource type="Compositor" id="Compositor_ws63c"]
+
+[node name="Level1" type="Node3D"]
+
+[node name="WorldEnvironment" type="WorldEnvironment" parent="."]
+environment = SubResource("Environment_poeaa")
+camera_attributes = SubResource("CameraAttributesPractical_ufara")
+compositor = SubResource("Compositor_ws63c")
+
+[node name="Wall" type="GridMap" parent="."]
+mesh_library = ExtResource("1_8ko5r")
+cell_size = Vector3(1, 1, 1)
+data = {
+"cells": PackedInt32Array(1, 65531, 1048708, 0, 65531, 75, 65535, 65531, 75, 65534, 65531, 75, 65533, 65531, 75, 65532, 65531, 97, 65531, 65531, 1048708, 65530, 65531, 1048708, 65529, 65531, 1048708, 65537, 65531, 1179780, 65536, 65531, 1179780, 131071, 65531, 75, 131070, 65531, 1441924, 131069, 65531, 1441924, 131068, 65531, 1441924, 65532, 65530, 97, 65533, 65530, 75, 65534, 65530, 75, 0, 65530, 75, 65535, 65530, 75, 131070, 65530, 97, 131071, 65530, 75, 131067, 65531, 1441924, 65536, 65530, 655448, 1, 65530, 655448)
+}
+metadata/_editor_floor_ = Vector3(0, 0, 0)
+
+[node name="DirectionalLight3D" type="DirectionalLight3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, -0.642788, 0.766044, 0, -0.766044, -0.642788, 0, 6.1, -9.7)
+
+[node name="floor" parent="." instance=ExtResource("5_poeaa")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -5.3, 0.5, -7.6)
+
+[node name="PauseMenu" parent="." instance=ExtResource("3_5exfe")]
+visible = false
+
+[node name="GridMap" type="GridMap" parent="."]
+mesh_library = ExtResource("5_ufara")
+cell_size = Vector3(1, 1, 1)
+data = {
+"cells": PackedInt32Array(65531, 65528, 0, 65530, 65528, 0, 65530, 65529, 0, 65531, 65529, 0, 65531, 65527, 0, 65530, 65527, 0, 65529, 65528, 0, 65529, 65529, 0, 65529, 65530, 0, 65530, 65530, 0, 65530, 65531, 0, 65531, 65531, 0, 65531, 65530, 0, 65529, 65527, 0, 65531, 65526, 0, 65530, 65526, 0, 65529, 65526, 0)
+}
+
+[node name="Player" parent="." instance=ExtResource("2_au1pm")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -5.3, 0.7, -7.8)
+collision_layer = 1
