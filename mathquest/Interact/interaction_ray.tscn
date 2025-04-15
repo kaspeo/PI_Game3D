@@ -1,0 +1,29 @@
+[gd_scene load_steps=2 format=3 uid="uid://dx4wtixbf53ct"]
+
+[ext_resource type="Script" uid="uid://be7t7uk1hjhug" path="res://Interact/Script/interaction_ray.gd" id="1_ewcwu"]
+
+[node name="InteractionRay" type="RayCast3D"]
+target_position = Vector3(0, 0, -4)
+script = ExtResource("1_ewcwu")
+
+[node name="Prompt" type="Label" parent="."]
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -36.5
+offset_top = 176.0
+offset_right = 36.5
+offset_bottom = 235.0
+grow_horizontal = 2
+grow_vertical = 2
+size_flags_horizontal = 4
+size_flags_vertical = 1
+theme_override_colors/font_outline_color = Color(0, 0, 0, 1)
+theme_override_constants/outline_size = 4
+theme_override_font_sizes/font_size = 20
+text = "Prompt
+[KEY]"
+horizontal_alignment = 1
+vertical_alignment = 1
