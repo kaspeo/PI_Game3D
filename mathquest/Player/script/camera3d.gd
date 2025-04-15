@@ -2,11 +2,15 @@ extends Camera3D
 
 @export var spring_arm: Node3D
 @export var lerp_power: float = 2.0
-
 @export var ray_length := 10.0
 @export var player_body: Node3D
+@export var grab_force := 10.0
+@export var release_force := 0.4
 
 @onready var prompt: Label = $"../../../UI/Prompt"
+@onready var grab_target: Node3D = $GrabTarget
+
+var grabbed_body: RigidBody3D = null
 
 func _process(delta: float) -> void:
 	position = lerp(position, spring_arm.position, delta * lerp_power)
@@ -31,7 +35,32 @@ func _process(delta: float) -> void:
 			prompt.text = collider.get_prompt()
 			if Input.is_action_just_pressed(collider.prompt_input):
 				collider.interact(owner)
+		
+		elif collider is RigidBody3D and grabbed_body == null and distance <= 3.0:
+			prompt.text = "Podnieś przedmiot 
+			[LPM] "
+		
 		else:
 			prompt.text = ""  
 	else:
-		prompt.text = ""  
+		prompt.text = ""
+
+	if Input.is_action_pressed("Grab"):
+		if grabbed_body:
+			var dir = grab_target.global_position - grabbed_body.global_position
+			grabbed_body.linear_velocity = dir * grab_force
+		elif result and result.collider is RigidBody3D:
+			grabbed_body = result.collider
+			await get_tree().create_timer(0.2).timeout
+			if grabbed_body:
+				grabbed_body.max_contacts_reported = 1
+				grabbed_body.contact_monitor = true
+	elif Input.is_action_just_released("Grab"):
+		release()
+
+func release():
+	if grabbed_body:
+		grabbed_body.max_contacts_reported = 0
+		grabbed_body.contact_monitor = false
+		grabbed_body.linear_velocity *= release_force
+		grabbed_body = null

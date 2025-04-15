@@ -1,25 +1,6 @@
-[gd_scene load_steps=7 format=4 uid="uid://ccaihbici2kuq"]
+[gd_scene load_steps=6 format=4 uid="uid://ccaihbici2kuq"]
 
 [ext_resource type="Texture2D" uid="uid://cceyp18bj5l6j" path="res://Objects/prototype-kit/Models/GLB format/Textures/colormap.png" id="1_adpwk"]
-
-[sub_resource type="GDScript" id="GDScript_adpwk"]
-script/source = "extends RigidBody3D
-class_name InteractableBox
-
-@export var prompt_message = \"Podnieś\"
-@export var prompt_input = \"interact\"
-
-func get_prompt():
-	var key_name=\"\"
-	for action in InputMap.action_get_events(prompt_input):
-		if action is InputEventKey:
-			key_name = action.as_text_physical_keycode()
-			break	
-	return prompt_message + \"\\n[\" + key_name + \"]\"
-
-func interact(_body):
-	pass 
-"
 
 [sub_resource type="StandardMaterial3D" id="StandardMaterial3D_rcis5"]
 resource_name = "colormap"
@@ -63,7 +44,6 @@ shadow_mesh = SubResource("ArrayMesh_rej1n")
 size = Vector3(0.5, 0.5, 0.5)
 
 [node name="CrateColor" type="RigidBody3D"]
-script = SubResource("GDScript_adpwk")
 
 [node name="crate-color" type="MeshInstance3D" parent="."]
 mesh = SubResource("ArrayMesh_mb4vx")

@@ -1,4 +1,4 @@
-[gd_scene load_steps=8 format=3 uid="uid://bqlnxabjvs6p0"]
+[gd_scene load_steps=9 format=3 uid="uid://bqlnxabjvs6p0"]
 
 [ext_resource type="PackedScene" uid="uid://cpvw3t84pq4c6" path="res://Objects/Room/wall.tscn" id="2_sywdm"]
 [ext_resource type="PackedScene" uid="uid://csln68u1mshtn" path="res://Objects/Room/wall_corner.tscn" id="3_abeby"]
@@ -6,6 +6,7 @@
 [ext_resource type="PackedScene" uid="uid://c12u2istqfwtt" path="res://Objects/Room/floor.tscn" id="4_4cpsy"]
 [ext_resource type="PackedScene" uid="uid://b4bcwi462f7li" path="res://Objects/Room/button_small.tscn" id="5_qwkqa"]
 [ext_resource type="PackedScene" uid="uid://di80n2exvk435" path="res://Player/player.tscn" id="6_4cpsy"]
+[ext_resource type="PackedScene" uid="uid://ccaihbici2kuq" path="res://Objects/InteractObject/crate_color.tscn" id="6_aqehm"]
 [ext_resource type="PackedScene" uid="uid://di8w1cu7ciavm" path="res://UI/PauseMenu/pause_menu.tscn" id="6_qwkqa"]
 
 [node name="Tutorial" type="Node3D"]
@@ -1720,8 +1721,11 @@ transform = Transform3D(-1, 0, 8.74228e-08, 0, 1, 0, -8.74228e-08, 0, -1, 9.8128
 transform = Transform3D(-4.37114e-08, -1, 0, 1, -4.37114e-08, 0, 0, 0, 1, 9.8, 1, 1.2)
 prompt_message = "Open door"
 
+[node name="CrateColor" parent="." instance=ExtResource("6_aqehm")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 13.5, 1.5, 0.8)
+
 [node name="Player" parent="." instance=ExtResource("6_4cpsy")]
-transform = Transform3D(-4.37114e-08, 0, 1, 0, 1, 0, -1, 0, -4.37114e-08, 12.7, 0.5, 0)
+transform = Transform3D(-4.37114e-08, 0, 1, 0, 1, 0, -1, 0, -4.37114e-08, 10.9, 0.5, 0)
 
 [node name="PauseMenu" parent="." instance=ExtResource("6_qwkqa")]
 visible = false
