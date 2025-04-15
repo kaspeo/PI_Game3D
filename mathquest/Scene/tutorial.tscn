@@ -1,9 +1,10 @@
-[gd_scene load_steps=7 format=3 uid="uid://bqlnxabjvs6p0"]
+[gd_scene load_steps=8 format=3 uid="uid://bqlnxabjvs6p0"]
 
 [ext_resource type="PackedScene" uid="uid://cpvw3t84pq4c6" path="res://Objects/Room/wall.tscn" id="2_sywdm"]
 [ext_resource type="PackedScene" uid="uid://csln68u1mshtn" path="res://Objects/Room/wall_corner.tscn" id="3_abeby"]
 [ext_resource type="PackedScene" uid="uid://lgwhiyy5ax3l" path="res://Objects/Room/double_door.tscn" id="3_b53jw"]
 [ext_resource type="PackedScene" uid="uid://c12u2istqfwtt" path="res://Objects/Room/floor.tscn" id="4_4cpsy"]
+[ext_resource type="PackedScene" uid="uid://b4bcwi462f7li" path="res://Objects/Room/button_small.tscn" id="5_qwkqa"]
 [ext_resource type="PackedScene" uid="uid://di80n2exvk435" path="res://Player/player.tscn" id="6_4cpsy"]
 [ext_resource type="PackedScene" uid="uid://di8w1cu7ciavm" path="res://UI/PauseMenu/pause_menu.tscn" id="6_qwkqa"]
 
@@ -546,9 +547,6 @@ transform = Transform3D(1.31134e-07, 0, -1, 0, 1, 0, 1, 0, 1.31134e-07, 9.5, 0.5
 
 [node name="wall-corner4" parent="CSGBox3D/Wall3" instance=ExtResource("3_abeby")]
 transform = Transform3D(1, 0, 1.74846e-07, 0, 1, 0, -1.74846e-07, 0, 1, 9.5, 0.5, -3.5)
-
-[node name="double-door" parent="CSGBox3D" instance=ExtResource("3_b53jw")]
-transform = Transform3D(-1, 0, 8.74228e-08, 0, 1, 0, -8.74228e-08, 0, -1, 9.81289, 0.56652, 0.256593)
 
 [node name="floor" type="Node3D" parent="CSGBox3D"]
 
@@ -1130,6 +1128,7 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -2.6, 0.5, 3.5)
 
 [node name="floor2" type="Node3D" parent="CSGBox3D"]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 3, 0)
+visible = false
 
 [node name="floor" parent="CSGBox3D/floor2" instance=ExtResource("4_4cpsy")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.4, 0.5, -3.5)
@@ -1711,11 +1710,23 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -2.6, 0.5, 3.5)
 transform = Transform3D(1.91069e-15, 1, 4.37114e-08, 4.37114e-08, -4.37114e-08, 1, 1, -3.59989e-21, -4.37114e-08, -0.5, 3.3, 0)
 directional_shadow_blend_splits = true
 
+[node name="door" type="Node3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 5.3, 0, 0)
+
+[node name="double-door" parent="door" instance=ExtResource("3_b53jw")]
+transform = Transform3D(-1, 0, 8.74228e-08, 0, 1, 0, -8.74228e-08, 0, -1, 9.81289, 0.56652, 0.256593)
+
+[node name="ButtonSmall" parent="door" instance=ExtResource("5_qwkqa")]
+transform = Transform3D(-4.37114e-08, -1, 0, 1, -4.37114e-08, 0, 0, 0, 1, 9.8, 1, 1.2)
+prompt_message = "Open door"
+
 [node name="Player" parent="." instance=ExtResource("6_4cpsy")]
-transform = Transform3D(-4.37114e-08, 0, 1, 0, 1, 0, -1, 0, -4.37114e-08, 4.4, 0.5, 0)
+transform = Transform3D(-4.37114e-08, 0, 1, 0, 1, 0, -1, 0, -4.37114e-08, 12.7, 0.5, 0)
 
 [node name="PauseMenu" parent="." instance=ExtResource("6_qwkqa")]
 visible = false
 
 [node name="CanvasLayer" type="CanvasLayer" parent="."]
 visible = false
+
+[connection signal="interacted" from="door/ButtonSmall" to="door/double-door" method="toggle"]
