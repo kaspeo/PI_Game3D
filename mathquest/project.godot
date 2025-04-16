@@ -11,13 +11,13 @@ config_version=5
 [application]
 
 config/name="MathQuest"
-run/main_scene="res://Scene/tutorial.tscn"
+run/main_scene="uid://bc2e0obqkdpcs"
 config/features=PackedStringArray("4.4", "Forward Plus")
-config/icon="res://icon.svg"
+config/icon="uid://co1fwwkqd5eau"
 
 [editor_plugins]
 
-enabled=PackedStringArray()
+enabled=PackedStringArray("res://addons/godot_gltf2meshlib-135c0b12c02e354a26b644c082e7be622f1a524c/addons/gltf2meshlib/plugin.cfg")
 
 [input]
 

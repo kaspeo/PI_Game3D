@@ -8,7 +8,7 @@ extends Camera3D
 @export var release_force := 0.4
 
 @onready var prompt: Label = $"../../../UI/Prompt"
-@onready var grab_target: Node3D = $GrabTarget
+@onready var grab_target: Node3D = $"../../GrabTarget"
 
 var grabbed_body: RigidBody3D = null
 
