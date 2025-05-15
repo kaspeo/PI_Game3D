@@ -45,3 +45,24 @@ layout_mode = 2
 theme_override_font_sizes/font_size = 48
 text = "Exit
 "
+
+[node name="PanelContainer2" type="PanelContainer" parent="."]
+layout_mode = 1
+anchors_preset = 3
+anchor_left = 1.0
+anchor_top = 1.0
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = -148.0
+offset_top = -40.0
+grow_horizontal = 0
+grow_vertical = 0
+
+[node name="ExitTutorial" type="Button" parent="PanelContainer2"]
+layout_mode = 2
+size_flags_horizontal = 4
+text = "Pomiń samouczek"
+
+[connection signal="pressed" from="PanelContainer/VBoxContainer/Resume" to="." method="_on_resume_pressed"]
+[connection signal="pressed" from="PanelContainer/VBoxContainer/Exit" to="." method="_on_exit_pressed"]
+[connection signal="pressed" from="PanelContainer2/ExitTutorial" to="." method="_on_exit_tutorial_pressed"]

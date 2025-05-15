@@ -12,3 +12,10 @@ func toggle(_body):
 		playback.travel("open")
 	else:
 		playback.travel("close")	
+
+
+func _on_area_3d_body_shape_entered(body_rid: RID, body: Node3D, body_shape_index: int, local_shape_index: int) -> void:
+	if body.name == "Skrzynka":
+		playback.travel("open")
+		if Global.get_ui():
+			Global.get_ui().ustaw_misje("Przenieś skrzynię", true)
