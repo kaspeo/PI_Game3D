@@ -223,6 +223,7 @@ shape = SubResource("ConcavePolygonShape3D_k7iup")
 [node name="door-sliding-double" type="Node3D" parent="door-sliding-double2"]
 
 [node name="door-right" type="MeshInstance3D" parent="door-sliding-double2/door-sliding-double"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 0.3)
 mesh = SubResource("ArrayMesh_tkdup")
 skeleton = NodePath("")
 
@@ -232,6 +233,7 @@ skeleton = NodePath("")
 shape = SubResource("ConcavePolygonShape3D_r7m6m")
 
 [node name="door-left" type="MeshInstance3D" parent="door-sliding-double2/door-sliding-double"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, -0.3)
 mesh = SubResource("ArrayMesh_u2a4d")
 skeleton = NodePath("")
 

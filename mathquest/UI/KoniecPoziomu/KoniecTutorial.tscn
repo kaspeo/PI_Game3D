@@ -1,0 +1,66 @@
+[gd_scene load_steps=3 format=3 uid="uid://8evy7rsrh1bl"]
+
+[ext_resource type="Script" uid="uid://c0582tn5a4cun" path="res://UI/KoniecPoziomu/koniec_tutorial.gd" id="1_pf7nx"]
+[ext_resource type="FontFile" uid="uid://8xqmbre1fr22" path="res://UI/Assets/Font/Kenney Future Narrow.ttf" id="1_sgb37"]
+
+[node name="KoniecTutorial" type="Control"]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("1_pf7nx")
+
+[node name="ColorRect" type="ColorRect" parent="."]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+color = Color(0.270588, 0.294118, 1, 1)
+
+[node name="Container" type="MarginContainer" parent="."]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="HBoxContainer" type="VBoxContainer" parent="Container"]
+layout_mode = 2
+size_flags_horizontal = 4
+size_flags_vertical = 4
+
+[node name="Label2" type="Label" parent="Container/HBoxContainer"]
+layout_mode = 2
+theme_override_fonts/font = ExtResource("1_sgb37")
+theme_override_font_sizes/font_size = 60
+text = "Koniec samouczka"
+horizontal_alignment = 1
+
+[node name="Label" type="Label" parent="Container/HBoxContainer"]
+layout_mode = 2
+size_flags_horizontal = 4
+theme_override_colors/font_shadow_color = Color(0, 0, 0, 1)
+theme_override_font_sizes/font_size = 22
+text = "Brawo ukończyłeś samouczka.
+Teraz czas na nauke metod numerytcznych.
+Czas na pierwszy poziom!!!"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="HSeparator" type="HSeparator" parent="Container/HBoxContainer"]
+layout_mode = 2
+theme_override_constants/separation = 33
+
+[node name="Dalej" type="Button" parent="Container/HBoxContainer"]
+layout_mode = 2
+size_flags_horizontal = 4
+size_flags_vertical = 4
+theme_override_font_sizes/font_size = 41
+text = "Przejdź dalej"
+
+[connection signal="pressed" from="Container/HBoxContainer/Dalej" to="." method="_on_dalej_pressed"]

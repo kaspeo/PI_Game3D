@@ -1,5 +1,6 @@
-[gd_scene load_steps=11 format=3 uid="uid://bc2e0obqkdpcs"]
+[gd_scene load_steps=13 format=3 uid="uid://bc2e0obqkdpcs"]
 
+[ext_resource type="Script" uid="uid://f3ge8vd3bl7d" path="res://Scene/script/level_1.gd" id="1_2ceuy"]
 [ext_resource type="MeshLibrary" uid="uid://w6ev0b2ct1rg" path="res://Objects/Room/Tile/FloorTiles.tres" id="1_6544n"]
 [ext_resource type="MeshLibrary" uid="uid://486s0eikkj00" path="res://Objects/Room/Tile/WallTiles.tres" id="2_6544n"]
 [ext_resource type="PackedScene" uid="uid://di80n2exvk435" path="res://Player/player.tscn" id="2_au1pm"]
@@ -7,6 +8,7 @@
 [ext_resource type="PackedScene" uid="uid://lgwhiyy5ax3l" path="res://Objects/Room/double_door.tscn" id="5_poeaa"]
 [ext_resource type="PackedScene" uid="uid://b4bcwi462f7li" path="res://Objects/Room/button_small.tscn" id="5_ufara"]
 [ext_resource type="PackedScene" uid="uid://ccaihbici2kuq" path="res://Objects/InteractObject/crate_color.tscn" id="7_ws63c"]
+[ext_resource type="PackedScene" uid="uid://kcbv01ys83ry" path="res://Objects/prototype-kit/Models/GLB format/number-1.glb" id="8_3rcer"]
 
 [sub_resource type="Environment" id="Environment_poeaa"]
 
@@ -15,6 +17,7 @@
 [sub_resource type="Compositor" id="Compositor_ws63c"]
 
 [node name="Level1" type="Node3D"]
+script = ExtResource("1_2ceuy")
 
 [node name="WorldEnvironment" type="WorldEnvironment" parent="."]
 environment = SubResource("Environment_poeaa")
@@ -97,6 +100,20 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 3.04327, 0.559865, -5.42222)
 
 [node name="CrateColor7" parent="." instance=ExtResource("7_ws63c")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 4.05626, 0.559865, -7.01767)
+
+[node name="number-12" parent="." instance=ExtResource("8_3rcer")]
+transform = Transform3D(-4.37114e-08, 0, 1, 0, 1, 0, -1, 0, -4.37114e-08, 2.15938, 1.50624, 7.11357)
+
+[node name="Dialogi" type="Node" parent="."]
+
+[node name="Start" type="AcceptDialog" parent="Dialogi"]
+auto_translate_mode = 1
+title = ""
+initial_position = 2
+size = Vector2i(212, 100)
+visible = true
+sharp_corners = true
+dialog_text = "Czas na poziom pierwszy!"
 
 [connection signal="interacted" from="Door1/ButtonSmall" to="Door1/double-door" method="toggle"]
 [connection signal="interacted" from="Door1/ButtonSmall2" to="Door1/double-door" method="toggle"]

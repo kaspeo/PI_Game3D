@@ -11,13 +11,17 @@ config_version=5
 [application]
 
 config/name="MathQuest"
-run/main_scene="uid://bc2e0obqkdpcs"
+run/main_scene="uid://bqnnet11lljgu"
 config/features=PackedStringArray("4.4", "Forward Plus")
 config/icon="uid://co1fwwkqd5eau"
 
+[autoload]
+
+Global="*res://Global/global.gd"
+
 [editor_plugins]
 
-enabled=PackedStringArray("res://addons/godot_gltf2meshlib-135c0b12c02e354a26b644c082e7be622f1a524c/addons/gltf2meshlib/plugin.cfg")
+enabled=PackedStringArray()
 
 [input]
 
