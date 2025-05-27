@@ -72,6 +72,12 @@ theme_override_font_sizes/font_size = 48
 text = "Start Game
 "
 
+[node name="Level1" type="Button" parent="PanelContainer/VBoxContainer"]
+layout_mode = 2
+theme_override_font_sizes/font_size = 48
+text = "Level 1
+"
+
 [node name="Exit" type="Button" parent="PanelContainer/VBoxContainer"]
 layout_mode = 2
 theme_override_font_sizes/font_size = 48
@@ -79,4 +85,5 @@ text = "Exit
 "
 
 [connection signal="pressed" from="PanelContainer/VBoxContainer/StartGame" to="." method="_on_start_game_pressed"]
+[connection signal="pressed" from="PanelContainer/VBoxContainer/Level1" to="." method="_on_level_1_pressed"]
 [connection signal="pressed" from="PanelContainer/VBoxContainer/Exit" to="." method="_on_exit_pressed"]
