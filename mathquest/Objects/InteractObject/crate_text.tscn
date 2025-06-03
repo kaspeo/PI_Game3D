@@ -1,0 +1,42 @@
+[gd_scene load_steps=7 format=3 uid="uid://byd0apmbn3bay"]
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_ii0ob"]
+albedo_color = Color(0, 0, 0, 1)
+
+[sub_resource type="BoxMesh" id="BoxMesh_8te7y"]
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_x5itf"]
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_b2jrg"]
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_ifll0"]
+
+[sub_resource type="BoxMesh" id="BoxMesh_q3af6"]
+material = SubResource("StandardMaterial3D_ifll0")
+
+[node name="CrateColor" type="RigidBody3D"]
+lock_rotation = true
+
+[node name="crate-color" type="MeshInstance3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.00396222, -2.98023e-08, -0.00216466)
+material_override = SubResource("StandardMaterial3D_ii0ob")
+mesh = SubResource("BoxMesh_8te7y")
+skeleton = NodePath("")
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="."]
+shape = SubResource("BoxShape3D_x5itf")
+
+[node name="Label3D" type="Label3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.00879189, 0.0177894, 0.503335)
+modulate = Color(1, 0, 0, 1)
+text = "A=XY
+SADSD"
+
+[node name="CSGPolygon3D" type="CSGPolygon3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 0.995552, 0, -0.0173415, 0.498143)
+polygon = PackedVector2Array(0.00142177, -0.350337, -0.492108, 0.02703, 0.00102985, 0.397065, 0.50215, 0.0265749)
+material = SubResource("StandardMaterial3D_b2jrg")
+
+[node name="MeshInstance3D" type="MeshInstance3D" parent="."]
+transform = Transform3D(0.992287, 0, 0, 0, 0.637784, 0, 0, 0, 0.637784, 0.0026381, 0, 0.182163)
+mesh = SubResource("BoxMesh_q3af6")
