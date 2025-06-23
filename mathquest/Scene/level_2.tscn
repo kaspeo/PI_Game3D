@@ -1,0 +1,158 @@
+[gd_scene load_steps=17 format=3 uid="uid://b07d3fgfqdnmo"]
+
+[ext_resource type="Script" uid="uid://cixfxqu8yf0jx" path="res://Scene/script/level_2.gd" id="1_7sdqy"]
+[ext_resource type="MeshLibrary" uid="uid://w6ev0b2ct1rg" path="res://Objects/Room/Tile/FloorTiles.tres" id="1_rj34r"]
+[ext_resource type="MeshLibrary" uid="uid://bsyaagdbyl4km" path="res://Objects/Room/Tile/Space_stationTitles.tres" id="2_louwq"]
+[ext_resource type="PackedScene" uid="uid://di80n2exvk435" path="res://Player/player.tscn" id="2_yiryk"]
+[ext_resource type="PackedScene" uid="uid://lgwhiyy5ax3l" path="res://Objects/Room/double_door.tscn" id="3_louwq"]
+[ext_resource type="PackedScene" uid="uid://di8w1cu7ciavm" path="res://UI/PauseMenu/pause_menu.tscn" id="3_yiryk"]
+[ext_resource type="MeshLibrary" uid="uid://486s0eikkj00" path="res://Objects/Room/Tile/WallTiles.tres" id="4_7sdqy"]
+[ext_resource type="Script" uid="uid://bwrpq2pmugcti" path="res://Interact/Script/interactable.gd" id="7_jte5b"]
+[ext_resource type="PackedScene" uid="uid://ysafwuffa01r" path="res://Scene/Podsceny/Level_2_dane.tscn" id="8_71r3i"]
+[ext_resource type="PackedScene" uid="uid://gbvu5bbb0ih5" path="res://Scene/Podsceny/Level_2_kod.tscn" id="9_jte5b"]
+
+[sub_resource type="Environment" id="Environment_louwq"]
+
+[sub_resource type="CameraAttributesPractical" id="CameraAttributesPractical_7sdqy"]
+
+[sub_resource type="Compositor" id="Compositor_a5oyc"]
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_jte5b"]
+
+[sub_resource type="QuadMesh" id="QuadMesh_43cbn"]
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_2thg8"]
+size = Vector3(1, 1, 0.66)
+
+[node name="Level2" type="Node3D"]
+script = ExtResource("1_7sdqy")
+
+[node name="DirectionalLight3D" type="DirectionalLight3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, -0.774404, 0.632691, 0, -0.632691, -0.774404, -0.0221002, 3.20541, -3.03001)
+light_color = Color(1, 0.960784, 0.882353, 1)
+
+[node name="WorldEnvironment" type="WorldEnvironment" parent="."]
+environment = SubResource("Environment_louwq")
+camera_attributes = SubResource("CameraAttributesPractical_7sdqy")
+compositor = SubResource("Compositor_a5oyc")
+
+[node name="Wejscie" type="Node3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.3, 3.9)
+
+[node name="double-door" parent="Wejscie" instance=ExtResource("3_louwq")]
+transform = Transform3D(-4.37114e-08, 0, -1, 0, 1, 0, 1, 0, -4.37114e-08, 0, 0.5, -11.8)
+
+[node name="start" parent="Wejscie" instance=ExtResource("3_louwq")]
+transform = Transform3D(-4.37114e-08, 0, -1, 0, 1, 0, 1, 0, -4.37114e-08, 0, 0.5, -7.1)
+
+[node name="Wejscie" type="GridMap" parent="Wejscie"]
+mesh_library = ExtResource("4_7sdqy")
+cell_size = Vector3(0.1, 1, 0.1)
+data = {
+"cells": PackedInt32Array(-65531, 65421, 7, -5, 65421, 7, -65531, 65431, 7, -5, 65431, 7, -5, 65441, 7, -65531, 65441, 7, -65531, 65451, 7, -5, 65451, 7, -5, 65461, 7, -65531, 65461, 7, 65523, 65421, 7, 12, 65421, 7, 12, 65431, 7, 12, 65441, 7, 12, 65451, 7, 12, 65461, 7, 65523, 65431, 7, 65523, 65441, 7, 65523, 65451, 7, 65523, 65461, 7, 65548, 65461, 7, 65548, 65451, 7, 65548, 65441, 7, 65548, 65431, 7, 65548, 65421, 7, 131059, 65421, 7, 131059, 65461, 7, 131059, 65451, 7, 131059, 65441, 7, 131059, 65430, 7, 131059, 65431, 7, 65538, 65417, 1441847, 131066, 65417, 1441847, 131067, 65465, 1441847, 65540, 65465, 1441847, 131074, 65423, 1441797, 196605, 65423, 1441797, 131074, 65458, 1441797, 131074, 65460, 1441797, 196605, 65459, 1441797, 196605, 65450, 1441797, 196605, 65449, 1441797, 196605, 65448, 1441797, 196605, 65447, 1441797, 196605, 65446, 1441797, 196605, 65445, 1441797, 196605, 65444, 1441797, 196605, 65443, 1441797, 196605, 65442, 1441797, 196604, 65442, 1441797, 196604, 65441, 1441797, 196605, 65441, 1441797, 196604, 65440, 1441797, 196604, 65439, 1441797, 196605, 65439, 1441797, 196605, 65438, 1441797, 196604, 65437, 1441797, 196605, 65437, 1441797, 196604, 65436, 1441797, 196604, 65435, 1441797, 196605, 65435, 1441797, 196604, 65434, 1441797, 196605, 65434, 1441797, 196605, 65433, 1441797, 196604, 65433, 1441797, 196605, 65432, 1441797, 196605, 65431, 1441797, 196605, 65430, 1441797, 131074, 65454, 1441797, 131074, 65453, 1441797, 131074, 65451, 1441797, 131074, 65449, 1441797, 131074, 65448, 1441797, 131074, 65447, 1441797, 131074, 65445, 1441797, 131074, 65444, 1441797, 131074, 65443, 1441797, 131074, 65442, 1441797, 131074, 65441, 1441797, 131074, 65440, 1441797, 131074, 65439, 1441797, 131074, 65438, 1441797, 131074, 65437, 1441797, 131074, 65436, 1441797, 131074, 65435, 1441797, 131074, 65434, 1441797, 131074, 65433, 1441797, 131074, 65432, 1441797, 131074, 65431, 1441797)
+}
+metadata/_editor_floor_ = Vector3(0, 2, 0)
+
+[node name="DirectionalLight3D" type="DirectionalLight3D" parent="Wejscie"]
+transform = Transform3D(1, 0, 0, 0, -0.944095, 0.329674, 0, -0.329674, -0.944095, -0.0221002, 2.20541, -11.13)
+light_color = Color(1, 0.960784, 0.882353, 1)
+
+[node name="Misja" type="Area3D" parent="Wejscie"]
+transform = Transform3D(2.23, 0, 0, 0, 1, 0, 0, 0, 1, 0.04, -0.3, -5.91)
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="Wejscie/Misja"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1.04, 0.51)
+shape = SubResource("BoxShape3D_jte5b")
+
+[node name="Floor" type="GridMap" parent="."]
+mesh_library = ExtResource("1_rj34r")
+cell_size = Vector3(1, 1, 1)
+data = {
+"cells": PackedInt32Array(0, 65534, 2, 1, 65534, 2, 2, 65534, 2, 0, 65533, 2, 1, 65533, 2, 2, 65533, 2, 65535, 65533, 2, 65535, 65534, 2, 65534, 65533, 2, 65534, 65534, 2, 65534, 65535, 655362, 65534, 0, 655362, 65534, 1, 655362, 65534, 2, 655362, 65535, 2, 655362, 65535, 1, 655362, 65535, 0, 655362, 65535, 65535, 655362, 0, 65535, 655362, 1, 65535, 655362, 2, 65535, 655362, 6, 0, 655362, 5, 0, 655362, 4, 0, 655362, 3, 0, 655362, 2, 0, 655362, 1, 0, 655362, 0, 0, 655362, 6, 65533, 655362, 5, 65533, 655362, 4, 65533, 655362, 3, 65533, 655362, 3, 65534, 655362, 3, 65535, 655362, 3, 1, 655362, 3, 2, 655362, 4, 2, 655362, 5, 2, 655362, 6, 2, 655362, 6, 1, 655362, 5, 1, 655362, 4, 1, 655362, 2, 1, 655362, 1, 1, 655362, 0, 1, 655362, 0, 2, 655362, 1, 2, 655362, 2, 2, 655362, 4, 65535, 655362, 4, 65534, 655362, 5, 65534, 655362, 6, 65534, 655362, 6, 65535, 655362, 5, 65535, 655362)
+}
+
+[node name="Map" type="GridMap" parent="."]
+mesh_library = ExtResource("2_louwq")
+cell_size = Vector3(0.1, 1, 0.1)
+data = {
+"cells": PackedInt32Array(0, 65510, 64, 65534, 65510, 64, 2, 65510, 64, 65533, 65510, 64)
+}
+metadata/_editor_floor_ = Vector3(0, 0, 0)
+
+[node name="Objects" type="GridMap" parent="."]
+mesh_library = ExtResource("2_louwq")
+cell_size = Vector3(0.1, 1, 0.1)
+data = {
+"cells": PackedInt32Array(65529, 65510, 54, 6, 65510, 54, 20, 2, 655475, 38, 65514, 1048627, 50, 65511, 1441842, 39, 65522, 48, 48, 65522, 48, 57, 65522, 48, 61, 65520, 1441839, 61, 65516, 1441839, 61, 65512, 1441839, 61, 65508, 1441839, 65538, 26, 655385, 65568, 26, 655385, 1, 23, 655376, 33, 23, 655376, 65519, 24, 655384, 68, 7, 1441922)
+}
+metadata/_editor_floor_ = Vector3(0, 0, 0)
+
+[node name="Wall" type="GridMap" parent="."]
+mesh_library = ExtResource("2_louwq")
+cell_size = Vector3(0.25, 1, 0.25)
+data = {
+"cells": PackedInt32Array(65529, 65523, 140, 65531, 65523, 140, 65528, 65524, 1441916, 65527, 65527, 1441932, 65527, 65531, 1441932, 65527, 65535, 1441932, 65527, 3, 1441932, 65527, 7, 1441932, 65528, 10, 123, 65531, 11, 120, 65535, 11, 120, 3, 11, 120, 7, 11, 120, 11, 11, 120, 4, 65523, 140, 8, 65523, 140, 12, 65523, 140, 16, 65523, 140, 20, 65523, 140, 15, 11, 120, 19, 11, 120, 23, 11, 120, 23, 65523, 140, 131067, 65523, 140, 65540, 65523, 140, 65544, 65523, 140, 131064, 65524, 1441916, 131063, 65527, 1441932, 131063, 65530, 1441932, 131063, 6, 1441932, 131063, 2, 1441932, 131063, 65534, 1441932, 131064, 10, 123, 131063, 7, 1441932, 131067, 11, 655480, 131071, 11, 655480, 65539, 11, 655480, 65543, 11, 655480, 65558, 11, 655480, 65554, 11, 655480, 65550, 11, 655480, 65547, 11, 655480, 65548, 65523, 655500, 65551, 65523, 655500, 65552, 65523, 655500, 65556, 65523, 655500, 65559, 65523, 655500, 26, 10, 1048697, 65562, 10, 1048697, 65559, 11, 120, 27, 7, 1441912, 65563, 7, 1048696)
+}
+metadata/_editor_floor_ = Vector3(0, 1, 0)
+
+[node name="MisjaKod" type="Node3D" parent="."]
+
+[node name="Ekran1" type="StaticBody3D" parent="MisjaKod"]
+script = ExtResource("7_jte5b")
+prompt_message = "Wejdz do komputera"
+
+[node name="Ekran" type="MeshInstance3D" parent="MisjaKod/Ekran1"]
+transform = Transform3D(0.712656, 0, 0, 0, 0.344683, -0.0607768, 0, 0.0607768, 0.344683, 0.15, 0.93, 2.38)
+mesh = SubResource("QuadMesh_43cbn")
+skeleton = NodePath("../..")
+
+[node name="CollisionShapeEkran" type="CollisionShape3D" parent="MisjaKod/Ekran1"]
+transform = Transform3D(0.712656, 0, 0, 0, 0.344683, -0.0607768, 0, 0.0607768, 0.344683, 0.15, 0.919668, 2.4386)
+shape = SubResource("BoxShape3D_2thg8")
+
+[node name="MisjaDane" type="Node3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 3.21, 0, 0)
+
+[node name="Ekran2" type="StaticBody3D" parent="MisjaDane"]
+script = ExtResource("7_jte5b")
+prompt_message = "Wejdz do komputera"
+
+[node name="Ekran" type="MeshInstance3D" parent="MisjaDane/Ekran2"]
+transform = Transform3D(0.712656, 0, 0, 0, 0.344683, -0.0607768, 0, 0.0607768, 0.344683, 0.15, 0.93, 2.38)
+mesh = SubResource("QuadMesh_43cbn")
+skeleton = NodePath("../..")
+
+[node name="CollisionShapeEkran" type="CollisionShape3D" parent="MisjaDane/Ekran2"]
+transform = Transform3D(0.712656, 0, 0, 0, 0.344683, -0.0607768, 0, 0.0607768, 0.344683, 0.15, 0.919668, 2.4386)
+shape = SubResource("BoxShape3D_2thg8")
+
+[node name="Player" parent="." instance=ExtResource("2_yiryk")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.03, 0.85, -2.83)
+collision_layer = 1
+
+[node name="Level2Dane" parent="." instance=ExtResource("8_71r3i")]
+visible = false
+
+[node name="Level2Kod" parent="." instance=ExtResource("9_jte5b")]
+visible = false
+
+[node name="PauseMenu" parent="." instance=ExtResource("3_yiryk")]
+visible = false
+
+[node name="Dialogi" type="Node" parent="."]
+
+[node name="Start" type="AcceptDialog" parent="Dialogi"]
+auto_translate_mode = 1
+title = ""
+initial_position = 2
+size = Vector2i(212, 100)
+sharp_corners = true
+dialog_text = "Czas na poziom drugi!"
+
+[node name="Misja" type="AcceptDialog" parent="Dialogi"]
+auto_translate_mode = 1
+title = "Cel poziomu"
+size = Vector2i(1107, 100)
+dialog_text = "Komputer stacji kosmicznej został zainfekowany wirusem. Napraw funkcję oraz podaj poprawne dane, aby przywrócić jego działanie."
+
+[connection signal="body_entered" from="Wejscie/Misja" to="." method="_on_area_3d_body_entered"]

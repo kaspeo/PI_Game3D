@@ -1,5 +1,6 @@
-[gd_scene load_steps=9 format=3 uid="uid://bqlnxabjvs6p0"]
+[gd_scene load_steps=11 format=3 uid="uid://bqlnxabjvs6p0"]
 
+[ext_resource type="Script" uid="uid://cwbwbehwdyh0q" path="res://Scene/script/tester.gd" id="1_7uadk"]
 [ext_resource type="PackedScene" uid="uid://bxhb8hl4k82rd" path="res://Objects/Room/wall.tscn" id="2_sywdm"]
 [ext_resource type="PackedScene" uid="uid://csln68u1mshtn" path="res://Objects/Room/wall_corner.tscn" id="3_abeby"]
 [ext_resource type="PackedScene" uid="uid://lgwhiyy5ax3l" path="res://Objects/Room/double_door.tscn" id="3_b53jw"]
@@ -9,7 +10,10 @@
 [ext_resource type="PackedScene" uid="uid://ccaihbici2kuq" path="res://Objects/InteractObject/crate_color.tscn" id="6_aqehm"]
 [ext_resource type="PackedScene" uid="uid://di8w1cu7ciavm" path="res://UI/PauseMenu/pause_menu.tscn" id="6_qwkqa"]
 
+[sub_resource type="BoxShape3D" id="BoxShape3D_1wi2v"]
+
 [node name="Tutorial" type="Node3D"]
+script = ExtResource("1_7uadk")
 
 [node name="CSGBox3D" type="CSGBox3D" parent="."]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 5.3, 0, 0)
@@ -1725,7 +1729,8 @@ prompt_message = "Open door"
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 13.5, 1.5, 0.8)
 
 [node name="Player" parent="." instance=ExtResource("6_4cpsy")]
-transform = Transform3D(-4.37114e-08, 0, 1, 0, 1, 0, -1, 0, -4.37114e-08, 10.9, 0.5, 0)
+transform = Transform3D(-4.37114e-08, 0, 1, 0, 1, 0, -1, 0, -4.37114e-08, 11.45, 0.5, 0)
+collision_layer = 1
 
 [node name="PauseMenu" parent="." instance=ExtResource("6_qwkqa")]
 visible = false
@@ -1733,4 +1738,11 @@ visible = false
 [node name="CanvasLayer" type="CanvasLayer" parent="."]
 visible = false
 
+[node name="Area3D" type="Area3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 10.9335, 10.07, 1, 0)
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="Area3D"]
+shape = SubResource("BoxShape3D_1wi2v")
+
 [connection signal="interacted" from="door/ButtonSmall" to="door/double-door" method="toggle"]
+[connection signal="body_entered" from="Area3D" to="." method="_on_area_3d_body_entered"]

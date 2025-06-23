@@ -1,0 +1,122 @@
+[gd_scene load_steps=2 format=3 uid="uid://ysafwuffa01r"]
+
+[ext_resource type="Script" uid="uid://c7tuvggqknlcr" path="res://Scene/Podsceny/Script/level_2_dane.gd" id="1_r4nch"]
+
+[node name="Level2Dane" type="Control"]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("1_r4nch")
+
+[node name="ColorRect" type="ColorRect" parent="."]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+color = Color(0, 0.247911, 0.223716, 1)
+
+[node name="HBoxContainer" type="VBoxContainer" parent="."]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="InfoLabel" type="Label" parent="HBoxContainer"]
+layout_mode = 2
+size_flags_horizontal = 4
+theme_override_font_sizes/font_size = 30
+text = "Oblicz wielomian interpolacyjny Lagrange’a dla punktów:"
+
+[node name="HSeparator" type="HSeparator" parent="HBoxContainer"]
+layout_mode = 2
+theme_override_constants/separation = 22
+
+[node name="alabel" type="Label" parent="HBoxContainer"]
+layout_mode = 2
+size_flags_horizontal = 4
+theme_override_font_sizes/font_size = 32
+text = "a) (-1,4),(3,0)"
+
+[node name="HBoxContainer2" type="HBoxContainer" parent="HBoxContainer"]
+layout_mode = 2
+size_flags_horizontal = 4
+
+[node name="al" type="Label" parent="HBoxContainer/HBoxContainer2"]
+layout_mode = 2
+size_flags_horizontal = 4
+theme_override_font_sizes/font_size = 32
+text = "L(x)="
+
+[node name="aedit" type="TextEdit" parent="HBoxContainer/HBoxContainer2"]
+process_mode = 2
+custom_minimum_size = Vector2(140, 57)
+layout_mode = 2
+size_flags_horizontal = 4
+theme_override_font_sizes/font_size = 32
+placeholder_text = "Dane a"
+
+[node name="HSeparator2" type="HSeparator" parent="HBoxContainer"]
+layout_mode = 2
+theme_override_constants/separation = 22
+
+[node name="blabel" type="Label" parent="HBoxContainer"]
+layout_mode = 2
+size_flags_horizontal = 4
+theme_override_font_sizes/font_size = 32
+text = "b) (2,5),(4,1)"
+
+[node name="HBoxContainer" type="HBoxContainer" parent="HBoxContainer"]
+layout_mode = 2
+size_flags_horizontal = 4
+
+[node name="bl" type="Label" parent="HBoxContainer/HBoxContainer"]
+layout_mode = 2
+size_flags_horizontal = 4
+theme_override_font_sizes/font_size = 32
+text = "L(x)="
+
+[node name="bedit" type="TextEdit" parent="HBoxContainer/HBoxContainer"]
+process_mode = 2
+custom_minimum_size = Vector2(140, 57)
+layout_mode = 2
+size_flags_horizontal = 4
+theme_override_font_sizes/font_size = 32
+placeholder_text = "Dane b
+"
+
+[node name="HSeparator3" type="HSeparator" parent="HBoxContainer"]
+layout_mode = 2
+theme_override_constants/separation = 22
+
+[node name="CheckButton" type="Button" parent="HBoxContainer"]
+process_mode = 2
+layout_mode = 2
+size_flags_horizontal = 4
+size_flags_vertical = 4
+theme_override_font_sizes/font_size = 40
+text = "Sprawdz"
+
+[node name="ResultLabel" type="Label" parent="HBoxContainer"]
+process_mode = 2
+custom_minimum_size = Vector2(200, 100)
+layout_mode = 2
+size_flags_horizontal = 4
+
+[node name="Exit" type="Button" parent="HBoxContainer"]
+process_mode = 2
+layout_mode = 2
+size_flags_horizontal = 4
+size_flags_vertical = 8
+theme_override_font_sizes/font_size = 40
+text = "Wyjdz
+"
+
+[connection signal="pressed" from="HBoxContainer/CheckButton" to="." method="_on_check_button_pressed"]
+[connection signal="pressed" from="HBoxContainer/Exit" to="." method="_on_exit_pressed"]
