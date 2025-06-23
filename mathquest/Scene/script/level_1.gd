@@ -1,7 +1,6 @@
 extends Node3D
 
 @onready var start: AcceptDialog = $Dialogi/Start
-@onready var misjashape: Area3D = $Door1/Misja
 @onready var misja: AcceptDialog = $Dialogi/Misja
 
 func _ready() -> void:

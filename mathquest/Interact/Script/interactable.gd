@@ -1,6 +1,9 @@
 extends CollisionObject3D
 class_name Interactable
 
+@onready var level_2_kod: Control = $"../../Level2Kod"
+@onready var level_2_dane: Control = $"../../Level2Dane"
+
 signal interacted(body)
 
 @export var prompt_message = "Interact"
@@ -14,4 +17,15 @@ func get_prompt():
 	return prompt_message + "\n[" + key_name + "]"
 
 func interact(body):
-	interacted.emit(body)
+	if name == "Ekran1":
+		Input.mouse_mode = Input.MOUSE_MODE_VISIBLE
+		get_tree().paused = true
+		level_2_kod.visible = true
+	elif name =="Ekran2":
+		Input.mouse_mode = Input.MOUSE_MODE_VISIBLE
+		get_tree().paused = true
+		level_2_dane.visible = true
+		
+	else:
+		emit_signal("interacted", body)
+	
