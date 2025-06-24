@@ -59,7 +59,8 @@ grow_vertical = 2
 layout_mode = 2
 size_flags_horizontal = 4
 theme_override_font_sizes/font_size = 29
-text = "Popraw kod interpolacji Lagrange'a:"
+text = "Podaj poprawną funkcję interpolacji 
+liniowej Lagrange’a dla dwóch punktów."
 
 [node name="CodeEdit" type="TextEdit" parent="HBoxContainer"]
 process_mode = 2

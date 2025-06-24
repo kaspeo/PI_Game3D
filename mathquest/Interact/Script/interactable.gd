@@ -3,6 +3,7 @@ class_name Interactable
 
 @onready var level_2_kod: Control = $"../../Level2Kod"
 @onready var level_2_dane: Control = $"../../Level2Dane"
+@onready var level_3_wykres: Control = $"../../Level3Wykres"
 
 signal interacted(body)
 
@@ -25,6 +26,11 @@ func interact(body):
 		Input.mouse_mode = Input.MOUSE_MODE_VISIBLE
 		get_tree().paused = true
 		level_2_dane.visible = true
+		
+	elif name =="Ekran3":
+		Input.mouse_mode = Input.MOUSE_MODE_VISIBLE
+		get_tree().paused = true
+		level_3_wykres.visible = true
 		
 	else:
 		emit_signal("interacted", body)
