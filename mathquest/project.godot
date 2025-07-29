@@ -19,6 +19,10 @@ config/icon="uid://co1fwwkqd5eau"
 
 Global="*res://Global/global.gd"
 
+[display]
+
+window/vsync/vsync_mode=0
+
 [editor_plugins]
 
 enabled=PackedStringArray()

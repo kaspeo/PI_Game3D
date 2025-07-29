@@ -6,6 +6,11 @@ var is_open := false
 func _ready() -> void:
 	playback = $"door-sliding-double2/AnimationTree".get("parameters/playback")
 	
+func open_door():
+	if not is_open:
+		is_open = true
+		playback.travel("open")
+
 func toggle(_body):
 	is_open = not is_open
 	if is_open:
