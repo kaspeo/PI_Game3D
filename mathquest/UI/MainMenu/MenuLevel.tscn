@@ -1,4 +1,4 @@
-[gd_scene load_steps=3 format=3 uid="uid://dsqqbd2gf0tfs"]
+[gd_scene load_steps=3 format=3 uid="uid://l2domsp5u3mu"]
 
 [ext_resource type="Script" uid="uid://ca67eoccyrt45" path="res://UI/MainMenu/menu_level.gd" id="1_kqtij"]
 [ext_resource type="FontFile" uid="uid://8xqmbre1fr22" path="res://UI/Assets/Font/Kenney Future Narrow.ttf" id="2_fh7kf"]
@@ -49,15 +49,10 @@ vertical_alignment = 1
 
 [node name="PanelContainer" type="MarginContainer" parent="."]
 layout_mode = 1
-anchors_preset = 8
-anchor_left = 0.5
-anchor_top = 0.5
-anchor_right = 0.5
-anchor_bottom = 0.5
-offset_left = -135.0
-offset_top = -77.0
-offset_right = 135.0
-offset_bottom = 77.0
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_top = 168.0
 grow_horizontal = 2
 grow_vertical = 2
 
@@ -66,31 +61,88 @@ layout_mode = 2
 size_flags_horizontal = 4
 size_flags_vertical = 4
 
-[node name="Level1" type="Button" parent="PanelContainer/VBoxContainer"]
+[node name="HBoxContainer" type="HBoxContainer" parent="PanelContainer/VBoxContainer"]
 layout_mode = 2
-theme_override_font_sizes/font_size = 48
-text = "Level 1
+
+[node name="Level1" type="Button" parent="PanelContainer/VBoxContainer/HBoxContainer"]
+layout_mode = 2
+size_flags_horizontal = 3
+theme_override_font_sizes/font_size = 30
+text = "Poziom 1 
+(Metoda biskecji)
 "
 
-[node name="Level2" type="Button" parent="PanelContainer/VBoxContainer"]
+[node name="Level2" type="Button" parent="PanelContainer/VBoxContainer/HBoxContainer"]
 layout_mode = 2
-theme_override_font_sizes/font_size = 48
-text = "Level 2
+size_flags_horizontal = 3
+theme_override_font_sizes/font_size = 30
+text = "Poziom 2 
+(metoda lagrange)
 "
 
-[node name="Level3" type="Button" parent="PanelContainer/VBoxContainer"]
+[node name="HBoxContainer2" type="HBoxContainer" parent="PanelContainer/VBoxContainer"]
 layout_mode = 2
-theme_override_font_sizes/font_size = 48
-text = "Level 3
-"
+
+[node name="Level3" type="Button" parent="PanelContainer/VBoxContainer/HBoxContainer2"]
+layout_mode = 2
+size_flags_horizontal = 3
+theme_override_font_sizes/font_size = 30
+text = "Poziom 3
+(wykres)"
+
+[node name="Level4" type="Button" parent="PanelContainer/VBoxContainer/HBoxContainer2"]
+layout_mode = 2
+size_flags_horizontal = 3
+theme_override_font_sizes/font_size = 30
+text = "Poziom 4 
+(układ liniowy)"
+
+[node name="HBoxContainer3" type="HBoxContainer" parent="PanelContainer/VBoxContainer"]
+layout_mode = 2
+
+[node name="Level5" type="Button" parent="PanelContainer/VBoxContainer/HBoxContainer3"]
+layout_mode = 2
+size_flags_horizontal = 3
+theme_override_font_sizes/font_size = 30
+text = "Poziom 5
+(brak)"
+
+[node name="Level6" type="Button" parent="PanelContainer/VBoxContainer/HBoxContainer3"]
+layout_mode = 2
+size_flags_horizontal = 3
+theme_override_font_sizes/font_size = 30
+text = "Poziom 6
+(brak)"
+
+[node name="HBoxContainer4" type="HBoxContainer" parent="PanelContainer/VBoxContainer"]
+layout_mode = 2
+
+[node name="Level7" type="Button" parent="PanelContainer/VBoxContainer/HBoxContainer4"]
+layout_mode = 2
+size_flags_horizontal = 3
+theme_override_font_sizes/font_size = 30
+text = "Poziom 7
+(brak)"
+
+[node name="Level8" type="Button" parent="PanelContainer/VBoxContainer/HBoxContainer4"]
+layout_mode = 2
+size_flags_horizontal = 3
+theme_override_font_sizes/font_size = 30
+text = "Poziom 8
+(brak)"
 
 [node name="Exit" type="Button" parent="PanelContainer/VBoxContainer"]
 layout_mode = 2
 theme_override_font_sizes/font_size = 48
-text = "Exit
+text = "Menu główne
 "
 
-[connection signal="pressed" from="PanelContainer/VBoxContainer/Level1" to="." method="_on_level_1_pressed"]
-[connection signal="pressed" from="PanelContainer/VBoxContainer/Level2" to="." method="_on_level_2_pressed"]
-[connection signal="pressed" from="PanelContainer/VBoxContainer/Level3" to="." method="_on_level_3_pressed"]
+[connection signal="pressed" from="PanelContainer/VBoxContainer/HBoxContainer/Level1" to="." method="_on_level_1_pressed"]
+[connection signal="pressed" from="PanelContainer/VBoxContainer/HBoxContainer/Level2" to="." method="_on_level_2_pressed"]
+[connection signal="pressed" from="PanelContainer/VBoxContainer/HBoxContainer2/Level3" to="." method="_on_level_3_pressed"]
+[connection signal="pressed" from="PanelContainer/VBoxContainer/HBoxContainer2/Level4" to="." method="_on_level_3_pressed"]
+[connection signal="pressed" from="PanelContainer/VBoxContainer/HBoxContainer3/Level5" to="." method="_on_level_3_pressed"]
+[connection signal="pressed" from="PanelContainer/VBoxContainer/HBoxContainer3/Level6" to="." method="_on_level_3_pressed"]
+[connection signal="pressed" from="PanelContainer/VBoxContainer/HBoxContainer4/Level7" to="." method="_on_level_3_pressed"]
+[connection signal="pressed" from="PanelContainer/VBoxContainer/HBoxContainer4/Level8" to="." method="_on_level_3_pressed"]
 [connection signal="pressed" from="PanelContainer/VBoxContainer/Exit" to="." method="_on_exit_pressed"]
