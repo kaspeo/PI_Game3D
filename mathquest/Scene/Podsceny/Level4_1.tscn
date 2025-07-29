@@ -1,0 +1,427 @@
+[gd_scene load_steps=2 format=3 uid="uid://bkfaaosphepel"]
+
+[ext_resource type="Script" uid="uid://4vavj8ir8ent" path="res://Scene/Podsceny/Script/level_4_1.gd" id="1_cecu2"]
+
+[node name="Level41" type="Control"]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("1_cecu2")
+
+[node name="ColorRect" type="ColorRect" parent="."]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+color = Color(0, 0.247911, 0.223716, 1)
+
+[node name="HBoxContainer" type="HBoxContainer" parent="."]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -256.0
+offset_top = -107.5
+offset_right = 256.0
+offset_bottom = 107.5
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="GridContainer1" type="GridContainer" parent="HBoxContainer"]
+layout_mode = 2
+theme_override_constants/h_separation = 15
+columns = 11
+
+[node name="Ramka" type="Label" parent="HBoxContainer/GridContainer1"]
+layout_mode = 2
+theme_override_font_sizes/font_size = 50
+text = "["
+
+[node name="Label" type="Label" parent="HBoxContainer/GridContainer1"]
+layout_mode = 2
+theme_override_font_sizes/font_size = 50
+text = "3"
+
+[node name="Label2" type="Label" parent="HBoxContainer/GridContainer1"]
+layout_mode = 2
+theme_override_font_sizes/font_size = 50
+text = "3"
+horizontal_alignment = 1
+
+[node name="Label3" type="Label" parent="HBoxContainer/GridContainer1"]
+layout_mode = 2
+theme_override_font_sizes/font_size = 50
+text = "0"
+
+[node name="Ramka4" type="Label" parent="HBoxContainer/GridContainer1"]
+layout_mode = 2
+theme_override_font_sizes/font_size = 50
+text = "]"
+
+[node name="kropka" type="Label" parent="HBoxContainer/GridContainer1"]
+layout_mode = 2
+theme_override_font_sizes/font_size = 50
+
+[node name="Label4" type="Label" parent="HBoxContainer/GridContainer1"]
+layout_mode = 2
+theme_override_font_sizes/font_size = 50
+text = "x₁"
+
+[node name="rowna" type="Label" parent="HBoxContainer/GridContainer1"]
+layout_mode = 2
+theme_override_font_sizes/font_size = 50
+
+[node name="Label5" type="Label" parent="HBoxContainer/GridContainer1"]
+layout_mode = 2
+theme_override_font_sizes/font_size = 50
+text = "["
+
+[node name="Label16" type="Label" parent="HBoxContainer/GridContainer1"]
+layout_mode = 2
+theme_override_font_sizes/font_size = 50
+text = "3"
+
+[node name="Label17" type="Label" parent="HBoxContainer/GridContainer1"]
+layout_mode = 2
+theme_override_font_sizes/font_size = 50
+text = "]"
+
+[node name="Ramka2" type="Label" parent="HBoxContainer/GridContainer1"]
+layout_mode = 2
+theme_override_font_sizes/font_size = 50
+text = "["
+
+[node name="Label6" type="Label" parent="HBoxContainer/GridContainer1"]
+layout_mode = 2
+theme_override_font_sizes/font_size = 50
+text = "1"
+
+[node name="Label7" type="Label" parent="HBoxContainer/GridContainer1"]
+layout_mode = 2
+theme_override_font_sizes/font_size = 50
+text = "0"
+horizontal_alignment = 1
+
+[node name="Label8" type="Label" parent="HBoxContainer/GridContainer1"]
+layout_mode = 2
+theme_override_font_sizes/font_size = 50
+text = "3"
+
+[node name="Ramka5" type="Label" parent="HBoxContainer/GridContainer1"]
+layout_mode = 2
+theme_override_font_sizes/font_size = 50
+text = "]"
+
+[node name="kropka2" type="Label" parent="HBoxContainer/GridContainer1"]
+layout_mode = 2
+theme_override_font_sizes/font_size = 50
+text = "*"
+
+[node name="Label9" type="Label" parent="HBoxContainer/GridContainer1"]
+layout_mode = 2
+theme_override_font_sizes/font_size = 50
+text = "x₂"
+
+[node name="rowna3" type="Label" parent="HBoxContainer/GridContainer1"]
+layout_mode = 2
+theme_override_font_sizes/font_size = 50
+text = "="
+
+[node name="Label10" type="Label" parent="HBoxContainer/GridContainer1"]
+layout_mode = 2
+theme_override_font_sizes/font_size = 50
+text = "["
+
+[node name="Label18" type="Label" parent="HBoxContainer/GridContainer1"]
+layout_mode = 2
+theme_override_font_sizes/font_size = 50
+text = "2"
+
+[node name="Label19" type="Label" parent="HBoxContainer/GridContainer1"]
+layout_mode = 2
+theme_override_font_sizes/font_size = 50
+text = "]"
+
+[node name="Ramka3" type="Label" parent="HBoxContainer/GridContainer1"]
+layout_mode = 2
+theme_override_font_sizes/font_size = 50
+text = "["
+
+[node name="Label11" type="Label" parent="HBoxContainer/GridContainer1"]
+layout_mode = 2
+theme_override_font_sizes/font_size = 50
+text = "0"
+
+[node name="Label12" type="Label" parent="HBoxContainer/GridContainer1"]
+layout_mode = 2
+theme_override_font_sizes/font_size = 50
+text = "2"
+horizontal_alignment = 1
+
+[node name="Label13" type="Label" parent="HBoxContainer/GridContainer1"]
+layout_mode = 2
+theme_override_font_sizes/font_size = 50
+text = "2"
+
+[node name="Ramka6" type="Label" parent="HBoxContainer/GridContainer1"]
+layout_mode = 2
+theme_override_font_sizes/font_size = 50
+text = "]"
+
+[node name="kropka3" type="Label" parent="HBoxContainer/GridContainer1"]
+layout_mode = 2
+theme_override_font_sizes/font_size = 50
+
+[node name="Label14" type="Label" parent="HBoxContainer/GridContainer1"]
+layout_mode = 2
+theme_override_font_sizes/font_size = 50
+text = "x₃"
+
+[node name="rowna2" type="Label" parent="HBoxContainer/GridContainer1"]
+layout_mode = 2
+theme_override_font_sizes/font_size = 50
+
+[node name="Label15" type="Label" parent="HBoxContainer/GridContainer1"]
+layout_mode = 2
+theme_override_font_sizes/font_size = 50
+text = "["
+
+[node name="Label20" type="Label" parent="HBoxContainer/GridContainer1"]
+layout_mode = 2
+theme_override_font_sizes/font_size = 50
+text = "1"
+
+[node name="Label21" type="Label" parent="HBoxContainer/GridContainer1"]
+layout_mode = 2
+theme_override_font_sizes/font_size = 50
+text = "]"
+
+[node name="Label" type="Label" parent="HBoxContainer"]
+layout_mode = 2
+theme_override_font_sizes/font_size = 180
+text = "→"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="GridContainer2" type="GridContainer" parent="HBoxContainer"]
+layout_mode = 2
+theme_override_constants/h_separation = 15
+columns = 11
+
+[node name="Ramka" type="Label" parent="HBoxContainer/GridContainer2"]
+layout_mode = 2
+theme_override_font_sizes/font_size = 50
+text = "["
+
+[node name="Label" type="Label" parent="HBoxContainer/GridContainer2"]
+layout_mode = 2
+theme_override_font_sizes/font_size = 50
+text = "3"
+
+[node name="Label2" type="Label" parent="HBoxContainer/GridContainer2"]
+layout_mode = 2
+theme_override_font_sizes/font_size = 50
+text = "3"
+horizontal_alignment = 1
+
+[node name="Label3" type="Label" parent="HBoxContainer/GridContainer2"]
+layout_mode = 2
+theme_override_font_sizes/font_size = 50
+text = "0"
+
+[node name="Ramka4" type="Label" parent="HBoxContainer/GridContainer2"]
+layout_mode = 2
+theme_override_font_sizes/font_size = 50
+text = "]"
+
+[node name="kropka" type="Label" parent="HBoxContainer/GridContainer2"]
+layout_mode = 2
+theme_override_font_sizes/font_size = 50
+
+[node name="Label4" type="Label" parent="HBoxContainer/GridContainer2"]
+layout_mode = 2
+theme_override_font_sizes/font_size = 50
+text = "x₁"
+
+[node name="rowna" type="Label" parent="HBoxContainer/GridContainer2"]
+layout_mode = 2
+theme_override_font_sizes/font_size = 50
+
+[node name="Label5" type="Label" parent="HBoxContainer/GridContainer2"]
+layout_mode = 2
+theme_override_font_sizes/font_size = 50
+text = "["
+
+[node name="Label16" type="Label" parent="HBoxContainer/GridContainer2"]
+layout_mode = 2
+theme_override_font_sizes/font_size = 50
+text = "3"
+
+[node name="Label17" type="Label" parent="HBoxContainer/GridContainer2"]
+layout_mode = 2
+theme_override_font_sizes/font_size = 50
+text = "]"
+
+[node name="Ramka2" type="Label" parent="HBoxContainer/GridContainer2"]
+layout_mode = 2
+theme_override_font_sizes/font_size = 50
+text = "["
+
+[node name="Label6" type="TextEdit" parent="HBoxContainer/GridContainer2"]
+layout_mode = 2
+theme_override_font_sizes/font_size = 50
+scroll_fit_content_height = true
+scroll_fit_content_width = true
+
+[node name="Label7" type="TextEdit" parent="HBoxContainer/GridContainer2"]
+layout_mode = 2
+theme_override_font_sizes/font_size = 50
+scroll_fit_content_height = true
+scroll_fit_content_width = true
+
+[node name="Label8" type="TextEdit" parent="HBoxContainer/GridContainer2"]
+layout_mode = 2
+theme_override_font_sizes/font_size = 50
+scroll_fit_content_height = true
+scroll_fit_content_width = true
+
+[node name="Ramka5" type="Label" parent="HBoxContainer/GridContainer2"]
+layout_mode = 2
+theme_override_font_sizes/font_size = 50
+text = "]"
+
+[node name="kropka2" type="Label" parent="HBoxContainer/GridContainer2"]
+layout_mode = 2
+theme_override_font_sizes/font_size = 50
+text = "*"
+
+[node name="Label9" type="Label" parent="HBoxContainer/GridContainer2"]
+layout_mode = 2
+theme_override_font_sizes/font_size = 50
+text = "x₂"
+
+[node name="rowna3" type="Label" parent="HBoxContainer/GridContainer2"]
+layout_mode = 2
+theme_override_font_sizes/font_size = 50
+text = "="
+
+[node name="Label10" type="Label" parent="HBoxContainer/GridContainer2"]
+layout_mode = 2
+theme_override_font_sizes/font_size = 50
+text = "["
+
+[node name="Label18" type="TextEdit" parent="HBoxContainer/GridContainer2"]
+layout_mode = 2
+theme_override_font_sizes/font_size = 50
+scroll_fit_content_height = true
+scroll_fit_content_width = true
+
+[node name="Label19" type="Label" parent="HBoxContainer/GridContainer2"]
+layout_mode = 2
+theme_override_font_sizes/font_size = 50
+text = "]"
+
+[node name="Ramka3" type="Label" parent="HBoxContainer/GridContainer2"]
+layout_mode = 2
+theme_override_font_sizes/font_size = 50
+text = "["
+
+[node name="Label11" type="Label" parent="HBoxContainer/GridContainer2"]
+layout_mode = 2
+theme_override_font_sizes/font_size = 50
+text = "0"
+
+[node name="Label12" type="Label" parent="HBoxContainer/GridContainer2"]
+layout_mode = 2
+theme_override_font_sizes/font_size = 50
+text = "2"
+horizontal_alignment = 1
+
+[node name="Label13" type="Label" parent="HBoxContainer/GridContainer2"]
+layout_mode = 2
+theme_override_font_sizes/font_size = 50
+text = "2"
+
+[node name="Ramka6" type="Label" parent="HBoxContainer/GridContainer2"]
+layout_mode = 2
+theme_override_font_sizes/font_size = 50
+text = "]"
+
+[node name="kropka3" type="Label" parent="HBoxContainer/GridContainer2"]
+layout_mode = 2
+theme_override_font_sizes/font_size = 50
+
+[node name="Label14" type="Label" parent="HBoxContainer/GridContainer2"]
+layout_mode = 2
+theme_override_font_sizes/font_size = 50
+text = "x₃"
+
+[node name="rowna2" type="Label" parent="HBoxContainer/GridContainer2"]
+layout_mode = 2
+theme_override_font_sizes/font_size = 50
+
+[node name="Label15" type="Label" parent="HBoxContainer/GridContainer2"]
+layout_mode = 2
+theme_override_font_sizes/font_size = 50
+text = "["
+
+[node name="Label20" type="Label" parent="HBoxContainer/GridContainer2"]
+layout_mode = 2
+theme_override_font_sizes/font_size = 50
+text = "1"
+
+[node name="Label21" type="Label" parent="HBoxContainer/GridContainer2"]
+layout_mode = 2
+theme_override_font_sizes/font_size = 50
+text = "]"
+
+[node name="HBoxContainer2" type="HBoxContainer" parent="."]
+layout_mode = 1
+anchors_preset = 7
+anchor_left = 0.5
+anchor_top = 1.0
+anchor_right = 0.5
+anchor_bottom = 1.0
+offset_left = -56.0
+offset_top = -40.0
+offset_right = 56.0
+grow_horizontal = 2
+grow_vertical = 0
+
+[node name="Sprawdź" type="Button" parent="HBoxContainer2"]
+layout_mode = 2
+theme_override_font_sizes/font_size = 53
+text = "Sprawdź"
+
+[node name="Wyjdz" type="Button" parent="HBoxContainer2"]
+layout_mode = 2
+theme_override_font_sizes/font_size = 53
+text = "Wyjdz"
+
+[node name="HBoxContainer3" type="HBoxContainer" parent="."]
+layout_mode = 1
+anchors_preset = 5
+anchor_left = 0.5
+anchor_right = 0.5
+offset_left = -40.5
+offset_right = 40.5
+offset_bottom = 47.0
+grow_horizontal = 2
+
+[node name="ResultLabel" type="Label" parent="HBoxContainer3"]
+process_mode = 2
+layout_mode = 2
+size_flags_horizontal = 4
+theme_override_font_sizes/font_size = 34
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[connection signal="pressed" from="HBoxContainer2/Sprawdź" to="." method="_on_sprawdź_pressed"]
+[connection signal="pressed" from="HBoxContainer2/Wyjdz" to="." method="_on_wyjdz_pressed"]
