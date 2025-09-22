@@ -1,6 +1,6 @@
 [gd_scene load_steps=17 format=3 uid="uid://bfwgqvgir4fnq"]
 
-[ext_resource type="Script" path="res://Scene/script/level_2.gd" id="1_7sdqy"]
+[ext_resource type="Script" uid="uid://cixfxqu8yf0jx" path="res://Scene/script/level_2.gd" id="1_7sdqy"]
 [ext_resource type="MeshLibrary" uid="uid://w6ev0b2ct1rg" path="res://Objects/Room/Tile/FloorTiles.tres" id="1_rj34r"]
 [ext_resource type="MeshLibrary" uid="uid://qy78iggykof6" path="res://Objects/Room/Tile/Space_stationTitles.tres" id="2_louwq"]
 [ext_resource type="PackedScene" uid="uid://di80n2exvk435" path="res://Player/player.tscn" id="2_yiryk"]

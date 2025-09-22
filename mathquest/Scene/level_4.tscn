@@ -8,10 +8,10 @@
 [ext_resource type="PackedScene" uid="uid://lgwhiyy5ax3l" path="res://Objects/Room/double_door.tscn" id="5_nb8bt"]
 [ext_resource type="Script" uid="uid://bwrpq2pmugcti" path="res://Interact/Script/interactable.gd" id="7_3frc5"]
 [ext_resource type="Script" uid="uid://cjug40h65t3k8" path="res://Objects/Room/Script/double_door.gd" id="7_nctk5"]
-[ext_resource type="PackedScene" uid="uid://bkfaaosphepel" path="res://Scene/Podsceny/Level4_1.tscn" id="8_3frc5"]
+[ext_resource type="PackedScene" uid="uid://bkfaaosphepel" path="res://Scene/Podsceny/Level_5/Level5_1_old.tscn" id="8_3frc5"]
 [ext_resource type="Texture2D" uid="uid://cceyp18bj5l6j" path="res://Objects/prototype-kit/Models/GLB format/Textures/colormap.png" id="8_sjlp6"]
-[ext_resource type="PackedScene" uid="uid://8t6ebida30f5" path="res://Scene/Podsceny/Level4_2.tscn" id="10_sjlp6"]
-[ext_resource type="PackedScene" uid="uid://df5ya1dgxr3yq" path="res://Scene/Podsceny/Level4_3.tscn" id="11_1apdv"]
+[ext_resource type="PackedScene" uid="uid://8t6ebida30f5" path="res://Scene/Podsceny/Level_5/Level5_2.tscn" id="10_sjlp6"]
+[ext_resource type="PackedScene" uid="uid://df5ya1dgxr3yq" path="res://Scene/Podsceny/Level_5/Level5_4.tscn" id="11_1apdv"]
 
 [sub_resource type="BoxShape3D" id="BoxShape3D_3frc5"]
 

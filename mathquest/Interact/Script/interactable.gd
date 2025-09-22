@@ -7,6 +7,14 @@ class_name Interactable
 @onready var level_42: Control = $"../../Drzwi2/Level42"
 @onready var level_41: Control = $"../Level41"
 @onready var level_43: Control = $"../../Drzwi3/Level43"
+@onready var level_51: Control = $"../Level5_1"
+@onready var level_52: Control = $"../../Drzwi2/Level52"
+@onready var level_53: Control = $"../../Drzwi3/Level53"
+@onready var level_54: Control = $"../../Drzwi4/Level54"
+
+
+
+var current_level = Global.current_level
 
 signal interacted(body)
 
@@ -23,30 +31,44 @@ func get_prompt():
 func interact(body):
 	if name == "Ekran1":
 		Input.mouse_mode = Input.MOUSE_MODE_VISIBLE
-		get_tree().paused = true
-		level_2_kod.visible = true
+		if current_level==2:
+			get_tree().paused = true
+			level_2_kod.visible = true
+		elif current_level==5:
+			level_51.visible = true
+			
 	elif name =="Ekran2":
 		Input.mouse_mode = Input.MOUSE_MODE_VISIBLE
-		get_tree().paused = true
-		level_2_dane.visible = true
-		
+		if current_level==2:
+			get_tree().paused = true
+			level_2_dane.visible = true
+		elif current_level==5:
+			level_52.visible = true
+			
 	elif name =="Ekran3":
 		Input.mouse_mode = Input.MOUSE_MODE_VISIBLE
-		get_tree().paused = true
-		level_3_wykres.visible = true
-		
+		if current_level==3:
+			get_tree().paused = true
+			level_3_wykres.visible = true
+		elif current_level==5:
+			level_53.visible = true
+			
 	elif name =="Ekran4":
 		Input.mouse_mode = Input.MOUSE_MODE_VISIBLE
-		level_41.visible = true
+		if current_level==4:
+			level_41.visible = true
+		elif current_level==5:
+			level_54.visible = true
 	
 	elif name =="Ekran5":
 		Input.mouse_mode = Input.MOUSE_MODE_VISIBLE
-		level_42.visible = true
+		if current_level==4:
+			level_42.visible = true
 	
 	elif name =="Ekran6":
 		Input.mouse_mode = Input.MOUSE_MODE_VISIBLE
-		level_43.visible = true
-		
+		if current_level==4:
+			level_42.visible = true
+			
 	else:
 		emit_signal("interacted", body)
-	
