@@ -1,0 +1,61 @@
+[gd_scene load_steps=11 format=3 uid="uid://c2cpc6sccxyf8"]
+
+[ext_resource type="PackedScene" uid="uid://di80n2exvk435" path="res://Player/player.tscn" id="1_7hckg"]
+[ext_resource type="MeshLibrary" uid="uid://w6ev0b2ct1rg" path="res://Objects/Room/Tile/FloorTiles.tres" id="1_cnfhg"]
+[ext_resource type="Script" uid="uid://betwyduehmfw" path="res://Scene/script/level_6.gd" id="1_k1x2f"]
+[ext_resource type="MeshLibrary" uid="uid://qy78iggykof6" path="res://Objects/Room/Tile/Space_stationTitles.tres" id="2_e65qx"]
+[ext_resource type="PackedScene" uid="uid://lgwhiyy5ax3l" path="res://Objects/Room/double_door.tscn" id="4_k1x2f"]
+[ext_resource type="PackedScene" uid="uid://owqloumof0no" path="res://Scene/Podsceny/Level_6/Cable2d.tscn" id="5_shx2f"]
+[ext_resource type="PackedScene" uid="uid://di8w1cu7ciavm" path="res://UI/PauseMenu/pause_menu.tscn" id="6_hrja7"]
+
+[sub_resource type="ViewportTexture" id="ViewportTexture_7hckg"]
+viewport_path = NodePath("SubViewport")
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_k1x2f"]
+resource_local_to_scene = true
+albedo_texture = SubResource("ViewportTexture_7hckg")
+
+[sub_resource type="PlaneMesh" id="PlaneMesh_gb3q4"]
+resource_local_to_scene = true
+material = SubResource("StandardMaterial3D_k1x2f")
+
+[node name="Level_6" type="Node3D"]
+script = ExtResource("1_k1x2f")
+
+[node name="Player" parent="." instance=ExtResource("1_7hckg")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 1.04, 0.53, -4.93)
+
+[node name="Floor" type="GridMap" parent="."]
+mesh_library = ExtResource("1_cnfhg")
+cell_size = Vector3(1, 1, 1)
+data = {
+"cells": PackedInt32Array(65533, 65530, 2, 65533, 65531, 2, 65533, 65532, 2, 65533, 65533, 2, 65533, 65534, 2, 65533, 65535, 2, 65533, 0, 2, 65533, 1, 2, 65533, 2, 2, 65533, 3, 2, 65534, 65530, 2, 65534, 65531, 2, 65534, 65532, 2, 65534, 65533, 2, 65534, 65534, 2, 65534, 65535, 2, 65534, 0, 2, 65534, 1, 2, 65534, 2, 2, 65534, 3, 2, 65535, 65530, 2, 65535, 65531, 2, 65535, 65532, 2, 65535, 65533, 2, 65535, 65534, 2, 65535, 65535, 2, 65535, 0, 2, 65535, 1, 2, 65535, 2, 2, 65535, 3, 2, 0, 65530, 2, 0, 65531, 2, 0, 65532, 2, 0, 65533, 2, 0, 65534, 2, 0, 65535, 2, 0, 0, 2, 0, 1, 2, 0, 2, 2, 0, 3, 2, 1, 65530, 2, 1, 65531, 2, 1, 65532, 2, 1, 65533, 2, 1, 65534, 2, 1, 65535, 2, 1, 0, 2, 1, 1, 2, 1, 2, 2, 1, 3, 2, 2, 65530, 2, 2, 65531, 2, 2, 65532, 2, 2, 65533, 2, 2, 65534, 2, 2, 65535, 2, 2, 0, 2, 2, 1, 2, 2, 2, 2, 2, 3, 2, 3, 65530, 2, 3, 65531, 2, 3, 65532, 2, 3, 65533, 2, 3, 65534, 2, 3, 65535, 2, 3, 0, 2, 3, 1, 2, 3, 2, 2, 3, 3, 2)
+}
+
+[node name="Wall" type="GridMap" parent="."]
+mesh_library = ExtResource("2_e65qx")
+cell_size = Vector3(0.25, 1, 0.25)
+data = {
+"cells": PackedInt32Array(14, 65513, 655481, 11, 65512, 655480, 15, 65516, 1048696, 8, 65512, 120, 65534, 65512, 120, 65530, 65512, 120, 65525, 65513, 1441913, 65526, 65512, 655480, 65524, 65516, 1048696, 65524, 65520, 1048696, 65524, 65524, 1048696, 65524, 65528, 1048696, 65524, 65532, 1048696, 65524, 0, 1048696, 65524, 4, 1048696, 65524, 8, 1048696, 65524, 10, 1048696, 15, 65520, 1048696, 15, 65524, 1048696, 15, 65528, 1048696, 15, 65532, 1048696, 15, 65535, 1048696, 15, 2, 1048696)
+}
+
+[node name="double-door" parent="." instance=ExtResource("4_k1x2f")]
+transform = Transform3D(-0.017452352, 0, -0.9998477, 0, 1, 0, 0.9998477, 0, -0.017452352, 0.86999995, 0.51, -5.8500004)
+
+[node name="SubViewport" type="SubViewport" parent="."]
+transparent_bg = true
+size = Vector2i(1024, 700)
+render_target_update_mode = 4
+
+[node name="Node2D" parent="SubViewport" instance=ExtResource("5_shx2f")]
+
+[node name="MeshInstance3D" type="MeshInstance3D" parent="."]
+transform = Transform3D(-0.99695635, -0.069714, 0.03489946, -0.034814455, -0.0024344134, -0.9993909, 0.06975651, -0.9975642, -4.3711395e-08, 0.5, 1.51, 0)
+mesh = SubResource("PlaneMesh_gb3q4")
+
+[node name="PauseMenu" parent="." instance=ExtResource("6_hrja7")]
+visible = false
+
+[node name="DirectionalLight3D" type="DirectionalLight3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, -0.63945264, 0.76883054, 0, -0.76883054, -0.63945264, 0.2378998, 5.87541, -6.86)
+light_color = Color(1, 0.960784, 0.882353, 1)

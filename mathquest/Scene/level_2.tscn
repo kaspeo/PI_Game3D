@@ -1,6 +1,6 @@
 [gd_scene load_steps=17 format=3 uid="uid://bfwgqvgir4fnq"]
 
-[ext_resource type="Script" path="res://Scene/script/level_2.gd" id="1_7sdqy"]
+[ext_resource type="Script" uid="uid://cixfxqu8yf0jx" path="res://Scene/script/level_2.gd" id="1_7sdqy"]
 [ext_resource type="MeshLibrary" uid="uid://w6ev0b2ct1rg" path="res://Objects/Room/Tile/FloorTiles.tres" id="1_rj34r"]
 [ext_resource type="MeshLibrary" uid="uid://qy78iggykof6" path="res://Objects/Room/Tile/Space_stationTitles.tres" id="2_louwq"]
 [ext_resource type="PackedScene" uid="uid://di80n2exvk435" path="res://Player/player.tscn" id="2_yiryk"]
@@ -129,13 +129,13 @@ shape = SubResource("BoxShape3D_2thg8")
 [node name="Player" parent="." instance=ExtResource("2_yiryk")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.03, 0.85, -2.83)
 
-[node name="Level2Dane" parent="." instance=ExtResource("8_71r3i")]
+[node name="PauseMenu" parent="." instance=ExtResource("3_yiryk")]
 visible = false
 
 [node name="Level2Kod" parent="." instance=ExtResource("9_jte5b")]
 visible = false
 
-[node name="PauseMenu" parent="." instance=ExtResource("3_yiryk")]
+[node name="Level2Dane" parent="." instance=ExtResource("8_71r3i")]
 visible = false
 
 [node name="Dialogi" type="Node" parent="."]

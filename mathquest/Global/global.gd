@@ -11,3 +11,5 @@ func set_ui(node: Node) -> void:
 
 func get_ui() -> Node:
 	return ui
+
+var can_move = true

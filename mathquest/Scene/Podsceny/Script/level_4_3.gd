@@ -1,5 +1,4 @@
 extends Control
-@onready var level_43: Control = $"."
 @onready var text_edit: TextEdit = $HBoxContainer/GridContainer2/TextEdit
 @onready var text_edit_2: TextEdit = $HBoxContainer/GridContainer2/TextEdit2
 @onready var text_edit_3: TextEdit = $HBoxContainer/GridContainer2/TextEdit3
@@ -30,4 +29,5 @@ func _on_sprawdź_pressed() -> void:
 
 func _on_wyjdz_pressed() -> void:
 	Input.mouse_mode = Input.MOUSE_MODE_CAPTURED
-	level_43.visible = false
+	Global.can_move = true
+	visible = false
