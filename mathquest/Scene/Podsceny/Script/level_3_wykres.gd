@@ -2,9 +2,9 @@ extends Control
 
 @onready var graph: Control = $PanelContainer/GraphDrawer
 @onready var point_sliders := []
-@onready var level_3_wykres: Control = $"."
 
 func _ready():
+	
 	var slider_container = $PanelContainer2/VBoxContainer
 	for child in slider_container.get_children():
 		child.queue_free()
@@ -40,5 +40,6 @@ func _on_slider_value_changed(value: float, index: int):
 
 func _on_exit_pressed() -> void:
 	Input.mouse_mode = Input.MOUSE_MODE_CAPTURED
+	Global.can_move = true
 	get_tree().paused = false
-	level_3_wykres.visible = false
+	visible = false

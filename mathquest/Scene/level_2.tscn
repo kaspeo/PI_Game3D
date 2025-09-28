@@ -129,13 +129,13 @@ shape = SubResource("BoxShape3D_2thg8")
 [node name="Player" parent="." instance=ExtResource("2_yiryk")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.03, 0.85, -2.83)
 
-[node name="Level2Dane" parent="." instance=ExtResource("8_71r3i")]
+[node name="PauseMenu" parent="." instance=ExtResource("3_yiryk")]
 visible = false
 
 [node name="Level2Kod" parent="." instance=ExtResource("9_jte5b")]
 visible = false
 
-[node name="PauseMenu" parent="." instance=ExtResource("3_yiryk")]
+[node name="Level2Dane" parent="." instance=ExtResource("8_71r3i")]
 visible = false
 
 [node name="Dialogi" type="Node" parent="."]

@@ -31,6 +31,14 @@ func update_label():
 		label.text = "Poziom: %d" % Global.current_level
 	
 func _process(delta):
+	if not Global.can_move:
+		# Blokujemy całe sterowanie, ale kamera nadal może być np. odblokowana
+		velocity = Vector3.ZERO
+		if is_on_floor() and (not animation_player.is_playing() or animation_player.current_animation != "Idle"):
+			animation_player.play("idle", 0.2)
+		move_and_slide()
+		return
+
 	var input_dir := Input.get_vector("move_left", "move_right", "move_up", "move_down")
 	var move_direction := Vector3(input_dir.x, 0, input_dir.y).normalized()
 	move_direction = move_direction.rotated(Vector3.UP, camera.global_rotation.y)

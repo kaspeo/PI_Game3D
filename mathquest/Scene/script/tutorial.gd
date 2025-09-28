@@ -1,6 +1,4 @@
 extends Node3D
-
-
 @onready var start: AcceptDialog = $Dialogi/Start
 @onready var sterowanie: AcceptDialog = $Dialogi/Sterowanie
 @onready var drzwi: AcceptDialog = $Dialogi/Drzwi

@@ -1,6 +1,4 @@
 extends Control
-@onready var level_52: Control = $"."
-
 
 @onready var result_label: Label = $HBoxContainer3/ResultLabel
 @onready var label_8: TextEdit = $HBoxContainer/GridContainer2/Label8
@@ -17,7 +15,6 @@ func _on_sprawdź_pressed() -> void:
 	if label_18.text.strip_edges() != "-11/2":
 		ok = false
 
-	# Wyświetlenie wyniku
 	if ok:
 		result_label.text = "✅ Poprawnie!"
 		Global.get_ui().ustaw_misje("Macierz zadanie", true)
@@ -29,4 +26,5 @@ func _on_sprawdź_pressed() -> void:
 
 func _on_wyjdz_pressed() -> void:
 	Input.mouse_mode = Input.MOUSE_MODE_CAPTURED
-	level_52.visible = false
+	Global.can_move = true
+	visible = false

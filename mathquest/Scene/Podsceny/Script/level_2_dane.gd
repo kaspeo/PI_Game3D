@@ -1,5 +1,4 @@
 extends Control
-@onready var level_2_dane: Control = $"."
 @onready var aedit: TextEdit = $HBoxContainer/HBoxContainer2/aedit
 @onready var bedit: TextEdit = $HBoxContainer/HBoxContainer/bedit
 @onready var result_label: Label = $HBoxContainer/ResultLabel
@@ -8,6 +7,7 @@ extends Control
 var correct_code_a := "-x + 3"
 var correct_code_b := "-2x + 9"
 var task_done := false
+
 
 func _on_check_button_pressed() -> void:
 	var entered_code_a = aedit.text.strip_edges().replace(" ", "")
@@ -36,5 +36,6 @@ func _on_check_button_pressed() -> void:
 
 func _on_exit_pressed() -> void:
 	Input.mouse_mode = Input.MOUSE_MODE_CAPTURED
+	Global.can_move = true
 	get_tree().paused = false
-	level_2_dane.visible = false
+	visible = false

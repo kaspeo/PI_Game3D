@@ -1,0 +1,111 @@
+[gd_scene load_steps=3 format=3 uid="uid://tkpgn83yaejg"]
+
+[ext_resource type="Script" uid="uid://ddsxgdsasutaw" path="res://Scene/Podsceny/Script/level7_1.gd" id="1_gvajl"]
+[ext_resource type="Script" uid="uid://d2542yqt0ubtf" path="res://Scene/Podsceny/Script/level7_1graph.gd" id="2_uwq7q"]
+
+[node name="Level7_1" type="Control"]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("1_gvajl")
+
+[node name="PanelContainer" type="PanelContainer" parent="."]
+layout_mode = 1
+anchors_preset = 11
+anchor_left = 1.0
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = -648.0
+offset_top = 418.0
+offset_bottom = -2.0
+grow_horizontal = 0
+grow_vertical = 2
+size_flags_horizontal = 8
+
+[node name="RichTextLabel" type="RichTextLabel" parent="PanelContainer"]
+layout_mode = 2
+size_flags_horizontal = 4
+size_flags_vertical = 4
+
+[node name="Container" type="PanelContainer" parent="."]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_top = 422.0
+offset_right = -647.0
+offset_bottom = -2.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="VBoxContainer2" type="VBoxContainer" parent="Container"]
+layout_mode = 2
+
+[node name="HBoxA" type="HBoxContainer" parent="Container/VBoxContainer2"]
+layout_mode = 2
+size_flags_horizontal = 4
+size_flags_vertical = 0
+
+[node name="LabelA" type="Label" parent="Container/VBoxContainer2/HBoxA"]
+layout_mode = 2
+text = "a:"
+
+[node name="InputA" type="LineEdit" parent="Container/VBoxContainer2/HBoxA"]
+layout_mode = 2
+size_flags_horizontal = 4
+
+[node name="HBoxB" type="HBoxContainer" parent="Container/VBoxContainer2"]
+layout_mode = 2
+size_flags_horizontal = 4
+
+[node name="LabelB" type="Label" parent="Container/VBoxContainer2/HBoxB"]
+layout_mode = 2
+text = "B:"
+
+[node name="InputB" type="LineEdit" parent="Container/VBoxContainer2/HBoxB"]
+layout_mode = 2
+size_flags_horizontal = 4
+
+[node name="HBoxContainer" type="HBoxContainer" parent="Container/VBoxContainer2"]
+layout_mode = 2
+size_flags_horizontal = 4
+
+[node name="Oblicz" type="Button" parent="Container/VBoxContainer2/HBoxContainer"]
+layout_mode = 2
+size_flags_horizontal = 4
+text = "Oblicz
+"
+
+[node name="VBoxContainer" type="HBoxContainer" parent="Container"]
+layout_mode = 2
+size_flags_horizontal = 4
+size_flags_vertical = 4
+
+[node name="PrzedzialA" type="Button" parent="Container/VBoxContainer"]
+layout_mode = 2
+text = "wybór przedziału [a, x]"
+
+[node name="PrzedzialB" type="Button" parent="Container/VBoxContainer"]
+layout_mode = 2
+text = "wybór przedziału [x, b]"
+
+[node name="Wynik" type="Label" parent="Container"]
+layout_mode = 2
+size_flags_vertical = 8
+
+[node name="Graph" type="Panel" parent="."]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_bottom = -229.0
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("2_uwq7q")
+
+[connection signal="pressed" from="Container/VBoxContainer2/HBoxContainer/Oblicz" to="." method="_on_oblicz_pressed"]
+[connection signal="pressed" from="Container/VBoxContainer/PrzedzialA" to="." method="_on_przedzial_a_pressed"]
+[connection signal="pressed" from="Container/VBoxContainer/PrzedzialB" to="." method="_on_przedzial_b_pressed"]

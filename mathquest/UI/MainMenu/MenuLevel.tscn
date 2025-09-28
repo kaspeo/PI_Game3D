@@ -57,9 +57,9 @@ grow_horizontal = 2
 grow_vertical = 2
 
 [node name="VBoxContainer" type="VBoxContainer" parent="PanelContainer"]
+custom_minimum_size = Vector2(700, 0)
 layout_mode = 2
 size_flags_horizontal = 4
-size_flags_vertical = 4
 
 [node name="HBoxContainer" type="HBoxContainer" parent="PanelContainer/VBoxContainer"]
 layout_mode = 2
@@ -69,7 +69,7 @@ layout_mode = 2
 size_flags_horizontal = 3
 theme_override_font_sizes/font_size = 30
 text = "Poziom 1 
-(Metoda biskecji)
+(Metoda Biskecji)
 "
 
 [node name="Level2" type="Button" parent="PanelContainer/VBoxContainer/HBoxContainer"]
@@ -77,7 +77,7 @@ layout_mode = 2
 size_flags_horizontal = 3
 theme_override_font_sizes/font_size = 30
 text = "Poziom 2 
-(metoda lagrange)
+(metoda Lagrange)
 "
 
 [node name="HBoxContainer2" type="HBoxContainer" parent="PanelContainer/VBoxContainer"]
@@ -88,7 +88,7 @@ layout_mode = 2
 size_flags_horizontal = 3
 theme_override_font_sizes/font_size = 30
 text = "Poziom 3
-(wykres)"
+(Metoda Secanta)"
 
 [node name="Level4" type="Button" parent="PanelContainer/VBoxContainer/HBoxContainer2"]
 layout_mode = 2
@@ -112,7 +112,7 @@ layout_mode = 2
 size_flags_horizontal = 3
 theme_override_font_sizes/font_size = 30
 text = "Poziom 6
-(brak)"
+(Interpolacja Hermita)"
 
 [node name="HBoxContainer4" type="HBoxContainer" parent="PanelContainer/VBoxContainer"]
 layout_mode = 2
@@ -122,7 +122,7 @@ layout_mode = 2
 size_flags_horizontal = 3
 theme_override_font_sizes/font_size = 30
 text = "Poziom 7
-(brak)"
+(Regula Falsi)"
 
 [node name="Level8" type="Button" parent="PanelContainer/VBoxContainer/HBoxContainer4"]
 layout_mode = 2
