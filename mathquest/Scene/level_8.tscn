@@ -1,0 +1,32 @@
+[gd_scene load_steps=6 format=3 uid="uid://cj5q67mdr0klv"]
+
+[ext_resource type="MeshLibrary" uid="uid://w6ev0b2ct1rg" path="res://Objects/Room/Tile/FloorTiles.tres" id="1_fxje6"]
+[ext_resource type="MeshLibrary" uid="uid://486s0eikkj00" path="res://Objects/Room/Tile/WallTiles.tres" id="2_78xq5"]
+[ext_resource type="PackedScene" uid="uid://di80n2exvk435" path="res://Player/player.tscn" id="2_t61qd"]
+[ext_resource type="PackedScene" uid="uid://di8w1cu7ciavm" path="res://UI/PauseMenu/pause_menu.tscn" id="3_78xq5"]
+[ext_resource type="MeshLibrary" uid="uid://qy78iggykof6" path="res://Objects/Room/Tile/Space_stationTitles.tres" id="3_i0su5"]
+
+[node name="Level_8" type="Node3D"]
+
+[node name="Word" type="Node3D" parent="."]
+
+[node name="Floor" type="GridMap" parent="Word"]
+mesh_library = ExtResource("1_fxje6")
+cell_size = Vector3(1, 1, 1)
+data = {
+"cells": PackedInt32Array(65535, 1, 2, 0, 1, 2, 1, 1, 2, 2, 1, 2, 65535, 2, 2, 65535, 3, 2, 65535, 4, 2, 0, 4, 2, 1, 4, 2, 2, 4, 2, 2, 3, 2, 2, 2, 2, 1, 2, 2, 0, 2, 2, 0, 3, 2, 1, 3, 2, 65534, 4, 2, 65533, 4, 2, 65533, 3, 2, 65533, 2, 2, 65533, 1, 2, 65533, 0, 2, 65534, 3, 2, 65535, 0, 2, 65534, 0, 2, 65534, 65535, 2, 65534, 1, 2, 65534, 2, 2, 65533, 65535, 2, 65533, 65534, 2, 65532, 65534, 2, 65535, 65535, 2, 65534, 65534, 2, 65533, 65533, 2, 65532, 65535, 2, 65532, 0, 2, 65532, 1, 2, 65532, 2, 2, 65532, 3, 2, 65532, 4, 2, 1, 0, 2, 2, 0, 2, 2, 65535, 2, 1, 65535, 2, 0, 65535, 2, 0, 0, 2, 0, 65534, 2, 65535, 65534, 2, 65535, 65533, 2, 65534, 65533, 2, 65533, 65532, 2, 65532, 65533, 2, 65532, 65532, 2, 65534, 65532, 2, 65535, 65532, 2, 0, 65533, 2, 1, 65533, 2, 0, 65532, 2, 1, 65532, 2, 2, 65533, 2, 2, 65534, 2, 2, 65532, 2, 1, 65534, 2)
+}
+
+[node name="Wall" type="GridMap" parent="Word"]
+mesh_library = ExtResource("2_78xq5")
+cell_size = Vector3(0.25, 1, 0.25)
+
+[node name="objects" type="GridMap" parent="Word"]
+mesh_library = ExtResource("3_i0su5")
+cell_size = Vector3(0.1, 1, 0.1)
+
+[node name="Player" parent="." instance=ExtResource("2_t61qd")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.65999997, -1.48)
+
+[node name="PauseMenu" parent="." instance=ExtResource("3_78xq5")]
+visible = false

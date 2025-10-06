@@ -1,0 +1,44 @@
+[gd_scene load_steps=6 format=3 uid="uid://b6ldj3gcis4v8"]
+
+[ext_resource type="MeshLibrary" uid="uid://w6ev0b2ct1rg" path="res://Objects/Room/Tile/FloorTiles.tres" id="1_7orrl"]
+[ext_resource type="MeshLibrary" uid="uid://486s0eikkj00" path="res://Objects/Room/Tile/WallTiles.tres" id="2_h2nqk"]
+[ext_resource type="MeshLibrary" uid="uid://qy78iggykof6" path="res://Objects/Room/Tile/Space_stationTitles.tres" id="3_jm3vw"]
+[ext_resource type="PackedScene" uid="uid://lgwhiyy5ax3l" path="res://Objects/Room/double_door.tscn" id="4_0jbfj"]
+[ext_resource type="PackedScene" uid="uid://di80n2exvk435" path="res://Player/player.tscn" id="5_h2nqk"]
+
+[node name="Tunnel" type="Node3D"]
+
+[node name="Enter" type="Node3D" parent="."]
+
+[node name="Floor" type="GridMap" parent="Enter"]
+mesh_library = ExtResource("1_7orrl")
+cell_size = Vector3(1, 1, 1)
+data = {
+"cells": PackedInt32Array(1, 65535, 7, 0, 65535, 7, 65535, 65535, 7, 65534, 65535, 7, 65534, 0, 7, 65535, 0, 7, 0, 0, 7, 1, 0, 7, 65533, 65535, 7, 65533, 0, 7, 2, 65535, 7, 2, 0, 7, 262141, 65534, 1441799, 262141, 65535, 1441799, 262141, 0, 1441799, 262141, 1, 1441799, 262142, 65534, 1441799, 196610, 65534, 1441799, 196609, 65534, 1441799, 196608, 65534, 1441799, 262143, 65534, 1441799, 262142, 65535, 1441799, 262143, 65535, 1441799, 196608, 65535, 1441799, 196609, 65535, 1441799, 196610, 65535, 1441799, 196610, 0, 1441799, 196610, 1, 1441799, 196609, 1, 1441799, 196608, 1, 1441799, 262143, 1, 1441799, 262142, 1, 1441799, 262142, 0, 1441799, 262143, 0, 1441799, 196608, 0, 1441799, 196609, 0, 1441799, 2, 1, 1441799, 65533, 1, 1441799, 65534, 1, 1441799, 65535, 1, 1441799, 0, 1, 1441799, 1, 1, 1441799, 2, 65534, 1441799, 1, 65534, 1441799, 0, 65534, 1441799, 65535, 65534, 1441799, 65534, 65534, 1441799, 65533, 65534, 1441799)
+}
+metadata/_editor_floor_ = Vector3(0, 0, 0)
+
+[node name="Wall" type="GridMap" parent="Enter"]
+mesh_library = ExtResource("2_h2nqk")
+cell_size = Vector3(0.25, 1, 0.25)
+data = {
+"cells": PackedInt32Array(11, 4, 655415, 11, 65531, 655415, 9, 4, 1048631, 5, 4, 1048631, 1, 4, 1048631, 65533, 4, 1048631, 65529, 4, 1048631, 65526, 4, 1048631, 9, 65531, 1441847, 5, 65531, 1441847, 1, 65531, 1441847, 65533, 65531, 1441847, 65529, 65531, 1441847, 65526, 65531, 1441847, 65524, 4, 655415, 65524, 65531, 655415, 131060, 65531, 655415, 131060, 4, 655415, 131060, 1, 655415, 131060, 65535, 655415, 131062, 65531, 1048631, 131066, 65531, 1048631, 131069, 65531, 1048631, 65537, 65531, 1048631, 65541, 65531, 1048631, 65545, 65531, 1048631, 131062, 4, 1048631, 131066, 4, 1048631, 131070, 4, 1048631, 65538, 4, 1048631, 65542, 4, 1048631, 65545, 4, 1048631, 65547, 4, 55, 65547, 0, 55, 65547, 65532, 55, 131083, 4, 55, 131083, 0, 55, 131083, 65532, 55, 196596, 65531, 55, 196596, 3, 55, 196596, 0, 55, 196596, 65535, 55, 196598, 65531, 1441847, 196602, 65531, 1441847, 196606, 65531, 1441847, 131074, 65531, 1441847, 131078, 65531, 1441847, 131081, 65531, 1441847, 131081, 4, 1441847, 131077, 4, 1441847, 131073, 4, 1441847, 196605, 4, 1441847, 196601, 4, 1441847, 196598, 4, 1441847)
+}
+metadata/_editor_floor_ = Vector3(0, 2, 0)
+
+[node name="objects" type="GridMap" parent="Enter"]
+mesh_library = ExtResource("3_jm3vw")
+cell_size = Vector3(0.1, 1, 0.1)
+
+[node name="double-door" parent="Enter" instance=ExtResource("4_0jbfj")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 2.8700001, 0.7, 0)
+
+[node name="double-door2" parent="Enter" instance=ExtResource("4_0jbfj")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -2.8700001, 0.7, 0)
+
+[node name="DirectionalLight3D" type="DirectionalLight3D" parent="Enter"]
+transform = Transform3D(0.12186933, 0.7630998, 0.63468623, 0, -0.63945264, 0.76883054, 0.9925462, -0.093696855, -0.07792966, 1.6978998, 1.68541, 0.15999973)
+light_color = Color(1, 0.960784, 0.882353, 1)
+
+[node name="Player" parent="." instance=ExtResource("5_h2nqk")]
+transform = Transform3D(0.017452383, 0, -0.9998477, 0, 1, 0, 0.9998477, 0, 0.017452383, 1.78, 0.81, 0)

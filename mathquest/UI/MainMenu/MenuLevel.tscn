@@ -21,23 +21,25 @@ grow_horizontal = 2
 grow_vertical = 2
 color = Color(0.105327, 0.379555, 0.541179, 1)
 
-[node name="Title" type="MarginContainer" parent="."]
+[node name="PanelContainer" type="MarginContainer" parent="."]
 layout_mode = 1
-anchors_preset = 14
-anchor_top = 0.5
+anchors_preset = 15
 anchor_right = 1.0
-anchor_bottom = 0.5
-offset_top = -240.0
-offset_bottom = 240.0
+anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
-theme_override_constants/margin_bottom = 400
 
-[node name="HBoxContainer" type="HBoxContainer" parent="Title"]
+[node name="VBoxContainer" type="VBoxContainer" parent="PanelContainer"]
+custom_minimum_size = Vector2(700, 0)
+layout_mode = 2
+size_flags_horizontal = 4
+size_flags_vertical = 4
+
+[node name="HBoxContainer6" type="HBoxContainer" parent="PanelContainer/VBoxContainer"]
 layout_mode = 2
 alignment = 1
 
-[node name="Label" type="Label" parent="Title/HBoxContainer"]
+[node name="Label" type="Label" parent="PanelContainer/VBoxContainer/HBoxContainer6"]
 layout_mode = 2
 theme_override_colors/font_shadow_color = Color(0, 0, 0, 1)
 theme_override_constants/shadow_outline_size = 29
@@ -46,20 +48,6 @@ theme_override_font_sizes/font_size = 70
 text = "MathQuest"
 horizontal_alignment = 1
 vertical_alignment = 1
-
-[node name="PanelContainer" type="MarginContainer" parent="."]
-layout_mode = 1
-anchors_preset = 15
-anchor_right = 1.0
-anchor_bottom = 1.0
-offset_top = 168.0
-grow_horizontal = 2
-grow_vertical = 2
-
-[node name="VBoxContainer" type="VBoxContainer" parent="PanelContainer"]
-custom_minimum_size = Vector2(700, 0)
-layout_mode = 2
-size_flags_horizontal = 4
 
 [node name="HBoxContainer" type="HBoxContainer" parent="PanelContainer/VBoxContainer"]
 layout_mode = 2
@@ -129,7 +117,24 @@ layout_mode = 2
 size_flags_horizontal = 3
 theme_override_font_sizes/font_size = 30
 text = "Poziom 8
-(brak)"
+(Metoda N-R)"
+
+[node name="HBoxContainer5" type="HBoxContainer" parent="PanelContainer/VBoxContainer"]
+layout_mode = 2
+
+[node name="Level9" type="Button" parent="PanelContainer/VBoxContainer/HBoxContainer5"]
+layout_mode = 2
+size_flags_horizontal = 3
+theme_override_font_sizes/font_size = 30
+text = "Poziom 9
+()"
+
+[node name="Level10" type="Button" parent="PanelContainer/VBoxContainer/HBoxContainer5"]
+layout_mode = 2
+size_flags_horizontal = 3
+theme_override_font_sizes/font_size = 30
+text = "Poziom 10
+(Końcowy quiz)"
 
 [node name="Exit" type="Button" parent="PanelContainer/VBoxContainer"]
 layout_mode = 2
@@ -145,4 +150,6 @@ text = "Menu główne
 [connection signal="pressed" from="PanelContainer/VBoxContainer/HBoxContainer3/Level6" to="." method="_on_level_6_pressed"]
 [connection signal="pressed" from="PanelContainer/VBoxContainer/HBoxContainer4/Level7" to="." method="_on_level_7_pressed"]
 [connection signal="pressed" from="PanelContainer/VBoxContainer/HBoxContainer4/Level8" to="." method="_on_level_8_pressed"]
+[connection signal="pressed" from="PanelContainer/VBoxContainer/HBoxContainer5/Level9" to="." method="_on_level_9_pressed"]
+[connection signal="pressed" from="PanelContainer/VBoxContainer/HBoxContainer5/Level10" to="." method="_on_level_10_pressed"]
 [connection signal="pressed" from="PanelContainer/VBoxContainer/Exit" to="." method="_on_exit_pressed"]
