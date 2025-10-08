@@ -20,8 +20,8 @@
 [sub_resource type="BoxShape3D" id="BoxShape3D_aqehm"]
 size = Vector3(2, 1, 1.52734)
 
-[sub_resource type="BoxShape3D" id="BoxShape3D_r3him"]
-size = Vector3(7.32327, 1, 4.03674)
+[sub_resource type="BoxShape3D" id="BoxShape3D_1n71j"]
+size = Vector3(3.2173767, 1, 2.725525)
 
 [sub_resource type="BoxShape3D" id="BoxShape3D_64kyw"]
 size = Vector3(0.213348, 0.47467, 0.214249)
@@ -110,8 +110,8 @@ font_size = 40
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 1.65654, 0, 5.79038)
 
 [node name="CollisionShape3D" type="CollisionShape3D" parent="Wyjscie/Koniec"]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.331589, 1.0353, -1.08222)
-shape = SubResource("BoxShape3D_r3him")
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.44617224, 1.0353, -0.40193748)
+shape = SubResource("BoxShape3D_1n71j")
 
 [node name="number-02" parent="." instance=ExtResource("7_qwkqa")]
 transform = Transform3D(-4.37114e-08, 0, -1, 0, 1, 0, 1, 0, -4.37114e-08, 2.19014, 1.61801, 7.14656)
@@ -133,6 +133,7 @@ W tym poziomie nauczysz się sterowania i przechodzenia kolejnych etapów.
 Kliknij \"Enter\" żeby zamknąć to okienko."
 
 [node name="Sterowanie" type="AcceptDialog" parent="Dialogi"]
+oversampling_override = 1.0
 title = "Sterowanie"
 initial_position = 2
 size = Vector2i(394, 392)
@@ -147,10 +148,14 @@ Skok: SPACJA.
 Interakcja z otoczeniem: E."
 
 [node name="Drzwi" type="AcceptDialog" parent="Dialogi"]
+oversampling_override = 1.0
 title = "Drzwi "
+initial_position = 2
+size = Vector2i(542, 100)
 dialog_text = "Nakieruj kamerę na przycisk obok drzwi i naciśnij E, aby je otworzyć."
 
 [node name="Koniec" type="AcceptDialog" parent="Dialogi"]
+oversampling_override = 1.0
 title = "Koniec samouczka"
 initial_position = 2
 size = Vector2i(353, 132)
@@ -159,6 +164,7 @@ Teraz czas na nauke metod numerytcznych.
 Czas na pierwszy poziom!!!"
 
 [node name="Misja" type="AcceptDialog" parent="Dialogi"]
+oversampling_override = 1.0
 title = "Zadanie"
 initial_position = 1
 size = Vector2i(876, 106)
