@@ -1,17 +1,30 @@
-[gd_scene load_steps=58 format=4 uid="uid://7cj3ttux1ik4"]
+[gd_scene load_steps=62 format=4 uid="uid://7cj3ttux1ik4"]
 
 [ext_resource type="Script" uid="uid://ltq8ryb5fsy6" path="res://Scene/script/level_4.gd" id="1_ewc76"]
 [ext_resource type="MeshLibrary" uid="uid://w6ev0b2ct1rg" path="res://Objects/Room/Tile/FloorTiles.tres" id="1_jylhg"]
 [ext_resource type="PackedScene" uid="uid://di80n2exvk435" path="res://Player/player.tscn" id="2_5mtfs"]
+[ext_resource type="Texture2D" uid="uid://bfgjqm6ivawoj" path="res://Texture/Panorama_Mars_01-2048x1024.png" id="2_yjmqo"]
 [ext_resource type="PackedScene" uid="uid://di8w1cu7ciavm" path="res://UI/PauseMenu/pause_menu.tscn" id="3_5mtfs"]
 [ext_resource type="MeshLibrary" uid="uid://qy78iggykof6" path="res://Objects/Room/Tile/Space_stationTitles.tres" id="4_kxdlq"]
 [ext_resource type="PackedScene" uid="uid://lgwhiyy5ax3l" path="res://Objects/Room/double_door.tscn" id="5_nb8bt"]
 [ext_resource type="Script" uid="uid://bwrpq2pmugcti" path="res://Interact/Script/interactable.gd" id="7_3frc5"]
 [ext_resource type="Script" uid="uid://cjug40h65t3k8" path="res://Objects/Room/Script/double_door.gd" id="7_nctk5"]
-[ext_resource type="PackedScene" uid="uid://bkfaaosphepel" path="res://Scene/Podsceny/Level_5/Level5_1_old.tscn" id="8_3frc5"]
+[ext_resource type="PackedScene" uid="uid://bkfaaosphepel" path="res://Scene/Podsceny/Level4_1.tscn" id="8_3frc5"]
 [ext_resource type="Texture2D" uid="uid://cceyp18bj5l6j" path="res://Objects/prototype-kit/Models/GLB format/Textures/colormap.png" id="8_sjlp6"]
-[ext_resource type="PackedScene" uid="uid://8t6ebida30f5" path="res://Scene/Podsceny/Level_5/Level5_2.tscn" id="10_sjlp6"]
-[ext_resource type="PackedScene" uid="uid://df5ya1dgxr3yq" path="res://Scene/Podsceny/Level_5/Level5_4.tscn" id="11_1apdv"]
+[ext_resource type="PackedScene" uid="uid://8t6ebida30f5" path="res://Scene/Podsceny/Level4_2.tscn" id="10_sjlp6"]
+[ext_resource type="PackedScene" uid="uid://df5ya1dgxr3yq" path="res://Scene/Podsceny/Level4_3.tscn" id="11_1apdv"]
+
+[sub_resource type="PanoramaSkyMaterial" id="PanoramaSkyMaterial_u0nsa"]
+panorama = ExtResource("2_yjmqo")
+
+[sub_resource type="Sky" id="Sky_05wjw"]
+sky_material = SubResource("PanoramaSkyMaterial_u0nsa")
+
+[sub_resource type="Environment" id="Environment_53mt6"]
+background_mode = 2
+sky = SubResource("Sky_05wjw")
+ambient_light_source = 1
+reflected_light_source = 1
 
 [sub_resource type="BoxShape3D" id="BoxShape3D_3frc5"]
 
@@ -429,31 +442,27 @@ transitions = ["Start", "close", SubResource("AnimationNodeStateMachineTransitio
 [node name="Level4" type="Node3D"]
 script = ExtResource("1_ewc76")
 
+[node name="WorldEnvironment" type="WorldEnvironment" parent="."]
+environment = SubResource("Environment_53mt6")
+
 [node name="Misja" type="Area3D" parent="."]
 transform = Transform3D(2.23, 0, 0, 0, 1, 0, 0, 0, 1, 2.24083, 0.324906, -2.74553)
 
 [node name="CollisionShape3D" type="CollisionShape3D" parent="Misja"]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.704246, 0.861244)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.7042459, 0.86124396)
 shape = SubResource("BoxShape3D_3frc5")
 
-[node name="Lights" type="Node3D" parent="."]
+[node name="Word" type="Node3D" parent="Misja"]
+transform = Transform3D(0.44843048, 0, 0, 0, 1, 0, 0, 0, 1, -1.0048565, -0.324906, 2.74553)
 
-[node name="DirectionalLight3D" type="DirectionalLight3D" parent="Lights"]
-transform = Transform3D(0.999545, 0.0300437, 0.00278178, -0.00414699, 0.0454748, 0.998957, 0.0298858, -0.998514, 0.0455787, 2.1379, 2.47808, -1.49029)
-light_color = Color(1, 0.960784, 0.882353, 1)
-
-[node name="DirectionalLight3D2" type="DirectionalLight3D" parent="Lights"]
-transform = Transform3D(1, 0, 0, 0, -0.0293874, 0.999568, 0, -0.999568, -0.0293874, 2.6045, 3.46957, 10.4853)
-light_color = Color(1, 0.960784, 0.882353, 1)
-
-[node name="Floor" type="GridMap" parent="."]
+[node name="Floor" type="GridMap" parent="Misja/Word"]
 mesh_library = ExtResource("1_jylhg")
 cell_size = Vector3(1, 1, 1)
 data = {
 "cells": PackedInt32Array(0, 0, 2, 1, 0, 2, 2, 0, 2, 3, 0, 2, 4, 0, 2, 5, 0, 2, 0, 1, 2, 1, 1, 2, 2, 1, 2, 3, 1, 2, 4, 1, 2, 5, 1, 2, 6, 1, 2, 5, 2, 2, 0, 2, 2, 0, 3, 2, 0, 4, 2, 0, 5, 2, 1, 5, 2, 2, 5, 2, 3, 5, 2, 3, 4, 2, 4, 4, 2, 5, 4, 2, 5, 3, 2, 4, 2, 2, 3, 2, 2, 3, 3, 2, 2, 3, 2, 1, 3, 2, 1, 2, 2, 1, 4, 2, 2, 4, 2, 2, 2, 2, 4, 3, 2, 4, 5, 2, 5, 5, 2, 6, 4, 2, 6, 3, 2, 6, 2, 2, 6, 0, 2, 6, 65535, 2, 6, 65534, 2, 6, 5, 2, 6, 6, 2, 5, 6, 2, 4, 6, 2, 3, 6, 2, 2, 6, 2, 1, 6, 2, 0, 6, 2, 65535, 6, 2, 65535, 5, 2, 65534, 5, 2, 65534, 4, 2, 65534, 3, 2, 65534, 2, 2, 65534, 1, 2, 65535, 0, 2, 65535, 65535, 2, 65535, 65534, 2, 0, 65533, 2, 0, 65532, 2, 1, 65532, 2, 2, 65532, 2, 3, 65532, 2, 4, 65532, 2, 5, 65532, 2, 6, 65532, 2, 6, 65533, 2, 5, 65533, 2, 4, 65533, 2, 3, 65533, 2, 65535, 65532, 2, 65534, 65532, 2, 65534, 65533, 2, 65534, 65534, 2, 65534, 65535, 2, 65534, 0, 2, 65535, 65533, 2, 1, 65533, 2, 2, 65533, 2, 5, 65534, 2, 5, 65535, 2, 0, 65535, 2, 0, 65534, 2, 2, 65534, 2, 3, 65534, 2, 4, 65534, 2, 4, 65535, 2, 3, 65535, 2, 2, 65535, 2, 1, 65535, 2, 1, 65534, 2, 65535, 1, 2, 65535, 4, 2, 65534, 6, 2, 65535, 3, 2, 65535, 2, 2, 65534, 7, 2, 65535, 7, 2, 0, 7, 2, 1, 7, 2, 2, 7, 2, 3, 7, 2, 4, 7, 2, 5, 7, 2, 6, 7, 2, 65534, 8, 2, 65535, 8, 2, 0, 8, 2, 1, 8, 2, 2, 8, 2, 3, 8, 2, 4, 8, 2, 5, 8, 2, 6, 8, 2, 6, 9, 2, 6, 10, 2, 6, 11, 2, 6, 12, 2, 6, 13, 2, 5, 13, 2, 4, 13, 2, 3, 13, 2, 2, 13, 2, 1, 13, 2, 0, 13, 2, 65535, 13, 2, 65534, 13, 2, 65534, 9, 2, 65534, 10, 2, 65534, 11, 2, 65534, 12, 2, 65535, 12, 2, 0, 12, 2, 1, 12, 2, 2, 12, 2, 3, 12, 2, 4, 12, 2, 5, 12, 2, 5, 11, 2, 5, 10, 2, 5, 9, 2, 4, 9, 2, 3, 9, 2, 2, 9, 2, 1, 9, 2, 0, 9, 2, 65535, 9, 2, 65535, 11, 2, 0, 11, 2, 1, 11, 2, 2, 11, 2, 3, 11, 2, 3, 10, 2, 4, 10, 2, 2, 10, 2, 1, 10, 2, 0, 10, 2, 65535, 10, 2, 4, 11, 2, 6, 14, 2, 5, 14, 2, 4, 14, 2, 3, 14, 2, 2, 14, 2, 1, 14, 2, 0, 14, 2, 65535, 14, 2, 65534, 14, 2, 65534, 15, 2, 65534, 16, 2, 65534, 17, 2, 65534, 18, 2, 65535, 18, 2, 0, 18, 2, 1, 17, 2, 2, 17, 2, 65535, 17, 2, 0, 17, 2, 1, 18, 2, 2, 18, 2, 3, 18, 2, 4, 18, 2, 5, 18, 2, 6, 18, 2, 6, 17, 2, 6, 16, 2, 6, 15, 2, 5, 15, 2, 4, 15, 2, 3, 15, 2, 2, 15, 2, 1, 15, 2, 0, 15, 2, 65535, 15, 2, 65535, 16, 2, 0, 16, 2, 1, 16, 2, 2, 16, 2, 3, 16, 2, 4, 16, 2, 5, 16, 2, 5, 17, 2, 4, 17, 2, 3, 17, 2, 2, 19, 2, 3, 19, 2, 3, 20, 2, 3, 21, 2, 3, 22, 2, 3, 23, 2, 3, 24, 2, 3, 25, 2, 3, 26, 2, 2, 26, 2, 2, 25, 2, 2, 24, 2, 2, 23, 2, 2, 22, 2, 2, 21, 2, 2, 20, 2, 2, 65531, 2, 3, 65531, 2, 1, 65531, 2, 3, 65530, 2, 2, 65530, 2, 2, 65529, 2, 1, 65529, 2, 2, 65528, 2, 2, 65527, 2, 3, 65528, 2, 3, 65529, 2, 3, 65527, 2, 1, 65527, 2, 1, 65528, 2, 1, 65530, 2, 3, 65526, 2, 2, 65526, 2, 1, 65526, 2, 1, 19, 2, 1, 20, 2, 1, 21, 2, 1, 22, 2, 1, 23, 2, 1, 24, 2, 1, 25, 2, 1, 26, 2)
 }
 
-[node name="Wall" type="GridMap" parent="."]
+[node name="Wall" type="GridMap" parent="Misja/Word"]
 mesh_library = ExtResource("4_kxdlq")
 cell_size = Vector3(0.25, 1, 0.25)
 data = {
@@ -461,13 +470,63 @@ data = {
 }
 metadata/_editor_floor_ = Vector3(0, 1, 0)
 
-[node name="Objects" type="GridMap" parent="."]
+[node name="Beds" type="GridMap" parent="Misja/Word"]
 mesh_library = ExtResource("4_kxdlq")
 cell_size = Vector3(0.1, 1, 0.1)
 data = {
-"cells": PackedInt32Array(65560, 9, 655386, 65560, 74, 655386, 65561, 136, 655386, 65561, 186, 655386, 15, 8, 655379, 15, 74, 655379, 15, 137, 655379, 12, 186, 655376)
+"cells": PackedInt32Array(65560, 9, 655386, 65560, 74, 655386, 65561, 136, 655386, 65561, 186, 655386, 15, 8, 655379, 15, 74, 655379, 15, 137, 655379, 12, 186, 655376, 54, 26, 1441801, 54, 37, 1441801, 54, 48, 1441801, 54, 60, 1441801, 38, 26, 1441801, 38, 37, 1441801, 38, 48, 1441801, 38, 60, 1441801)
 }
 metadata/_editor_floor_ = Vector3(0, 0, 0)
+
+[node name="GridMap" type="GridMap" parent="Misja/Word"]
+mesh_library = ExtResource("4_kxdlq")
+cell_size = Vector3(0.1, 0.2, 0.1)
+data = {
+"cells": PackedInt32Array(196660, 26, 1441800, 196660, 37, 1048584, 196660, 48, 1048584, 196660, 60, 1048584, 196644, 60, 1048584, 196644, 48, 1048584, 196644, 37, 1048584, 196644, 26, 1048584, 131073, 61, 118, 131073, 42, 118, 131073, 24, 118, 196605, 70, 655375, 196598, 62, 1048591, 196605, 53, 15, 131076, 53, 15, 131076, 50, 655375, 196605, 50, 655375, 131076, 34, 15, 131076, 31, 655375, 196598, 41, 1048591, 196598, 23, 1048591, 131076, 16, 15, 131076, 70, 655375, 196605, 34, 15, 196605, 31, 655375, 196605, 32, 655375, 196605, 16, 15)
+}
+metadata/_editor_floor_ = Vector3(0, 2, 0)
+
+[node name="Lights" type="Node3D" parent="."]
+
+[node name="OmniLight3D" type="OmniLight3D" parent="Lights"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 1.1016357, 2.487164, -1.5765173)
+light_color = Color(1, 0.9607843, 0.88235295, 1)
+light_energy = 4.699
+
+[node name="OmniLight3D3" type="OmniLight3D" parent="Lights"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.46095347, 2.487164, 10.38915)
+light_color = Color(1, 0.9607843, 0.88235295, 1)
+light_energy = 4.699
+
+[node name="OmniLight3D4" type="OmniLight3D" parent="Lights"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.37820554, 2.487164, 15.807334)
+light_color = Color(1, 0.9607843, 0.88235295, 1)
+light_energy = 4.699
+
+[node name="OmniLight3D5" type="OmniLight3D" parent="Lights"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 4.7136374, 2.487164, -1.5765173)
+light_color = Color(1, 0.9607843, 0.88235295, 1)
+light_energy = 4.699
+
+[node name="OmniLight3D7" type="OmniLight3D" parent="Lights"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 4.7136374, 2.487164, 10.168525)
+light_color = Color(1, 0.9607843, 0.88235295, 1)
+light_energy = 4.699
+
+[node name="OmniLight3D8" type="OmniLight3D" parent="Lights"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 4.7136374, 2.487164, 15.934975)
+light_color = Color(1, 0.9607843, 0.88235295, 1)
+light_energy = 4.699
+
+[node name="OmniLight3D2" type="OmniLight3D" parent="Lights"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.41964102, 2.568973, 4.202566)
+light_color = Color(1, 0.9607843, 0.88235295, 1)
+light_energy = 2.372
+
+[node name="OmniLight3D6" type="OmniLight3D" parent="Lights"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 4.678054, 2.568973, 4.202566)
+light_color = Color(1, 0.9607843, 0.88235295, 1)
+light_energy = 2.663
 
 [node name="double-door" parent="." instance=ExtResource("5_nb8bt")]
 transform = Transform3D(-4.37114e-08, 0, -1, 0, 1, 0, 1, 0, -4.37114e-08, 2.37471, 0.503359, -3.8244)

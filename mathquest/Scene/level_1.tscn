@@ -593,6 +593,7 @@ script = ExtResource("4_246mo")
 [node name="wall-doorway-wide2" type="StaticBody3D" parent="Zadanie_bisekcji/double-door"]
 
 [node name="wall-doorway-wide" type="MeshInstance3D" parent="Zadanie_bisekcji/double-door/wall-doorway-wide2"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.008833885, 0, 0)
 mesh = SubResource("ArrayMesh_i1imf")
 skeleton = NodePath("")
 
@@ -604,7 +605,6 @@ shape = SubResource("ConcavePolygonShape3D_k7iup")
 [node name="door-sliding-double" type="Node3D" parent="Zadanie_bisekcji/double-door/door-sliding-double2"]
 
 [node name="door-right" type="MeshInstance3D" parent="Zadanie_bisekcji/double-door/door-sliding-double2/door-sliding-double"]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 0.04547298)
 mesh = SubResource("ArrayMesh_tkdup")
 skeleton = NodePath("")
 
@@ -614,7 +614,6 @@ skeleton = NodePath("")
 shape = SubResource("ConcavePolygonShape3D_r7m6m")
 
 [node name="door-left" type="MeshInstance3D" parent="Zadanie_bisekcji/double-door/door-sliding-double2/door-sliding-double"]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, -0.04547298)
 mesh = SubResource("ArrayMesh_u2a4d")
 skeleton = NodePath("")
 
@@ -700,9 +699,6 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 1.68454, 1.68748, -0.845356)
 text = "TAK"
 font_size = 50
 
-[node name="PauseMenu" parent="." instance=ExtResource("3_5exfe")]
-visible = false
-
 [node name="Player" parent="." instance=ExtResource("2_au1pm")]
 transform = Transform3D(0.0218497, 0, -0.999761, 0, 1, 0, 0.999761, 0, 0.0218497, 4.26738, 0.5, 8.56661)
 
@@ -741,6 +737,9 @@ dialog_text = "Czas na poziom pierwszy!"
 [node name="Misja" type="AcceptDialog" parent="Dialogi"]
 title = "Cel poziomu"
 dialog_text = "Poziom przedstawia nie pełne działanie kodu metody biskecji, wstaw skrzynki w odpowiednie miejsca żeby otworzyć drzwi na kolejny poziom."
+
+[node name="PauseMenu" parent="." instance=ExtResource("3_5exfe")]
+visible = false
 
 [connection signal="interacted" from="Door1/ButtonSmall" to="Door1/double-door" method="toggle"]
 [connection signal="interacted" from="Door1/ButtonSmall2" to="Door1/double-door" method="toggle"]
