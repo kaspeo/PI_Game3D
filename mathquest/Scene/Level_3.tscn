@@ -1,4 +1,4 @@
-[gd_scene load_steps=9 format=3 uid="uid://dvewcqo30imaa"]
+[gd_scene load_steps=10 format=3 uid="uid://dvewcqo30imaa"]
 
 [ext_resource type="MeshLibrary" uid="uid://w6ev0b2ct1rg" path="res://Objects/Room/Tile/FloorTiles.tres" id="1_dk5bn"]
 [ext_resource type="MeshLibrary" uid="uid://qy78iggykof6" path="res://Objects/Room/Tile/Space_stationTitles.tres" id="2_75tud"]
@@ -6,6 +6,7 @@
 [ext_resource type="PackedScene" uid="uid://di8w1cu7ciavm" path="res://UI/PauseMenu/pause_menu.tscn" id="3_75tud"]
 [ext_resource type="Script" uid="uid://bwrpq2pmugcti" path="res://Interact/Script/interactable.gd" id="5_j24hx"]
 [ext_resource type="PackedScene" uid="uid://b5uuyxbv1kd5b" path="res://Scene/Podsceny/Level_3_wykres.tscn" id="6_j24hx"]
+[ext_resource type="PackedScene" uid="uid://b6ldj3gcis4v8" path="res://Scene/Podsceny/Tunnel.tscn" id="7_7daln"]
 
 [sub_resource type="QuadMesh" id="QuadMesh_7daln"]
 
@@ -56,3 +57,6 @@ visible = false
 
 [node name="PauseMenu" parent="." instance=ExtResource("3_75tud")]
 visible = false
+
+[node name="Tunnel" parent="." instance=ExtResource("7_7daln")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 6.97, -0.17999999, 0)

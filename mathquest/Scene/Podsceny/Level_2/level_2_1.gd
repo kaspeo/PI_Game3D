@@ -1,5 +1,7 @@
 extends Control
 
+signal level2_1_completed
+
 @onready var input_a: LineEdit = $MarginContainer/VBoxContainer/HBoxContainer/GridContainer/HBoxContainerA/InputA
 @onready var input_b: LineEdit = $MarginContainer/VBoxContainer/HBoxContainer/GridContainer/HBoxContainerB/InputB
 @onready var output: Label = $MarginContainer/VBoxContainer/HBoxContainer3/Wynik
@@ -10,15 +12,25 @@ var a: float
 var b: float
 var x: float
 var has_point := false
+var iteration_count := 0
+var max_iterations := 50
+var tolerance := 0.001
 
-# 🔹 Funkcja z jednym miejscem zerowym (~1.521)
 func f(v: float) -> float:
-	return pow(v, 3) - v - 2
-
+	return sin(pow(v, 2) - v + (1.0 / 3.0)) + (v / 2.0)
 
 func _on_oblicz_pressed() -> void:
+	# Resetowanie licznika iteracji przy nowym obliczeniu
+	iteration_count = 0
+	
 	a = input_a.text.to_float()
 	b = input_b.text.to_float()
+
+	# Walidacja przedziału
+	if a >= b:
+		output.text = "❌ Nieprawidłowy przedział (a >= b)"
+		results_label.text = ""
+		return
 
 	if f(a) * f(b) > 0:
 		output.text = "❌ Zły przedział (f(a)*f(b) > 0)"
@@ -32,77 +44,95 @@ func _on_oblicz_pressed() -> void:
 	results_label.text = calculate_iterations(a, b)
 	update_graph()
 
-
 func _on_przedzial_a_pressed() -> void:
 	_update_interval(true)
 
-
 func _on_przedzial_b_pressed() -> void:
 	_update_interval(false)
-
 
 func _update_interval(use_left: bool) -> void:
 	if not has_point:
 		output.text = "Najpierw oblicz punkt!"
 		return
 
+	# Sprawdzenie warunku zakończenia
+	if abs(f(x)) < tolerance:
+		output.text = "🎉 Rozwiązanie już znalezione: x = %.4f" % x
+		return
+
+	# Sprawdzenie maksymalnej liczby iteracji
+	if iteration_count >= max_iterations:
+		output.text = "⚠️ Osiągnięto maksymalną liczbę iteracji"
+		return
+
 	var fa = f(a)
 	var fb = f(b)
 	var fx = f(x)
 
-	# Wybór strony przedziału i aktualizacja dynamiczna
+	# Wybór przedziału z walidacją
 	if use_left:
 		# wybór przedziału [a, x]
 		if fa * fx < 0:
 			b = x
+			fb = fx
 			output.text = "✅ Dobry wybór: przedział [a, x]"
+			iteration_count += 1
 		else:
-			output.text = "❌ Zły wybór: przedział [a, x]"
+			output.text = "❌ Zły wybór: przedział [a, x] - brak pierwiastka w tym przedziale"
+			return
 	else:
 		# wybór przedziału [x, b]
 		if fx * fb < 0:
 			a = x
+			fa = fx
 			output.text = "✅ Dobry wybór: przedział [x, b]"
+			iteration_count += 1
 		else:
-			output.text = "❌ Zły wybór: przedział [x, b]"
+			output.text = "❌ Zły wybór: przedział [x, b] - brak pierwiastka w tym przedziale"
+			return
 
-	# 🔁 zawsze licz nowy punkt po aktualizacji
-	x = (a * f(b) - b * f(a)) / (f(b) - f(a))
+	x = (a * fb - b * fa) / (fb - fa)
+	
 	input_a.text = "%.4f" % a
 	input_b.text = "%.4f" % b
 
-	# Warunek zakończenia (blisko zera)
-	if abs(f(x)) < 0.001:
-		output.text += "\n🎉 Znalazłeś rozwiązanie: x = %.4f" % x
+	if abs(f(x)) < tolerance:
+		output.text += "\n🎉 Znalazłeś rozwiązanie: x = %.4f (iteracja: %d)" % [x, iteration_count]
+		emit_signal("level2_1_completed")
 
 	results_label.text = calculate_iterations(a, b)
 	update_graph()
 
-
-func calculate_iterations(a: float, b: float, tol := 0.001, max_iter := 20) -> String:
+func calculate_iterations(a: float, b: float) -> String:
 	var fa = f(a)
 	var fb = f(b)
-	var output := "Iteracje Reguły Falsi:\n"
-	output += "[i]      a         b         x        f(x)\n"
-
-	for i in range(1, max_iter + 1):
-		var x_val = (a * fb - b * fa) / (fb - fa)
+	var output := "Iteracje Reguly Falsi:\n"
+	output += "[code]      a         b         x        f(x)     Iteracja\n"
+	
+	var current_a = a
+	var current_b = b
+	var current_fa = fa
+	var current_fb = fb
+	
+	for i in range(iteration_count + 1):
+		var x_val = (current_a * current_fb - current_b * current_fa) / (current_fb - current_fa)
 		var fx = f(x_val)
-		output += "%2d   %8.4f  %8.4f  %8.4f  %8.4f\n" % [i, a, b, x_val, fx]
+		
+		var marker = " "
+		if i == iteration_count:
+			marker = "▶" 
+		
+		output += "%s %2d   %8.4f  %8.4f  %8.4f  %8.4f\n" % [marker, i, current_a, current_b, x_val, fx]
 
-		if abs(fx) < tol:
-			output += "\n✅ Zbieżność osiągnięta po %d iteracjach." % i
-			break
-
-		if fa * fx < 0:
-			b = x_val
-			fb = fx
-		else:
-			a = x_val
-			fa = fx
+		if i < iteration_count:
+			if current_fa * fx < 0:
+				current_b = x_val
+				current_fb = fx
+			else:
+				current_a = x_val
+				current_fa = fx
 
 	return output
-
 
 func update_graph() -> void:
 	if not graph:
@@ -113,9 +143,7 @@ func update_graph() -> void:
 	graph.f = Callable(self, "f")
 	graph.queue_redraw()
 
-
 func _on_exit_pressed() -> void:
 	visible = false
 	Input.mouse_mode = Input.MOUSE_MODE_CAPTURED
-	if Engine.has_singleton("Global"):
-		Global.can_move = true
+	Global.can_move = true

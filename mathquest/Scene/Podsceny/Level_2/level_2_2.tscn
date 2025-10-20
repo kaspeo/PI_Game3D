@@ -1,18 +1,16 @@
-[gd_scene load_steps=3 format=3 uid="uid://tkpgn83yaejg"]
+[gd_scene load_steps=3 format=3 uid="uid://df2dbcbohgj0g"]
 
-[ext_resource type="Script" uid="uid://ddsxgdsasutaw" path="res://Scene/Podsceny/Script/level_2_1.gd" id="1_gvajl"]
-[ext_resource type="Script" uid="uid://d2542yqt0ubtf" path="res://Scene/Podsceny/Script/level_2_1graph.gd" id="2_uwq7q"]
+[ext_resource type="Script" uid="uid://bkioq0jfurlh8" path="res://Scene/Podsceny/Level_2/level_2_2.gd" id="1_1hjwv"]
+[ext_resource type="Script" uid="uid://d2542yqt0ubtf" path="res://Scene/Podsceny/Level_2/level_2_1graph.gd" id="2_oedrk"]
 
-[node name="Level7_1" type="Control"]
-clip_contents = true
-custom_minimum_size = Vector2(1920, 1080)
+[node name="Level2_2" type="Control"]
 layout_mode = 3
 anchors_preset = 15
 anchor_right = 1.0
 anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
-script = ExtResource("1_gvajl")
+script = ExtResource("1_1hjwv")
 
 [node name="ColorRect" type="ColorRect" parent="."]
 layout_mode = 1
@@ -21,7 +19,7 @@ anchor_right = 1.0
 anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
-color = Color(0, 0.247911, 0.223716, 1)
+color = Color(0.24964118, 0.44229612, 0.4149804, 1)
 
 [node name="MarginContainer" type="MarginContainer" parent="."]
 layout_mode = 1
@@ -40,9 +38,9 @@ layout_mode = 2
 
 [node name="Task Label" type="Label" parent="MarginContainer/VBoxContainer/HBoxContainer"]
 layout_mode = 2
-size_flags_horizontal = 0
+size_flags_horizontal = 4
 theme_override_font_sizes/font_size = 24
-text = "Znajdź miejsce zerowe funkcji: f(x) = x^3 -x-2
+text = "Znajdź miejsce zerowe funkcji:  f(x) = sin(4x)⋅cos(2x) + 0.2(x - 2.5) + 0.1⋅sin(8x)
 korzystając z metody Reguły Falsi.
 Uwaga! Funkcja ma kilka miejsc zerowych blisko siebie. 
 Wybieraj ostrożnie przedział [a,x] lub [x,b]."
@@ -52,9 +50,20 @@ layout_mode = 2
 size_flags_horizontal = 6
 theme_override_constants/v_separation = 38
 
+[node name="HBoxContainer" type="HBoxContainer" parent="MarginContainer/VBoxContainer/HBoxContainer/GridContainer"]
+layout_mode = 2
+alignment = 1
+
+[node name="PrzedzalAB" type="Button" parent="MarginContainer/VBoxContainer/HBoxContainer/GridContainer/HBoxContainer"]
+visible = false
+layout_mode = 2
+theme_override_font_sizes/font_size = 27
+text = "Sprawdz mozliwe a i b"
+
 [node name="HBoxContainerA" type="HBoxContainer" parent="MarginContainer/VBoxContainer/HBoxContainer/GridContainer"]
 layout_mode = 2
 size_flags_horizontal = 4
+alignment = 1
 
 [node name="LabelA" type="Label" parent="MarginContainer/VBoxContainer/HBoxContainer/GridContainer/HBoxContainerA"]
 layout_mode = 2
@@ -65,9 +74,11 @@ text = "a:"
 layout_mode = 2
 size_flags_horizontal = 4
 theme_override_font_sizes/font_size = 26
+placeholder_text = "1"
 
 [node name="HBoxContainerB" type="HBoxContainer" parent="MarginContainer/VBoxContainer/HBoxContainer/GridContainer"]
 layout_mode = 2
+alignment = 1
 
 [node name="LabelB" type="Label" parent="MarginContainer/VBoxContainer/HBoxContainer/GridContainer/HBoxContainerB"]
 layout_mode = 2
@@ -78,6 +89,7 @@ text = "b:"
 layout_mode = 2
 size_flags_horizontal = 4
 theme_override_font_sizes/font_size = 26
+placeholder_text = "3"
 
 [node name="HBoxContainer2" type="HBoxContainer" parent="MarginContainer/VBoxContainer"]
 layout_mode = 2
@@ -131,16 +143,18 @@ text = "
 "
 
 [node name="PanelContainer" type="PanelContainer" parent="MarginContainer/VBoxContainer"]
-clip_contents = true
-custom_minimum_size = Vector2(400, 700)
+custom_minimum_size = Vector2(0, 550)
 layout_mode = 2
 size_flags_vertical = 10
 
 [node name="Graph" type="Panel" parent="MarginContainer/VBoxContainer/PanelContainer"]
 clip_contents = true
 layout_mode = 2
-script = ExtResource("2_uwq7q")
+script = ExtResource("2_oedrk")
+scale_x = 150.0
+scale_y = 150.0
 
+[connection signal="pressed" from="MarginContainer/VBoxContainer/HBoxContainer/GridContainer/HBoxContainer/PrzedzalAB" to="." method="_on_przedzal_ab_pressed"]
 [connection signal="pressed" from="MarginContainer/VBoxContainer/HBoxContainer2/Oblicz" to="." method="_on_oblicz_pressed"]
 [connection signal="pressed" from="MarginContainer/VBoxContainer/HBoxContainer2/Exit" to="." method="_on_exit_pressed"]
 [connection signal="pressed" from="MarginContainer/VBoxContainer/VBoxContainer/PrzedzialA" to="." method="_on_przedzial_a_pressed"]

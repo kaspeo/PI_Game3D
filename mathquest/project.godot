@@ -19,6 +19,10 @@ config/icon="uid://co1fwwkqd5eau"
 
 Global="*res://Global/global.gd"
 
+[debug]
+
+shapes/collision/shape_color=Color(0.7262233, 3.4172833e-06, 5.7756904e-07, 0.41960785)
+
 [display]
 
 window/size/viewport_width=1920
