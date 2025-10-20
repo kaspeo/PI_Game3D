@@ -1,17 +1,18 @@
-[gd_scene load_steps=2 format=3 uid="uid://df5ya1dgxr3yq"]
+[gd_scene load_steps=2 format=3 uid="uid://bdodbafjfyx06"]
 
-[ext_resource type="Script" uid="uid://ie65xy455stb" path="res://Scene/Podsceny/Script/level_4_3.gd" id="1_55apl"]
+[ext_resource type="Script" uid="uid://dd8wh8cokoqf6" path="res://Scene/Podsceny/Level_6/level_6_4.gd" id="1_yxell"]
 
-[node name="Level43" type="Control"]
+[node name="Level54" type="Control"]
 layout_mode = 3
 anchors_preset = 15
 anchor_right = 1.0
 anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
-script = ExtResource("1_55apl")
+script = ExtResource("1_yxell")
 
 [node name="ColorRect" type="ColorRect" parent="."]
+custom_minimum_size = Vector2(83, 0)
 layout_mode = 1
 anchors_preset = 15
 anchor_right = 1.0
@@ -48,13 +49,13 @@ horizontal_alignment = 1
 [node name="Label" type="Label" parent="HBoxContainer/GridContainer1"]
 layout_mode = 2
 theme_override_font_sizes/font_size = 50
-text = "3"
+text = "1"
 horizontal_alignment = 1
 
 [node name="Label2" type="Label" parent="HBoxContainer/GridContainer1"]
 layout_mode = 2
 theme_override_font_sizes/font_size = 50
-text = "3"
+text = "0"
 horizontal_alignment = 1
 
 [node name="Label3" type="Label" parent="HBoxContainer/GridContainer1"]
@@ -94,7 +95,7 @@ horizontal_alignment = 1
 [node name="Label16" type="Label" parent="HBoxContainer/GridContainer1"]
 layout_mode = 2
 theme_override_font_sizes/font_size = 50
-text = "3"
+text = "37/2"
 horizontal_alignment = 1
 
 [node name="Label17" type="Label" parent="HBoxContainer/GridContainer1"]
@@ -118,13 +119,13 @@ horizontal_alignment = 1
 [node name="Label7" type="Label" parent="HBoxContainer/GridContainer1"]
 layout_mode = 2
 theme_override_font_sizes/font_size = 50
-text = "-1"
+text = "1"
 horizontal_alignment = 1
 
 [node name="Label8" type="Label" parent="HBoxContainer/GridContainer1"]
 layout_mode = 2
 theme_override_font_sizes/font_size = 50
-text = "1"
+text = "0"
 horizontal_alignment = 1
 
 [node name="Ramka5" type="Label" parent="HBoxContainer/GridContainer1"]
@@ -160,7 +161,7 @@ horizontal_alignment = 1
 [node name="Label18" type="Label" parent="HBoxContainer/GridContainer1"]
 layout_mode = 2
 theme_override_font_sizes/font_size = 50
-text = "1"
+text = "-11/2"
 horizontal_alignment = 1
 
 [node name="Label19" type="Label" parent="HBoxContainer/GridContainer1"]
@@ -190,7 +191,7 @@ horizontal_alignment = 1
 [node name="Label13" type="Label" parent="HBoxContainer/GridContainer1"]
 layout_mode = 2
 theme_override_font_sizes/font_size = 50
-text = "4"
+text = "1"
 horizontal_alignment = 1
 
 [node name="Ramka6" type="Label" parent="HBoxContainer/GridContainer1"]
@@ -224,7 +225,7 @@ horizontal_alignment = 1
 [node name="Label20" type="Label" parent="HBoxContainer/GridContainer1"]
 layout_mode = 2
 theme_override_font_sizes/font_size = 50
-text = "3"
+text = "7/2"
 horizontal_alignment = 1
 
 [node name="Label21" type="Label" parent="HBoxContainer/GridContainer1"]
@@ -248,33 +249,33 @@ layout_mode = 2
 theme_override_font_sizes/font_size = 30
 text = "x₁="
 
-[node name="TextEdit" type="TextEdit" parent="HBoxContainer/GridContainer2"]
+[node name="TextEdit" type="LineEdit" parent="HBoxContainer/GridContainer2"]
 layout_mode = 2
 theme_override_font_sizes/font_size = 30
-scroll_fit_content_height = true
-scroll_fit_content_width = true
+alignment = 1
+max_length = 5
 
 [node name="Label2" type="Label" parent="HBoxContainer/GridContainer2"]
 layout_mode = 2
 theme_override_font_sizes/font_size = 30
 text = "x₂="
 
-[node name="TextEdit2" type="TextEdit" parent="HBoxContainer/GridContainer2"]
+[node name="TextEdit2" type="LineEdit" parent="HBoxContainer/GridContainer2"]
 layout_mode = 2
 theme_override_font_sizes/font_size = 30
-scroll_fit_content_height = true
-scroll_fit_content_width = true
+alignment = 1
+max_length = 5
 
 [node name="Label3" type="Label" parent="HBoxContainer/GridContainer2"]
 layout_mode = 2
 theme_override_font_sizes/font_size = 30
 text = "x₃="
 
-[node name="TextEdit3" type="TextEdit" parent="HBoxContainer/GridContainer2"]
+[node name="TextEdit3" type="LineEdit" parent="HBoxContainer/GridContainer2"]
 layout_mode = 2
 theme_override_font_sizes/font_size = 30
-scroll_fit_content_height = true
-scroll_fit_content_width = true
+alignment = 1
+max_length = 5
 
 [node name="HBoxContainer2" type="HBoxContainer" parent="."]
 layout_mode = 1

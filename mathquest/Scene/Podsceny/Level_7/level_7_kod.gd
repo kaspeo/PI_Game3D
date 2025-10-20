@@ -1,6 +1,6 @@
 extends Control
 
-@onready var level_2_kod: Control = $"."
+@onready var level_7_kod: Control = $"."
 @onready var code_edit: TextEdit = $HBoxContainer/CodeEdit
 @onready var result_label: Label = $HBoxContainer/ResultLabel
 
@@ -11,7 +11,7 @@ func _on_exit_pressed() -> void:
 	Input.set_mouse_mode(Input.MOUSE_MODE_CAPTURED)
 	Global.can_move = true
 	get_tree().paused = false
-	level_2_kod.visible = false
+	level_7_kod.visible = false
 
 func _on_check_button_pressed() -> void:
 	var entered_code = code_edit.text.strip_edges()

@@ -1,6 +1,6 @@
 [gd_scene load_steps=2 format=3 uid="uid://bkfaaosphepel"]
 
-[ext_resource type="Script" uid="uid://4vavj8ir8ent" path="res://Scene/Podsceny/Script/level_4_1.gd" id="1_cecu2"]
+[ext_resource type="Script" uid="uid://4vavj8ir8ent" path="res://Scene/Podsceny/Level_5/level_5_1.gd" id="1_cecu2"]
 
 [node name="Level41" type="Control"]
 layout_mode = 3

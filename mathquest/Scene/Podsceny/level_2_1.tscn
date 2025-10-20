@@ -1,7 +1,7 @@
 [gd_scene load_steps=3 format=3 uid="uid://tkpgn83yaejg"]
 
-[ext_resource type="Script" uid="uid://ddsxgdsasutaw" path="res://Scene/Podsceny/Script/level7_1.gd" id="1_gvajl"]
-[ext_resource type="Script" uid="uid://d2542yqt0ubtf" path="res://Scene/Podsceny/Script/level7_1graph.gd" id="2_uwq7q"]
+[ext_resource type="Script" uid="uid://ddsxgdsasutaw" path="res://Scene/Podsceny/Script/level_2_1.gd" id="1_gvajl"]
+[ext_resource type="Script" uid="uid://d2542yqt0ubtf" path="res://Scene/Podsceny/Script/level_2_1graph.gd" id="2_uwq7q"]
 
 [node name="Level7_1" type="Control"]
 clip_contents = true

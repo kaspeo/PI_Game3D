@@ -1,6 +1,6 @@
 [gd_scene load_steps=3 format=3 uid="uid://owqloumof0no"]
 
-[ext_resource type="Script" uid="uid://cu2vlsyw5uk48" path="res://Scene/Podsceny/Level_6/Cable2d.gd" id="1_vg2du"]
+[ext_resource type="Script" uid="uid://cu2vlsyw5uk48" path="res://Scene/Podsceny/Level_8/Cable2d.gd" id="1_vg2du"]
 
 [sub_resource type="Gradient" id="Gradient_vg2du"]
 

@@ -1,15 +1,15 @@
-[gd_scene load_steps=2 format=3 uid="uid://8t6ebida30f5"]
+[gd_scene load_steps=2 format=3 uid="uid://b612o2wqmac03"]
 
-[ext_resource type="Script" uid="uid://0wchumn8tbh1" path="res://Scene/Podsceny/Script/level_4_2.gd" id="1_6nqup"]
+[ext_resource type="Script" uid="uid://rhpux48oihr7" path="res://Scene/Podsceny/Level_6/level_6_3.gd" id="1_pnaxf"]
 
-[node name="Level42" type="Control"]
+[node name="Level53" type="Control"]
 layout_mode = 3
 anchors_preset = 15
 anchor_right = 1.0
 anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
-script = ExtResource("1_6nqup")
+script = ExtResource("1_pnaxf")
 
 [node name="ColorRect" type="ColorRect" parent="."]
 layout_mode = 1
@@ -43,24 +43,23 @@ columns = 11
 layout_mode = 2
 theme_override_font_sizes/font_size = 50
 text = "["
-horizontal_alignment = 1
 
 [node name="Label" type="Label" parent="HBoxContainer/GridContainer1"]
 layout_mode = 2
 theme_override_font_sizes/font_size = 50
-text = "3"
+text = "1"
 horizontal_alignment = 1
 
 [node name="Label2" type="Label" parent="HBoxContainer/GridContainer1"]
 layout_mode = 2
 theme_override_font_sizes/font_size = 50
-text = "3"
+text = "2"
 horizontal_alignment = 1
 
 [node name="Label3" type="Label" parent="HBoxContainer/GridContainer1"]
 layout_mode = 2
 theme_override_font_sizes/font_size = 50
-text = "0"
+text = "-1"
 horizontal_alignment = 1
 
 [node name="Ramka4" type="Label" parent="HBoxContainer/GridContainer1"]
@@ -94,7 +93,7 @@ horizontal_alignment = 1
 [node name="Label16" type="Label" parent="HBoxContainer/GridContainer1"]
 layout_mode = 2
 theme_override_font_sizes/font_size = 50
-text = "3"
+text = "4"
 horizontal_alignment = 1
 
 [node name="Label17" type="Label" parent="HBoxContainer/GridContainer1"]
@@ -118,13 +117,13 @@ horizontal_alignment = 1
 [node name="Label7" type="Label" parent="HBoxContainer/GridContainer1"]
 layout_mode = 2
 theme_override_font_sizes/font_size = 50
-text = "-1"
+text = "1"
 horizontal_alignment = 1
 
 [node name="Label8" type="Label" parent="HBoxContainer/GridContainer1"]
 layout_mode = 2
 theme_override_font_sizes/font_size = 50
-text = "1"
+text = "0"
 horizontal_alignment = 1
 
 [node name="Ramka5" type="Label" parent="HBoxContainer/GridContainer1"]
@@ -160,7 +159,7 @@ horizontal_alignment = 1
 [node name="Label18" type="Label" parent="HBoxContainer/GridContainer1"]
 layout_mode = 2
 theme_override_font_sizes/font_size = 50
-text = "1"
+text = "-11/2"
 horizontal_alignment = 1
 
 [node name="Label19" type="Label" parent="HBoxContainer/GridContainer1"]
@@ -184,13 +183,13 @@ horizontal_alignment = 1
 [node name="Label12" type="Label" parent="HBoxContainer/GridContainer1"]
 layout_mode = 2
 theme_override_font_sizes/font_size = 50
-text = "2"
+text = "0"
 horizontal_alignment = 1
 
 [node name="Label13" type="Label" parent="HBoxContainer/GridContainer1"]
 layout_mode = 2
 theme_override_font_sizes/font_size = 50
-text = "2"
+text = "1"
 horizontal_alignment = 1
 
 [node name="Ramka6" type="Label" parent="HBoxContainer/GridContainer1"]
@@ -224,7 +223,7 @@ horizontal_alignment = 1
 [node name="Label20" type="Label" parent="HBoxContainer/GridContainer1"]
 layout_mode = 2
 theme_override_font_sizes/font_size = 50
-text = "1"
+text = "7/2"
 horizontal_alignment = 1
 
 [node name="Label21" type="Label" parent="HBoxContainer/GridContainer1"]
@@ -253,19 +252,20 @@ text = "["
 [node name="Label" type="Label" parent="HBoxContainer/GridContainer2"]
 layout_mode = 2
 theme_override_font_sizes/font_size = 50
-text = "3"
-
-[node name="Label2" type="Label" parent="HBoxContainer/GridContainer2"]
-layout_mode = 2
-theme_override_font_sizes/font_size = 50
-text = "3"
+text = "1"
 horizontal_alignment = 1
 
-[node name="Label3" type="Label" parent="HBoxContainer/GridContainer2"]
+[node name="Label2" type="TextEdit" parent="HBoxContainer/GridContainer2"]
 layout_mode = 2
 theme_override_font_sizes/font_size = 50
-text = "0"
-vertical_alignment = 1
+scroll_fit_content_height = true
+scroll_fit_content_width = true
+
+[node name="Label3" type="TextEdit" parent="HBoxContainer/GridContainer2"]
+layout_mode = 2
+theme_override_font_sizes/font_size = 50
+scroll_fit_content_height = true
+scroll_fit_content_width = true
 
 [node name="Ramka4" type="Label" parent="HBoxContainer/GridContainer2"]
 layout_mode = 2
@@ -280,7 +280,6 @@ theme_override_font_sizes/font_size = 50
 layout_mode = 2
 theme_override_font_sizes/font_size = 50
 text = "x₁"
-horizontal_alignment = 1
 
 [node name="rowna" type="Label" parent="HBoxContainer/GridContainer2"]
 layout_mode = 2
@@ -291,10 +290,11 @@ layout_mode = 2
 theme_override_font_sizes/font_size = 50
 text = "["
 
-[node name="Label16" type="Label" parent="HBoxContainer/GridContainer2"]
+[node name="Label16" type="TextEdit" parent="HBoxContainer/GridContainer2"]
 layout_mode = 2
 theme_override_font_sizes/font_size = 50
-text = "3"
+scroll_fit_content_height = true
+scroll_fit_content_width = true
 
 [node name="Label17" type="Label" parent="HBoxContainer/GridContainer2"]
 layout_mode = 2
@@ -306,22 +306,20 @@ layout_mode = 2
 theme_override_font_sizes/font_size = 50
 text = "["
 
-[node name="Label11" type="Label" parent="HBoxContainer/GridContainer2"]
+[node name="Label6" type="Label" parent="HBoxContainer/GridContainer2"]
 layout_mode = 2
 theme_override_font_sizes/font_size = 50
 text = "0"
 
-[node name="Label12" type="Label" parent="HBoxContainer/GridContainer2"]
-layout_mode = 2
-theme_override_font_sizes/font_size = 50
-text = "-1"
-horizontal_alignment = 1
-
-[node name="Label13" type="Label" parent="HBoxContainer/GridContainer2"]
+[node name="Label7" type="Label" parent="HBoxContainer/GridContainer2"]
 layout_mode = 2
 theme_override_font_sizes/font_size = 50
 text = "1"
-vertical_alignment = 1
+
+[node name="Label8" type="Label" parent="HBoxContainer/GridContainer2"]
+layout_mode = 2
+theme_override_font_sizes/font_size = 50
+text = "0"
 
 [node name="Ramka5" type="Label" parent="HBoxContainer/GridContainer2"]
 layout_mode = 2
@@ -337,7 +335,6 @@ text = "*"
 layout_mode = 2
 theme_override_font_sizes/font_size = 50
 text = "x₂"
-horizontal_alignment = 1
 
 [node name="rowna3" type="Label" parent="HBoxContainer/GridContainer2"]
 layout_mode = 2
@@ -349,10 +346,10 @@ layout_mode = 2
 theme_override_font_sizes/font_size = 50
 text = "["
 
-[node name="Label20" type="Label" parent="HBoxContainer/GridContainer2"]
+[node name="Label18" type="Label" parent="HBoxContainer/GridContainer2"]
 layout_mode = 2
 theme_override_font_sizes/font_size = 50
-text = "1"
+text = "-11/2"
 
 [node name="Label19" type="Label" parent="HBoxContainer/GridContainer2"]
 layout_mode = 2
@@ -364,23 +361,20 @@ layout_mode = 2
 theme_override_font_sizes/font_size = 50
 text = "["
 
-[node name="Label6" type="TextEdit" parent="HBoxContainer/GridContainer2"]
+[node name="Label11" type="Label" parent="HBoxContainer/GridContainer2"]
 layout_mode = 2
 theme_override_font_sizes/font_size = 50
-scroll_fit_content_height = true
-scroll_fit_content_width = true
+text = "0"
 
-[node name="Label7" type="TextEdit" parent="HBoxContainer/GridContainer2"]
+[node name="Label12" type="Label" parent="HBoxContainer/GridContainer2"]
 layout_mode = 2
 theme_override_font_sizes/font_size = 50
-scroll_fit_content_height = true
-scroll_fit_content_width = true
+text = "0"
 
-[node name="Label8" type="TextEdit" parent="HBoxContainer/GridContainer2"]
+[node name="Label13" type="Label" parent="HBoxContainer/GridContainer2"]
 layout_mode = 2
 theme_override_font_sizes/font_size = 50
-scroll_fit_content_height = true
-scroll_fit_content_width = true
+text = "1"
 
 [node name="Ramka6" type="Label" parent="HBoxContainer/GridContainer2"]
 layout_mode = 2
@@ -395,7 +389,6 @@ theme_override_font_sizes/font_size = 50
 layout_mode = 2
 theme_override_font_sizes/font_size = 50
 text = "x₃"
-horizontal_alignment = 1
 
 [node name="rowna2" type="Label" parent="HBoxContainer/GridContainer2"]
 layout_mode = 2
@@ -406,11 +399,10 @@ layout_mode = 2
 theme_override_font_sizes/font_size = 50
 text = "["
 
-[node name="Label18" type="TextEdit" parent="HBoxContainer/GridContainer2"]
+[node name="Label20" type="Label" parent="HBoxContainer/GridContainer2"]
 layout_mode = 2
 theme_override_font_sizes/font_size = 50
-scroll_fit_content_height = true
-scroll_fit_content_width = true
+text = "7/2"
 
 [node name="Label21" type="Label" parent="HBoxContainer/GridContainer2"]
 layout_mode = 2

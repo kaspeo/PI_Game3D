@@ -1,18 +1,17 @@
-[gd_scene load_steps=2 format=3 uid="uid://bdodbafjfyx06"]
+[gd_scene load_steps=2 format=3 uid="uid://clsil5bf265us"]
 
-[ext_resource type="Script" uid="uid://dd8wh8cokoqf6" path="res://Scene/Podsceny/Level_5/level_5_4.gd" id="1_yxell"]
+[ext_resource type="Script" uid="uid://dn6w004pi63hq" path="res://Scene/Podsceny/Level_6/level_6_1.gd" id="1_egugd"]
 
-[node name="Level54" type="Control"]
+[node name="Level5_1" type="Control"]
 layout_mode = 3
 anchors_preset = 15
 anchor_right = 1.0
 anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
-script = ExtResource("1_yxell")
+script = ExtResource("1_egugd")
 
 [node name="ColorRect" type="ColorRect" parent="."]
-custom_minimum_size = Vector2(83, 0)
 layout_mode = 1
 anchors_preset = 15
 anchor_right = 1.0
@@ -44,7 +43,6 @@ columns = 11
 layout_mode = 2
 theme_override_font_sizes/font_size = 50
 text = "["
-horizontal_alignment = 1
 
 [node name="Label" type="Label" parent="HBoxContainer/GridContainer1"]
 layout_mode = 2
@@ -55,13 +53,13 @@ horizontal_alignment = 1
 [node name="Label2" type="Label" parent="HBoxContainer/GridContainer1"]
 layout_mode = 2
 theme_override_font_sizes/font_size = 50
-text = "0"
+text = "2"
 horizontal_alignment = 1
 
 [node name="Label3" type="Label" parent="HBoxContainer/GridContainer1"]
 layout_mode = 2
 theme_override_font_sizes/font_size = 50
-text = "0"
+text = "-1"
 horizontal_alignment = 1
 
 [node name="Ramka4" type="Label" parent="HBoxContainer/GridContainer1"]
@@ -95,7 +93,7 @@ horizontal_alignment = 1
 [node name="Label16" type="Label" parent="HBoxContainer/GridContainer1"]
 layout_mode = 2
 theme_override_font_sizes/font_size = 50
-text = "37/2"
+text = "4"
 horizontal_alignment = 1
 
 [node name="Label17" type="Label" parent="HBoxContainer/GridContainer1"]
@@ -113,19 +111,19 @@ horizontal_alignment = 1
 [node name="Label6" type="Label" parent="HBoxContainer/GridContainer1"]
 layout_mode = 2
 theme_override_font_sizes/font_size = 50
-text = "0"
+text = "2"
 horizontal_alignment = 1
 
 [node name="Label7" type="Label" parent="HBoxContainer/GridContainer1"]
 layout_mode = 2
 theme_override_font_sizes/font_size = 50
-text = "1"
+text = "5"
 horizontal_alignment = 1
 
 [node name="Label8" type="Label" parent="HBoxContainer/GridContainer1"]
 layout_mode = 2
 theme_override_font_sizes/font_size = 50
-text = "0"
+text = "1"
 horizontal_alignment = 1
 
 [node name="Ramka5" type="Label" parent="HBoxContainer/GridContainer1"]
@@ -161,7 +159,7 @@ horizontal_alignment = 1
 [node name="Label18" type="Label" parent="HBoxContainer/GridContainer1"]
 layout_mode = 2
 theme_override_font_sizes/font_size = 50
-text = "-11/2"
+text = "13"
 horizontal_alignment = 1
 
 [node name="Label19" type="Label" parent="HBoxContainer/GridContainer1"]
@@ -179,19 +177,19 @@ horizontal_alignment = 1
 [node name="Label11" type="Label" parent="HBoxContainer/GridContainer1"]
 layout_mode = 2
 theme_override_font_sizes/font_size = 50
-text = "0"
+text = "3"
 horizontal_alignment = 1
 
 [node name="Label12" type="Label" parent="HBoxContainer/GridContainer1"]
 layout_mode = 2
 theme_override_font_sizes/font_size = 50
-text = "0"
+text = "8"
 horizontal_alignment = 1
 
 [node name="Label13" type="Label" parent="HBoxContainer/GridContainer1"]
 layout_mode = 2
 theme_override_font_sizes/font_size = 50
-text = "1"
+text = "5"
 horizontal_alignment = 1
 
 [node name="Ramka6" type="Label" parent="HBoxContainer/GridContainer1"]
@@ -225,7 +223,7 @@ horizontal_alignment = 1
 [node name="Label20" type="Label" parent="HBoxContainer/GridContainer1"]
 layout_mode = 2
 theme_override_font_sizes/font_size = 50
-text = "7/2"
+text = "29"
 horizontal_alignment = 1
 
 [node name="Label21" type="Label" parent="HBoxContainer/GridContainer1"]
@@ -238,44 +236,179 @@ horizontal_alignment = 1
 layout_mode = 2
 theme_override_font_sizes/font_size = 180
 text = "→"
+horizontal_alignment = 1
+vertical_alignment = 1
 
 [node name="GridContainer2" type="GridContainer" parent="HBoxContainer"]
 layout_mode = 2
-theme_override_constants/v_separation = 25
-columns = 2
+theme_override_constants/h_separation = 15
+columns = 11
+
+[node name="Ramka" type="Label" parent="HBoxContainer/GridContainer2"]
+layout_mode = 2
+theme_override_font_sizes/font_size = 50
+text = "["
 
 [node name="Label" type="Label" parent="HBoxContainer/GridContainer2"]
 layout_mode = 2
-theme_override_font_sizes/font_size = 30
-text = "x₁="
-
-[node name="TextEdit" type="LineEdit" parent="HBoxContainer/GridContainer2"]
-layout_mode = 2
-theme_override_font_sizes/font_size = 30
-alignment = 1
-max_length = 5
+theme_override_font_sizes/font_size = 50
+text = "1"
+horizontal_alignment = 1
 
 [node name="Label2" type="Label" parent="HBoxContainer/GridContainer2"]
 layout_mode = 2
-theme_override_font_sizes/font_size = 30
-text = "x₂="
-
-[node name="TextEdit2" type="LineEdit" parent="HBoxContainer/GridContainer2"]
-layout_mode = 2
-theme_override_font_sizes/font_size = 30
-alignment = 1
-max_length = 5
+theme_override_font_sizes/font_size = 50
+text = "2"
+horizontal_alignment = 1
 
 [node name="Label3" type="Label" parent="HBoxContainer/GridContainer2"]
 layout_mode = 2
-theme_override_font_sizes/font_size = 30
-text = "x₃="
+theme_override_font_sizes/font_size = 50
+text = "-1"
 
-[node name="TextEdit3" type="LineEdit" parent="HBoxContainer/GridContainer2"]
+[node name="Ramka4" type="Label" parent="HBoxContainer/GridContainer2"]
 layout_mode = 2
-theme_override_font_sizes/font_size = 30
-alignment = 1
-max_length = 5
+theme_override_font_sizes/font_size = 50
+text = "]"
+
+[node name="kropka" type="Label" parent="HBoxContainer/GridContainer2"]
+layout_mode = 2
+theme_override_font_sizes/font_size = 50
+
+[node name="Label4" type="Label" parent="HBoxContainer/GridContainer2"]
+layout_mode = 2
+theme_override_font_sizes/font_size = 50
+text = "x₁"
+
+[node name="rowna" type="Label" parent="HBoxContainer/GridContainer2"]
+layout_mode = 2
+theme_override_font_sizes/font_size = 50
+
+[node name="Label5" type="Label" parent="HBoxContainer/GridContainer2"]
+layout_mode = 2
+theme_override_font_sizes/font_size = 50
+text = "["
+
+[node name="Label16" type="Label" parent="HBoxContainer/GridContainer2"]
+layout_mode = 2
+theme_override_font_sizes/font_size = 50
+text = "4"
+
+[node name="Label17" type="Label" parent="HBoxContainer/GridContainer2"]
+layout_mode = 2
+theme_override_font_sizes/font_size = 50
+text = "]"
+
+[node name="Ramka2" type="Label" parent="HBoxContainer/GridContainer2"]
+layout_mode = 2
+theme_override_font_sizes/font_size = 50
+text = "["
+
+[node name="Label6" type="Label" parent="HBoxContainer/GridContainer2"]
+layout_mode = 2
+theme_override_font_sizes/font_size = 50
+text = "0"
+
+[node name="Label7" type="Label" parent="HBoxContainer/GridContainer2"]
+layout_mode = 2
+theme_override_font_sizes/font_size = 50
+text = "1"
+
+[node name="Label8" type="TextEdit" parent="HBoxContainer/GridContainer2"]
+layout_mode = 2
+theme_override_font_sizes/font_size = 50
+scroll_fit_content_height = true
+scroll_fit_content_width = true
+
+[node name="Ramka5" type="Label" parent="HBoxContainer/GridContainer2"]
+layout_mode = 2
+theme_override_font_sizes/font_size = 50
+text = "]"
+
+[node name="kropka2" type="Label" parent="HBoxContainer/GridContainer2"]
+layout_mode = 2
+theme_override_font_sizes/font_size = 50
+text = "*"
+
+[node name="Label9" type="Label" parent="HBoxContainer/GridContainer2"]
+layout_mode = 2
+theme_override_font_sizes/font_size = 50
+text = "x₂"
+
+[node name="rowna3" type="Label" parent="HBoxContainer/GridContainer2"]
+layout_mode = 2
+theme_override_font_sizes/font_size = 50
+text = "="
+
+[node name="Label10" type="Label" parent="HBoxContainer/GridContainer2"]
+layout_mode = 2
+theme_override_font_sizes/font_size = 50
+text = "["
+
+[node name="Label18" type="TextEdit" parent="HBoxContainer/GridContainer2"]
+layout_mode = 2
+theme_override_font_sizes/font_size = 50
+scroll_fit_content_height = true
+scroll_fit_content_width = true
+
+[node name="Label19" type="Label" parent="HBoxContainer/GridContainer2"]
+layout_mode = 2
+theme_override_font_sizes/font_size = 50
+text = "]"
+
+[node name="Ramka3" type="Label" parent="HBoxContainer/GridContainer2"]
+layout_mode = 2
+theme_override_font_sizes/font_size = 50
+text = "["
+
+[node name="Label11" type="Label" parent="HBoxContainer/GridContainer2"]
+layout_mode = 2
+theme_override_font_sizes/font_size = 50
+text = "0"
+
+[node name="Label12" type="Label" parent="HBoxContainer/GridContainer2"]
+layout_mode = 2
+theme_override_font_sizes/font_size = 50
+text = "0"
+
+[node name="Label13" type="Label" parent="HBoxContainer/GridContainer2"]
+layout_mode = 2
+theme_override_font_sizes/font_size = 50
+text = "1"
+
+[node name="Ramka6" type="Label" parent="HBoxContainer/GridContainer2"]
+layout_mode = 2
+theme_override_font_sizes/font_size = 50
+text = "]"
+
+[node name="kropka3" type="Label" parent="HBoxContainer/GridContainer2"]
+layout_mode = 2
+theme_override_font_sizes/font_size = 50
+
+[node name="Label14" type="Label" parent="HBoxContainer/GridContainer2"]
+layout_mode = 2
+theme_override_font_sizes/font_size = 50
+text = "x₃"
+
+[node name="rowna2" type="Label" parent="HBoxContainer/GridContainer2"]
+layout_mode = 2
+theme_override_font_sizes/font_size = 50
+
+[node name="Label15" type="Label" parent="HBoxContainer/GridContainer2"]
+layout_mode = 2
+theme_override_font_sizes/font_size = 50
+text = "["
+
+[node name="Label20" type="TextEdit" parent="HBoxContainer/GridContainer2"]
+layout_mode = 2
+theme_override_font_sizes/font_size = 50
+scroll_fit_content_height = true
+scroll_fit_content_width = true
+
+[node name="Label21" type="Label" parent="HBoxContainer/GridContainer2"]
+layout_mode = 2
+theme_override_font_sizes/font_size = 50
+text = "]"
 
 [node name="HBoxContainer2" type="HBoxContainer" parent="."]
 layout_mode = 1
