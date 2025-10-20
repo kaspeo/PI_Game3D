@@ -12,9 +12,7 @@ extends CharacterBody3D
 @onready var camera_pivot: Node3D = $SpringArmPivot
 @onready var camera: Camera3D = $SpringArmPivot/SpringArm3D/Camera3D
 @onready var animation_player: AnimationPlayer = $"character-male-e2/AnimationPlayer"
-@onready var label: Label = $UI/Label
-@onready var misja: Label = $UI/PaneMisji/HBoxContainer/Misja
-@onready var status_m: Label = $UI/PaneMisji/HBoxContainer/StatusM
+
 
 var direction = Vector3.ZERO
 var coyote_timer = 0.0
@@ -22,13 +20,7 @@ var jump_buffer_timer = 0.0
 
 func _ready():
 	Input.set_mouse_mode(Input.MOUSE_MODE_CAPTURED)
-	update_label()
-
-func update_label():
-	if Global.current_level == 0:
-		label.text = "Tutorial"
-	else:
-		label.text = "Poziom: %d" % Global.current_level
+	await get_tree().process_frame
 	
 func _process(delta):
 	if not Global.can_move:

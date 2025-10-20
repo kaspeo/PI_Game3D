@@ -38,16 +38,16 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.62, -1.26)
 [node name="MisjaKod" type="Node3D" parent="."]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.42, 0.52, -0.86)
 
-[node name="Ekran3" type="StaticBody3D" parent="MisjaKod"]
+[node name="Level_3" type="StaticBody3D" parent="MisjaKod"]
 script = ExtResource("5_j24hx")
 prompt_message = "Wejdz do komputera"
 
-[node name="Ekran" type="MeshInstance3D" parent="MisjaKod/Ekran3"]
+[node name="Ekran" type="MeshInstance3D" parent="MisjaKod/Level_3"]
 transform = Transform3D(0.356328, 0, 0, 0, 0.344683, -0.0607768, 0, 0.0607768, 0.344683, 0.13, 0.38, 2.38)
 mesh = SubResource("QuadMesh_7daln")
 skeleton = NodePath("../..")
 
-[node name="CollisionShapeEkran" type="CollisionShape3D" parent="MisjaKod/Ekran3"]
+[node name="CollisionShapeEkran" type="CollisionShape3D" parent="MisjaKod/Level_3"]
 transform = Transform3D(0.356328, 0, 0, 0, 0.344683, -0.0607768, 0, 0.0607768, 0.344683, 0.13, 0.369668, 2.4386)
 shape = SubResource("BoxShape3D_bnaxb")
 

@@ -43,5 +43,15 @@ func _on_level_8_pressed() -> void:
 	Global.can_move = true
 	get_tree().change_scene_to_file("res://Scene/level_8.tscn")
 
+func _on_level_9_pressed() -> void:
+	Global.current_level = 9
+	Global.can_move = true
+	get_tree().change_scene_to_file("res://Scene/level_9.tscn")
+
+func _on_level_10_pressed() -> void:
+	Global.current_level = 10
+	Global.can_move = true
+	get_tree().change_scene_to_file("res://Scene/level_10.tscn")
+
 func _on_exit_pressed() -> void:
 	get_tree().change_scene_to_file("res://UI/MainMenu/MainMenu.tscn")

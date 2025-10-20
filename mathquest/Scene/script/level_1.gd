@@ -4,6 +4,7 @@ extends Node3D
 @onready var misja: AcceptDialog = $Dialogi/Misja
 
 func _ready() -> void:
+	Global.current_level == 1
 	show_start_dialog()
 
 func show_start_dialog() -> void:

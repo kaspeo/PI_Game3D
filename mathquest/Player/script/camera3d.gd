@@ -33,8 +33,10 @@ func _process(delta: float) -> void:
 		var distance = player_body.global_position.distance_to(hit_position)
 		if collider is Interactable and distance <= 1.5:
 			prompt.text = collider.get_prompt()
-			if Input.is_action_just_pressed(collider.prompt_input):
-				collider.interact(owner)
+			if collider.prompt_input != null and collider.prompt_input != "":
+				if Input.is_action_just_pressed(collider.prompt_input):
+					collider.interact(owner)
+
 		
 		elif collider is RigidBody3D and grabbed_body == null and distance <= 3.0:
 			prompt.text = "Podnieś przedmiot 

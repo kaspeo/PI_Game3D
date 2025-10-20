@@ -5,7 +5,7 @@
 [ext_resource type="MeshLibrary" uid="uid://486s0eikkj00" path="res://Objects/Room/Tile/WallTiles.tres" id="2_6544n"]
 [ext_resource type="PackedScene" uid="uid://di80n2exvk435" path="res://Player/player.tscn" id="2_au1pm"]
 [ext_resource type="PackedScene" uid="uid://di8w1cu7ciavm" path="res://UI/PauseMenu/pause_menu.tscn" id="3_5exfe"]
-[ext_resource type="Script" uid="uid://bnir0itwux6rm" path="res://Scene/script/double_door.gd" id="4_246mo"]
+[ext_resource type="Script" uid="uid://bnir0itwux6rm" path="res://Objects/Room/double_door.gd" id="4_246mo"]
 [ext_resource type="PackedScene" uid="uid://lgwhiyy5ax3l" path="res://Objects/Room/double_door.tscn" id="5_poeaa"]
 [ext_resource type="Texture2D" uid="uid://cceyp18bj5l6j" path="res://Objects/prototype-kit/Models/GLB format/Textures/colormap.png" id="5_sq6mb"]
 [ext_resource type="PackedScene" uid="uid://b4bcwi462f7li" path="res://Objects/Room/button_small.tscn" id="5_ufara"]
@@ -593,6 +593,7 @@ script = ExtResource("4_246mo")
 [node name="wall-doorway-wide2" type="StaticBody3D" parent="Zadanie_bisekcji/double-door"]
 
 [node name="wall-doorway-wide" type="MeshInstance3D" parent="Zadanie_bisekcji/double-door/wall-doorway-wide2"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.008833885, 0, 0)
 mesh = SubResource("ArrayMesh_i1imf")
 skeleton = NodePath("")
 
@@ -604,7 +605,6 @@ shape = SubResource("ConcavePolygonShape3D_k7iup")
 [node name="door-sliding-double" type="Node3D" parent="Zadanie_bisekcji/double-door/door-sliding-double2"]
 
 [node name="door-right" type="MeshInstance3D" parent="Zadanie_bisekcji/double-door/door-sliding-double2/door-sliding-double"]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 0.04547298)
 mesh = SubResource("ArrayMesh_tkdup")
 skeleton = NodePath("")
 
@@ -614,7 +614,6 @@ skeleton = NodePath("")
 shape = SubResource("ConcavePolygonShape3D_r7m6m")
 
 [node name="door-left" type="MeshInstance3D" parent="Zadanie_bisekcji/double-door/door-sliding-double2/door-sliding-double"]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, -0.04547298)
 mesh = SubResource("ArrayMesh_u2a4d")
 skeleton = NodePath("")
 
@@ -631,6 +630,54 @@ libraries = {
 [node name="AnimationTree" type="AnimationTree" parent="Zadanie_bisekcji/double-door/door-sliding-double2"]
 tree_root = SubResource("AnimationNodeStateMachine_uk24f")
 anim_player = NodePath("../AnimationPlayer")
+
+[node name="double-door2" type="Node3D" parent="Zadanie_bisekcji"]
+transform = Transform3D(-4.37114e-08, 0, -1, 0, 1, 0, 1, 0, -4.37114e-08, 4.89793, 6.49855, -15.965727)
+script = ExtResource("4_246mo")
+
+[node name="wall-doorway-wide2" type="StaticBody3D" parent="Zadanie_bisekcji/double-door2"]
+
+[node name="wall-doorway-wide" type="MeshInstance3D" parent="Zadanie_bisekcji/double-door2/wall-doorway-wide2"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.008833885, 0, 0)
+mesh = SubResource("ArrayMesh_i1imf")
+skeleton = NodePath("")
+
+[node name="CollisionShapeDoorway" type="CollisionShape3D" parent="Zadanie_bisekcji/double-door2/wall-doorway-wide2"]
+shape = SubResource("ConcavePolygonShape3D_k7iup")
+
+[node name="door-sliding-double2" type="Node3D" parent="Zadanie_bisekcji/double-door2"]
+
+[node name="door-sliding-double" type="Node3D" parent="Zadanie_bisekcji/double-door2/door-sliding-double2"]
+
+[node name="door-right" type="MeshInstance3D" parent="Zadanie_bisekcji/double-door2/door-sliding-double2/door-sliding-double"]
+mesh = SubResource("ArrayMesh_tkdup")
+skeleton = NodePath("")
+
+[node name="StaticBody3D" type="StaticBody3D" parent="Zadanie_bisekcji/double-door2/door-sliding-double2/door-sliding-double/door-right"]
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="Zadanie_bisekcji/double-door2/door-sliding-double2/door-sliding-double/door-right/StaticBody3D"]
+shape = SubResource("ConcavePolygonShape3D_r7m6m")
+
+[node name="door-left" type="MeshInstance3D" parent="Zadanie_bisekcji/double-door2/door-sliding-double2/door-sliding-double"]
+mesh = SubResource("ArrayMesh_u2a4d")
+skeleton = NodePath("")
+
+[node name="StaticBody3D" type="StaticBody3D" parent="Zadanie_bisekcji/double-door2/door-sliding-double2/door-sliding-double/door-left"]
+
+[node name="CollisionShape3D2" type="CollisionShape3D" parent="Zadanie_bisekcji/double-door2/door-sliding-double2/door-sliding-double/door-left/StaticBody3D"]
+shape = SubResource("ConcavePolygonShape3D_pxw2u")
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="Zadanie_bisekcji/double-door2/door-sliding-double2"]
+libraries = {
+&"": SubResource("AnimationLibrary_2qre6")
+}
+
+[node name="AnimationTree" type="AnimationTree" parent="Zadanie_bisekcji/double-door2/door-sliding-double2"]
+tree_root = SubResource("AnimationNodeStateMachine_uk24f")
+anim_player = NodePath("../AnimationPlayer")
+
+[node name="ButtonSmall" parent="Zadanie_bisekcji/double-door2" instance=ExtResource("5_ufara")]
+transform = Transform3D(-4.371139e-08, 1, 0, -1, -4.371139e-08, 0, 0, 0, 1, 0.12375355, 0.39265537, -0.61866426)
 
 [node name="Arrows" type="Node3D" parent="Zadanie_bisekcji"]
 
@@ -700,9 +747,6 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 1.68454, 1.68748, -0.845356)
 text = "TAK"
 font_size = 50
 
-[node name="PauseMenu" parent="." instance=ExtResource("3_5exfe")]
-visible = false
-
 [node name="Player" parent="." instance=ExtResource("2_au1pm")]
 transform = Transform3D(0.0218497, 0, -0.999761, 0, 1, 0, 0.999761, 0, 0.0218497, 4.26738, 0.5, 8.56661)
 
@@ -732,15 +776,20 @@ transform = Transform3D(-4.37114e-08, 0, 1, 0, 1, 0, -1, 0, -4.37114e-08, 2.1593
 
 [node name="Start" type="AcceptDialog" parent="Dialogi"]
 auto_translate_mode = 1
+oversampling_override = 1.0
 title = ""
 initial_position = 2
 size = Vector2i(212, 100)
 sharp_corners = true
-dialog_text = "Czas na poziom pierwszy!"
+dialog_text = "Czas na poziom pierwszy!
+Metoda Bisekcji"
 
 [node name="Misja" type="AcceptDialog" parent="Dialogi"]
 title = "Cel poziomu"
 dialog_text = "Poziom przedstawia nie pełne działanie kodu metody biskecji, wstaw skrzynki w odpowiednie miejsca żeby otworzyć drzwi na kolejny poziom."
+
+[node name="PauseMenu" parent="." instance=ExtResource("3_5exfe")]
+visible = false
 
 [connection signal="interacted" from="Door1/ButtonSmall" to="Door1/double-door" method="toggle"]
 [connection signal="interacted" from="Door1/ButtonSmall2" to="Door1/double-door" method="toggle"]
