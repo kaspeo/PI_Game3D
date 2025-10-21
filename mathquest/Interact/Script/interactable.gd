@@ -8,7 +8,7 @@ class_name Interactable
 
 @onready var level_21: Control = $"../Level_21"
 @onready var level_22: Control = $"../../MisjaKod2/Level_22"
-@onready var level_3: Control = $"../../Level3Wykres"
+@onready var level_3: Control = $"../Level3Wykres"
 @onready var level_51: Control = $"../Level51"
 @onready var level_52: Control = $"../../Drzwi2/Level52"
 @onready var level_53: Control = $"../../Drzwi3/Level53"

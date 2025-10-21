@@ -1,0 +1,182 @@
+[gd_scene load_steps=3 format=3 uid="uid://b5uuyxbv1kd5b"]
+
+[ext_resource type="Script" uid="uid://8s1bbyyxleas" path="res://Scene/Podsceny/Level_3/level_3_wykres.gd" id="1_5riig"]
+[ext_resource type="Script" uid="uid://bc4idqgs357rb" path="res://Scene/Podsceny/Level_3/level_3_graph_draw.gd" id="2_3bmyu"]
+
+[node name="Level3Wykres" type="Control"]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+size_flags_horizontal = 4
+script = ExtResource("1_5riig")
+
+[node name="ColorRect" type="ColorRect" parent="."]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+color = Color(0, 0.39215687, 0.9098039, 1)
+
+[node name="Terminal" type="Control" parent="."]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="VBoxContainer3" type="VBoxContainer" parent="Terminal"]
+layout_mode = 1
+anchors_preset = 13
+anchor_left = 0.5
+anchor_right = 0.5
+anchor_bottom = 1.0
+offset_left = -284.5
+offset_right = 284.5
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_constants/separation = 70
+
+[node name="TaskDescription" type="Label" parent="Terminal/VBoxContainer3"]
+layout_mode = 2
+size_flags_horizontal = 4
+size_flags_vertical = 1
+theme_override_font_sizes/font_size = 21
+text = "SYSTEM NUMERYCZNY - METODA SIECZNYCH
+ZADANIE GŁÓWNE: Znajdź miejsce zerowe funkcji f(x) = x² - 4
+OCZEKIWANE ROZWIĄZANIE: x ≈ 2.0
+
+INSTRUKCJA:
+1. Wybierz funkcję z listy rozwijanej
+2. Ustaw przedział początkowy [x₀, x₁] zawierający miejsce zerowe
+3. Dostosuj tolerancję (precyzję)
+4. Kliknij Oblicz aby uruchomić algorytm
+5. Powtarzaj aż znajdziesz rozwiązanie z dokładnością 0.01
+
+WSKAZÓWKI:
+• Dla f(x) = x² - 4 spróbuj przedziału [1.0, 3.0]
+• Jeśli metoda nie zbiega, zmień przedział początkowy"
+horizontal_alignment = 1
+
+[node name="VBoxContainer" type="VBoxContainer" parent="Terminal/VBoxContainer3"]
+layout_mode = 2
+size_flags_horizontal = 4
+size_flags_vertical = 4
+
+[node name="GridContainer" type="GridContainer" parent="Terminal/VBoxContainer3/VBoxContainer"]
+layout_mode = 2
+size_flags_horizontal = 4
+columns = 2
+
+[node name="Funkcja" type="Label" parent="Terminal/VBoxContainer3/VBoxContainer/GridContainer"]
+layout_mode = 2
+theme_override_font_sizes/font_size = 25
+text = "Wybierz funkcje"
+
+[node name="SelectFunc" type="OptionButton" parent="Terminal/VBoxContainer3/VBoxContainer/GridContainer"]
+layout_mode = 2
+theme_override_font_sizes/font_size = 25
+
+[node name="Labx0" type="Label" parent="Terminal/VBoxContainer3/VBoxContainer/GridContainer"]
+layout_mode = 2
+theme_override_font_sizes/font_size = 25
+text = "X0:"
+
+[node name="X0" type="LineEdit" parent="Terminal/VBoxContainer3/VBoxContainer/GridContainer"]
+layout_mode = 2
+theme_override_font_sizes/font_size = 25
+
+[node name="Labx1" type="Label" parent="Terminal/VBoxContainer3/VBoxContainer/GridContainer"]
+layout_mode = 2
+theme_override_font_sizes/font_size = 25
+text = "X1:"
+
+[node name="X1" type="LineEdit" parent="Terminal/VBoxContainer3/VBoxContainer/GridContainer"]
+layout_mode = 2
+theme_override_font_sizes/font_size = 25
+
+[node name="LabTol" type="Label" parent="Terminal/VBoxContainer3/VBoxContainer/GridContainer"]
+layout_mode = 2
+theme_override_font_sizes/font_size = 25
+text = "Tolerancja:"
+
+[node name="Tolerance" type="LineEdit" parent="Terminal/VBoxContainer3/VBoxContainer/GridContainer"]
+layout_mode = 2
+theme_override_font_sizes/font_size = 25
+
+[node name="VBoxContainer2" type="VBoxContainer" parent="Terminal"]
+layout_mode = 0
+offset_right = 487.0
+offset_bottom = 852.0
+
+[node name="CodeDisplay" type="TextEdit" parent="Terminal/VBoxContainer2"]
+layout_mode = 2
+
+[node name="GraphDisplay" type="Control" parent="Terminal/VBoxContainer2"]
+layout_mode = 2
+script = ExtResource("2_3bmyu")
+
+[node name="VBoxContainer" type="VBoxContainer" parent="Terminal"]
+layout_mode = 1
+anchors_preset = 1
+anchor_left = 1.0
+anchor_right = 1.0
+offset_left = -573.0
+offset_bottom = 8.0
+grow_horizontal = 0
+
+[node name="StatusLabel" type="Label" parent="Terminal/VBoxContainer"]
+layout_mode = 2
+
+[node name="OutputDisplay" type="TextEdit" parent="Terminal/VBoxContainer"]
+layout_mode = 2
+
+[node name="HBoxContainer" type="HBoxContainer" parent="Terminal"]
+layout_mode = 1
+anchors_preset = 7
+anchor_left = 0.5
+anchor_top = 1.0
+anchor_right = 0.5
+anchor_bottom = 1.0
+offset_left = -150.0
+offset_top = -63.0
+offset_right = 150.0
+grow_horizontal = 2
+grow_vertical = 0
+
+[node name="Calculation" type="Button" parent="Terminal/HBoxContainer"]
+layout_mode = 2
+size_flags_horizontal = 8
+theme_override_font_sizes/font_size = 40
+text = "Oblicz"
+
+[node name="Reset" type="Button" parent="Terminal/HBoxContainer"]
+layout_mode = 2
+size_flags_horizontal = 8
+theme_override_font_sizes/font_size = 40
+text = "Reset"
+
+[node name="Exit" type="Button" parent="."]
+layout_mode = 1
+anchors_preset = 3
+anchor_left = 1.0
+anchor_top = 1.0
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = -66.0
+offset_top = -31.0
+grow_horizontal = 0
+grow_vertical = 0
+size_flags_horizontal = 4
+theme_override_font_sizes/font_size = 40
+text = "Wyjscie"
+
+[connection signal="item_selected" from="Terminal/VBoxContainer3/VBoxContainer/GridContainer/SelectFunc" to="." method="_on_select_func_item_selected"]
+[connection signal="pressed" from="Terminal/HBoxContainer/Calculation" to="." method="_on_calculation_pressed"]
+[connection signal="pressed" from="Terminal/HBoxContainer/Reset" to="." method="_on_reset_pressed"]
+[connection signal="pressed" from="Exit" to="." method="_on_exit_pressed"]

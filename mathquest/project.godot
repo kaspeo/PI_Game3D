@@ -28,6 +28,8 @@ shapes/collision/shape_color=Color(0.7262233, 3.4172833e-06, 5.7756904e-07, 0.41
 window/size/viewport_width=1920
 window/size/viewport_height=1080
 window/size/mode=2
+window/stretch/mode="canvas_items"
+window/stretch/aspect="keep_height"
 
 [editor_plugins]
 
