@@ -1,6 +1,6 @@
 [gd_scene load_steps=2 format=3 uid="uid://l2domsp5u3mu"]
 
-[ext_resource type="Script" uid="uid://ca67eoccyrt45" path="res://UI/MainMenu/menu_level.gd" id="1_kqtij"]
+[ext_resource type="Script" uid="uid://ca67eoccyrt45" path="res://UI/MainMenu/Script/menu_level.gd" id="1_kqtij"]
 
 [node name="MenuLevel" type="Control"]
 custom_minimum_size = Vector2(1920, 1080)
@@ -75,7 +75,8 @@ layout_mode = 2
 size_flags_horizontal = 3
 theme_override_font_sizes/font_size = 30
 text = "Poziom 4 
-Metoda Newtona–Raphsona"
+Metoda kolejnych przybliżeń i 
+Newtona–Raphsona"
 
 [node name="Label3" type="Label" parent="PanelContainer/VBoxContainer"]
 layout_mode = 2
