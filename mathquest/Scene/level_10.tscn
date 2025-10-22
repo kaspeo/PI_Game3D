@@ -498,7 +498,7 @@ data = {
 metadata/_editor_floor_ = Vector3(0, 4, 0)
 
 [node name="Player" parent="." instance=ExtResource("4_28kw3")]
-transform = Transform3D(0.009581763, 0, 0.9999541, 0, 1, 0, -0.9999541, 0, 0.009581763, -8.678394, 1.719059, 0.017601311)
+transform = Transform3D(0.009581763, 0, 0.9999541, 0, 1, 0, -0.9999541, 0, 0.009581763, -6.602918, 1.719059, 0.017601311)
 
 [node name="DirectionalLight3D" type="OmniLight3D" parent="."]
 transform = Transform3D(-0.54200596, -0.38941008, -0.7447076, 0.024129648, -0.8930074, 0.44939473, -0.84002817, 0.22560509, 0.49341163, -1.460179, 3.9620867, -5.63923)

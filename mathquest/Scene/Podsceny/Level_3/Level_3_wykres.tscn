@@ -47,19 +47,17 @@ layout_mode = 2
 size_flags_horizontal = 4
 size_flags_vertical = 1
 theme_override_font_sizes/font_size = 21
-text = "SYSTEM NUMERYCZNY - METODA SIECZNYCH
-ZADANIE GŁÓWNE: Znajdź miejsce zerowe funkcji f(x) = x² - 4
-OCZEKIWANE ROZWIĄZANIE: x ≈ 2.0
+text = "METODA SIECZNYCH
+ CEL: Popraw Pseudokod o rozwiąż 2 różne funkcjeużywając 
+metody siecznych
 
-INSTRUKCJA:
-1. Wybierz funkcję z listy rozwijanej
-2. Ustaw przedział początkowy [x₀, x₁] zawierający miejsce zerowe
-3. Dostosuj tolerancję (precyzję)
-4. Kliknij Oblicz aby uruchomić algorytm
-5. Powtarzaj aż znajdziesz rozwiązanie z dokładnością 0.01
-
-WSKAZÓWKI:
-• Dla f(x) = x² - 4 spróbuj przedziału [1.0, 3.0]
+KROKI:
+1. Wybierz funkcję z listy
+2. Uzupełnij pseudo-kod po lewej stronie
+3. Wprowadź przedział [x₀, x₁]
+4. Kliknij OBLICZ
+5. Powtórz dla drugiej funkcji
+Wskazówka:
 • Jeśli metoda nie zbiega, zmień przedział początkowy"
 horizontal_alignment = 1
 
@@ -85,7 +83,7 @@ theme_override_font_sizes/font_size = 25
 [node name="Labx0" type="Label" parent="Terminal/VBoxContainer3/VBoxContainer/GridContainer"]
 layout_mode = 2
 theme_override_font_sizes/font_size = 25
-text = "X0:"
+text = "X₀:"
 
 [node name="X0" type="LineEdit" parent="Terminal/VBoxContainer3/VBoxContainer/GridContainer"]
 layout_mode = 2
@@ -94,7 +92,7 @@ theme_override_font_sizes/font_size = 25
 [node name="Labx1" type="Label" parent="Terminal/VBoxContainer3/VBoxContainer/GridContainer"]
 layout_mode = 2
 theme_override_font_sizes/font_size = 25
-text = "X1:"
+text = "X₁:"
 
 [node name="X1" type="LineEdit" parent="Terminal/VBoxContainer3/VBoxContainer/GridContainer"]
 layout_mode = 2
@@ -109,25 +107,72 @@ text = "Tolerancja:"
 layout_mode = 2
 theme_override_font_sizes/font_size = 25
 
-[node name="VBoxContainer2" type="VBoxContainer" parent="Terminal"]
-layout_mode = 0
-offset_right = 487.0
-offset_bottom = 852.0
-
-[node name="CodeDisplay" type="TextEdit" parent="Terminal/VBoxContainer2"]
-layout_mode = 2
-
-[node name="GraphDisplay" type="Control" parent="Terminal/VBoxContainer2"]
+[node name="GraphDisplay" type="Control" parent="Terminal/VBoxContainer3"]
 layout_mode = 2
 script = ExtResource("2_3bmyu")
+
+[node name="VBoxContainer2" type="VBoxContainer" parent="Terminal"]
+layout_mode = 0
+offset_left = 11.0
+offset_right = 587.0
+offset_bottom = 852.0
+
+[node name="PseudocodeContainer" type="VBoxContainer" parent="Terminal/VBoxContainer2"]
+layout_mode = 2
+
+[node name="DragItems" type="GridContainer" parent="Terminal/VBoxContainer2"]
+layout_mode = 2
+theme_override_constants/h_separation = 50
+theme_override_constants/v_separation = 20
+columns = 4
+
+[node name="Drag(f_x1 - f_x0)" type="Button" parent="Terminal/VBoxContainer2/DragItems"]
+layout_mode = 2
+theme_override_font_sizes/font_size = 21
+text = "f_x₁ - f_x₀"
+
+[node name="Drag(x0 = x1)" type="Button" parent="Terminal/VBoxContainer2/DragItems"]
+layout_mode = 2
+theme_override_font_sizes/font_size = 21
+text = "x₀ = x₁"
+
+[node name="Drag(x1 = x2)" type="Button" parent="Terminal/VBoxContainer2/DragItems"]
+layout_mode = 2
+theme_override_font_sizes/font_size = 21
+text = "x₁ = x₂"
+
+[node name="Drag1(error > tolerance)" type="Button" parent="Terminal/VBoxContainer2/DragItems"]
+layout_mode = 2
+theme_override_font_sizes/font_size = 21
+text = "error > tolerance"
+
+[node name="Drag(f_x0 + f_x1)" type="Button" parent="Terminal/VBoxContainer2/DragItems"]
+layout_mode = 2
+theme_override_font_sizes/font_size = 21
+text = "f_x₀ + f_x₁"
+
+[node name="Drag(x0 = x2)" type="Button" parent="Terminal/VBoxContainer2/DragItems"]
+layout_mode = 2
+theme_override_font_sizes/font_size = 21
+text = "x₀ = x₂"
+
+[node name="Drag(x1 = x0)" type="Button" parent="Terminal/VBoxContainer2/DragItems"]
+layout_mode = 2
+theme_override_font_sizes/font_size = 21
+text = "x₁ = x₀"
+
+[node name="Drag2(error < tolerance)" type="Button" parent="Terminal/VBoxContainer2/DragItems"]
+layout_mode = 2
+theme_override_font_sizes/font_size = 21
+text = "error < tolerance"
 
 [node name="VBoxContainer" type="VBoxContainer" parent="Terminal"]
 layout_mode = 1
 anchors_preset = 1
 anchor_left = 1.0
 anchor_right = 1.0
-offset_left = -573.0
-offset_bottom = 8.0
+offset_left = -600.0
+offset_bottom = 35.0
 grow_horizontal = 0
 
 [node name="StatusLabel" type="Label" parent="Terminal/VBoxContainer"]
@@ -177,6 +222,14 @@ theme_override_font_sizes/font_size = 40
 text = "Wyjscie"
 
 [connection signal="item_selected" from="Terminal/VBoxContainer3/VBoxContainer/GridContainer/SelectFunc" to="." method="_on_select_func_item_selected"]
+[connection signal="gui_input" from="Terminal/VBoxContainer2/DragItems/Drag(f_x1 - f_x0)" to="." method="_on_dragf_x_1__f_x_0_gui_input"]
+[connection signal="gui_input" from="Terminal/VBoxContainer2/DragItems/Drag(x0 = x1)" to="." method="_on_dragx_0__x_1_gui_input"]
+[connection signal="gui_input" from="Terminal/VBoxContainer2/DragItems/Drag(x1 = x2)" to="." method="_on_dragx_1__x_2_gui_input"]
+[connection signal="gui_input" from="Terminal/VBoxContainer2/DragItems/Drag1(error > tolerance)" to="." method="_on_dragerror__tolerance_gui_input"]
+[connection signal="gui_input" from="Terminal/VBoxContainer2/DragItems/Drag(f_x0 + f_x1)" to="." method="_on_dragf_x_0__f_x_1_gui_input"]
+[connection signal="gui_input" from="Terminal/VBoxContainer2/DragItems/Drag(x0 = x2)" to="." method="_on_dragx_0__x_2_gui_input"]
+[connection signal="gui_input" from="Terminal/VBoxContainer2/DragItems/Drag(x1 = x0)" to="." method="_on_dragx_1__x_0_gui_input"]
+[connection signal="gui_input" from="Terminal/VBoxContainer2/DragItems/Drag2(error < tolerance)" to="." method="_on_drag_2_error__tolerance_gui_input"]
 [connection signal="pressed" from="Terminal/HBoxContainer/Calculation" to="." method="_on_calculation_pressed"]
 [connection signal="pressed" from="Terminal/HBoxContainer/Reset" to="." method="_on_reset_pressed"]
 [connection signal="pressed" from="Exit" to="." method="_on_exit_pressed"]
