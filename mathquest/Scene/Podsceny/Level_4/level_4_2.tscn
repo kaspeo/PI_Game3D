@@ -1,6 +1,7 @@
-[gd_scene load_steps=2 format=3 uid="uid://bb4d6m8gue8gt"]
+[gd_scene load_steps=3 format=3 uid="uid://bb4d6m8gue8gt"]
 
 [ext_resource type="Script" uid="uid://db4sdpn0p2rl8" path="res://Scene/Podsceny/Level_4/level_4_2.gd" id="1_gpvkc"]
+[ext_resource type="PackedScene" uid="uid://dbfug3g7hwfq4" path="res://Scene/Podsceny/Level_4/level_4_2_wykres.tscn" id="2_ti7jv"]
 
 [node name="Level4_2" type="Control"]
 layout_mode = 3
@@ -20,7 +21,7 @@ grow_horizontal = 2
 grow_vertical = 2
 color = Color(0.21568628, 0.3019608, 0.7019608, 1)
 
-[node name="Panel" type="Control" parent="."]
+[node name="Panel" type="VBoxContainer" parent="."]
 layout_mode = 1
 anchors_preset = 15
 anchor_right = 1.0
@@ -29,51 +30,55 @@ grow_horizontal = 2
 grow_vertical = 2
 
 [node name="MisjaLab" type="Label" parent="Panel"]
-layout_mode = 0
-offset_top = 528.0
-offset_right = 1920.0
-offset_bottom = 551.0
+layout_mode = 2
+theme_override_font_sizes/font_size = 40
+text = "Znajdź pierwiastek funkcji f(x) = x² - 2 metodą Newtona-Raphsona"
+horizontal_alignment = 1
 
-[node name="GuessLab" type="Label" parent="Panel"]
-layout_mode = 0
-offset_top = 528.0
-offset_right = 1920.0
-offset_bottom = 551.0
+[node name="VBoxContainer" type="VBoxContainer" parent="Panel"]
+layout_mode = 2
+size_flags_horizontal = 4
 
-[node name="AttemLab" type="Label" parent="Panel"]
-layout_mode = 0
-offset_top = 528.0
-offset_right = 1920.0
-offset_bottom = 551.0
+[node name="CalcLab" type="Label" parent="Panel/VBoxContainer"]
+layout_mode = 2
+horizontal_alignment = 1
 
-[node name="ScoreLab" type="Label" parent="Panel"]
-layout_mode = 0
-offset_top = 528.0
-offset_right = 1920.0
-offset_bottom = 551.0
+[node name="HBoxContainer" type="HBoxContainer" parent="Panel/VBoxContainer"]
+layout_mode = 2
+alignment = 1
+
+[node name="ButtonA" type="Button" parent="Panel/VBoxContainer/HBoxContainer"]
+layout_mode = 2
+theme_override_font_sizes/font_size = 39
+text = "A"
+
+[node name="ButtonB" type="Button" parent="Panel/VBoxContainer/HBoxContainer"]
+layout_mode = 2
+theme_override_font_sizes/font_size = 39
+text = "B"
+
+[node name="ButtonC" type="Button" parent="Panel/VBoxContainer/HBoxContainer"]
+layout_mode = 2
+theme_override_font_sizes/font_size = 39
+text = "C"
 
 [node name="ResultLab" type="Label" parent="Panel"]
-layout_mode = 0
-offset_top = 528.0
-offset_right = 1920.0
-offset_bottom = 551.0
+layout_mode = 2
+horizontal_alignment = 1
 
-[node name="HBoxContainer" type="HBoxContainer" parent="Panel"]
+[node name="NextIter" type="Button" parent="Panel"]
+layout_mode = 2
+size_flags_horizontal = 4
+theme_override_font_sizes/font_size = 40
+text = "Następna iteracja"
+
+[node name="Level4_2_wykres" parent="." instance=ExtResource("2_ti7jv")]
 layout_mode = 1
-anchors_preset = 12
-anchor_top = 1.0
-anchor_right = 1.0
-anchor_bottom = 1.0
-offset_top = -31.0
-grow_horizontal = 2
-grow_vertical = 0
-
-[node name="Guess" type="LineEdit" parent="Panel/HBoxContainer"]
-layout_mode = 2
-
-[node name="ResultLab" type="Button" parent="Panel/HBoxContainer"]
-layout_mode = 2
-text = "Wynik"
+offset_left = 417.99997
+offset_top = 343.0
+offset_right = 418.0
+offset_bottom = 343.0
+scale = Vector2(0.5902422, 0.67531)
 
 [node name="Exit" type="Button" parent="."]
 layout_mode = 1
@@ -86,4 +91,11 @@ offset_left = -8.0
 offset_top = -8.0
 grow_horizontal = 0
 grow_vertical = 0
+theme_override_font_sizes/font_size = 45
 text = "Wyjscie"
+
+[connection signal="pressed" from="Panel/VBoxContainer/HBoxContainer/ButtonA" to="." method="_on_button_a_pressed"]
+[connection signal="pressed" from="Panel/VBoxContainer/HBoxContainer/ButtonB" to="." method="_on_button_b_pressed"]
+[connection signal="pressed" from="Panel/VBoxContainer/HBoxContainer/ButtonC" to="." method="_on_button_c_pressed"]
+[connection signal="pressed" from="Panel/NextIter" to="." method="_on_next_iter_pressed"]
+[connection signal="pressed" from="Exit" to="." method="_on_exit_pressed"]

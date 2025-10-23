@@ -20,13 +20,11 @@ func f(v: float) -> float:
 	return sin(pow(v, 2) - v + (1.0 / 3.0)) + (v / 2.0)
 
 func _on_oblicz_pressed() -> void:
-	# Resetowanie licznika iteracji przy nowym obliczeniu
 	iteration_count = 0
 	
 	a = input_a.text.to_float()
 	b = input_b.text.to_float()
 
-	# Walidacja przedziału
 	if a >= b:
 		output.text = "❌ Nieprawidłowy przedział (a >= b)"
 		results_label.text = ""
@@ -55,12 +53,10 @@ func _update_interval(use_left: bool) -> void:
 		output.text = "Najpierw oblicz punkt!"
 		return
 
-	# Sprawdzenie warunku zakończenia
 	if abs(f(x)) < tolerance:
 		output.text = "🎉 Rozwiązanie już znalezione: x = %.4f" % x
 		return
 
-	# Sprawdzenie maksymalnej liczby iteracji
 	if iteration_count >= max_iterations:
 		output.text = "⚠️ Osiągnięto maksymalną liczbę iteracji"
 		return
@@ -69,9 +65,7 @@ func _update_interval(use_left: bool) -> void:
 	var fb = f(b)
 	var fx = f(x)
 
-	# Wybór przedziału z walidacją
 	if use_left:
-		# wybór przedziału [a, x]
 		if fa * fx < 0:
 			b = x
 			fb = fx
@@ -81,7 +75,6 @@ func _update_interval(use_left: bool) -> void:
 			output.text = "❌ Zły wybór: przedział [a, x] - brak pierwiastka w tym przedziale"
 			return
 	else:
-		# wybór przedziału [x, b]
 		if fx * fb < 0:
 			a = x
 			fa = fx

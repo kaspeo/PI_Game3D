@@ -1,5 +1,5 @@
 extends Control
-class_name GraphDrawer
+class_name GraphDrawer1
 
 @export var graph_width: float = 850
 @export var graph_height: float = 850

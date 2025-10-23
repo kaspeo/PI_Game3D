@@ -1,7 +1,7 @@
 [gd_scene load_steps=17 format=3 uid="uid://bfwgqvgir4fnq"]
 
-[ext_resource type="Script" uid="uid://cixfxqu8yf0jx" path="res://Scene/script/level_7.gd" id="1_7sdqy"]
 [ext_resource type="MeshLibrary" uid="uid://w6ev0b2ct1rg" path="res://Objects/Room/Tile/FloorTiles.tres" id="1_rj34r"]
+[ext_resource type="Script" uid="uid://b46enlgbpdyue" path="res://Scene/script/level_7.gd" id="1_u3hva"]
 [ext_resource type="Texture2D" uid="uid://bfgjqm6ivawoj" path="res://Texture/Panorama_Mars_01-2048x1024.png" id="2_f57uu"]
 [ext_resource type="MeshLibrary" uid="uid://qy78iggykof6" path="res://Objects/Room/Tile/Space_stationTitles.tres" id="2_louwq"]
 [ext_resource type="PackedScene" uid="uid://di80n2exvk435" path="res://Player/player.tscn" id="2_yiryk"]
@@ -32,7 +32,7 @@ size = Vector3(1.26, 1.38, 1)
 size = Vector3(1, 1, 0.66)
 
 [node name="Level7" type="Node3D"]
-script = ExtResource("1_7sdqy")
+script = ExtResource("1_u3hva")
 
 [node name="WorldEnvironment" type="WorldEnvironment" parent="."]
 environment = SubResource("Environment_u723o")

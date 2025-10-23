@@ -9,7 +9,7 @@ extends Control
 
 signal level_4_1_completed
 
-@onready var graph_drawer: GraphDrawer = $Control
+@onready var graph_drawer: GraphDrawer1 = $Control
 
 var current_result: Dictionary
 

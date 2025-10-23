@@ -1,106 +1,107 @@
 extends Control
 
-# Zmienne gry
-var current_guess = 2.0
-var correct_solution = 2.0946
-var tolerance = 0.01
-var max_attempts = 10
-var attempts = 0
-var game_won = false
-var score = 0
+@onready var misja_lab: Label = $Panel/MisjaLab
+@onready var result_lab: Label = $Panel/ResultLab
+@onready var obliczenia_lab: Label = $Panel/VBoxContainer/CalcLab
+@onready var wykres: GraphDrawer2 = $Level4_2_wykres
+@onready var button_a: Button = $Panel/VBoxContainer/HBoxContainer/ButtonA
+@onready var button_b: Button = $Panel/VBoxContainer/HBoxContainer/ButtonB
+@onready var button_c: Button = $Panel/VBoxContainer/HBoxContainer/ButtonC
+@onready var button_next = $Panel/NextIter
 
-@onready var problem_label = $VBoxContainer/ProblemLabel
-@onready var guess_label = $VBoxContainer/GuessLabel
-@onready var attempts_label = $VBoxContainer/AttemptsLabel
-@onready var result_label = $VBoxContainer/ResultLabel
-@onready var score_label = $VBoxContainer/ScoreLabel
-@onready var guess_input = $VBoxContainer/HBoxContainer/GuessInput
-@onready var calculate_button = $VBoxContainer/HBoxContainer/CalculateButton
-@onready var hint_button = $VBoxContainer/ButtonsContainer/HintButton
-@onready var new_problem_button = $VBoxContainer/ButtonsContainer/NewProblemButton
+var iteration := 0
+var x_current := 1.8
+var f = func(x): return x*x*x - 2*x*x - 5*x + 6
+var df = func(x): return 3*x*x - 4*x - 5
+var correct_x_next := 0.0
+var points := []
+var task_completed := false
 
 func _ready():
-	setup_problem()
+	if wykres and wykres is GraphDrawer2:
+		wykres.function = f
+		wykres.derivative = df
+		wykres.queue_redraw()
+	await get_tree().process_frame
+	_new_iteration()
 
-func setup_problem():
-	problem_label.text = "ZADANIE: Znajdź miejsce zerowe funkcji f(x) = x³ - 2x - 5"
-	guess_label.text = "Aktualne przybliżenie: x = %.1f" % current_guess
-	attempts_label.text = "Pozostało prób: %d" % (max_attempts - attempts)
-	result_label.text = "Wprowadź swoje obliczenia następnego przybliżenia!"
-	score_label.text = "Wynik: %d" % score
-	game_won = false
-	attempts = 0
-	guess_input.text = ""
-	calculate_button.disabled = false
-	hint_button.disabled = false
-
-# Funkcja zadania
-func calculate_fx(x):
-	return x * x * x - 2 * x - 5
-
-# Pochodna
-func calculate_dfx(x):
-	return 3 * x * x - 2
-
-func _on_calculate_button_pressed():
-	if game_won:
+func _new_iteration():
+	if task_completed:
 		return
-	
-	if guess_input.text == "":
-		result_label.text = "Wprowadź wartość!"
+	var fx = f.call(x_current)
+	var dfx = df.call(x_current)
+	correct_x_next = x_current - fx / dfx
+	var iter_data = {"x": x_current, "fx": fx, "dfx": dfx, "x_new": correct_x_next}
+	points.append(iter_data)
+	if wykres and wykres is GraphDrawer2:
+		wykres.iterations_data = points
+		wykres.current_iteration = points.size() - 1
+		wykres.queue_redraw()
+	if abs(fx) < 0.0001:
+		_complete_task()
 		return
-	
-	var user_guess = float(guess_input.text)
-	attempts += 1
-	
-	# Oblicz następne przybliżenie metodą Newtona
-	var fx = calculate_fx(current_guess)
-	var dfx = calculate_dfx(current_guess)
-	
-	if abs(dfx) < 0.0001:
-		result_label.text = "Błąd: pochodna bliska zera! Zacznij od nowego punktu."
+	if iteration >= 8:
+		_complete_task()
 		return
-	
-	var new_guess = current_guess - fx / dfx
-	
-	# Sprawdź jak blisko jest gracz
-	var user_error = abs(user_guess - new_guess)
-	var solution_error = abs(new_guess - correct_solution)
-	
-	current_guess = new_guess
-	guess_label.text = "Aktualne przybliżenie: x = %.4f" % current_guess
-	attempts_label.text = "Pozostało prób: %d" % (max_attempts - attempts)
-	
-	if user_error < tolerance:
-		result_label.text = "✅ DOBRZE! Twoje obliczenia są poprawne!"
-		score += 10
-		score_label.text = "Wynik: %d" % score
-		
-		if solution_error < tolerance:
-			game_won = true
-			result_label.text += "\n🎉 GRATULACJE! Znalazłeś rozwiązanie: x ≈ %.4f" % current_guess
-			score += 50
-			score_label.text = "Wynik: %d" % score
-			calculate_button.disabled = true
-			hint_button.disabled = true
+	iteration += 1
+	var wrong1 = correct_x_next + randf_range(0.2, 0.5) * (1.0 if randi() % 2 == 0 else -1.0)
+	var wrong2 = correct_x_next + randf_range(0.6, 1.0) * (1.0 if randi() % 2 == 0 else -1.0)
+	var options = [correct_x_next, wrong1, wrong2]
+	options.shuffle()
+	button_a.text = "%.4f" % options[0]
+	button_b.text = "%.4f" % options[1]
+	button_c.text = "%.4f" % options[2]
+	misja_lab.text = "Iteracja %d: Znajdź x%d\nAktualny x%d = %.4f" % [iteration, iteration, iteration-1, x_current]
+	obliczenia_lab.text = "Wzór metody Newtona:\nxₙ₊₁ = xₙ - f(xₙ)/f'(xₙ)"
+	result_lab.text = ""
+	button_next.visible = false
+	button_a.disabled = false
+	button_b.disabled = false
+	button_c.disabled = false
+
+func _complete_task():
+	task_completed = true
+	var final_fx = f.call(correct_x_next)
+	misja_lab.text = "🎉 Zadanie ukończone!"
+	obliczenia_lab.text = ""
+	result_lab.text = "Znaleziono pierwiastek: x ≈ %.4f\nf(%.4f) = %.6f\nLiczba iteracji: %d" % [correct_x_next, correct_x_next, final_fx, iteration]
+	button_a.visible = false
+	button_b.visible = false
+	button_c.visible = false
+	button_next.visible = false
+	if wykres and wykres is GraphDrawer2:
+		wykres.queue_redraw()
+
+func _check_answer(selected: float):
+	if task_completed:
+		return
+	if abs(selected - correct_x_next) < 0.01:
+		result_lab.text = "✅ Dobrze! x%d ≈ %.4f" % [iteration, correct_x_next]
+		obliczenia_lab.text = "Wzór metody Newtona:\nxₙ₊₁ = xₙ - f(xₙ)/f'(xₙ)"
 	else:
-		result_label.text = "❌ Spróbuj jeszcze raz. Błąd w obliczeniach."
-		score = max(0, score - 5)
-		score_label.text = "Wynik: %d" % score
-	
-	if attempts >= max_attempts and not game_won:
-		result_label.text = "💀 Koniec prób. Rozwiązanie to x ≈ %.4f" % correct_solution
-		calculate_button.disabled = true
-		hint_button.disabled = true
+		result_lab.text = "❌ Źle! Poprawne: %.4f" % correct_x_next
+		obliczenia_lab.text = "Wzór metody Newtona:\nxₙ₊₁ = xₙ - f(xₙ)/f'(xₙ)"
+	button_a.disabled = true
+	button_b.disabled = true
+	button_c.disabled = true
+	button_next.visible = true
 
-func _on_hint_button_pressed():
-	var fx = calculate_fx(current_guess)
-	var dfx = calculate_dfx(current_guess)
-	result_label.text = "💡 WSKAZÓWKA:\nf(%.2f) = %.2f\nf'(%.2f) = %.2f" % [current_guess, fx, current_guess, dfx]
-	score = max(0, score - 3)
-	score_label.text = "Wynik: %d" % score
+func _on_button_a_pressed():
+	_check_answer(float(button_a.text))
 
-func _on_new_problem_button_pressed():
-	# Nowe zadanie z losowym punktem startowym
-	current_guess = 1.5 + randf() * 2.0
-	setup_problem()
+func _on_button_b_pressed():
+	_check_answer(float(button_b.text))
+
+func _on_button_c_pressed():
+	_check_answer(float(button_c.text))
+
+func _on_next_iter_pressed():
+	if task_completed:
+		return
+	x_current = correct_x_next
+	_new_iteration()
+
+func _on_exit_pressed():
+	visible = false
+	Input.mouse_mode = Input.MOUSE_MODE_CAPTURED
+	Global.can_move = true
