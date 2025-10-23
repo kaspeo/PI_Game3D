@@ -69,14 +69,20 @@ size_flags_vertical = 4
 [node name="StartGame" type="Button" parent="PanelContainer/VBoxContainer"]
 layout_mode = 2
 theme_override_font_sizes/font_size = 48
-text = "Start Game
+text = "Nowa gra
 "
+
+[node name="SelectLevel" type="Button" parent="PanelContainer/VBoxContainer"]
+layout_mode = 2
+theme_override_font_sizes/font_size = 48
+text = "Poziomy"
 
 [node name="Exit" type="Button" parent="PanelContainer/VBoxContainer"]
 layout_mode = 2
 theme_override_font_sizes/font_size = 48
-text = "Exit
+text = "Wyjście z gry
 "
 
 [connection signal="pressed" from="PanelContainer/VBoxContainer/StartGame" to="." method="_on_start_game_pressed"]
+[connection signal="pressed" from="PanelContainer/VBoxContainer/SelectLevel" to="." method="_on_select_level_pressed"]
 [connection signal="pressed" from="PanelContainer/VBoxContainer/Exit" to="." method="_on_exit_pressed"]

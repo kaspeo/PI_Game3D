@@ -9,13 +9,13 @@
 [ext_resource type="Texture2D" uid="uid://bym6w3mjfmepg" path="res://UI/Assets/Crosshair/crosshair001.png" id="7_od3ui"]
 
 [sub_resource type="CapsuleShape3D" id="CapsuleShape3D_gwnis"]
-radius = 0.2
-height = 0.8
+radius = 0.174895
+height = 0.706396
 
 [sub_resource type="SeparationRayShape3D" id="SeparationRayShape3D_k53q1"]
 
 [node name="Player" type="CharacterBody3D"]
-collision_layer = 2
+floor_max_angle = 1.309
 script = ExtResource("1_4ntmi")
 
 [node name="character-male-e2" parent="." instance=ExtResource("1_l8h54")]
@@ -27,7 +27,7 @@ libraries = {
 }
 
 [node name="CollisionShape3D" type="CollisionShape3D" parent="."]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.4, 0)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.00609666, 0.353755, 0.00453138)
 shape = SubResource("CapsuleShape3D_gwnis")
 
 [node name="SpringArmPivot" type="Node3D" parent="."]

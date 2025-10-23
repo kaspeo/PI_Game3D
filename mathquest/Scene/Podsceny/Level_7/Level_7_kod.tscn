@@ -1,0 +1,92 @@
+[gd_scene load_steps=3 format=3 uid="uid://cwdalqtf0aqg5"]
+
+[ext_resource type="Script" uid="uid://to4ddla8ebwa" path="res://Scene/Podsceny/Level_7/level_7_kod.gd" id="1_ca0ul"]
+[ext_resource type="Texture2D" uid="uid://dw8gxwna50x5k" path="res://Texture/Ubuntudesktop.png" id="2_lyhdb"]
+
+[node name="Level7_kod" type="Control"]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("1_ca0ul")
+
+[node name="ColorRect2" type="ColorRect" parent="."]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+color = Color(0, 0, 0, 1)
+
+[node name="ColorRect" type="TextureRect" parent="."]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+scale = Vector2(1.00036, 1.00099)
+texture = ExtResource("2_lyhdb")
+expand_mode = 1
+stretch_mode = 5
+
+[node name="HBoxContainer" type="VBoxContainer" parent="."]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -153.0
+offset_top = -37.0
+offset_right = 153.0
+offset_bottom = 37.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="InfoLabel" type="Label" parent="HBoxContainer"]
+layout_mode = 2
+size_flags_horizontal = 4
+theme_override_font_sizes/font_size = 29
+text = "Podaj poprawną funkcję interpolacji 
+liniowej Lagrange’a dla dwóch punktów."
+
+[node name="CodeEdit" type="TextEdit" parent="HBoxContainer"]
+custom_minimum_size = Vector2(60, 100)
+layout_mode = 2
+theme_override_font_sizes/font_size = 28
+text = "L(x) ="
+placeholder_text = "L(x) ="
+
+[node name="CheckButton" type="Button" parent="HBoxContainer"]
+layout_mode = 2
+size_flags_horizontal = 4
+theme_override_font_sizes/font_size = 32
+text = "Sprawdz
+"
+
+[node name="ResultLabel" type="Label" parent="HBoxContainer"]
+layout_mode = 2
+theme_override_font_sizes/font_size = 34
+
+[node name="Exit" type="Button" parent="."]
+layout_mode = 1
+anchors_preset = 3
+anchor_left = 1.0
+anchor_top = 1.0
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = -92.0
+offset_top = -73.0
+grow_horizontal = 0
+grow_vertical = 0
+scale = Vector2(0.954501, 1)
+theme_override_font_sizes/font_size = 47
+text = "Wyjście
+"
+
+[connection signal="pressed" from="HBoxContainer/CheckButton" to="." method="_on_check_button_pressed"]
+[connection signal="pressed" from="Exit" to="." method="_on_exit_pressed"]

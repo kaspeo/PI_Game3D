@@ -12,9 +12,7 @@ extends CharacterBody3D
 @onready var camera_pivot: Node3D = $SpringArmPivot
 @onready var camera: Camera3D = $SpringArmPivot/SpringArm3D/Camera3D
 @onready var animation_player: AnimationPlayer = $"character-male-e2/AnimationPlayer"
-@onready var label: Label = $UI/Label
-@onready var misja: Label = $UI/PaneMisji/HBoxContainer/Misja
-@onready var status_m: Label = $UI/PaneMisji/HBoxContainer/StatusM
+
 
 var direction = Vector3.ZERO
 var coyote_timer = 0.0
@@ -22,15 +20,17 @@ var jump_buffer_timer = 0.0
 
 func _ready():
 	Input.set_mouse_mode(Input.MOUSE_MODE_CAPTURED)
-	update_label()
-
-func update_label():
-	if Global.current_level == 0:
-		label.text = "Tutorial"
-	else:
-		label.text = "Poziom: %d" % Global.current_level
+	await get_tree().process_frame
 	
 func _process(delta):
+	if not Global.can_move:
+		# Blokujemy całe sterowanie, ale kamera nadal może być np. odblokowana
+		velocity = Vector3.ZERO
+		if is_on_floor() and (not animation_player.is_playing() or animation_player.current_animation != "Idle"):
+			animation_player.play("idle", 0.2)
+		move_and_slide()
+		return
+
 	var input_dir := Input.get_vector("move_left", "move_right", "move_up", "move_down")
 	var move_direction := Vector3(input_dir.x, 0, input_dir.y).normalized()
 	move_direction = move_direction.rotated(Vector3.UP, camera.global_rotation.y)

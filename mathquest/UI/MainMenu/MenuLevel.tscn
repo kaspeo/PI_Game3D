@@ -1,0 +1,183 @@
+[gd_scene load_steps=2 format=3 uid="uid://l2domsp5u3mu"]
+
+[ext_resource type="Script" uid="uid://ca67eoccyrt45" path="res://UI/MainMenu/menu_level.gd" id="1_kqtij"]
+
+[node name="MenuLevel" type="Control"]
+custom_minimum_size = Vector2(1920, 1080)
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("1_kqtij")
+
+[node name="ColorRect" type="ColorRect" parent="."]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+color = Color(0.105327, 0.379555, 0.541179, 1)
+
+[node name="PanelContainer" type="MarginContainer" parent="."]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="VBoxContainer" type="VBoxContainer" parent="PanelContainer"]
+custom_minimum_size = Vector2(900, 0)
+layout_mode = 2
+size_flags_horizontal = 4
+size_flags_vertical = 4
+
+[node name="Label2" type="Label" parent="PanelContainer/VBoxContainer"]
+layout_mode = 2
+theme_override_font_sizes/font_size = 35
+text = "Rozdział 1: Metody znajdowania pierwiastków równań"
+horizontal_alignment = 1
+
+[node name="HBoxContainer" type="HBoxContainer" parent="PanelContainer/VBoxContainer"]
+layout_mode = 2
+
+[node name="Level1" type="Button" parent="PanelContainer/VBoxContainer/HBoxContainer"]
+layout_mode = 2
+size_flags_horizontal = 3
+theme_override_font_sizes/font_size = 30
+text = "Poziom 1 
+Metoda Biskecji
+"
+
+[node name="Level2" type="Button" parent="PanelContainer/VBoxContainer/HBoxContainer"]
+layout_mode = 2
+size_flags_horizontal = 3
+theme_override_font_sizes/font_size = 30
+text = "Poziom 2 
+Metoda Regula Falsi
+"
+
+[node name="HBoxContainer2" type="HBoxContainer" parent="PanelContainer/VBoxContainer"]
+layout_mode = 2
+
+[node name="Level3" type="Button" parent="PanelContainer/VBoxContainer/HBoxContainer2"]
+layout_mode = 2
+size_flags_horizontal = 3
+theme_override_font_sizes/font_size = 30
+text = "Poziom 3
+Metoda Siecznych (Secanta)"
+
+[node name="Level4" type="Button" parent="PanelContainer/VBoxContainer/HBoxContainer2"]
+layout_mode = 2
+size_flags_horizontal = 3
+theme_override_font_sizes/font_size = 30
+text = "Poziom 4 
+Metoda Newtona–Raphsona"
+
+[node name="Label3" type="Label" parent="PanelContainer/VBoxContainer"]
+layout_mode = 2
+theme_override_font_sizes/font_size = 35
+text = "Rozdział 2: Metody rozwiązywania układów równań liniowych"
+horizontal_alignment = 1
+
+[node name="HBoxContainer3" type="HBoxContainer" parent="PanelContainer/VBoxContainer"]
+layout_mode = 2
+
+[node name="Level5" type="Button" parent="PanelContainer/VBoxContainer/HBoxContainer3"]
+layout_mode = 2
+size_flags_horizontal = 3
+theme_override_font_sizes/font_size = 30
+text = "Poziom 5
+Metoda Gaussa"
+
+[node name="Level6" type="Button" parent="PanelContainer/VBoxContainer/HBoxContainer3"]
+layout_mode = 2
+size_flags_horizontal = 3
+theme_override_font_sizes/font_size = 30
+text = "Poziom 6
+Metoda Jordana"
+
+[node name="Label4" type="Label" parent="PanelContainer/VBoxContainer"]
+layout_mode = 2
+theme_override_font_sizes/font_size = 35
+text = "Rozdział 3: Interpolacja i aproksymacja"
+horizontal_alignment = 1
+
+[node name="HBoxContainer4" type="HBoxContainer" parent="PanelContainer/VBoxContainer"]
+layout_mode = 2
+
+[node name="Level7" type="Button" parent="PanelContainer/VBoxContainer/HBoxContainer4"]
+layout_mode = 2
+size_flags_horizontal = 3
+theme_override_font_sizes/font_size = 30
+text = "Poziom 7
+Metoda Lagrange’a"
+
+[node name="Level8" type="Button" parent="PanelContainer/VBoxContainer/HBoxContainer4"]
+layout_mode = 2
+size_flags_horizontal = 3
+theme_override_font_sizes/font_size = 30
+text = "Poziom 8
+Interpolacja Hermita"
+
+[node name="HBoxContainer5" type="HBoxContainer" parent="PanelContainer/VBoxContainer"]
+layout_mode = 2
+size_flags_horizontal = 4
+
+[node name="VBoxContainer" type="VBoxContainer" parent="PanelContainer/VBoxContainer/HBoxContainer5"]
+layout_mode = 2
+
+[node name="Label" type="Label" parent="PanelContainer/VBoxContainer/HBoxContainer5/VBoxContainer"]
+layout_mode = 2
+theme_override_font_sizes/font_size = 35
+text = "Rozdział 4: Całkowanie numeryczne"
+
+[node name="Level9" type="Button" parent="PanelContainer/VBoxContainer/HBoxContainer5/VBoxContainer"]
+layout_mode = 2
+size_flags_horizontal = 3
+theme_override_font_sizes/font_size = 30
+text = "Poziom 9
+Całkowanie numeryczne"
+
+[node name="HBoxContainer7" type="HBoxContainer" parent="PanelContainer/VBoxContainer"]
+layout_mode = 2
+size_flags_horizontal = 4
+
+[node name="VBoxContainer" type="VBoxContainer" parent="PanelContainer/VBoxContainer/HBoxContainer7"]
+layout_mode = 2
+size_flags_horizontal = 4
+
+[node name="Label" type="Label" parent="PanelContainer/VBoxContainer/HBoxContainer7/VBoxContainer"]
+layout_mode = 2
+theme_override_font_sizes/font_size = 35
+text = "Rozdział 5: Podsumowanie"
+
+[node name="Level10" type="Button" parent="PanelContainer/VBoxContainer/HBoxContainer7/VBoxContainer"]
+layout_mode = 2
+size_flags_horizontal = 3
+theme_override_font_sizes/font_size = 30
+text = "Poziom 10
+Końcowy quiz"
+
+[node name="Exit" type="Button" parent="PanelContainer/VBoxContainer"]
+layout_mode = 2
+size_flags_horizontal = 4
+size_flags_vertical = 8
+theme_override_font_sizes/font_size = 48
+text = "Menu główne
+"
+
+[connection signal="pressed" from="PanelContainer/VBoxContainer/HBoxContainer/Level1" to="." method="_on_level_1_pressed"]
+[connection signal="pressed" from="PanelContainer/VBoxContainer/HBoxContainer/Level2" to="." method="_on_level_2_pressed"]
+[connection signal="pressed" from="PanelContainer/VBoxContainer/HBoxContainer2/Level3" to="." method="_on_level_3_pressed"]
+[connection signal="pressed" from="PanelContainer/VBoxContainer/HBoxContainer2/Level4" to="." method="_on_level_4_pressed"]
+[connection signal="pressed" from="PanelContainer/VBoxContainer/HBoxContainer3/Level5" to="." method="_on_level_5_pressed"]
+[connection signal="pressed" from="PanelContainer/VBoxContainer/HBoxContainer3/Level6" to="." method="_on_level_6_pressed"]
+[connection signal="pressed" from="PanelContainer/VBoxContainer/HBoxContainer4/Level7" to="." method="_on_level_7_pressed"]
+[connection signal="pressed" from="PanelContainer/VBoxContainer/HBoxContainer4/Level8" to="." method="_on_level_8_pressed"]
+[connection signal="pressed" from="PanelContainer/VBoxContainer/HBoxContainer5/VBoxContainer/Level9" to="." method="_on_level_9_pressed"]
+[connection signal="pressed" from="PanelContainer/VBoxContainer/HBoxContainer7/VBoxContainer/Level10" to="." method="_on_level_10_pressed"]
+[connection signal="pressed" from="PanelContainer/VBoxContainer/Exit" to="." method="_on_exit_pressed"]
