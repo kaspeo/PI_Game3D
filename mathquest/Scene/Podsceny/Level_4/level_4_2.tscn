@@ -1,0 +1,89 @@
+[gd_scene load_steps=2 format=3 uid="uid://bb4d6m8gue8gt"]
+
+[ext_resource type="Script" uid="uid://db4sdpn0p2rl8" path="res://Scene/Podsceny/Level_4/level_4_2.gd" id="1_gpvkc"]
+
+[node name="Level4_2" type="Control"]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("1_gpvkc")
+
+[node name="ColorRect" type="ColorRect" parent="."]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+color = Color(0.21568628, 0.3019608, 0.7019608, 1)
+
+[node name="Panel" type="Control" parent="."]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="MisjaLab" type="Label" parent="Panel"]
+layout_mode = 0
+offset_top = 528.0
+offset_right = 1920.0
+offset_bottom = 551.0
+
+[node name="GuessLab" type="Label" parent="Panel"]
+layout_mode = 0
+offset_top = 528.0
+offset_right = 1920.0
+offset_bottom = 551.0
+
+[node name="AttemLab" type="Label" parent="Panel"]
+layout_mode = 0
+offset_top = 528.0
+offset_right = 1920.0
+offset_bottom = 551.0
+
+[node name="ScoreLab" type="Label" parent="Panel"]
+layout_mode = 0
+offset_top = 528.0
+offset_right = 1920.0
+offset_bottom = 551.0
+
+[node name="ResultLab" type="Label" parent="Panel"]
+layout_mode = 0
+offset_top = 528.0
+offset_right = 1920.0
+offset_bottom = 551.0
+
+[node name="HBoxContainer" type="HBoxContainer" parent="Panel"]
+layout_mode = 1
+anchors_preset = 12
+anchor_top = 1.0
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_top = -31.0
+grow_horizontal = 2
+grow_vertical = 0
+
+[node name="Guess" type="LineEdit" parent="Panel/HBoxContainer"]
+layout_mode = 2
+
+[node name="ResultLab" type="Button" parent="Panel/HBoxContainer"]
+layout_mode = 2
+text = "Wynik"
+
+[node name="Exit" type="Button" parent="."]
+layout_mode = 1
+anchors_preset = 3
+anchor_left = 1.0
+anchor_top = 1.0
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = -8.0
+offset_top = -8.0
+grow_horizontal = 0
+grow_vertical = 0
+text = "Wyjscie"
