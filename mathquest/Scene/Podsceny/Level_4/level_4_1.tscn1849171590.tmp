@@ -1,0 +1,111 @@
+[gd_scene load_steps=3 format=3 uid="uid://bbxrxjp065ov0"]
+
+[ext_resource type="Script" uid="uid://bepfbgrm5yywk" path="res://Scene/Podsceny/Level_4/level_4_1.gd" id="1_ebsst"]
+[ext_resource type="PackedScene" uid="uid://c5ec4yr6jmug5" path="res://Scene/Podsceny/Level_4/level_4_1_wykres.tscn" id="2_25yk7"]
+
+[node name="Level4_1" type="Control"]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("1_ebsst")
+
+[node name="ColorRect" type="ColorRect" parent="."]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+color = Color(0.24311975, 0.07506918, 0.04963135, 1)
+
+[node name="Control" parent="." instance=ExtResource("2_25yk7")]
+layout_mode = 1
+
+[node name="CanvasLayer" type="CanvasLayer" parent="."]
+
+[node name="Control" type="Control" parent="CanvasLayer"]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="TitleLabel" type="Label" parent="CanvasLayer/Control"]
+layout_mode = 1
+anchors_preset = 5
+anchor_left = 0.5
+anchor_right = 0.5
+offset_left = -20.0
+offset_right = 20.0
+offset_bottom = 23.0
+grow_horizontal = 2
+theme_override_font_sizes/font_size = 34
+text = "Znaleźć pierwiastek równania: x3-x4.5=0"
+
+[node name="HBoxContainer" type="HBoxContainer" parent="CanvasLayer/Control"]
+layout_mode = 1
+anchors_preset = 10
+anchor_right = 1.0
+offset_bottom = 8.0
+grow_horizontal = 2
+
+[node name="ButtonA" type="Button" parent="CanvasLayer/Control/HBoxContainer"]
+layout_mode = 2
+text = "Metoda A x = x³ - 4.5"
+
+[node name="ButtonB" type="Button" parent="CanvasLayer/Control/HBoxContainer"]
+layout_mode = 2
+text = "Metoda B\\nx = 4.5/(x² + 1)"
+
+[node name="ButtonC" type="Button" parent="CanvasLayer/Control/HBoxContainer"]
+layout_mode = 2
+text = "Metoda C\\nx = (x + 4.5)/x²"
+
+[node name="ButtonD" type="Button" parent="CanvasLayer/Control/HBoxContainer"]
+layout_mode = 2
+text = "Metoda D\\nx = √((x + 4.5)/x)"
+
+[node name="ButtonE" type="Button" parent="CanvasLayer/Control/HBoxContainer"]
+layout_mode = 2
+text = "Metoda E\\nx = ³√(x + 4.5)"
+
+[node name="Results" type="Panel" parent="CanvasLayer/Control"]
+layout_mode = 0
+offset_right = 40.0
+offset_bottom = 40.0
+
+[node name="VBoxContainer" type="VBoxContainer" parent="CanvasLayer/Control/Results"]
+layout_mode = 0
+offset_right = 40.0
+offset_bottom = 40.0
+
+[node name="MethodLab" type="Label" parent="CanvasLayer/Control/Results/VBoxContainer"]
+layout_mode = 2
+
+[node name="ConLab" type="Label" parent="CanvasLayer/Control/Results/VBoxContainer"]
+layout_mode = 2
+
+[node name="RootLab" type="Label" parent="CanvasLayer/Control/Results/VBoxContainer"]
+layout_mode = 2
+
+[node name="IterLab" type="Label" parent="CanvasLayer/Control/Results/VBoxContainer"]
+layout_mode = 2
+
+[node name="ErrorLabe" type="Label" parent="CanvasLayer/Control/Results/VBoxContainer"]
+layout_mode = 2
+
+[node name="ClearButton" type="Button" parent="CanvasLayer/Control"]
+layout_mode = 0
+offset_right = 8.0
+offset_bottom = 8.0
+
+[connection signal="pressed" from="CanvasLayer/Control/HBoxContainer/ButtonA" to="." method="_on_button_a_pressed"]
+[connection signal="pressed" from="CanvasLayer/Control/HBoxContainer/ButtonB" to="." method="_on_button_b_pressed"]
+[connection signal="pressed" from="CanvasLayer/Control/HBoxContainer/ButtonC" to="." method="_on_button_c_pressed"]
+[connection signal="pressed" from="CanvasLayer/Control/HBoxContainer/ButtonD" to="." method="_on_button_d_pressed"]
+[connection signal="pressed" from="CanvasLayer/Control/HBoxContainer/ButtonE" to="." method="_on_button_e_pressed"]
+[connection signal="pressed" from="CanvasLayer/Control/ClearButton" to="." method="_on_clear_button_pressed"]

@@ -1,0 +1,150 @@
+[gd_scene load_steps=3 format=3 uid="uid://tkpgn83yaejg"]
+
+[ext_resource type="Script" uid="uid://ddsxgdsasutaw" path="res://Scene/Podsceny/Level_2/level_2_1.gd" id="1_gvajl"]
+[ext_resource type="Script" uid="uid://d2542yqt0ubtf" path="res://Scene/Podsceny/Level_2/level_2_1graph.gd" id="2_uwq7q"]
+
+[node name="Level2_1" type="Control"]
+clip_contents = true
+custom_minimum_size = Vector2(1920, 1080)
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("1_gvajl")
+
+[node name="ColorRect" type="ColorRect" parent="."]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+color = Color(0, 0.247911, 0.223716, 1)
+
+[node name="MarginContainer" type="MarginContainer" parent="."]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_constants/margin_top = 40
+
+[node name="VBoxContainer" type="VBoxContainer" parent="MarginContainer"]
+layout_mode = 2
+
+[node name="HBoxContainer" type="HBoxContainer" parent="MarginContainer/VBoxContainer"]
+layout_mode = 2
+
+[node name="Task Label" type="Label" parent="MarginContainer/VBoxContainer/HBoxContainer"]
+layout_mode = 2
+size_flags_horizontal = 4
+theme_override_font_sizes/font_size = 24
+text = "Znajdź miejsce zerowe funkcji: f(x) = sin(x² - x + 1/3) + x/2 
+korzystając z metody Reguły Falsi.
+Uwaga! Funkcja ma kilka miejsc zerowych blisko siebie. 
+Wybieraj ostrożnie przedział [a,x] lub [x,b]."
+
+[node name="GridContainer" type="GridContainer" parent="MarginContainer/VBoxContainer/HBoxContainer"]
+layout_mode = 2
+size_flags_horizontal = 6
+theme_override_constants/v_separation = 38
+
+[node name="HBoxContainerA" type="HBoxContainer" parent="MarginContainer/VBoxContainer/HBoxContainer/GridContainer"]
+layout_mode = 2
+size_flags_horizontal = 4
+
+[node name="LabelA" type="Label" parent="MarginContainer/VBoxContainer/HBoxContainer/GridContainer/HBoxContainerA"]
+layout_mode = 2
+theme_override_font_sizes/font_size = 26
+text = "a:"
+
+[node name="InputA" type="LineEdit" parent="MarginContainer/VBoxContainer/HBoxContainer/GridContainer/HBoxContainerA"]
+layout_mode = 2
+size_flags_horizontal = 4
+theme_override_font_sizes/font_size = 26
+placeholder_text = "-2"
+
+[node name="HBoxContainerB" type="HBoxContainer" parent="MarginContainer/VBoxContainer/HBoxContainer/GridContainer"]
+layout_mode = 2
+
+[node name="LabelB" type="Label" parent="MarginContainer/VBoxContainer/HBoxContainer/GridContainer/HBoxContainerB"]
+layout_mode = 2
+theme_override_font_sizes/font_size = 26
+text = "b:"
+
+[node name="InputB" type="LineEdit" parent="MarginContainer/VBoxContainer/HBoxContainer/GridContainer/HBoxContainerB"]
+layout_mode = 2
+size_flags_horizontal = 4
+theme_override_font_sizes/font_size = 26
+placeholder_text = "0"
+
+[node name="HBoxContainer2" type="HBoxContainer" parent="MarginContainer/VBoxContainer"]
+layout_mode = 2
+size_flags_horizontal = 4
+size_flags_vertical = 4
+
+[node name="Oblicz" type="Button" parent="MarginContainer/VBoxContainer/HBoxContainer2"]
+layout_mode = 2
+size_flags_horizontal = 4
+theme_override_font_sizes/font_size = 27
+text = "Oblicz
+"
+
+[node name="Exit" type="Button" parent="MarginContainer/VBoxContainer/HBoxContainer2"]
+layout_mode = 2
+size_flags_horizontal = 4
+size_flags_vertical = 4
+theme_override_font_sizes/font_size = 27
+text = "Wyjdź"
+
+[node name="VBoxContainer" type="HBoxContainer" parent="MarginContainer/VBoxContainer"]
+layout_mode = 2
+size_flags_horizontal = 4
+size_flags_vertical = 4
+
+[node name="PrzedzialA" type="Button" parent="MarginContainer/VBoxContainer/VBoxContainer"]
+layout_mode = 2
+theme_override_font_sizes/font_size = 27
+text = "wybór przedziału [a, x]"
+
+[node name="PrzedzialB" type="Button" parent="MarginContainer/VBoxContainer/VBoxContainer"]
+layout_mode = 2
+theme_override_font_sizes/font_size = 27
+text = "wybór przedziału [x, b]"
+
+[node name="HBoxContainer3" type="HBoxContainer" parent="MarginContainer/VBoxContainer"]
+layout_mode = 2
+
+[node name="Wynik" type="Label" parent="MarginContainer/VBoxContainer/HBoxContainer3"]
+layout_mode = 2
+size_flags_vertical = 8
+
+[node name="HBoxContainer4" type="HBoxContainer" parent="MarginContainer/VBoxContainer"]
+layout_mode = 2
+
+[node name="RichTextLabel" type="RichTextLabel" parent="MarginContainer/VBoxContainer/HBoxContainer4"]
+custom_minimum_size = Vector2(1920, 200)
+layout_mode = 2
+size_flags_vertical = 8
+text = "
+"
+
+[node name="PanelContainer" type="PanelContainer" parent="MarginContainer/VBoxContainer"]
+custom_minimum_size = Vector2(0, 550)
+layout_mode = 2
+size_flags_vertical = 10
+
+[node name="Graph" type="Panel" parent="MarginContainer/VBoxContainer/PanelContainer"]
+clip_contents = true
+layout_mode = 2
+script = ExtResource("2_uwq7q")
+scale_x = 200.0
+scale_y = 200.0
+
+[connection signal="pressed" from="MarginContainer/VBoxContainer/HBoxContainer2/Oblicz" to="." method="_on_oblicz_pressed"]
+[connection signal="pressed" from="MarginContainer/VBoxContainer/HBoxContainer2/Exit" to="." method="_on_exit_pressed"]
+[connection signal="pressed" from="MarginContainer/VBoxContainer/VBoxContainer/PrzedzialA" to="." method="_on_przedzial_a_pressed"]
+[connection signal="pressed" from="MarginContainer/VBoxContainer/VBoxContainer/PrzedzialB" to="." method="_on_przedzial_b_pressed"]

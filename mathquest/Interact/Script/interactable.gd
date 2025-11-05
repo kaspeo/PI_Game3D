@@ -4,12 +4,13 @@ class_name Interactable
 
 
 
-@onready var level_2_kod: Control   = $"../../Level2Kod"
-@onready var level_2_dane: Control  = $"../../Level2Dane"
 
 
-@onready var level_21: Control = $"../../Level_21"
-@onready var level_3_wykres: Control = $"../../Level3Wykres"
+@onready var level_21: Control = $"../Level_21"
+@onready var level_22: Control = $"../../MisjaKod2/Level_22"
+@onready var level_3: Control = $"../Level3Wykres"
+@onready var level_41: Control = $"../Level4_1"
+@onready var level_42: Control = $"../../MisjaLevel4_2/Level4_2"
 @onready var level_51: Control = $"../Level51"
 @onready var level_52: Control = $"../../Drzwi2/Level52"
 @onready var level_53: Control = $"../../Drzwi3/Level53"
@@ -40,13 +41,30 @@ func get_prompt():
 
 
 func interact(body):
-	if name =="Level_2":
+	if name =="Level_2_1":
+		Input.mouse_mode = Input.MOUSE_MODE_VISIBLE
 		Global.can_move= false
 		level_21.visible = true
+	
+	elif name =="Level_2_2":
+		Input.mouse_mode = Input.MOUSE_MODE_VISIBLE
+		Global.can_move= false
+		level_22.visible = true
 		
 	elif name =="Level_3":
+		Input.mouse_mode = Input.MOUSE_MODE_VISIBLE
 		Global.can_move= false
-		level_3_wykres.visible = true
+		level_3.visible = true
+		
+	elif name =="Level_4_1":
+		Input.mouse_mode = Input.MOUSE_MODE_VISIBLE
+		Global.can_move= false
+		level_41.visible = true
+	
+	elif name =="Level_4_2":
+		Input.mouse_mode = Input.MOUSE_MODE_VISIBLE
+		Global.can_move= false
+		level_42.visible = true
 		
 	elif name =="Level_5_1":
 		Input.mouse_mode = Input.MOUSE_MODE_VISIBLE
