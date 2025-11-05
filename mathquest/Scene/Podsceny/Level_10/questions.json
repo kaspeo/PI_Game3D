@@ -1,0 +1,122 @@
+[
+  {
+	"text": "Na czym polega metoda bisekcji?",
+	"choices": [
+	  "Na przybliżeniu pochodnej funkcji",
+	  "Na dzieleniu przedziału na pół i wyborze podprzedziału, w którym funkcja zmienia znak",
+	  "Na iteracyjnym różniczkowaniu funkcji",
+      "Na interpolacji punktów funkcji"
+	],
+	"correct": 1
+  },
+  {
+	"text": "Metoda Regula Falsi jest modyfikacją której metody?",
+	"choices": [
+	  "Metody Newtona-Raphsona",
+	  "Metody Gaussa",
+	  "Metody bisekcji",
+      "Metody siecznych"
+	],
+	"correct": 3
+  },
+  {
+	"text": "Metoda siecznych (secant) nie wymaga:",
+	"choices": [
+	  "Znajomości pochodnej funkcji",
+	  "Dwóch punktów początkowych",
+	  "Wartości funkcji w punkcie początkowym",
+      "Iteracyjnych obliczeń"
+	],
+	"correct": 0
+  },
+  {
+	"text": "Metoda Newtona-Raphsona wykorzystuje:",
+	"choices": [
+	  "Wartości funkcji i jej pochodnej",
+	  "Tylko wartości funkcji",
+	  "Przybliżenie funkcji liniowej",
+      "Tabelę interpolacyjną"
+	],
+	"correct": 0
+  },
+  {
+	"text": "Metoda Gaussa służy do:",
+	"choices": [
+	  "Rozwiązywania równań nieliniowych",
+	  "Interpolacji wielomianowej",
+	  "Rozwiązywania układów równań liniowych",
+      "Całkowania numerycznego"
+	],
+	"correct": 2
+  },
+  {
+	"text": "Na czym polega metoda Jordana?",
+	"choices": [
+	  "Na eliminacji zmiennych przez operacje elementarne na wierszach",
+	  "Na aproksymacji funkcji trygonometrycznych",
+	  "Na przybliżaniu całki przez trapezy",
+      "Na znajdowaniu pierwiastków równań"
+	],
+	"correct": 0
+  },
+  {
+	"text": "Wielomian Lagrange’a wykorzystywany jest w:",
+	"choices": [
+	  "Całkowaniu numerycznym",
+	  "Interpolacji funkcji",
+	  "Rozwiązywaniu układów równań",
+      "Metodzie Newtona-Raphsona"
+	],
+	"correct": 1
+  },
+  {
+	"text": "Interpolacja Hermita różni się od interpolacji Lagrange’a tym, że:",
+	"choices": [
+	  "Używa funkcji wykładniczych zamiast wielomianów",
+	  "Uwzględnia wartości pochodnych w punktach węzłowych",
+	  "Nie wymaga znajomości punktów interpolacyjnych",
+      "Działa tylko dla funkcji trygonometrycznych"
+	],
+	"correct": 1
+  },
+  {
+	"text": "Całkowanie numeryczne służy do:",
+	"choices": [
+	  "Rozwiązywania równań różniczkowych",
+	  "Przybliżonego obliczania całek oznaczonych",
+	  "Wyznaczania ekstremów funkcji",
+      "Rozwiązywania układów równań liniowych"
+	],
+	"correct": 1
+  },
+  {
+	"text": "W metodzie trapezów obszar pod wykresem funkcji przybliża się za pomocą:",
+	"choices": [
+	  "Prostokątów",
+	  "Trójkątów prostokątnych",
+	  "Trapezów",
+      "Parabol"
+	],
+	"correct": 2
+  },
+  {
+	"text": "Dokładność metody trapezów rośnie, gdy:",
+	"choices": [
+	  "Zwiększamy długość przedziału całkowania",
+	  "Zwiększamy liczbę podprzedziałów",
+	  "Zmniejszamy liczbę węzłów",
+      "Zastępujemy trapezy prostokątami"
+	],
+	"correct": 1
+  },
+  {
+	"text": "Która z metod jest iteracyjna i wymaga pochodnej funkcji?",
+	"choices": [
+	  "Metoda siecznych",
+	  "Metoda Newtona-Raphsona",
+	  "Metoda Regula Falsi",
+      "Metoda bisekcji"
+	],
+	"correct": 1
+  }
+]
