@@ -1,4 +1,4 @@
-[gd_scene load_steps=11 format=3 uid="uid://c2cpc6sccxyf8"]
+[gd_scene load_steps=12 format=3 uid="uid://c2cpc6sccxyf8"]
 
 [ext_resource type="PackedScene" uid="uid://di80n2exvk435" path="res://Player/player.tscn" id="1_7hckg"]
 [ext_resource type="MeshLibrary" uid="uid://w6ev0b2ct1rg" path="res://Objects/Room/Tile/FloorTiles.tres" id="1_cnfhg"]
@@ -18,6 +18,9 @@ albedo_texture = SubResource("ViewportTexture_7hckg")
 [sub_resource type="PlaneMesh" id="PlaneMesh_gb3q4"]
 resource_local_to_scene = true
 material = SubResource("StandardMaterial3D_k1x2f")
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_p4jvd"]
+size = Vector3(1.76, 1.27, 1.52)
 
 [node name="Level_8" type="Node3D"]
 script = ExtResource("1_k1x2f")
@@ -59,3 +62,12 @@ visible = false
 [node name="DirectionalLight3D" type="DirectionalLight3D" parent="."]
 transform = Transform3D(1, 0, 0, 0, -0.63945264, 0.76883054, 0, -0.76883054, -0.63945264, 0.2378998, 5.87541, -6.86)
 light_color = Color(1, 0.960784, 0.882353, 1)
+
+[node name="ZmianaPoziomu" type="Area3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.8827629, 1.152615, 3.9543023)
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="ZmianaPoziomu"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.0060743093, 0.13499999, 0.15853882)
+shape = SubResource("BoxShape3D_p4jvd")
+
+[connection signal="body_entered" from="ZmianaPoziomu" to="." method="_on_zmiana_poziomu_body_entered"]

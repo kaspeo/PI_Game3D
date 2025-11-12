@@ -1,8 +1,8 @@
 [gd_scene load_steps=2 format=3 uid="uid://b612o2wqmac03"]
 
-[ext_resource type="Script" uid="uid://rhpux48oihr7" path="res://Scene/Podsceny/Level_6/level_6_3.gd" id="1_pnaxf"]
+[ext_resource type="Script" uid="uid://blk2pspgccbms" path="res://Scene/Podsceny/Level_6/level_6_3.gd" id="1_pnaxf"]
 
-[node name="Level53" type="Control"]
+[node name="Level63" type="Control"]
 layout_mode = 3
 anchors_preset = 15
 anchor_right = 1.0

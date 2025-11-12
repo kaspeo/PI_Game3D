@@ -2,6 +2,7 @@ extends Control
 
 @onready var player_ui: Control = get_node("../Player/UI")
 @onready var exittutorial: PanelContainer = $PanelContainer2
+@onready var task_label: Label = $TaskLabel
 
 func _ready() -> void:
 	hide()
@@ -39,5 +40,3 @@ func _on_exit_tutorial_pressed() -> void:
 	Global.current_level=1
 	get_tree().paused = false
 	get_tree().change_scene_to_file("res://Scene/level_1.tscn")
-
-	

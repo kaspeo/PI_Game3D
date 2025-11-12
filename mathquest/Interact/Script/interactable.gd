@@ -3,7 +3,7 @@ class_name Interactable
 
 @export var icon_label: Label3D
 var is_solved := false
-var has_question := false  # Nowa zmienna - czy komputer ma pytanie
+var has_question := false
 
 @onready var level_21: Control = $"../Level_21"
 @onready var level_22: Control = $"../../MisjaKod2/Level_22"
@@ -19,6 +19,9 @@ var has_question := false  # Nowa zmienna - czy komputer ma pytanie
 @onready var level_64: Control = $"../../Drzwi4/Level64"
 @onready var level_7_kod: Control = $"../Level7_kod"
 @onready var level_7_dane: Control = $"../../MisjaDane/Level7Dane"
+@onready var level_9_1: RectangleMethodComputer = $Level91
+@onready var level_9_2: SimpsonMethodComputer = $"../Level_9_2/Level92"
+@onready var level_9_3: MonteCarloMethodComputer = $"../Level_9_3/Level93"
 @onready var level_10_quiz: Control = $"../Level_10_quiz"
 
 @export var quiz_manager_path: NodePath
@@ -31,15 +34,13 @@ signal interacted(body)
 @export var prompt_input = "interact"
 
 func _ready():
-	# Ukryj ikonę na początku, będzie pokazana tylko gdy ma pytanie
 	if icon_label:
 		icon_label.visible = false
 
 func get_prompt():
-	# Dla komputerów Level_10 pokazuj prompt tylko jeśli mają pytanie i nie są rozwiązane
 	if name.begins_with("Level_10_"):
 		if not has_question or is_solved:
-			return ""  # Brak prompta dla komputerów bez pytań lub rozwiązanych
+			return "" 
 	
 	if prompt_input == null or prompt_input == "":
 		return prompt_message
@@ -56,9 +57,8 @@ func get_prompt():
 	return prompt_message + "\n[" + key_name + "]"
 
 func interact(body):
-	# Sprawdź czy komputer ma pytanie i nie jest rozwiązany
 	if name.begins_with("Level_10_") and (not has_question or is_solved):
-		return  # Nie interaktywne jeśli nie ma pytania lub już rozwiązane
+		return  
 	
 	if name == "Level_2_1":
 		Input.mouse_mode = Input.MOUSE_MODE_VISIBLE
@@ -130,6 +130,21 @@ func interact(body):
 		Global.can_move = false
 		level_7_dane.visible = true	
 		
+	elif name == "Level_9_1":
+		Input.mouse_mode = Input.MOUSE_MODE_VISIBLE
+		Global.can_move = false
+		level_9_1.visible = true	
+		
+	elif name == "Level_9_2":
+		Input.mouse_mode = Input.MOUSE_MODE_VISIBLE
+		Global.can_move = false
+		level_9_2.visible = true	
+		
+	elif name == "Level_9_3":
+		Input.mouse_mode = Input.MOUSE_MODE_VISIBLE
+		Global.can_move = false
+		level_9_3.visible = true	
+		
 	elif name.begins_with("Level_10_"):
 		Input.mouse_mode = Input.MOUSE_MODE_VISIBLE
 		Global.can_move = false
@@ -148,32 +163,27 @@ func _update_icon():
 		return
 		
 	if not has_question:
-		# Komputer bez pytania - ukryj ikonę całkowicie
 		icon_label.visible = false
 	else:
 		icon_label.visible = true
 		if is_solved:
-			# Rozwiązany - zielony znaczek
 			icon_label.text = "✔"
 			icon_label.modulate = Color(0, 1, 0)
 		else:
-			# Ma pytanie, nie rozwiązany - czerwony X
 			icon_label.text = "✖"
 			icon_label.modulate = Color(1, 0, 0)
 
-# Ustaw komputer jako mający pytanie
 func set_question_assigned():
 	is_solved = false
 	has_question = true
 	_update_icon()
 
-# Ustaw komputer jako rozwiązany
+
 func mark_solved():
 	is_solved = true
-	has_question = false  # Po rozwiązaniu już nie ma pytania
+	has_question = false
 	_update_icon()
 
-# Ustaw komputer jako nie mający pytania (nieinteraktywny)
 func set_no_question():
 	has_question = false
 	is_solved = false

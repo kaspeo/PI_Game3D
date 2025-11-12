@@ -1,0 +1,114 @@
+[gd_scene load_steps=3 format=3 uid="uid://kbn6r4jbao1p"]
+
+[ext_resource type="Script" uid="uid://bw20nkxta5m7c" path="res://Scene/Podsceny/Level_9/level_9_3.gd" id="1_jnhl4"]
+[ext_resource type="Script" uid="uid://bfco5p0psrlx7" path="res://Scene/Podsceny/Level_9/monte_carlo.gd" id="2_jnhl4"]
+
+[node name="Level93" type="Control"]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("1_jnhl4")
+
+[node name="ColorRect" type="ColorRect" parent="."]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+color = Color(0, 0, 0, 1)
+
+[node name="MonteCarlo" type="ColorRect" parent="."]
+layout_mode = 1
+anchors_preset = -1
+anchor_right = 1.0
+anchor_bottom = 0.787037
+offset_bottom = -342.0
+grow_horizontal = 2
+grow_vertical = 2
+color = Color(0.5335785, 0.52953106, 0.15232381, 1)
+script = ExtResource("2_jnhl4")
+metadata/_edit_use_anchors_ = true
+
+[node name="Panel" type="Panel" parent="."]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_top = 509.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="ResultLabel" type="Label" parent="Panel"]
+layout_mode = 1
+anchors_preset = -1
+offset_right = 535.0
+offset_bottom = 522.0
+theme_override_font_sizes/font_size = 25
+metadata/_edit_use_anchors_ = true
+
+[node name="Vbox" type="VBoxContainer" parent="Panel"]
+layout_mode = 1
+anchors_preset = -1
+anchor_left = 0.4596354
+anchor_top = 0.34440228
+anchor_right = 0.4596354
+anchor_bottom = 0.60910815
+offset_left = -398.5
+offset_top = -137.5
+offset_right = 398.5
+offset_bottom = 137.5
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_constants/separation = 26
+metadata/_edit_use_anchors_ = true
+
+[node name="TaskLabel" type="Label" parent="Panel/Vbox"]
+layout_mode = 2
+theme_override_font_sizes/font_size = 38
+horizontal_alignment = 1
+metadata/_edit_use_anchors_ = true
+
+[node name="PointsSlider" type="HSlider" parent="Panel/Vbox"]
+layout_mode = 2
+size_flags_vertical = 1
+min_value = 100.0
+max_value = 2000.0
+step = 50.0
+value = 100.0
+scrollable = false
+tick_count = 7
+ticks_on_borders = true
+
+[node name="CheckButton" type="Button" parent="Panel/Vbox"]
+layout_mode = 2
+theme_override_font_sizes/font_size = 48
+text = "Oblicz"
+
+[node name="PointsValue" type="Label" parent="Panel/Vbox"]
+layout_mode = 2
+theme_override_font_sizes/font_size = 30
+text = "Ile punktów"
+horizontal_alignment = 1
+
+[node name="Exit" type="Button" parent="Panel/Vbox"]
+layout_mode = 2
+theme_override_font_sizes/font_size = 48
+text = "Wyjdź"
+
+[node name="CalculationLabel" type="Label" parent="Panel"]
+layout_mode = 1
+anchors_preset = 1
+anchor_left = 1.0
+anchor_right = 1.0
+offset_left = -520.0
+offset_bottom = 212.0
+grow_horizontal = 0
+theme_override_font_sizes/font_size = 17
+
+[connection signal="value_changed" from="Panel/Vbox/PointsSlider" to="." method="_on_points_slider_value_changed"]
+[connection signal="pressed" from="Panel/Vbox/CheckButton" to="." method="_on_check_button_pressed"]
+[connection signal="pressed" from="Panel/Vbox/Exit" to="." method="_on_exit_pressed"]
