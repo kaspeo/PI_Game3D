@@ -1,12 +1,11 @@
 extends ColorRect
 
-class_name VolumeOfRevolution
+class_name UniversalFunctionGraph
 
-var current_function: String = "x"
+var current_function: String = ""
 var integration_limits: Array = [0.0, 1.0]
-var visualization_type: String = "disk"
-var num_elements: int = 8
-var rotation_axis: String = "x"  # "x" lub "y"
+var visualization_type: String = "monte_carlo"
+var monte_carlo_points: Array = []
 
 func _ready():
 	queue_redraw()
@@ -16,13 +15,13 @@ func set_problem(func_str: String, limits: Array):
 	integration_limits = limits
 	queue_redraw()
 
-func update_visualization(type: String, count: int):
-	visualization_type = type
-	num_elements = count
+func set_monte_carlo_points(points: Array):
+	monte_carlo_points = points
 	queue_redraw()
 
-func set_rotation_axis(axis: String):
-	rotation_axis = axis
+func update_visualization(type: String, count: int):
+	visualization_type = type
+	# Nie generujemy tutaj punktów - punkty są przekazywane z głównego skryptu
 	queue_redraw()
 
 func _draw():
@@ -30,197 +29,111 @@ func _draw():
 		return
 		
 	var size = get_rect().size
-	var margin = 50
+	var margin = 20
 	var graph_width = size.x - 2 * margin
 	var graph_height = size.y - 2 * margin
 	
 	draw_rect(Rect2(0, 0, size.x, size.y), Color(0.1, 0.1, 0.2))
 	
-	match visualization_type:
-		"disk":
-			draw_disk_method(margin, graph_width, graph_height)
-		"shell":
-			draw_shell_method(margin, graph_width, graph_height)
-		"3d_preview":
-			draw_3d_preview(margin, graph_width, graph_height)
-
-func draw_disk_method(margin: float, width: float, height: float):
-	var size = get_rect().size
+	# Osie
+	draw_line(Vector2(margin, size.y - margin), Vector2(size.x - margin, size.y - margin), Color.WHITE, 2)
+	draw_line(Vector2(margin, margin), Vector2(margin, size.y - margin), Color.WHITE, 2)
+	
 	var a = integration_limits[0]
 	var b = integration_limits[1]
-	var n = num_elements
-	var h = (b - a) / n
+	var scale_x = graph_width / (b - a)
 	
-	# Rysuj oś obrotu
-	if rotation_axis == "x":
-		draw_line(Vector2(margin, size.y/2), Vector2(size.x - margin, size.y/2), Color.YELLOW, 3.0)
-	else:
-		draw_line(Vector2(size.x/2, margin), Vector2(size.x/2, size.y - margin), Color.YELLOW, 3.0)
+	# Skalowanie Y
+	var max_y = find_max_function_value()
+	var min_y = find_min_function_value()
+	var y_range = max_y - min_y
 	
-	# Rysuj dyski/walcowe elementy
-	for i in range(n):
-		var x = a + i * h
-		var x_next = a + (i + 1) * h
-		var radius = evaluate_function(x)
-		var radius_next = evaluate_function(x_next)
+	if y_range == 0:
+		y_range = 1.0
 		
-		if rotation_axis == "x":
-			# Obrót wokół osi X - tworzy dyski
-			var disk_center_x = margin + (x - a) * (width / (b - a))
-			var disk_width = h * (width / (b - a))
-			var disk_radius = abs(radius) * (height / 4.0)
-			
-			# Dysk
-			draw_circle(Vector2(disk_center_x + disk_width/2, size.y/2), disk_radius, Color(1, 0, 0, 0.3))
-			draw_arc(Vector2(disk_center_x + disk_width/2, size.y/2), disk_radius, 0, TAU, 32, Color.RED, 2.0)
-			
-			# Linie łączące z osią
-			draw_line(Vector2(disk_center_x + disk_width/2, size.y/2 - disk_radius), 
-					 Vector2(disk_center_x + disk_width/2, size.y/2 + disk_radius), 
-					 Color(1, 1, 1, 0.5), 1.0)
-		else:
-			# Obrót wokół osi Y - tworzy cylindry/pierścienie
-			var disk_center_y = size.y/2
-			var disk_height = h * (height / (b - a))
-			var disk_radius = abs(radius) * (width / 4.0)
-			
-			# Cylinder
-			draw_arc(Vector2(size.x/2, margin + i * disk_height + disk_height/2), disk_radius, -PI/2, PI/2, 16, Color.BLUE, 2.0)
-			draw_arc(Vector2(size.x/2, margin + i * disk_height + disk_height/2), disk_radius, PI/2, 3*PI/2, 16, Color.BLUE, 2.0)
-			draw_line(Vector2(size.x/2 - disk_radius, margin + i * disk_height), 
-					 Vector2(size.x/2 - disk_radius, margin + i * disk_height + disk_height), 
-					 Color.BLUE, 2.0)
-			draw_line(Vector2(size.x/2 + disk_radius, margin + i * disk_height), 
-					 Vector2(size.x/2 + disk_radius, margin + i * disk_height + disk_height), 
-					 Color.BLUE, 2.0)
+	var scale_y = graph_height / (y_range * 1.2)
+	var y_offset = -min_y
+	
+	# Rysuj funkcję
+	draw_function(scale_x, scale_y, margin, graph_height, y_offset)
+	
+	# Rysuj punkty Monte Carlo
+	draw_monte_carlo_points(scale_x, scale_y, margin, graph_height, y_offset)
 
-func draw_shell_method(margin: float, width: float, height: float):
-	var size = get_rect().size
-	var a = integration_limits[0]
-	var b = integration_limits[1]
-	var n = num_elements
-	var h = (b - a) / n
-	
-	# Rysuj oś obrotu
-	draw_line(Vector2(size.x/2, margin), Vector2(size.x/2, size.y - margin), Color.YELLOW, 3.0)
-	
-	# Rysuj powłoki walcowe
-	for i in range(n):
-		var x = a + i * h
-		var radius = x
-		var height_shell = evaluate_function(x)
-		var shell_thickness = h * (width / (b - a))
-		
-		var shell_center_x = size.x/2
-		var shell_radius = abs(radius) * (width / (b - a)) * 0.8
-		var shell_height = abs(height_shell) * (height / 4.0)
-		
-		# Powłoka walcowa
-		draw_arc(Vector2(shell_center_x, size.y/2), shell_radius, -PI/2, PI/2, 16, Color.GREEN, 2.0)
-		draw_arc(Vector2(shell_center_x, size.y/2), shell_radius + shell_thickness, -PI/2, PI/2, 16, Color.GREEN, 2.0)
-		
-		# Linie łączące
-		draw_line(Vector2(shell_center_x - shell_radius, size.y/2 - shell_height),
-				 Vector2(shell_center_x - shell_radius - shell_thickness, size.y/2 - shell_height),
-				 Color.GREEN, 2.0)
-		draw_line(Vector2(shell_center_x - shell_radius, size.y/2 + shell_height),
-				 Vector2(shell_center_x - shell_radius - shell_thickness, size.y/2 + shell_height),
-				 Color.GREEN, 2.0)
-
-func draw_3d_preview(margin: float, width: float, height: float):
+func draw_function(scale_x: float, scale_y: float, margin: float, graph_height: float, y_offset: float):
 	var size = get_rect().size
 	var a = integration_limits[0]
 	var b = integration_limits[1]
 	
-	# Rysuj prostą wizualizację 3D bryły obrotowej
-	var center = Vector2(size.x/2, size.y/2)
-	var max_radius = 0.0
-	
-	# Znajdź maksymalny promień
-	for i in range(100):
-		var x = a + (b - a) * i / 100.0
-		max_radius = max(max_radius, abs(evaluate_function(x)))
-	
-	var scale = min(width, height) / (max_radius * 2.5)
-	
-	# Rysuj kontur bryły
 	var points = PackedVector2Array()
-	for i in range(72):  # 72 punkty dla gładkiego okręgu
-		var angle = i * TAU / 72
-		var x = a + (b - a) * i / 72.0
-		var radius = evaluate_function(x)
-		var point = center + Vector2(cos(angle) * radius * scale, sin(angle) * radius * scale * 0.7)  # Skalowanie dla efektu 3D
-		points.append(point)
+	for i in range(size.x - 2 * margin):
+		var x_pixel = i + margin
+		var x = a + (i / float(size.x - 2 * margin)) * (b - a)
+		var y = evaluate_function(x)
+		var y_pixel = size.y - margin - ((y + y_offset) * scale_y)
+		points.append(Vector2(x_pixel, y_pixel))
 	
 	if points.size() > 1:
-		draw_polyline(points, Color.CYAN, 3.0)
-	
-	# Rysuj linie przekroju
-	for i in range(0, 72, 12):
-		var angle = i * TAU / 72
-		var x = a + (b - a) * i / 72.0
-		var radius = evaluate_function(x)
-		var point = center + Vector2(cos(angle) * radius * scale, sin(angle) * radius * scale * 0.7)
-		draw_line(center, point, Color(1, 1, 1, 0.3), 1.0)
+		draw_polyline(points, Color.GREEN, 2)
 
-func calculate_volume_disk_method(n: int) -> float:
+func draw_monte_carlo_points(scale_x: float, scale_y: float, margin: float, graph_height: float, y_offset: float):
+	var size = get_rect().size
+	var a = integration_limits[0]
+	var max_y = find_max_function_value()
+	var min_y = find_min_function_value()
+	
+	# Rysuj prostokąt całkowania
+	var rect_top = size.y - margin - ((max_y + y_offset) * scale_y)
+	var rect_bottom = size.y - margin - ((min_y + y_offset) * scale_y)
+	var rect_height = rect_bottom - rect_top
+	
+	draw_rect(Rect2(
+		margin, 
+		rect_top, 
+		size.x - 2 * margin, 
+		rect_height
+	), Color(1, 1, 1, 0.1), false, 2.0)
+	
+	# Rysuj oś X
+	var zero_y = size.y - margin - ((0 + y_offset) * scale_y)
+	draw_line(
+		Vector2(margin, zero_y),
+		Vector2(size.x - margin, zero_y),
+		Color(1, 1, 1, 0.5),
+		1.0
+	)
+	
+	# Rysuj punkty Monte Carlo
+	for point in monte_carlo_points:
+		var x_pixel = margin + (point["x"] - a) * scale_x
+		var y_pixel = size.y - margin - ((point["y"] + y_offset) * scale_y)
+		
+		var color = Color.GREEN if point["inside"] else Color.RED
+		var size_point = 3 if point["inside"] else 2
+		
+		draw_circle(Vector2(x_pixel, y_pixel), size_point, color)
+
+func find_max_function_value() -> float:
 	var a = integration_limits[0]
 	var b = integration_limits[1]
-	var h = (b - a) / n
-	var volume = 0.0
+	var max_val = -INF
 	
-	for i in range(n):
-		var x = a + i * h
-		var radius = evaluate_function(x)
-		volume += PI * radius * radius * h
+	for i in range(100):
+		var x = a + (b - a) * i / 100.0
+		max_val = max(max_val, evaluate_function(x))
 	
-	return volume
+	return max(0.1, max_val)
 
-func calculate_volume_shell_method(n: int) -> float:
+func find_min_function_value() -> float:
 	var a = integration_limits[0]
 	var b = integration_limits[1]
-	var h = (b - a) / n
-	var volume = 0.0
+	var min_val = INF
 	
-	for i in range(n):
-		var x = a + i * h
-		var radius = x
-		var height = evaluate_function(x)
-		volume += 2 * PI * radius * height * h
+	for i in range(100):
+		var x = a + (b - a) * i / 100.0
+		min_val = min(min_val, evaluate_function(x))
 	
-	return volume
-
-func get_volume_info() -> Dictionary:
-	var disk_volume = calculate_volume_disk_method(1000)
-	var shell_volume = calculate_volume_shell_method(1000)
-	
-	return {
-		"disk_method": disk_volume,
-		"shell_method": shell_volume,
-		"exact": calculate_exact_volume()
-	}
-
-func calculate_exact_volume() -> float:
-	# Dla funkcji x^2 od 0 do 1, objętość = π/5
-	if current_function == "x*x" and integration_limits[0] == 0 and integration_limits[1] == 1:
-		return PI / 5.0
-	# Dla funkcji x od 0 do 1, objętość = π/3
-	elif current_function == "x" and integration_limits[0] == 0 and integration_limits[1] == 1:
-		return PI / 3.0
-	else:
-		return calculate_volume_disk_method(5000)  # Wysoka precyzja
+	return min(-0.1, min_val)
 
 func evaluate_function(x: float) -> float:
-	match current_function:
-		"x":
-			return x
-		"x*x":
-			return x * x
-		"sqrt(x)":
-			return sqrt(x)
-		"sin(x)":
-			return sin(x)
-		"1":
-			return 1.0
-		_:
-			return x  # Domyślnie funkcja liniowa
+	return exp(-x/2.0) * sin(3.0 * x) * cos(2.0 * x)

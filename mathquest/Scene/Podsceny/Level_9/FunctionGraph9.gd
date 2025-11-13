@@ -1,6 +1,5 @@
 extends ColorRect
 
-class_name UniversalFunctionGraph
 
 var current_function: String = ""
 var integration_limits: Array = [0.0, 1.0]

@@ -17,6 +17,10 @@ var optimal_range: Array = [16, 20]
 @onready var check_button: Button = $Panel/Vbox/CheckButton
 @onready var calculation_label: Label = $Panel/CalculationLabel
 
+signal level_9_2_completed(function_name: String)
+
+var is_solved := false
+
 func _ready() -> void:
 	setup_ui()
 	exact_solution = calculate_exact_solution()
@@ -29,7 +33,7 @@ func setup_ui():
 	segments_slider.max_value = 50
 	segments_slider.step = 2
 	
-	task_label.text = "Oblicz całkę funkcji e^(-x/2)·sin(3x)·cos(2x) od 0 do 3\nMetodą Simpsona z dokładnością powyżej 99.9%"
+	task_label.text = "METODA SIMPSONA\nOblicz całkę funkcji e^(-x/2)·sin(3x)·cos(2x)\n od 0 do 3\n z dokładnością powyżej 99.9%"
 	
 	update_segments_display()
 
@@ -127,21 +131,24 @@ func show_detailed_calculation():
 		if is_optimal_range:
 			result_text += "✓ Idealnie! Odpowiednia liczba segmentów"
 			result_label.modulate = Color.GREEN
+			if not is_solved:
+				is_solved = true
+				emit_signal("level_9_2_completed", "simpson_method")
 		elif num_segments < optimal_range[0]:
-			result_text += "✓ Dokładność dobra, ale można użyć więcej segmentów dla optymalnej efektywności"
+			result_text += "✓ Dokładność dobra,\n ale można użyć więcej segmentów\n dla optymalnej efektywności"
 			result_label.modulate = Color.YELLOW
 		else:
-			result_text += "✓ Dokładność dobra, ale za dużo segmentów (nieefektywne)"
+			result_text += "✓ Dokładność dobra,\n ale za dużo segmentów\n (nieefektywne)"
 			result_label.modulate = Color.ORANGE
 	else:
 		if num_segments < optimal_range[0]:
-			result_text += "✗ Za mało segmentów - zwiększ liczbę"
+			result_text += "✗ Za mało segmentów  zwiększ liczbę"
 			result_label.modulate = Color.RED
 		elif num_segments > optimal_range[1]:
-			result_text += "✗ Za dużo segmentów - zmniejsz liczbę"
+			result_text += "✗ Za dużo segmentów zmniejsz liczbę"
 			result_label.modulate = Color.ORANGE
 		else:
-			result_text += "✗ Spróbuj innych wartości w zakresie 14-20"
+			result_text += "✗ Spróbuj innych wartości"
 			result_label.modulate = Color.RED
 	
 	result_label.text = result_text

@@ -17,6 +17,9 @@ var optimal_range: Array = [12, 18]
 @onready var check_button: Button = $Panel/Vbox/CheckButton
 @onready var calculation_label: Label = $Panel/CalculationLabel
 
+signal level_9_1_completed(function_name: String)
+var is_solved := false
+
 func _ready() -> void:
 	setup_ui()
 	exact_solution = calculate_exact_solution()
@@ -102,6 +105,9 @@ func show_detailed_calculation():
 	if is_optimal_range and is_high_accuracy:
 		result_text += "Dobrze"
 		result_label.modulate = Color.GREEN
+		if not is_solved:
+			is_solved = true
+			emit_signal("level_9_1_completed", "rectangle_method")
 	elif num_rectangles < optimal_range[0]:
 		result_text += "Za mało"
 		result_label.modulate = Color.RED
