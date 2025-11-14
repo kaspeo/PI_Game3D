@@ -774,24 +774,6 @@ shape = SubResource("BoxShape3D_nctk5")
 [node name="Level64" parent="Drzwi4" instance=ExtResource("12_1oke1")]
 visible = false
 
-[node name="Dialogi" type="Node" parent="."]
-
-[node name="Start" type="AcceptDialog" parent="Dialogi"]
-auto_translate_mode = 1
-oversampling_override = 1.0
-title = ""
-initial_position = 2
-size = Vector2i(212, 100)
-visible = true
-sharp_corners = true
-dialog_text = "Czas na poziom szósty!"
-
-[node name="Misja" type="AcceptDialog" parent="Dialogi"]
-auto_translate_mode = 1
-title = "Cel poziomu"
-size = Vector2i(1107, 100)
-dialog_text = "Kolejne drzwi się zamknęły. Aby otworzyć każde z nich i przejść dalej, rozwiąż układ równań metodą eliminacji Hermita!"
-
 [node name="PauseMenu" parent="." instance=ExtResource("12_aid4e")]
 visible = false
 
@@ -803,5 +785,24 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 6.98, -0.19, -7.65)
 [node name="CollisionShape3D" type="CollisionShape3D" parent="Misja"]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 2.4950004, 1.5949999, -3.2199998)
 shape = SubResource("BoxShape3D_aat1c")
+
+[node name="Dialogi" type="Node" parent="."]
+
+[node name="Start" type="AcceptDialog" parent="Dialogi"]
+auto_translate_mode = 1
+oversampling_override = 1.0
+title = ""
+initial_position = 2
+size = Vector2i(212, 106)
+visible = true
+sharp_corners = true
+dialog_text = "Poziom 6
+Metoda Jordana"
+
+[node name="Misja" type="AcceptDialog" parent="Dialogi"]
+auto_translate_mode = 1
+title = "Cel poziomu"
+size = Vector2i(1107, 100)
+dialog_text = "Kolejne drzwi się zamknęły. Aby otworzyć każde z nich i przejść dalej, rozwiąż układ równań metodą Jordana!"
 
 [connection signal="body_entered" from="Misja" to="." method="_on_misja_body_entered"]

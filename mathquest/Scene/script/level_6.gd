@@ -7,7 +7,7 @@ var popup_shown := false
 func _ready() -> void:
 	start.popup_centered()
 	start.grab_focus()
-	Global.current_level==6
+	Global.current_level=6
 
 
 func show_misja_dialog() -> void:
