@@ -1033,7 +1033,7 @@ initial_position = 2
 size = Vector2i(212, 106)
 visible = true
 sharp_corners = true
-dialog_text = "Poziom 7
+dialog_text = "Poziom 5
 Metoda Gaussa"
 
 [node name="Misja" type="AcceptDialog" parent="Dialogi"]

@@ -1,4 +1,4 @@
-[gd_scene load_steps=17 format=3 uid="uid://bfwgqvgir4fnq"]
+[gd_scene load_steps=18 format=3 uid="uid://bfwgqvgir4fnq"]
 
 [ext_resource type="MeshLibrary" uid="uid://w6ev0b2ct1rg" path="res://Objects/Room/Tile/FloorTiles.tres" id="1_rj34r"]
 [ext_resource type="Script" uid="uid://b46enlgbpdyue" path="res://Scene/script/level_7.gd" id="1_u3hva"]
@@ -23,6 +23,9 @@ sky = SubResource("Sky_05wjw")
 ambient_light_source = 1
 reflected_light_source = 1
 
+[sub_resource type="BoxShape3D" id="BoxShape3D_f57uu"]
+size = Vector3(9.016235, 2.803711, 1)
+
 [sub_resource type="BoxShape3D" id="BoxShape3D_u3hva"]
 size = Vector3(1.26, 1.38, 1)
 
@@ -39,6 +42,14 @@ environment = SubResource("Environment_u723o")
 
 [node name="Player" parent="." instance=ExtResource("2_yiryk")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.03, 0.85, -5.66)
+
+[node name="Misja" type="Area3D" parent="."]
+transform = Transform3D(0.7660444, 0, 0.6427877, 0, 1, 0, -0.6427877, 0, 0.7660444, -0.32756156, 0.1893565, -1.851496)
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="Misja"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.06489217, 1.935312, 1.8101084)
+shape = SubResource("BoxShape3D_f57uu")
+debug_color = Color(0, 0.6, 0.7, 0.42)
 
 [node name="Lights" type="Node3D" parent="."]
 
@@ -181,10 +192,12 @@ initial_position = 2
 size = Vector2i(212, 100)
 visible = true
 sharp_corners = true
-dialog_text = "Czas na poziom siódmy!"
+dialog_text = "Czas na poziom 7!"
 
 [node name="Misja" type="AcceptDialog" parent="Dialogi"]
 auto_translate_mode = 1
 title = "Cel poziomu"
 size = Vector2i(1107, 100)
 dialog_text = "Komputer stacji kosmicznej został zainfekowany wirusem. Napraw funkcję oraz podaj poprawne dane, aby przywrócić jego działanie."
+
+[connection signal="body_entered" from="Misja" to="." method="_on_misja_body_entered"]
