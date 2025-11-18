@@ -1,0 +1,117 @@
+[gd_scene load_steps=3 format=3 uid="uid://mqwmybu2dkjp"]
+
+[ext_resource type="Script" uid="uid://hkv7p0mnrbpk" path="res://Scene/Podsceny/Level_9/level_9_1.gd" id="1_tcu54"]
+[ext_resource type="Script" uid="uid://7cm2ngheymx6" path="res://Scene/Podsceny/Level_9/FunctionGraph9.gd" id="2_ffr6p"]
+
+[node name="Level91" type="Control"]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("1_tcu54")
+
+[node name="ColorRect" type="ColorRect" parent="."]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+color = Color(0, 0, 0, 1)
+
+[node name="Function Graph" type="ColorRect" parent="."]
+layout_mode = 1
+anchors_preset = -1
+anchor_right = 1.0
+anchor_bottom = 0.83148146
+offset_bottom = -342.0
+grow_horizontal = 2
+grow_vertical = 2
+color = Color(0.5335785, 0.52953106, 0.15232381, 1)
+script = ExtResource("2_ffr6p")
+metadata/_edit_use_anchors_ = true
+
+[node name="Panel" type="Panel" parent="."]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_top = 553.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="ResultLabel" type="Label" parent="Panel"]
+layout_mode = 1
+anchors_preset = -1
+anchor_left = 0.028645834
+anchor_right = 0.028645834
+offset_right = 535.0
+offset_bottom = 522.0
+theme_override_font_sizes/font_size = 40
+metadata/_edit_use_anchors_ = true
+
+[node name="Vbox" type="VBoxContainer" parent="Panel"]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -398.5
+offset_top = -137.5
+offset_right = 398.5
+offset_bottom = 137.5
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_constants/separation = 26
+metadata/_edit_use_anchors_ = true
+
+[node name="TaskLabel" type="Label" parent="Panel/Vbox"]
+layout_mode = 2
+theme_override_font_sizes/font_size = 38
+text = "Oblicz całkę funkcji sin(4x)⋅e^(x/2) od 0 do 3
+z dokładnością co najmniej 98%"
+horizontal_alignment = 1
+metadata/_edit_use_anchors_ = true
+
+[node name="RectCountSlider" type="HSlider" parent="Panel/Vbox"]
+layout_mode = 2
+size_flags_vertical = 1
+min_value = 2.0
+max_value = 20.0
+value = 4.0
+scrollable = false
+tick_count = 4
+ticks_on_borders = true
+
+[node name="RectCountValue" type="Label" parent="Panel/Vbox"]
+layout_mode = 2
+theme_override_font_sizes/font_size = 45
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="CheckButton" type="Button" parent="Panel/Vbox"]
+layout_mode = 2
+theme_override_font_sizes/font_size = 48
+text = "Oblicz"
+
+[node name="Exit" type="Button" parent="Panel/Vbox"]
+layout_mode = 2
+theme_override_font_sizes/font_size = 48
+text = "Wyjdz"
+
+[node name="CalculationLabel" type="Label" parent="Panel"]
+layout_mode = 1
+anchors_preset = 1
+anchor_left = 1.0
+anchor_right = 1.0
+offset_left = -548.0
+offset_bottom = 212.0
+grow_horizontal = 0
+theme_override_font_sizes/font_size = 25
+
+[connection signal="value_changed" from="Panel/Vbox/RectCountSlider" to="." method="_on_rect_count_slider_value_changed"]
+[connection signal="pressed" from="Panel/Vbox/CheckButton" to="." method="_on_check_button_pressed"]
+[connection signal="pressed" from="Panel/Vbox/Exit" to="." method="_on_exit_pressed"]

@@ -1,4 +1,4 @@
-[gd_scene load_steps=45 format=4 uid="uid://dt0yjksb0bmbs"]
+[gd_scene load_steps=51 format=4 uid="uid://dt0yjksb0bmbs"]
 
 [ext_resource type="Script" uid="uid://c81y7jd6h152v" path="res://Scene/script/level_10.gd" id="1_8ls38"]
 [ext_resource type="Texture2D" uid="uid://bfgjqm6ivawoj" path="res://Texture/Panorama_Mars_01-2048x1024.png" id="1_fx88e"]
@@ -14,6 +14,10 @@
 [ext_resource type="Shader" uid="uid://i6uap7jd5hg6" path="res://glass.gdshader" id="10_d4kdy"]
 [ext_resource type="MeshLibrary" uid="uid://diqtuc1tsfim" path="res://Objects/Room/Tile/Space_wordTiles.tres" id="11_syxt6"]
 [ext_resource type="PackedScene" uid="uid://c7r53q37cy3ct" path="res://Objects/Room/rocket.tscn" id="12_cwler"]
+[ext_resource type="Script" uid="uid://bgrrstbc22o25" path="res://Scene/Podsceny/Level_10/QuizManager.gd" id="15_i6lle"]
+[ext_resource type="Script" uid="uid://bwrpq2pmugcti" path="res://Interact/Script/interactable.gd" id="15_rocqi"]
+[ext_resource type="PackedScene" uid="uid://b1211a2k74wor" path="res://Scene/Podsceny/Level_10/ekran_3d.tscn" id="16_a8d0p"]
+[ext_resource type="PackedScene" uid="uid://bdyf64e6brnua" path="res://Scene/Podsceny/Level_10/Level_10_quiz.tscn" id="17_0h21f"]
 
 [sub_resource type="PanoramaSkyMaterial" id="PanoramaSkyMaterial_8ls38"]
 panorama = ExtResource("1_fx88e")
@@ -267,6 +271,11 @@ tracks/0/keys = {
 _data = {
 &"alarm": SubResource("Animation_d4kdy")
 }
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_i6lle"]
+size = Vector3(1.223999, 1.5524902, 0.66)
+
+[sub_resource type="QuadMesh" id="QuadMesh_0h21f"]
 
 [node name="Level_10" type="Node3D"]
 script = ExtResource("1_8ls38")
@@ -528,5 +537,384 @@ libraries = {
 }
 autoplay = "alarm"
 playback_auto_capture_ease_type = 2
+
+[node name="Komputer" type="Node3D" parent="."]
+transform = Transform3D(-4.371139e-08, 0, -1, 0, 1, 0, 1, 0, -4.371139e-08, -0.77729034, 0.5896642, -1.5686741)
+script = ExtResource("15_i6lle")
+
+[node name="Ekran_3d" parent="Komputer" instance=ExtResource("16_a8d0p")]
+transform = Transform3D(2.506536, 0, -6.12505e-08, -1.0956417e-07, 1.9106853e-15, -1.4012482, 0, 0.99999994, 2.6773445e-15, 1.9923085, 2.1995177, -9.661554)
+
+[node name="Level_10_1" type="StaticBody3D" parent="Komputer" node_paths=PackedStringArray("icon_label")]
+transform = Transform3D(-1, -8.608464e-09, -8.656673e-08, 8.608463e-09, 0.9804158, -0.19693871, 8.656673e-08, -0.19693871, -0.9804158, -1.8052897, 0.36927372, -1.0709013)
+script = ExtResource("15_rocqi")
+icon_label = NodePath("Label_10_1")
+quiz_manager_path = NodePath("..")
+prompt_message = "Wejdz do komputera"
+
+[node name="CollisionShapeEkran" type="CollisionShape3D" parent="Komputer/Level_10_1"]
+transform = Transform3D(0.35632798, 0, 0, 0, 0.35000026, 0, 0, 0, 0.35000026, 0, 0, 0)
+shape = SubResource("BoxShape3D_i6lle")
+
+[node name="Ekran" type="MeshInstance3D" parent="Komputer/Level_10_1/CollisionShapeEkran"]
+transform = Transform3D(1, 0, 0, 0, 1.0000001, 0, 0, 0, 1.0000001, 0, 0, 0)
+mesh = SubResource("QuadMesh_0h21f")
+skeleton = NodePath("../../..")
+
+[node name="Label_10_1" type="Label3D" parent="Komputer/Level_10_1"]
+transform = Transform3D(-1.0000001, 0, -8.742278e-08, 0, 1.0000001, 0, 8.7422784e-08, 0, -1, 0, 0, 0)
+font_size = 44
+
+[node name="Level_10_2" type="StaticBody3D" parent="Komputer" node_paths=PackedStringArray("icon_label")]
+transform = Transform3D(-1, -8.608464e-09, -8.656673e-08, 8.608463e-09, 0.9804158, -0.19693871, 8.656673e-08, -0.19693871, -0.9804158, -0.5567932, 0.36927372, -1.0709014)
+script = ExtResource("15_rocqi")
+icon_label = NodePath("Label_10_2")
+quiz_manager_path = NodePath("..")
+prompt_message = "Wejdz do komputera"
+
+[node name="CollisionShapeEkran" type="CollisionShape3D" parent="Komputer/Level_10_2"]
+transform = Transform3D(0.35632798, 0, 0, 0, 0.35000026, 0, 0, 0, 0.35000026, 0, 0, 0)
+shape = SubResource("BoxShape3D_i6lle")
+
+[node name="Ekran" type="MeshInstance3D" parent="Komputer/Level_10_2/CollisionShapeEkran"]
+transform = Transform3D(1, 0, 0, 0, 1.0000001, 0, 0, 0, 1.0000001, 0, 0, 0)
+mesh = SubResource("QuadMesh_0h21f")
+skeleton = NodePath("../../..")
+
+[node name="Label_10_2" type="Label3D" parent="Komputer/Level_10_2"]
+transform = Transform3D(-1, 0, -8.742278e-08, 0, 1, 0, 8.742278e-08, 0, -1, 0, 0, 0)
+font_size = 44
+
+[node name="Level_10_3" type="StaticBody3D" parent="Komputer" node_paths=PackedStringArray("icon_label")]
+transform = Transform3D(-1, -8.608464e-09, -8.656673e-08, 8.608463e-09, 0.9804158, -0.19693871, 8.656673e-08, -0.19693871, -0.9804158, 0.68866396, 0.36927372, -1.0709014)
+script = ExtResource("15_rocqi")
+icon_label = NodePath("Label_10_3")
+quiz_manager_path = NodePath("..")
+prompt_message = "Wejdz do komputera"
+
+[node name="CollisionShapeEkran" type="CollisionShape3D" parent="Komputer/Level_10_3"]
+transform = Transform3D(0.35632798, 0, 0, 0, 0.35000026, 0, 0, 0, 0.35000026, 0, 0, 0)
+shape = SubResource("BoxShape3D_i6lle")
+
+[node name="Ekran" type="MeshInstance3D" parent="Komputer/Level_10_3/CollisionShapeEkran"]
+transform = Transform3D(1, 0, 0, 0, 1.0000001, 0, 0, 0, 1.0000001, 0, 0, 0)
+mesh = SubResource("QuadMesh_0h21f")
+skeleton = NodePath("../../..")
+
+[node name="Label_10_3" type="Label3D" parent="Komputer/Level_10_3"]
+transform = Transform3D(-1, 0, -8.742278e-08, 0, 1, 0, 8.742278e-08, 0, -1, 0, 0, 0)
+font_size = 44
+
+[node name="Level_10_4" type="StaticBody3D" parent="Komputer" node_paths=PackedStringArray("icon_label")]
+transform = Transform3D(-1, -8.608464e-09, -8.656673e-08, 8.608463e-09, 0.9804158, -0.19693871, 8.656673e-08, -0.19693871, -0.9804158, 3.1865184, 0.36927372, -1.0709015)
+script = ExtResource("15_rocqi")
+icon_label = NodePath("Label_10_4")
+quiz_manager_path = NodePath("..")
+prompt_message = "Wejdz do komputera"
+
+[node name="CollisionShapeEkran" type="CollisionShape3D" parent="Komputer/Level_10_4"]
+transform = Transform3D(0.35632798, 0, 0, 0, 0.35000026, 0, 0, 0, 0.35000026, 0, 0, 0)
+shape = SubResource("BoxShape3D_i6lle")
+
+[node name="Ekran" type="MeshInstance3D" parent="Komputer/Level_10_4/CollisionShapeEkran"]
+transform = Transform3D(1, 0, 0, 0, 1.0000001, 0, 0, 0, 1.0000001, 0, 0, 0)
+mesh = SubResource("QuadMesh_0h21f")
+skeleton = NodePath("../../..")
+
+[node name="Label_10_4" type="Label3D" parent="Komputer/Level_10_4"]
+text = "
+"
+font_size = 44
+
+[node name="Level_10_5" type="StaticBody3D" parent="Komputer" node_paths=PackedStringArray("icon_label")]
+transform = Transform3D(-1, -8.608464e-09, -8.656673e-08, 8.608463e-09, 0.9804158, -0.19693871, 8.656673e-08, -0.19693871, -0.9804158, 4.4477835, 0.36927372, -1.0709016)
+script = ExtResource("15_rocqi")
+icon_label = NodePath("Label_10_5")
+quiz_manager_path = NodePath("..")
+prompt_message = "Wejdz do komputera"
+
+[node name="CollisionShapeEkran" type="CollisionShape3D" parent="Komputer/Level_10_5"]
+transform = Transform3D(0.35632798, 0, 0, 0, 0.35000026, 0, 0, 0, 0.35000026, 0, 0, 0)
+shape = SubResource("BoxShape3D_i6lle")
+
+[node name="Ekran" type="MeshInstance3D" parent="Komputer/Level_10_5/CollisionShapeEkran"]
+transform = Transform3D(1, 0, 0, 0, 1.0000001, 0, 0, 0, 1.0000001, 0, 0, 0)
+mesh = SubResource("QuadMesh_0h21f")
+skeleton = NodePath("../../..")
+
+[node name="Label_10_5" type="Label3D" parent="Komputer/Level_10_5"]
+transform = Transform3D(-1, 0, -8.742278e-08, 0, 1, 0, 8.742278e-08, 0, -1, 0, 0, 0)
+font_size = 44
+
+[node name="Level_10_6" type="StaticBody3D" parent="Komputer" node_paths=PackedStringArray("icon_label")]
+transform = Transform3D(-1, -8.608464e-09, -8.656673e-08, 8.608463e-09, 0.9804158, -0.19693871, 8.656673e-08, -0.19693871, -0.9804158, 5.68832, 0.36927372, -1.0709016)
+script = ExtResource("15_rocqi")
+icon_label = NodePath("Label_10_6")
+quiz_manager_path = NodePath("..")
+prompt_message = "Wejdz do komputera"
+
+[node name="CollisionShapeEkran" type="CollisionShape3D" parent="Komputer/Level_10_6"]
+transform = Transform3D(0.35632798, 0, 0, 0, 0.35000026, 0, 0, 0, 0.35000026, 0, 0, 0)
+shape = SubResource("BoxShape3D_i6lle")
+
+[node name="Ekran" type="MeshInstance3D" parent="Komputer/Level_10_6/CollisionShapeEkran"]
+transform = Transform3D(1, 0, 0, 0, 1.0000001, 0, 0, 0, 1.0000001, 0, 0, 0)
+mesh = SubResource("QuadMesh_0h21f")
+skeleton = NodePath("../../..")
+
+[node name="Label_10_6" type="Label3D" parent="Komputer/Level_10_6"]
+transform = Transform3D(-1, 0, -8.742278e-08, 0, 1, 0, 8.742278e-08, 0, -1, 0, 0, 0)
+font_size = 44
+
+[node name="Level_10_7" type="StaticBody3D" parent="Komputer" node_paths=PackedStringArray("icon_label")]
+transform = Transform3D(-1, -8.608464e-09, -8.656673e-08, 8.608463e-09, 0.9804158, -0.19693871, 8.656673e-08, -0.19693871, -0.9804158, 5.68832, 0.36927372, -3.320535)
+script = ExtResource("15_rocqi")
+icon_label = NodePath("Label_10_7")
+quiz_manager_path = NodePath("..")
+prompt_message = "Wejdz do komputera"
+
+[node name="CollisionShapeEkran" type="CollisionShape3D" parent="Komputer/Level_10_7"]
+transform = Transform3D(0.35632798, 0, 0, 0, 0.35000026, 0, 0, 0, 0.35000026, 0, 0, 0)
+shape = SubResource("BoxShape3D_i6lle")
+
+[node name="Ekran" type="MeshInstance3D" parent="Komputer/Level_10_7/CollisionShapeEkran"]
+transform = Transform3D(1, 0, 0, 0, 1.0000001, 0, 0, 0, 1.0000001, 0, 0, 0)
+mesh = SubResource("QuadMesh_0h21f")
+skeleton = NodePath("../../..")
+
+[node name="Label_10_7" type="Label3D" parent="Komputer/Level_10_7"]
+transform = Transform3D(-1, 0, -8.742278e-08, 0, 1, 0, 8.742278e-08, 0, -1, 0, 0, 0)
+font_size = 44
+
+[node name="Level_10_8" type="StaticBody3D" parent="Komputer" node_paths=PackedStringArray("icon_label")]
+transform = Transform3D(-1, -8.608464e-09, -8.656673e-08, 8.608463e-09, 0.9804158, -0.19693871, 8.656673e-08, -0.19693871, -0.9804158, 4.4474993, 0.36927372, -3.320535)
+script = ExtResource("15_rocqi")
+icon_label = NodePath("Label_10_8")
+quiz_manager_path = NodePath("..")
+prompt_message = "Wejdz do komputera"
+
+[node name="CollisionShapeEkran" type="CollisionShape3D" parent="Komputer/Level_10_8"]
+transform = Transform3D(0.35632798, 0, 0, 0, 0.35000026, 0, 0, 0, 0.35000026, 0, 0, 0)
+shape = SubResource("BoxShape3D_i6lle")
+
+[node name="Ekran" type="MeshInstance3D" parent="Komputer/Level_10_8/CollisionShapeEkran"]
+transform = Transform3D(1, 0, 0, 0, 1.0000001, 0, 0, 0, 1.0000001, 0, 0, 0)
+mesh = SubResource("QuadMesh_0h21f")
+skeleton = NodePath("../../..")
+
+[node name="Label_10_8" type="Label3D" parent="Komputer/Level_10_8"]
+transform = Transform3D(-1, 0, -8.742278e-08, 0, 1, 0, 8.742278e-08, 0, -1, 0, 0, 0)
+font_size = 44
+
+[node name="Level_10_9" type="StaticBody3D" parent="Komputer" node_paths=PackedStringArray("icon_label")]
+transform = Transform3D(-1, -8.608464e-09, -8.656673e-08, 8.608463e-09, 0.9804158, -0.19693871, 8.656673e-08, -0.19693871, -0.9804158, 3.194519, 0.36927372, -3.3205347)
+script = ExtResource("15_rocqi")
+icon_label = NodePath("Label_10_9")
+quiz_manager_path = NodePath("..")
+prompt_message = "Wejdz do komputera"
+
+[node name="CollisionShapeEkran" type="CollisionShape3D" parent="Komputer/Level_10_9"]
+transform = Transform3D(0.35632798, 0, 0, 0, 0.35000026, 0, 0, 0, 0.35000026, 0, 0, 0)
+shape = SubResource("BoxShape3D_i6lle")
+
+[node name="Ekran" type="MeshInstance3D" parent="Komputer/Level_10_9/CollisionShapeEkran"]
+transform = Transform3D(1, 0, 0, 0, 1.0000001, 0, 0, 0, 1.0000001, 0, 0, 0)
+mesh = SubResource("QuadMesh_0h21f")
+skeleton = NodePath("../../..")
+
+[node name="Label_10_9" type="Label3D" parent="Komputer/Level_10_9"]
+transform = Transform3D(-1, 0, -8.742278e-08, 0, 1, 0, 8.742278e-08, 0, -1, 0, 0, 0)
+text = "
+"
+font_size = 44
+
+[node name="Level_10_10" type="StaticBody3D" parent="Komputer" node_paths=PackedStringArray("icon_label")]
+transform = Transform3D(-1, -8.608464e-09, -8.656673e-08, 8.608463e-09, 0.9804158, -0.19693871, 8.656673e-08, -0.19693871, -0.9804158, 0.6963495, 0.36927372, -3.3205345)
+script = ExtResource("15_rocqi")
+icon_label = NodePath("Label_10_10")
+quiz_manager_path = NodePath("..")
+prompt_message = "Wejdz do komputera"
+
+[node name="CollisionShapeEkran" type="CollisionShape3D" parent="Komputer/Level_10_10"]
+transform = Transform3D(0.35632798, 0, 0, 0, 0.35000026, 0, 0, 0, 0.35000026, 0, 0, 0)
+shape = SubResource("BoxShape3D_i6lle")
+
+[node name="Ekran" type="MeshInstance3D" parent="Komputer/Level_10_10/CollisionShapeEkran"]
+transform = Transform3D(1, 0, 0, 0, 1.0000001, 0, 0, 0, 1.0000001, 0, 0, 0)
+mesh = SubResource("QuadMesh_0h21f")
+skeleton = NodePath("../../..")
+
+[node name="Label_10_10" type="Label3D" parent="Komputer/Level_10_10"]
+transform = Transform3D(-1, 0, -8.742278e-08, 0, 1, 0, 8.742278e-08, 0, -1, 0, 0, 0)
+font_size = 44
+
+[node name="Level_10_11" type="StaticBody3D" parent="Komputer" node_paths=PackedStringArray("icon_label")]
+transform = Transform3D(-1, -8.608464e-09, -8.656673e-08, 8.608463e-09, 0.9804158, -0.19693871, 8.656673e-08, -0.19693871, -0.9804158, -0.5546603, 0.36927372, -3.3205345)
+script = ExtResource("15_rocqi")
+icon_label = NodePath("Label_10_11")
+quiz_manager_path = NodePath("..")
+prompt_message = "Wejdz do komputera"
+
+[node name="CollisionShapeEkran" type="CollisionShape3D" parent="Komputer/Level_10_11"]
+transform = Transform3D(0.35632798, 0, 0, 0, 0.35000026, 0, 0, 0, 0.35000026, 0, 0, 0)
+shape = SubResource("BoxShape3D_i6lle")
+
+[node name="Ekran" type="MeshInstance3D" parent="Komputer/Level_10_11/CollisionShapeEkran"]
+transform = Transform3D(1, 0, 0, 0, 1.0000001, 0, 0, 0, 1.0000001, 0, 0, 0)
+mesh = SubResource("QuadMesh_0h21f")
+skeleton = NodePath("../../..")
+
+[node name="Label_10_11" type="Label3D" parent="Komputer/Level_10_11"]
+transform = Transform3D(-1, 0, -8.742278e-08, 0, 1, 0, 8.742278e-08, 0, -1, 0, 0, 0)
+text = "
+"
+font_size = 44
+
+[node name="Level_10_12" type="StaticBody3D" parent="Komputer" node_paths=PackedStringArray("icon_label")]
+transform = Transform3D(-1, -8.608464e-09, -8.656673e-08, 8.608463e-09, 0.9804158, -0.19693871, 8.656673e-08, -0.19693871, -0.9804158, -1.7941515, 0.36927372, -3.3205342)
+script = ExtResource("15_rocqi")
+icon_label = NodePath("Label_10_12")
+quiz_manager_path = NodePath("..")
+prompt_message = "Wejdz do komputera"
+
+[node name="CollisionShapeEkran" type="CollisionShape3D" parent="Komputer/Level_10_12"]
+transform = Transform3D(0.35632798, 0, 0, 0, 0.35000026, 0, 0, 0, 0.35000026, 0, 0, 0)
+shape = SubResource("BoxShape3D_i6lle")
+
+[node name="Ekran" type="MeshInstance3D" parent="Komputer/Level_10_12/CollisionShapeEkran"]
+transform = Transform3D(1, 0, 0, 0, 1.0000001, 0, 0, 0, 1.0000001, 0, 0, 0)
+mesh = SubResource("QuadMesh_0h21f")
+skeleton = NodePath("../../..")
+
+[node name="Label_10_12" type="Label3D" parent="Komputer/Level_10_12"]
+transform = Transform3D(-1, 0, -8.742278e-08, 0, 1, 0, 8.742278e-08, 0, -1, 0, 0, 0)
+font_size = 44
+
+[node name="Level_10_13" type="StaticBody3D" parent="Komputer" node_paths=PackedStringArray("icon_label")]
+transform = Transform3D(-1, -8.608464e-09, -8.656673e-08, 8.608463e-09, 0.9804158, -0.19693871, 8.656673e-08, -0.19693871, -0.9804158, -1.8029611, 0.36927372, -5.551563)
+script = ExtResource("15_rocqi")
+icon_label = NodePath("Label_10_13")
+quiz_manager_path = NodePath("..")
+prompt_message = "Wejdz do komputera"
+
+[node name="CollisionShapeEkran" type="CollisionShape3D" parent="Komputer/Level_10_13"]
+transform = Transform3D(0.35632798, 0, 0, 0, 0.35000026, 0, 0, 0, 0.35000026, 0, 0, 0)
+shape = SubResource("BoxShape3D_i6lle")
+
+[node name="Ekran" type="MeshInstance3D" parent="Komputer/Level_10_13/CollisionShapeEkran"]
+transform = Transform3D(1, 0, 0, 0, 1.0000001, 0, 0, 0, 1.0000001, 0, 0, 0)
+mesh = SubResource("QuadMesh_0h21f")
+skeleton = NodePath("../../..")
+
+[node name="Label_10_13" type="Label3D" parent="Komputer/Level_10_13"]
+transform = Transform3D(-1, 0, -8.742278e-08, 0, 1, 0, 8.742278e-08, 0, -1, 0, 0, 0)
+text = "
+"
+font_size = 44
+
+[node name="Level_10_14" type="StaticBody3D" parent="Komputer" node_paths=PackedStringArray("icon_label")]
+transform = Transform3D(-1, -8.608464e-09, -8.656673e-08, 8.608463e-09, 0.9804158, -0.19693871, 8.656673e-08, -0.19693871, -0.9804158, -0.56699276, 0.36927372, -5.551563)
+script = ExtResource("15_rocqi")
+icon_label = NodePath("Label_10_14")
+quiz_manager_path = NodePath("..")
+prompt_message = "Wejdz do komputera"
+
+[node name="CollisionShapeEkran" type="CollisionShape3D" parent="Komputer/Level_10_14"]
+transform = Transform3D(0.35632798, 0, 0, 0, 0.35000026, 0, 0, 0, 0.35000026, 0, 0, 0)
+shape = SubResource("BoxShape3D_i6lle")
+
+[node name="Ekran" type="MeshInstance3D" parent="Komputer/Level_10_14/CollisionShapeEkran"]
+transform = Transform3D(1, 0, 0, 0, 1.0000001, 0, 0, 0, 1.0000001, 0, 0, 0)
+mesh = SubResource("QuadMesh_0h21f")
+skeleton = NodePath("../../..")
+
+[node name="Label_10_14" type="Label3D" parent="Komputer/Level_10_14"]
+transform = Transform3D(-1, 0, -8.742278e-08, 0, 1, 0, 8.742278e-08, 0, -1, 0, 0, 0)
+text = "
+"
+font_size = 44
+
+[node name="Level_10_15" type="StaticBody3D" parent="Komputer" node_paths=PackedStringArray("icon_label")]
+transform = Transform3D(-1, -8.608464e-09, -8.656673e-08, 8.608463e-09, 0.9804158, -0.19693871, 8.656673e-08, -0.19693871, -0.9804158, 0.70188725, 0.36927372, -5.551563)
+script = ExtResource("15_rocqi")
+icon_label = NodePath("Label_10_15")
+quiz_manager_path = NodePath("..")
+prompt_message = "Wejdz do komputera"
+
+[node name="CollisionShapeEkran" type="CollisionShape3D" parent="Komputer/Level_10_15"]
+transform = Transform3D(0.35632798, 0, 0, 0, 0.35000026, 0, 0, 0, 0.35000026, 0, 0, 0)
+shape = SubResource("BoxShape3D_i6lle")
+
+[node name="Ekran" type="MeshInstance3D" parent="Komputer/Level_10_15/CollisionShapeEkran"]
+transform = Transform3D(1, 0, 0, 0, 1.0000001, 0, 0, 0, 1.0000001, 0, 0, 0)
+mesh = SubResource("QuadMesh_0h21f")
+skeleton = NodePath("../../..")
+
+[node name="Label_10_15" type="Label3D" parent="Komputer/Level_10_15"]
+transform = Transform3D(-1, 0, -8.742278e-08, 0, 1, 0, 8.742278e-08, 0, -1, 0, 0, 0)
+font_size = 44
+
+[node name="Level_10_16" type="StaticBody3D" parent="Komputer" node_paths=PackedStringArray("icon_label")]
+transform = Transform3D(-1, -8.608464e-09, -8.656673e-08, 8.608463e-09, 0.9804158, -0.19693871, 8.656673e-08, -0.19693871, -0.9804158, 3.188477, 0.36927372, -5.551563)
+script = ExtResource("15_rocqi")
+icon_label = NodePath("Label_10_16")
+quiz_manager_path = NodePath("..")
+prompt_message = "Wejdz do komputera"
+
+[node name="CollisionShapeEkran" type="CollisionShape3D" parent="Komputer/Level_10_16"]
+transform = Transform3D(0.35632798, 0, 0, 0, 0.35000026, 0, 0, 0, 0.35000026, 0, 0, 0)
+shape = SubResource("BoxShape3D_i6lle")
+
+[node name="Ekran" type="MeshInstance3D" parent="Komputer/Level_10_16/CollisionShapeEkran"]
+transform = Transform3D(1, 0, 0, 0, 1.0000001, 0, 0, 0, 1.0000001, 0, 0, 0)
+mesh = SubResource("QuadMesh_0h21f")
+skeleton = NodePath("../../..")
+
+[node name="Label_10_16" type="Label3D" parent="Komputer/Level_10_16"]
+transform = Transform3D(-1, 0, -8.742278e-08, 0, 1, 0, 8.742278e-08, 0, -1, 0, 0, 0)
+font_size = 44
+
+[node name="Level_10_17" type="StaticBody3D" parent="Komputer" node_paths=PackedStringArray("icon_label")]
+transform = Transform3D(-1, -8.608464e-09, -8.656673e-08, 8.608463e-09, 0.9804158, -0.19693871, 8.656673e-08, -0.19693871, -0.9804158, 4.434622, 0.36927372, -5.551563)
+script = ExtResource("15_rocqi")
+icon_label = NodePath("Label_10_17")
+quiz_manager_path = NodePath("..")
+prompt_message = "Wejdz do komputera"
+
+[node name="CollisionShapeEkran" type="CollisionShape3D" parent="Komputer/Level_10_17"]
+transform = Transform3D(0.35632798, 0, 0, 0, 0.35000026, 0, 0, 0, 0.35000026, 0, 0, 0)
+shape = SubResource("BoxShape3D_i6lle")
+
+[node name="Ekran" type="MeshInstance3D" parent="Komputer/Level_10_17/CollisionShapeEkran"]
+transform = Transform3D(1, 0, 0, 0, 1.0000001, 0, 0, 0, 1.0000001, 0, 0, 0)
+mesh = SubResource("QuadMesh_0h21f")
+skeleton = NodePath("../../..")
+
+[node name="Label_10_17" type="Label3D" parent="Komputer/Level_10_17"]
+transform = Transform3D(-1, 0, -8.742278e-08, 0, 1, 0, 8.742278e-08, 0, -1, 0, 0, 0)
+font_size = 44
+
+[node name="Level_10_18" type="StaticBody3D" parent="Komputer" node_paths=PackedStringArray("icon_label")]
+transform = Transform3D(-1, -8.608464e-09, -8.656673e-08, 8.608463e-09, 0.9804158, -0.19693871, 8.656673e-08, -0.19693871, -0.9804158, 5.705343, 0.36927372, -5.5515623)
+script = ExtResource("15_rocqi")
+icon_label = NodePath("Label_10_18")
+quiz_manager_path = NodePath("..")
+prompt_message = "Wejdz do komputera"
+
+[node name="CollisionShapeEkran" type="CollisionShape3D" parent="Komputer/Level_10_18"]
+transform = Transform3D(0.35632798, 0, 0, 0, 0.35000026, 0, 0, 0, 0.35000026, 0, 0, 0)
+shape = SubResource("BoxShape3D_i6lle")
+
+[node name="Ekran" type="MeshInstance3D" parent="Komputer/Level_10_18/CollisionShapeEkran"]
+transform = Transform3D(1, 0, 0, 0, 1.0000001, 0, 0, 0, 1.0000001, 0, 0, 0)
+mesh = SubResource("QuadMesh_0h21f")
+skeleton = NodePath("../../..")
+
+[node name="Label_10_18" type="Label3D" parent="Komputer/Level_10_18"]
+transform = Transform3D(-1, 0, -8.742278e-08, 0, 1, 0, 8.742278e-08, 0, -1, 0, 0, 0)
+font_size = 44
+
+[node name="Level_10_quiz" parent="Komputer" instance=ExtResource("17_0h21f")]
+visible = false
 
 [connection signal="interacted" from="Word/Tunnel/Enter/ButtonSmall" to="Word/Tunnel/Enter/enter" method="toggle"]

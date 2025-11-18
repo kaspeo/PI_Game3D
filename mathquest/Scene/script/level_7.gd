@@ -8,18 +8,18 @@ var popup_shown := false
 func _ready() -> void:
 	start.popup_centered()
 	start.grab_focus()
-	Global.current_level==7
+	Global.current_level=7
 	
 func show_misja_dialog() -> void:
 	misja.popup_centered()
 	misja.grab_focus()
 	misja.connect("confirmed", Callable(self, "_on_misja_confirmed"))
 
-func _on_area_3d_body_entered(body: Node3D) -> void:
+
+func _on_misja_body_entered(body: Node3D) -> void:
 	if body is CharacterBody3D:
 		if Global.get_ui():
-			Global.get_ui().ustaw_misje("Uzupelnij wzor i podaje dane", false)
+			Global.get_ui().ustaw_misje("Napraw dwa komputery", false)
 		if not popup_shown:
 			popup_shown = true
 			show_misja_dialog()
-	

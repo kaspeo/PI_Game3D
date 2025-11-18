@@ -18,6 +18,7 @@ config/icon="uid://co1fwwkqd5eau"
 [autoload]
 
 Global="*res://Global/global.gd"
+MusicManager="*res://Sounds/Music/music_manager.gd"
 
 [debug]
 

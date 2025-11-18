@@ -1,6 +1,6 @@
 [gd_scene load_steps=60 format=4 uid="uid://by3wdlg0m85nk"]
 
-[ext_resource type="Script" uid="uid://b46enlgbpdyue" path="res://Scene/script/level_2.gd" id="1_4qayw"]
+[ext_resource type="Script" uid="uid://cixfxqu8yf0jx" path="res://Scene/script/level_2.gd" id="1_f3pwq"]
 [ext_resource type="PackedScene" uid="uid://di80n2exvk435" path="res://Player/player.tscn" id="1_ps88n"]
 [ext_resource type="MeshLibrary" uid="uid://w6ev0b2ct1rg" path="res://Objects/Room/Tile/FloorTiles.tres" id="2_wo0id"]
 [ext_resource type="MeshLibrary" uid="uid://qy78iggykof6" path="res://Objects/Room/Tile/Space_stationTitles.tres" id="3_t8mw1"]
@@ -13,6 +13,9 @@
 [ext_resource type="Texture2D" uid="uid://cceyp18bj5l6j" path="res://Objects/prototype-kit/Models/GLB format/Textures/colormap.png" id="11_f3pwq"]
 [ext_resource type="PackedScene" uid="uid://b4bcwi462f7li" path="res://Objects/Room/button_small.tscn" id="12_ccfm3"]
 [ext_resource type="PackedScene" uid="uid://df2dbcbohgj0g" path="res://Scene/Podsceny/Level_2/level_2_2.tscn" id="12_f3pwq"]
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_67jix"]
+size = Vector3(6.3789063, 2.803711, 1)
 
 [sub_resource type="StandardMaterial3D" id="StandardMaterial3D_ilc6j"]
 resource_name = "colormap"
@@ -425,14 +428,11 @@ transitions = ["Start", "close", SubResource("AnimationNodeStateMachineTransitio
 [sub_resource type="BoxShape3D" id="BoxShape3D_4qayw"]
 size = Vector3(2.05, 0.96999997, 0.66)
 
-[sub_resource type="BoxShape3D" id="BoxShape3D_67jix"]
-size = Vector3(6.3789063, 2.803711, 1)
-
 [sub_resource type="BoxShape3D" id="BoxShape3D_f3pwq"]
 size = Vector3(1.4147949, 1.0899658, 1.52)
 
 [node name="Level2" type="Node3D"]
-script = ExtResource("1_4qayw")
+script = ExtResource("1_f3pwq")
 
 [node name="Player" parent="." instance=ExtResource("1_ps88n")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.5531138, -10.736758)
@@ -489,6 +489,14 @@ light_color = Color(1, 0.960784, 0.882353, 1)
 [node name="DirectionalLight3D2" type="OmniLight3D" parent="Word"]
 transform = Transform3D(0.06322086, 0.42485535, 0.903051, -0.02948037, -0.9036713, 0.427211, 0.9975641, -0.053630926, -0.044605978, -7.2021, 2.18541, -0.80000013)
 light_color = Color(1, 0.960784, 0.882353, 1)
+
+[node name="Misja" type="Area3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.28284845, 0, -4.920869)
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="Misja"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.7783203, 1.935312, 2.1327734)
+shape = SubResource("BoxShape3D_67jix")
+debug_color = Color(0, 0.6, 0.7, 0.42)
 
 [node name="Wyjscie" type="Node3D" parent="."]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -4.84, 0.84999996, -0.75999993)
@@ -640,14 +648,6 @@ transform = Transform3D(0.356328, 0, 0, 0, 0.34468323, -0.06077692, 0, 0.0607769
 shape = SubResource("BoxShape3D_4qayw")
 debug_color = Color(0, 0.6, 0.7, 0.42)
 
-[node name="Misja" type="Area3D" parent="MisjaKod"]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.70284843, -0.52, -4.0608687)
-
-[node name="CollisionShape3D" type="CollisionShape3D" parent="MisjaKod/Misja"]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.7783203, 1.935312, 2.1327734)
-shape = SubResource("BoxShape3D_67jix")
-debug_color = Color(0, 0.6, 0.7, 0.42)
-
 [node name="Level_21" parent="MisjaKod" instance=ExtResource("8_o7kde")]
 visible = false
 
@@ -700,6 +700,6 @@ title = "Cel poziomu"
 initial_position = 2
 dialog_text = "W tym etapie bedziesz musiał"
 
+[connection signal="body_entered" from="Misja" to="." method="_on_misja_body_entered"]
 [connection signal="interacted" from="Tunnel/ButtonSmall" to="Tunnel/Enter/Enter" method="toggle"]
-[connection signal="body_entered" from="MisjaKod/Misja" to="." method="_on_misja_body_entered"]
 [connection signal="body_entered" from="ZmianaPoziomu" to="." method="_on_zmiana_poziomu_body_entered"]

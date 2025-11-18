@@ -7,7 +7,7 @@ const LEVEL_2 = "res://Scene/level_2.tscn"
 var popup_shown := false
 
 func _ready() -> void:
-	Global.current_level == 1
+	Global.current_level = 1
 	show_start_dialog()
 
 func show_start_dialog() -> void:
