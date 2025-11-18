@@ -8,6 +8,7 @@ extends Node3D
 
 
 func _ready() -> void:
+	MusicManager.play_music("res://Sounds/Music/ingame.wav")
 	show_start_dialog()
 	arrow_anim.play("MoveUpDown")
 

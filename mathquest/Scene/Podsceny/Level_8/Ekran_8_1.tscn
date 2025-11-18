@@ -6,13 +6,13 @@
 [sub_resource type="ViewportTexture" id="ViewportTexture_3ywwt"]
 viewport_path = NodePath("SubViewport")
 
-[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_cobgv"]
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_3ywwt"]
 resource_local_to_scene = true
 albedo_texture = SubResource("ViewportTexture_3ywwt")
 
 [sub_resource type="PlaneMesh" id="PlaneMesh_x5n8q"]
 resource_local_to_scene = true
-material = SubResource("StandardMaterial3D_cobgv")
+material = SubResource("StandardMaterial3D_3ywwt")
 
 [node name="Ekran_8_1" type="Node3D"]
 script = ExtResource("1_3ywwt")

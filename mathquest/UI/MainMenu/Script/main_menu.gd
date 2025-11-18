@@ -2,6 +2,7 @@ extends Control
 
 
 func _ready() -> void:
+	MusicManager.play_music("res://Sounds/Music/menu.wav")
 	pass
 
 

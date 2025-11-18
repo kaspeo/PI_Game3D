@@ -4,7 +4,6 @@ extends Node3D
 @onready var hermite_ui: Control = $SubViewport/Wykres81
 
 func _ready():
-	# Te same ustawienia co w poprzednim zadaniu
 	viewport.size = Vector2i(512, 512)
 	viewport.disable_3d = true                
 	viewport.render_target_update_mode = SubViewport.UPDATE_ALWAYS
@@ -12,7 +11,6 @@ func _ready():
 	viewport.gui_disable_input = false
 	await get_tree().process_frame
 	
-	# Zacznij z pustym ekranem
 	show_empty()
 
 func show_empty():

@@ -1,8 +1,7 @@
-@tool
 extends ColorRect
 
-var key_points_to_draw: Array[Vector2] = []
-var line_points_to_draw: Array[Vector2] = []
+var key_points_to_draw: PackedVector2Array = []
+var line_points_to_draw: PackedVector2Array = []
 var current_color: Color = Color.WHITE
 
 @export var pixels_per_unit := 50.0
@@ -11,7 +10,7 @@ var current_color: Color = Color.WHITE
 @export var grid_color := Color(0.4, 0.4, 0.4)
 @export var font_color := Color(0.9, 0.9, 0.9)
 
-func draw_solution(key_points: Array[Vector2], line_points: Array[Vector2], line_color: Color):
+func draw_solution(key_points: PackedVector2Array, line_points: PackedVector2Array, line_color: Color):
 	key_points_to_draw = key_points
 	line_points_to_draw = line_points
 	current_color = line_color

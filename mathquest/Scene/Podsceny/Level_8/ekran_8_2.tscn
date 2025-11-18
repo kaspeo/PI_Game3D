@@ -1,0 +1,27 @@
+[gd_scene load_steps=6 format=3 uid="uid://bmhyxxwo5t5p2"]
+
+[ext_resource type="PackedScene" uid="uid://snlst2rk0vsr" path="res://Scene/Podsceny/Level_8/Wykres_8_2.tscn" id="1_32mb6"]
+[ext_resource type="Script" uid="uid://oxd44f8fyv5e" path="res://Scene/Podsceny/Level_8/ekran_8_2.gd" id="1_g1v2y"]
+
+[sub_resource type="ViewportTexture" id="ViewportTexture_g1v2y"]
+viewport_path = NodePath("SubViewport")
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_cobgv"]
+resource_local_to_scene = true
+albedo_texture = SubResource("ViewportTexture_g1v2y")
+
+[sub_resource type="PlaneMesh" id="PlaneMesh_4qg07"]
+resource_local_to_scene = true
+material = SubResource("StandardMaterial3D_cobgv")
+
+[node name="Ekran_8_2" type="Node3D"]
+script = ExtResource("1_g1v2y")
+
+[node name="SubViewport" type="SubViewport" parent="."]
+size = Vector2i(1024, 512)
+
+[node name="Wykres82" parent="SubViewport" instance=ExtResource("1_32mb6")]
+
+[node name="Mesh" type="MeshInstance3D" parent="."]
+transform = Transform3D(1.98, 0, 0, 0, 1, 0, 0, 0, 1.65, 0, 0, 0)
+mesh = SubResource("PlaneMesh_4qg07")

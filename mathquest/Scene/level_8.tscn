@@ -1,4 +1,4 @@
-[gd_scene load_steps=52 format=4 uid="uid://c2cpc6sccxyf8"]
+[gd_scene load_steps=54 format=4 uid="uid://c2cpc6sccxyf8"]
 
 [ext_resource type="PackedScene" uid="uid://di80n2exvk435" path="res://Player/player.tscn" id="1_7hckg"]
 [ext_resource type="MeshLibrary" uid="uid://w6ev0b2ct1rg" path="res://Objects/Room/Tile/FloorTiles.tres" id="1_cnfhg"]
@@ -10,17 +10,22 @@
 [ext_resource type="PackedScene" uid="uid://b6ldj3gcis4v8" path="res://Scene/Podsceny/Tunnel.tscn" id="6_p4jvd"]
 [ext_resource type="PackedScene" uid="uid://d1vdkxjo13cmt" path="res://Scene/Podsceny/Level_8/Ekran_8_1.tscn" id="8_grlxq"]
 [ext_resource type="Texture2D" uid="uid://b2a6r0wvrwss8" path="res://Objects/kenney_conveyor/Models/GLB format/Textures/colormap.png" id="8_yvo8h"]
+[ext_resource type="PackedScene" uid="uid://bmhyxxwo5t5p2" path="res://Scene/Podsceny/Level_8/ekran_8_2.tscn" id="9_d33lx"]
 [ext_resource type="MeshLibrary" uid="uid://486s0eikkj00" path="res://Objects/Room/Tile/WallTiles.tres" id="10_x5tjy"]
 [ext_resource type="PackedScene" uid="uid://lgwhiyy5ax3l" path="res://Objects/Room/double_door.tscn" id="11_d33lx"]
 [ext_resource type="Script" uid="uid://cjug40h65t3k8" path="res://Objects/Room/Script/double_door.gd" id="12_vhoqp"]
 [ext_resource type="Texture2D" uid="uid://cceyp18bj5l6j" path="res://Objects/prototype-kit/Models/GLB format/Textures/colormap.png" id="13_dptbo"]
 [ext_resource type="PackedScene" uid="uid://b4bcwi462f7li" path="res://Objects/Room/button_small.tscn" id="14_6h2kb"]
+[ext_resource type="PackedScene" uid="uid://25bacq2gbxcr" path="res://Objects/Room/robot_hand.tscn" id="17_vhoqp"]
 
 [sub_resource type="BoxShape3D" id="BoxShape3D_p4jvd"]
 size = Vector3(1.76, 1.27, 1.9399999)
 
 [sub_resource type="BoxShape3D" id="BoxShape3D_x0pby"]
 size = Vector3(7.0299997, 2.803711, 1)
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_grlxq"]
+size = Vector3(1.56, 1.8199999, 2.21)
 
 [sub_resource type="StandardMaterial3D" id="StandardMaterial3D_aumvg"]
 resource_name = "colormap"
@@ -150,9 +155,6 @@ shadow_mesh = SubResource("ArrayMesh_vda5c")
 
 [sub_resource type="BoxShape3D" id="BoxShape3D_e27iq"]
 size = Vector3(0.5, 0.5, 0.5)
-
-[sub_resource type="BoxShape3D" id="BoxShape3D_grlxq"]
-size = Vector3(1, 1.5, 2.21)
 
 [sub_resource type="StandardMaterial3D" id="StandardMaterial3D_ilc6j"]
 resource_name = "colormap"
@@ -399,6 +401,15 @@ transform = Transform3D(0.4753959, -0.16303551, 0.86453366, -0.0123426225, 0.981
 
 [node name="Word" type="Node3D" parent="."]
 
+[node name="RobotHand" parent="Word" instance=ExtResource("17_vhoqp")]
+transform = Transform3D(-3.4969112e-08, 0, -0.8000001, 0, 0.8, 0, 0.8000001, 0, -3.4969112e-08, -2.3799999, 0.49999997, -1.8199999)
+
+[node name="RobotHand2" parent="Word" instance=ExtResource("17_vhoqp")]
+transform = Transform3D(-3.4969112e-08, 0, -0.8000001, 0, 0.8, 0, 0.8000001, 0, -3.4969112e-08, -2.3799999, 0.49999997, 6.3599997)
+
+[node name="RobotHand3" parent="Word" instance=ExtResource("17_vhoqp")]
+transform = Transform3D(0.8000001, 0, 0, 0, 0.8, 0, 0, 0, 0.8000001, 2.3400002, 0.49999997, 13.41)
+
 [node name="Floor" type="GridMap" parent="Word"]
 mesh_library = ExtResource("1_cnfhg")
 cell_size = Vector3(1, 1, 1)
@@ -480,7 +491,7 @@ mesh_library = ExtResource("6_grlxq")
 cell_size = Vector3(0.01, 1.35, 0.01)
 cell_scale = 0.8
 data = {
-"cells": PackedInt32Array(131753, 116, 2, 66225, 113, 2, 688, 104, 2, 789, 102, 1441795, 66345, 106, 1441797, 131886, 106, 1441794, 132014, 106, 1441794, 132130, 106, 1441794, 132257, 105, 1441794, 132386, 105, 1441794, 132506, 104, 1441794, 132630, 103, 1441794, 132755, 103, 1441794, 67231, 105, 1441794, 1687, 109, 1441794, 1588, 106, 1441795, 1538, 104, 1441795, 1289, 103, 1441795, 1334, 104, 1441795, 1162, 80, 1441796, 1206, 79, 1441796, 1162, 129, 1441796, 1206, 132, 1441796, 1036, 78, 1441796, 1086, 78, 1441796, 1038, 129, 1441796, 1084, 131, 1441796, 66574, 130, 1441796, 66624, 131, 1441796, 66575, 84, 1441796, 66626, 83, 1441796, 686, 498, 1441794, 66222, 495, 1441794, 131755, 491, 1441794, 131755, 892, 1441794, 131865, 891, 1441794, 132005, 894, 1441794, 132133, 892, 1441794, 132257, 892, 655362, 132381, 891, 655362, 132383, 507, 655362, 132259, 507, 655362, 132260, 507, 655362, 66718, 507, 655362, 66599, 504, 655362, 66471, 509, 655362, 66472, 509, 655362, 132014, 507, 655362, 66345, 487, 655363, 66346, 487, 655363, 66349, 534, 655363, 938, 474, 655363, 937, 518, 655363, 780, 498, 1048579, 780, 499, 1048579, 781, 500, 1048579, 781, 501, 1048579, 782, 501, 1048579, 833, 504, 1048579, 1063, 498, 1048578, 1683, 507, 2, 67218, 507, 2, 1437, 1330, 3)
+"cells": PackedInt32Array(131753, 116, 2, 66225, 113, 2, 688, 104, 2, 789, 102, 1441795, 66345, 106, 1441797, 131886, 106, 1441794, 132014, 106, 1441794, 132130, 106, 1441794, 132257, 105, 1441794, 132386, 105, 1441794, 132506, 104, 1441794, 132630, 103, 1441794, 132755, 103, 1441794, 67231, 105, 1441794, 1687, 109, 1441794, 1588, 106, 1441795, 1538, 104, 1441795, 1289, 103, 1441795, 1334, 104, 1441795, 1162, 80, 1441796, 1206, 79, 1441796, 1162, 129, 1441796, 1206, 132, 1441796, 1036, 78, 1441796, 1086, 78, 1441796, 1038, 129, 1441796, 1084, 131, 1441796, 66574, 130, 1441796, 66624, 131, 1441796, 66575, 84, 1441796, 66626, 83, 1441796, 66222, 495, 1441794, 131755, 491, 1441794, 131755, 892, 1441794, 131865, 891, 1441794, 132005, 894, 1441794, 132133, 892, 1441794, 132257, 892, 655362, 132381, 891, 655362, 132383, 507, 655362, 132259, 507, 655362, 132260, 507, 655362, 66718, 507, 655362, 66599, 504, 655362, 66471, 509, 655362, 66472, 509, 655362, 132014, 507, 655362, 66345, 487, 655363, 66346, 487, 655363, 66349, 534, 655363, 938, 474, 655363, 937, 518, 655363, 1063, 498, 1048578, 1683, 507, 2, 67218, 507, 2, 1437, 1330, 3, 814, 496, 2, 657, 495, 1441795, 702, 495, 1441795, 66823, 79, 655364, 66874, 82, 655364, 66826, 144, 1048580, 66873, 145, 4, 66998, 143, 4, 66999, 94, 4, 66948, 85, 4, 67102, 111, 655362, 131862, 486, 1048579, 131911, 501, 1048579, 1437, 520, 1048581, 1462, 466, 1048580, 1461, 467, 1048580, 1415, 468, 4, 1587, 522, 4, 1540, 521, 4, 1562, 469, 4, 1287, 523, 4, 1337, 523, 4, 1184, 476, 3, 1185, 476, 3, 1185, 532, 3, 66225, 911, 3, 66227, 866, 3, 66220, 1295, 2, 811, 1294, 1441794, 66594, 1291, 1441794, 67220, 1290, 1441794, 67099, 1286, 655362, 66972, 1289, 655362, 66850, 1316, 655363, 66852, 1263, 655363, 66749, 1317, 655364, 66693, 1317, 655364, 66719, 1260, 655364, 1217, 1316, 655364, 1157, 1312, 655364, 1181, 1263, 655364, 1065, 1321, 655364, 1064, 1321, 655364, 1043, 1263, 655364, 937, 1322, 655363, 936, 1322, 655363, 66473, 1318, 655363, 66472, 1267, 655363, 66368, 1290, 1048579, 131736, 1293, 1048579, 131980, 1289, 1048579, 132030, 1294, 1048579, 132256, 1302, 3, 132255, 1259, 3, 132485, 1281, 1441795, 132536, 1283, 1441795, 132661, 1286, 1441795, 132609, 1281, 1441795, 132776, 1299, 1441796, 132727, 1299, 1441796, 132776, 1254, 1441796, 132728, 1255, 655364, 1441, 1270, 655364, 1681, 1296, 655362, 1439, 903, 655362, 66843, 909, 655362, 66720, 909, 655362, 66599, 911, 1048578, 66498, 907, 1048579, 66449, 908, 1048579, 66349, 873, 3, 66350, 931, 3, 708, 870, 4, 704, 926, 4, 656, 899, 4, 66975, 512, 2)
 }
 metadata/_editor_floor_ = Vector3(0, 0, 0)
 
@@ -501,76 +512,20 @@ debug_color = Color(0, 0.6, 0.7, 0.42)
 
 [node name="Ekrany" type="Node3D" parent="."]
 
-[node name="Skrzynik" type="Node3D" parent="Ekrany"]
-
-[node name="BoxLarge_2" type="RigidBody3D" parent="Ekrany/Skrzynik"]
-transform = Transform3D(-1, 0, -8.742278e-08, 0, 1, 0, 8.742278e-08, 0, -1, 8.15, 0.79999995, 8.82)
-linear_damp = 40.0
-
-[node name="box-large" type="MeshInstance3D" parent="Ekrany/Skrzynik/BoxLarge_2"]
-transform = Transform3D(0.8, 0, 0, 0, 0.8, 0, 0, 0, 0.8, 0, 0, 0)
-mesh = SubResource("ArrayMesh_anax4")
-skeleton = NodePath("")
-
-[node name="CollisionShape3D" type="CollisionShape3D" parent="Ekrany/Skrzynik/BoxLarge_2"]
-transform = Transform3D(0.8, 0, 0, 0, 0.8, 0, 0, 0, 0.8, 0, 0.2, 0)
-shape = SubResource("BoxShape3D_jtcy4")
-
-[node name="Label3D" type="Label3D" parent="Ekrany/Skrzynik/BoxLarge_2"]
-transform = Transform3D(0.8, 0, 0, 0, 0.8, 0, 0, 0, 0.8, 0, 0.22999999, 0.41)
-text = "x = 0, f = 1, 
-f' = 2
-"
-
-[node name="BoxLong_2" type="RigidBody3D" parent="Ekrany/Skrzynik"]
-transform = Transform3D(-0.9986295, 0, -0.05233605, 0, 1, 0, 0.05233605, 0, -0.9986295, 13.11, 0.7799999, 4.76)
-
-[node name="box-long" type="MeshInstance3D" parent="Ekrany/Skrzynik/BoxLong_2"]
-transform = Transform3D(0.8, 0, 0, 0, 0.8, 0, 0, 0, 0.8, 0, 0, 0)
-mesh = SubResource("ArrayMesh_gkowp")
-skeleton = NodePath("")
-
-[node name="CollisionShape3D" type="CollisionShape3D" parent="Ekrany/Skrzynik/BoxLong_2"]
-transform = Transform3D(0.8, 0, 0, 0, 0.8, 0, 0, 0, 0.8, -0.0039999965, 0.2, -0.0049999803)
-shape = SubResource("BoxShape3D_jiq8v")
-
-[node name="Label3D" type="Label3D" parent="Ekrany/Skrzynik/BoxLong_2"]
-transform = Transform3D(0.8, 0, 0, 0, 0.8, 0, 0, 0, 0.8, 0, 0.24, 0.21)
-text = "x = 1, f = 3
-"
-
-[node name="BoxSmall_2" type="RigidBody3D" parent="Ekrany/Skrzynik"]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 11.589999, 0.7699999, 9.29)
-
-[node name="box-small" type="MeshInstance3D" parent="Ekrany/Skrzynik/BoxSmall_2"]
-transform = Transform3D(0.8, 0, 0, 0, 0.8, 0, 0, 0, 0.8, 0, 0, 0)
-mesh = SubResource("ArrayMesh_jrv5m")
-skeleton = NodePath("")
-
-[node name="CollisionShape3D" type="CollisionShape3D" parent="Ekrany/Skrzynik/BoxSmall_2"]
-transform = Transform3D(0.8, 0, 0, 0, 0.8, 0, 0, 0, 0.8, 0, 0.2, 0)
-shape = SubResource("BoxShape3D_e27iq")
-
-[node name="Label3D" type="Label3D" parent="Ekrany/Skrzynik/BoxSmall_2"]
-transform = Transform3D(0.8, 0, 0, 0, 0.8, 0, 0, 0, 0.8, 0, 0.21000004, 0.21000004)
-text = "x = 2, 
-f = 7
-"
-
 [node name="Ekran1" type="Node3D" parent="Ekrany"]
 
 [node name="Ekran_8_1" parent="Ekrany/Ekran1" instance=ExtResource("8_grlxq")]
-transform = Transform3D(-4.371139e-08, 1, 0, 4.371139e-08, 1.9106855e-15, -1, -1, -4.371139e-08, -4.371139e-08, -2.7099998, 2.83, 7.5)
+transform = Transform3D(-4.371139e-08, 1, 0, 4.371139e-08, 1.9106855e-15, -1, -1, -4.371139e-08, -4.371139e-08, -2.7099998, 2.83, 8.19)
 
 [node name="AreaEkran1" type="Area3D" parent="Ekrany/Ekran1"]
 transform = Transform3D(-4.371139e-08, 1, 0, -1, -4.371139e-08, 0, 0, 0, 1, -1.5700002, 2.6799998, 8.08)
 
 [node name="CollisionShape3D" type="CollisionShape3D" parent="Ekrany/Ekran1/AreaEkran1"]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 1.560001, 0.08999932, -0.22500038)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 1.4200013, 0.08999932, -0.22500038)
 shape = SubResource("BoxShape3D_grlxq")
 
 [node name="BoxLarge_1" type="RigidBody3D" parent="Ekrany/Ekran1"]
-transform = Transform3D(-1, 0, -8.742278e-08, 0, 1, 0, 8.742278e-08, 0, -1, 3.399999, 0.7999996, 8.73)
+transform = Transform3D(-1, 0, -8.742278e-08, 0, 1, 0, 8.742278e-08, 0, -1, 15.619998, 0.8499996, 12.699999)
 linear_damp = 40.0
 
 [node name="box-large" type="MeshInstance3D" parent="Ekrany/Ekran1/BoxLarge_1"]
@@ -588,7 +543,7 @@ text = "x = -1, f = -8
 "
 
 [node name="BoxLong_1" type="RigidBody3D" parent="Ekrany/Ekran1"]
-transform = Transform3D(-0.9986295, 0, -0.05233605, 0, 1, 0, 0.05233605, 0, -0.9986295, 1.3599997, 0.7899996, 9.52)
+transform = Transform3D(-0.9986295, 0, -0.05233605, 0, 1, 0, 0.05233605, 0, -0.9986295, 16.849998, 0.7899996, 8.780001)
 
 [node name="box-long" type="MeshInstance3D" parent="Ekrany/Ekran1/BoxLong_1"]
 transform = Transform3D(0.8, 0, 0, 0, 0.8, 0, 0, 0, 0.8, 0, 0, 0)
@@ -607,7 +562,7 @@ f' = 1
 "
 
 [node name="BoxSmall_1" type="RigidBody3D" parent="Ekrany/Ekran1"]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 1.8099992, 0.73999953, 5.8299994)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 14.129998, 2.0799994, 1.4799997)
 
 [node name="box-small" type="MeshInstance3D" parent="Ekrany/Ekran1/BoxSmall_1"]
 transform = Transform3D(0.8, 0, 0, 0, 0.8, 0, 0, 0, 0.8, 0, 0, 0)
@@ -622,6 +577,72 @@ shape = SubResource("BoxShape3D_e27iq")
 transform = Transform3D(0.8, 0, 0, 0, 0.8, 0, 0, 0, 0.8, 0, 0.21000004, 0.21000004)
 text = "x = 1, 
 f = -4"
+
+[node name="Ekran2" type="Node3D" parent="Ekrany"]
+
+[node name="Ekran_8_2" parent="Ekrany/Ekran2" instance=ExtResource("9_d33lx")]
+transform = Transform3D(-1, 3.821371e-15, -8.742278e-08, 8.742278e-08, 4.371139e-08, -1, 0, -1, -4.371139e-08, -0.00999999, 2.7947526, 13.722526)
+
+[node name="AreaEkran2" type="Area3D" parent="Ekrany/Ekran2"]
+transform = Transform3D(-4.371139e-08, 0, -1, 0, 1, 0, 1, 0, -4.371139e-08, -0.8400002, 1.4099998, 11.109999)
+
+[node name="AreaEkran2" type="CollisionShape3D" parent="Ekrany/Ekran2/AreaEkran2"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 1.5800009, -0.020000696, -0.2250005)
+shape = SubResource("BoxShape3D_grlxq")
+
+[node name="BoxLarge_2" type="RigidBody3D" parent="Ekrany/Ekran2"]
+transform = Transform3D(-1, 0, -8.742278e-08, 0, 1, 0, 8.742278e-08, 0, -1, 8.15, 0.79999995, 8.82)
+linear_damp = 40.0
+
+[node name="box-large" type="MeshInstance3D" parent="Ekrany/Ekran2/BoxLarge_2"]
+transform = Transform3D(0.8, 0, 0, 0, 0.8, 0, 0, 0, 0.8, 0, 0, 0)
+mesh = SubResource("ArrayMesh_anax4")
+skeleton = NodePath("")
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="Ekrany/Ekran2/BoxLarge_2"]
+transform = Transform3D(0.8, 0, 0, 0, 0.8, 0, 0, 0, 0.8, 0, 0.2, 0)
+shape = SubResource("BoxShape3D_jtcy4")
+
+[node name="Label3D" type="Label3D" parent="Ekrany/Ekran2/BoxLarge_2"]
+transform = Transform3D(0.8, 0, 0, 0, 0.8, 0, 0, 0, 0.8, 0, 0.22999999, 0.41)
+text = "x = 0, f = 1, 
+f' = 2
+"
+
+[node name="BoxLong_2" type="RigidBody3D" parent="Ekrany/Ekran2"]
+transform = Transform3D(-0.9986295, 0, -0.05233605, 0, 1, 0, 0.05233605, 0, -0.9986295, 13.11, 0.7799999, 4.73)
+
+[node name="box-long" type="MeshInstance3D" parent="Ekrany/Ekran2/BoxLong_2"]
+transform = Transform3D(0.8, 0, 0, 0, 0.8, 0, 0, 0, 0.8, 0, 0, 0)
+mesh = SubResource("ArrayMesh_gkowp")
+skeleton = NodePath("")
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="Ekrany/Ekran2/BoxLong_2"]
+transform = Transform3D(0.8, 0, 0, 0, 0.8, 0, 0, 0, 0.8, -0.0039999965, 0.2, -0.0049999803)
+shape = SubResource("BoxShape3D_jiq8v")
+
+[node name="Label3D" type="Label3D" parent="Ekrany/Ekran2/BoxLong_2"]
+transform = Transform3D(0.8, 0, 0, 0, 0.8, 0, 0, 0, 0.8, 0, 0.24, 0.21)
+text = "x = 1, f = 3
+"
+
+[node name="BoxSmall_2" type="RigidBody3D" parent="Ekrany/Ekran2"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 11.589999, 0.7699999, 9.29)
+
+[node name="box-small" type="MeshInstance3D" parent="Ekrany/Ekran2/BoxSmall_2"]
+transform = Transform3D(0.8, 0, 0, 0, 0.8, 0, 0, 0, 0.8, 0, 0, 0)
+mesh = SubResource("ArrayMesh_jrv5m")
+skeleton = NodePath("")
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="Ekrany/Ekran2/BoxSmall_2"]
+transform = Transform3D(0.8, 0, 0, 0, 0.8, 0, 0, 0, 0.8, 0, 0.2, 0)
+shape = SubResource("BoxShape3D_e27iq")
+
+[node name="Label3D" type="Label3D" parent="Ekrany/Ekran2/BoxSmall_2"]
+transform = Transform3D(0.8, 0, 0, 0, 0.8, 0, 0, 0, 0.8, 0, 0.21000004, 0.21000004)
+text = "x = 2, 
+f = 7
+"
 
 [node name="Wejscie" parent="." instance=ExtResource("6_p4jvd")]
 transform = Transform3D(-4.371139e-08, 0, 1, 0, 1, 0, -1, 0, -4.371139e-08, 0.88, -0.19, -8.76)
@@ -730,7 +751,7 @@ oversampling_override = 1.0
 title = "Cel poziomu"
 initial_position = 2
 size = Vector2i(761, 100)
-dialog_text = "Po magazynie porozrzucane sa bloki ułuz je na odpowiednie miejsca zeby naprawic wykresy na ekranach."
+dialog_text = "Znajdź i ułóż pudełka z wartościami funkcji i pochodnych, aby uzyskać poprawne wykresy interpolacji Hermite'a."
 
 [connection signal="body_entered" from="ZmianaPoziomu" to="." method="_on_zmiana_poziomu_body_entered"]
 [connection signal="body_entered" from="Misja" to="." method="_on_misja_body_entered"]
