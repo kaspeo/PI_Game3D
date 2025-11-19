@@ -5,6 +5,7 @@ class_name Interactable
 var is_solved := false
 var has_question := false
 
+
 @onready var level_21: Control = $"../Level_21"
 @onready var level_22: Control = $"../../MisjaKod2/Level_22"
 @onready var level_3: Control = $"../Level3Wykres"
@@ -36,7 +37,7 @@ signal interacted(body)
 func _ready():
 	if icon_label:
 		icon_label.visible = false
-
+	
 func get_prompt():
 	if name.begins_with("Level_10_"):
 		if not has_question or is_solved:
@@ -57,6 +58,7 @@ func get_prompt():
 	return prompt_message + "\n[" + key_name + "]"
 
 func interact(body):
+	
 	if name.begins_with("Level_10_") and (not has_question or is_solved):
 		return  
 	
@@ -64,90 +66,108 @@ func interact(body):
 		Input.mouse_mode = Input.MOUSE_MODE_VISIBLE
 		Global.can_move = false
 		level_21.visible = true
+		MusicManager.play_computer_sound()
 	
 	elif name == "Level_2_2":
 		Input.mouse_mode = Input.MOUSE_MODE_VISIBLE
 		Global.can_move = false
 		level_22.visible = true
+		MusicManager.play_computer_sound()
 		
 	elif name == "Level_3":
 		Input.mouse_mode = Input.MOUSE_MODE_VISIBLE
 		Global.can_move = false
 		level_3.visible = true
+		MusicManager.play_computer_sound()
 		
 	elif name == "Level_4_1":
 		Input.mouse_mode = Input.MOUSE_MODE_VISIBLE
 		Global.can_move = false
 		level_41.visible = true
+		MusicManager.play_computer_sound()
 	
 	elif name == "Level_4_2":
 		Input.mouse_mode = Input.MOUSE_MODE_VISIBLE
 		Global.can_move = false
 		level_42.visible = true
+		MusicManager.play_computer_sound()
 		
 	elif name == "Level_5_1":
 		Input.mouse_mode = Input.MOUSE_MODE_VISIBLE
 		Global.can_move = false
 		level_51.visible = true
+		MusicManager.play_computer_sound()
 		
 	elif name == "Level_5_2":
 		Input.mouse_mode = Input.MOUSE_MODE_VISIBLE
 		Global.can_move = false
 		level_52.visible = true
+		MusicManager.play_computer_sound()
 		
 	elif name == "Level_5_3":
 		Input.mouse_mode = Input.MOUSE_MODE_VISIBLE
 		Global.can_move = false
 		level_53.visible = true
+		MusicManager.play_computer_sound()
 		
 	elif name == "Level_6_1":
 		Input.mouse_mode = Input.MOUSE_MODE_VISIBLE
 		Global.can_move = false
 		level_61.visible = true
+		MusicManager.play_computer_sound()
 	
 	elif name == "Level_6_2":
 		Input.mouse_mode = Input.MOUSE_MODE_VISIBLE
 		Global.can_move = false
 		level_62.visible = true
+		MusicManager.play_computer_sound()
 		
 	elif name == "Level_6_3":
 		Input.mouse_mode = Input.MOUSE_MODE_VISIBLE
 		Global.can_move = false
 		level_63.visible = true
+		MusicManager.play_computer_sound()
 		
 	elif name == "Level_6_4":
 		Input.mouse_mode = Input.MOUSE_MODE_VISIBLE
 		Global.can_move = false
 		level_64.visible = true	
+		MusicManager.play_computer_sound()
 		
 	elif name == "Level_7_kod":
 		Input.mouse_mode = Input.MOUSE_MODE_VISIBLE
 		Global.can_move = false
 		level_7_kod.visible = true	
+		MusicManager.play_computer_sound()
 		
 	elif name == "Level_7_dane":
 		Input.mouse_mode = Input.MOUSE_MODE_VISIBLE
 		Global.can_move = false
 		level_7_dane.visible = true	
+		MusicManager.play_computer_sound()
 		
 	elif name == "Level_9_1":
 		Input.mouse_mode = Input.MOUSE_MODE_VISIBLE
 		Global.can_move = false
 		level_9_1.visible = true	
+		MusicManager.play_computer_sound()
 		
 	elif name == "Level_9_2":
 		Input.mouse_mode = Input.MOUSE_MODE_VISIBLE
 		Global.can_move = false
 		level_9_2.visible = true	
+		MusicManager.play_computer_sound()
 		
 	elif name == "Level_9_3":
 		Input.mouse_mode = Input.MOUSE_MODE_VISIBLE
 		Global.can_move = false
 		level_9_3.visible = true	
+		MusicManager.play_computer_sound()
 		
 	elif name.begins_with("Level_10_"):
 		Input.mouse_mode = Input.MOUSE_MODE_VISIBLE
 		Global.can_move = false
+		MusicManager.play_computer_sound()
 
 		var quiz_manager = get_node_or_null(quiz_manager_path)
 		if quiz_manager:
@@ -177,7 +197,6 @@ func set_question_assigned():
 	is_solved = false
 	has_question = true
 	_update_icon()
-
 
 func mark_solved():
 	is_solved = true

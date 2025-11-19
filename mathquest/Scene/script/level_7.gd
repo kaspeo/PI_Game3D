@@ -1,13 +1,11 @@
 extends Node3D
 
-@onready var start: AcceptDialog = $Dialogi/Start
+
 @onready var misja: AcceptDialog = $Dialogi/Misja
 var popup_shown := false
 
 
 func _ready() -> void:
-	start.popup_centered()
-	start.grab_focus()
 	Global.current_level=7
 	
 func show_misja_dialog() -> void:

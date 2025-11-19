@@ -917,4 +917,14 @@ font_size = 44
 [node name="Level_10_quiz" parent="Komputer" instance=ExtResource("17_0h21f")]
 visible = false
 
+[node name="Dialogi" type="Node" parent="."]
+
+[node name="Misja" type="AcceptDialog" parent="Dialogi"]
+oversampling_override = 1.0
+title = "Cel poziomu"
+initial_position = 2
+size = Vector2i(761, 100)
+visible = true
+dialog_text = "Odpowiedz na 12 pytań. Jeden komputer to jedno pytanie."
+
 [connection signal="interacted" from="Word/Tunnel/Enter/ButtonSmall" to="Word/Tunnel/Enter/enter" method="toggle"]

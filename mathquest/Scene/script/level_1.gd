@@ -1,6 +1,6 @@
 extends Node3D
 
-@onready var start: AcceptDialog = $Dialogi/Start
+
 @onready var misja: AcceptDialog = $Dialogi/Misja
 const LEVEL_2 = "res://Scene/level_2.tscn"
 
@@ -8,15 +8,8 @@ var popup_shown := false
 
 func _ready() -> void:
 	Global.current_level = 1
-	show_start_dialog()
 
-func show_start_dialog() -> void:
-	start.popup_centered()
-	start.grab_focus()
-	start.connect("confirmed", Callable(self, "_on_start_confirmed"))
 
-func _on_start_confirmed() -> void:
-	start.hide()
 	
 func show_misja_dialog() -> void:
 	misja.popup_centered()

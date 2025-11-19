@@ -1,6 +1,8 @@
-[gd_scene load_steps=2 format=3 uid="uid://di8w1cu7ciavm"]
+[gd_scene load_steps=4 format=3 uid="uid://di8w1cu7ciavm"]
 
+[ext_resource type="Theme" uid="uid://diir8laqqumkc" path="res://UI/Assets/UI_Assets/soft_retro.tres" id="1_jesmc"]
 [ext_resource type="Script" uid="uid://d1tqpdjhx1qan" path="res://UI/PauseMenu/pause_menu.gd" id="1_t3iro"]
+[ext_resource type="PackedScene" uid="uid://bmmb8qxaqvmxf" path="res://UI/Settings/Settings.tscn" id="2_w5vkt"]
 
 [node name="PauseMenu" type="Control"]
 process_mode = 3
@@ -10,6 +12,7 @@ anchor_right = 1.0
 anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
+theme = ExtResource("1_jesmc")
 script = ExtResource("1_t3iro")
 
 [node name="ColorRect" type="ColorRect" parent="."]
@@ -68,64 +71,11 @@ size_flags_horizontal = 4
 theme_override_font_sizes/font_size = 50
 text = "Pomiń samouczek"
 
-[node name="Settings" type="Panel" parent="."]
+[node name="Settings" parent="." instance=ExtResource("2_w5vkt")]
 visible = false
 layout_mode = 1
-anchors_preset = 15
-anchor_right = 1.0
-anchor_bottom = 1.0
-grow_horizontal = 2
-grow_vertical = 2
-metadata/_edit_use_anchors_ = true
-
-[node name="ColorRect" type="ColorRect" parent="Settings"]
-layout_mode = 1
-anchors_preset = 15
-anchor_right = 1.0
-anchor_bottom = 1.0
-grow_horizontal = 2
-grow_vertical = 2
-color = Color(0.07590044, 0.39959106, 0.4623711, 1)
-
-[node name="VBoxContainer" type="VBoxContainer" parent="Settings"]
-layout_mode = 1
-anchors_preset = 8
-anchor_left = 0.5
-anchor_top = 0.5
-anchor_right = 0.5
-anchor_bottom = 0.5
-offset_left = -24.0
-offset_top = -27.5
-offset_right = 24.0
-offset_bottom = 27.5
-grow_horizontal = 2
-grow_vertical = 2
-metadata/_edit_use_anchors_ = true
-
-[node name="Window" type="OptionButton" parent="Settings/VBoxContainer"]
-layout_mode = 2
-size_flags_horizontal = 4
-size_flags_vertical = 4
-theme_override_font_sizes/font_size = 76
-alignment = 1
-selected = 1
-item_count = 3
-popup/item_0/text = "Okno"
-popup/item_0/id = 0
-popup/item_1/text = "Pełen Ekran"
-popup/item_1/id = 1
-popup/item_2/text = "Pełny ekran bez obramowania"
-popup/item_2/id = 2
-
-[node name="Exti_settings" type="Button" parent="Settings/VBoxContainer"]
-layout_mode = 2
-size_flags_horizontal = 4
-theme_override_font_sizes/font_size = 76
-text = "Wróć"
 
 [connection signal="pressed" from="PanelContainer/VBoxContainer/Resume" to="." method="_on_resume_pressed"]
 [connection signal="pressed" from="PanelContainer/VBoxContainer/Ustawienia" to="." method="_on_ustawienia_pressed"]
 [connection signal="pressed" from="PanelContainer/VBoxContainer/Exit" to="." method="_on_exit_pressed"]
 [connection signal="pressed" from="PanelContainer2/ExitTutorial" to="." method="_on_exit_tutorial_pressed"]
-[connection signal="item_selected" from="Settings/VBoxContainer/Window" to="." method="_on_window_item_selected"]
-[connection signal="pressed" from="Settings/VBoxContainer/Exti_settings" to="." method="_on_exti_settings_pressed"]

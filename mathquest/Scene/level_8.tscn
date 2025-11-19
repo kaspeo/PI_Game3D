@@ -735,17 +735,6 @@ visible = false
 
 [node name="Dialogi" type="Node" parent="."]
 
-[node name="Start" type="AcceptDialog" parent="Dialogi"]
-auto_translate_mode = 1
-oversampling_override = 1.0
-title = ""
-initial_position = 2
-size = Vector2i(212, 184)
-visible = true
-sharp_corners = true
-dialog_text = "Poziom 8
-Interpolacja hermita"
-
 [node name="Misja" type="AcceptDialog" parent="Dialogi"]
 oversampling_override = 1.0
 title = "Cel poziomu"

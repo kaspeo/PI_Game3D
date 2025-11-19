@@ -28,7 +28,7 @@ size = Vector3(3.2173767, 1, 2.725525)
 size = Vector3(0.213348, 0.47467, 0.214249)
 
 [sub_resource type="BoxShape3D" id="BoxShape3D_veuv8"]
-size = Vector3(2.50085, 1, 1.26758)
+size = Vector3(7.4474173, 1.9926758, 1.26758)
 
 [node name="Tutorial" type="Node3D"]
 script = ExtResource("1_aqehm")
@@ -156,30 +156,16 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.0886993, -0.262665, -0.003
 shape = SubResource("BoxShape3D_64kyw")
 
 [node name="AreaPopup" type="Area3D" parent="Misja1"]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 2.5599, 1.00845, 5.38272)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 2.5599, 1.00845, 4.2844105)
 
 [node name="CollisionShape3D" type="CollisionShape3D" parent="Misja1/AreaPopup"]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.401428, 0, 0.133789)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.62864757, 0.4963379, 0.13378906)
 shape = SubResource("BoxShape3D_veuv8")
 
 [node name="Skrzynka" parent="Misja1" instance=ExtResource("2_r3him")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 2.21264, 0.552435, 4.57117)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 1.3221986, 0.552435, 2.5483384)
 
 [node name="Dialogi" type="Node" parent="."]
-
-[node name="Start" type="AcceptDialog" parent="Dialogi"]
-oversampling_override = 1.0
-title = "Samouczek"
-position = Vector2i(176, 230)
-size = Vector2i(799, 210)
-visible = true
-sharp_corners = true
-dialog_text = "Witaj w MathQuest!
-
-MathQuest pomoże Ci zrozumieć metody numeryczne w prosty sposób.
-W tym poziomie nauczysz się sterowania i przechodzenia kolejnych etapów.
-
-Kliknij \"Enter\" żeby zamknąć to okienko."
 
 [node name="Sterowanie" type="AcceptDialog" parent="Dialogi"]
 oversampling_override = 1.0

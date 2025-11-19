@@ -786,16 +786,6 @@ shape = SubResource("BoxShape3D_sq6mb")
 
 [node name="Dialogi" type="Node" parent="."]
 
-[node name="Start" type="AcceptDialog" parent="Dialogi"]
-auto_translate_mode = 1
-oversampling_override = 1.0
-title = ""
-initial_position = 2
-size = Vector2i(212, 106)
-sharp_corners = true
-dialog_text = "Czas na poziom pierwszy!
-Metoda Bisekcji"
-
 [node name="Misja" type="AcceptDialog" parent="Dialogi"]
 oversampling_override = 1.0
 title = "Cel poziomu"

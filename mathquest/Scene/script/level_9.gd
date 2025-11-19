@@ -4,7 +4,6 @@ var popup_shown := false
 var computers_done = 0
 const LEVEL_10 = "res://Scene/Level_10.tscn"
 @onready var misja: AcceptDialog = $Dialogi/Misja
-@onready var start: AcceptDialog = $Dialogi/Start
 @onready var level_91: RectangleMethodComputer = $Zadania/Level_9_1/Level91
 @onready var level_92: SimpsonMethodComputer = $Zadania/Level_9_2/Level92
 @onready var level_93: MonteCarloMethodComputer = $Zadania/Level_9_3/Level93

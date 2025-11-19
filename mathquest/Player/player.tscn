@@ -1,4 +1,4 @@
-[gd_scene load_steps=10 format=3 uid="uid://di80n2exvk435"]
+[gd_scene load_steps=11 format=3 uid="uid://di80n2exvk435"]
 
 [ext_resource type="Script" uid="uid://db3xn5rq5a6ak" path="res://Player/script/player.gd" id="1_4ntmi"]
 [ext_resource type="PackedScene" uid="uid://b8g7vufbop8ih" path="res://Player/Assets/mini-characters/Models/GLB format/character-male-e.glb" id="1_l8h54"]
@@ -7,6 +7,7 @@
 [ext_resource type="Script" uid="uid://c0vhumvv4808v" path="res://Player/script/camera3d.gd" id="5_k53q1"]
 [ext_resource type="Script" uid="uid://6lqqwpcfkoyu" path="res://Player/script/ui.gd" id="6_vtle1"]
 [ext_resource type="Texture2D" uid="uid://bym6w3mjfmepg" path="res://UI/Assets/Crosshair/crosshair001.png" id="7_od3ui"]
+[ext_resource type="FontFile" uid="uid://dx4ipeoy3xbbl" path="res://UI/Assets/Font/Kenney Future.ttf" id="8_od3ui"]
 
 [sub_resource type="CapsuleShape3D" id="CapsuleShape3D_gwnis"]
 radius = 0.174895
@@ -51,6 +52,10 @@ script = ExtResource("5_k53q1")
 spring_arm = NodePath("../SpringPosition")
 player_body = NodePath("../../..")
 
+[node name="FootstepPlayer" type="AudioStreamPlayer3D" parent="."]
+volume_db = -35.0
+max_db = 1.0
+
 [node name="UI" type="Control" parent="."]
 layout_mode = 3
 anchors_preset = 15
@@ -60,6 +65,7 @@ grow_horizontal = 2
 grow_vertical = 2
 mouse_filter = 2
 script = ExtResource("6_vtle1")
+metadata/_edit_use_anchors_ = true
 
 [node name="CrossHair" type="TextureRect" parent="UI"]
 layout_mode = 1
@@ -111,27 +117,55 @@ text = "aktualny poziom"
 horizontal_alignment = 1
 vertical_alignment = 1
 
+[node name="MarginContainer" type="MarginContainer" parent="UI"]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_constants/margin_bottom = 400
+metadata/_edit_use_anchors_ = true
+
+[node name="Level" type="Label" parent="UI/MarginContainer"]
+layout_mode = 2
+size_flags_horizontal = 4
+theme_override_colors/font_color = Color(1, 0.060000002, 0.060000002, 1)
+theme_override_colors/font_shadow_color = Color(1, 1, 1, 0)
+theme_override_colors/font_outline_color = Color(0, 0, 0, 1)
+theme_override_constants/outline_size = 25
+theme_override_fonts/font = ExtResource("8_od3ui")
+theme_override_font_sizes/font_size = 55
+text = "Informacje poziomu"
+horizontal_alignment = 1
+vertical_alignment = 1
+
 [node name="PaneMisji" type="PanelContainer" parent="UI"]
 layout_mode = 1
+anchors_preset = -1
+anchor_right = 0.028125
+anchor_bottom = 0.032407407
 offset_left = 8.0
 offset_top = 10.0
 offset_right = 149.0
 offset_bottom = 73.0
+metadata/_edit_use_anchors_ = true
 
 [node name="HBoxContainer" type="VBoxContainer" parent="UI/PaneMisji"]
 layout_mode = 2
+alignment = 1
 
 [node name="Misja" type="Label" parent="UI/PaneMisji/HBoxContainer"]
 layout_mode = 2
+theme_override_font_sizes/font_size = 26
 text = "Brak zadania"
 horizontal_alignment = 1
 vertical_alignment = 1
-autowrap_mode = 3
 
 [node name="StatusM" type="Label" parent="UI/PaneMisji/HBoxContainer"]
 layout_mode = 2
+theme_override_font_sizes/font_size = 26
 horizontal_alignment = 1
 vertical_alignment = 1
-autowrap_mode = 3
 
 [editable path="character-male-e2"]

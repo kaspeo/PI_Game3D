@@ -3,7 +3,6 @@ extends Node3D
 var computers_done = 0
 @onready var misja: AcceptDialog = $Dialogi/Misja
 var popup_shown := false
-@onready var start: AcceptDialog = $Dialogi/Start
 const LEVEL_5 = "res://Scene/Level_5.tscn"
 @onready var level_4_1: Control = $MisjaLevel4/Level4_1
 @onready var wyjscie: Node3D = $wyjscie/Enter/Wyjscie

@@ -174,7 +174,7 @@ shape = SubResource("BoxShape3D_2thg8")
 visible = false
 
 [node name="Wejscie" parent="." instance=ExtResource("10_u3hva")]
-transform = Transform3D(-4.371139e-08, 0, 1, 0, 1, 0, -1, 0, -4.371139e-08, 0, 0.099999994, -6.0499997)
+transform = Transform3D(-4.371139e-08, 0, 1, 0, 1, 0, -1, 0, -4.371139e-08, 0, 0.099999994, -6.06)
 
 [node name="Wyjscie" parent="." instance=ExtResource("10_u3hva")]
 transform = Transform3D(-1, 0, 8.742278e-08, 0, 1, 0, -8.742278e-08, 0, -1, 17.779999, 0.099999994, 1.12)
@@ -183,16 +183,6 @@ transform = Transform3D(-1, 0, 8.742278e-08, 0, 1, 0, -8.742278e-08, 0, -1, 17.7
 visible = false
 
 [node name="Dialogi" type="Node" parent="."]
-
-[node name="Start" type="AcceptDialog" parent="Dialogi"]
-auto_translate_mode = 1
-oversampling_override = 1.0
-title = ""
-initial_position = 2
-size = Vector2i(212, 100)
-visible = true
-sharp_corners = true
-dialog_text = "Czas na poziom 7!"
 
 [node name="Misja" type="AcceptDialog" parent="Dialogi"]
 auto_translate_mode = 1

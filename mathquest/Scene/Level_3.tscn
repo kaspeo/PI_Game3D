@@ -400,16 +400,6 @@ visible = false
 
 [node name="Dialogi" type="Node" parent="."]
 
-[node name="Start" type="AcceptDialog" parent="Dialogi"]
-auto_translate_mode = 1
-oversampling_override = 1.0
-title = ""
-initial_position = 2
-size = Vector2i(212, 106)
-sharp_corners = true
-dialog_text = "Poziom 3
-Metoda Siecznych"
-
 [node name="Misja" type="AcceptDialog" parent="Dialogi"]
 title = "Cel poziomu"
 initial_position = 2

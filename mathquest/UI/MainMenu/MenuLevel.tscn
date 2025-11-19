@@ -1,5 +1,6 @@
-[gd_scene load_steps=2 format=3 uid="uid://l2domsp5u3mu"]
+[gd_scene load_steps=3 format=3 uid="uid://l2domsp5u3mu"]
 
+[ext_resource type="Theme" uid="uid://diir8laqqumkc" path="res://UI/Assets/UI_Assets/soft_retro.tres" id="1_fh7kf"]
 [ext_resource type="Script" uid="uid://ca67eoccyrt45" path="res://UI/MainMenu/Script/menu_level.gd" id="1_kqtij"]
 
 [node name="MenuLevel" type="Control"]
@@ -10,6 +11,7 @@ anchor_right = 1.0
 anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
+theme = ExtResource("1_fh7kf")
 script = ExtResource("1_kqtij")
 
 [node name="ColorRect" type="ColorRect" parent="."]
