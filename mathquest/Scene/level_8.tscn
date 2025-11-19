@@ -525,7 +525,7 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 1.4200013, 0.08999932, -0.225
 shape = SubResource("BoxShape3D_grlxq")
 
 [node name="BoxLarge_1" type="RigidBody3D" parent="Ekrany/Ekran1"]
-transform = Transform3D(-1, 0, -8.742278e-08, 0, 1, 0, 8.742278e-08, 0, -1, 15.619998, 0.8499996, 12.699999)
+transform = Transform3D(-1, 0, -8.742278e-08, 0, 1, 0, 8.742278e-08, 0, -1, 4.6799984, 0.8499996, 5.779999)
 linear_damp = 40.0
 
 [node name="box-large" type="MeshInstance3D" parent="Ekrany/Ekran1/BoxLarge_1"]
@@ -543,7 +543,7 @@ text = "x = -1, f = -8
 "
 
 [node name="BoxLong_1" type="RigidBody3D" parent="Ekrany/Ekran1"]
-transform = Transform3D(-0.9986295, 0, -0.05233605, 0, 1, 0, 0.05233605, 0, -0.9986295, 16.849998, 0.7899996, 8.780001)
+transform = Transform3D(-0.9986295, 0, -0.05233605, 0, 1, 0, 0.05233605, 0, -0.9986295, 4.7999983, 0.7899996, 8.780001)
 
 [node name="box-long" type="MeshInstance3D" parent="Ekrany/Ekran1/BoxLong_1"]
 transform = Transform3D(0.8, 0, 0, 0, 0.8, 0, 0, 0, 0.8, 0, 0, 0)
@@ -562,7 +562,7 @@ f' = 1
 "
 
 [node name="BoxSmall_1" type="RigidBody3D" parent="Ekrany/Ekran1"]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 14.129998, 2.0799994, 1.4799997)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 3.5999985, 0.73999953, 1.4799997)
 
 [node name="box-small" type="MeshInstance3D" parent="Ekrany/Ekran1/BoxSmall_1"]
 transform = Transform3D(0.8, 0, 0, 0, 0.8, 0, 0, 0, 0.8, 0, 0, 0)
