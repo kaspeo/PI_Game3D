@@ -30,23 +30,8 @@ func question_completed():
 		
 	completed_questions += 1
 	_update_display()
-	
-	if completed_questions >= total_questions:
-		var timer = get_tree().create_timer(2.0)
-		timer.timeout.connect(hide_bsod)
+
 
 func _update_display():
 	if bsod_ui and bsod_ui.has_method("update_progress"):
 		bsod_ui.update_progress(completed_questions, total_questions)
-
-func hide_bsod():
-	is_active = false
-	visible = false
-
-func set_total_questions(count: int):
-	total_questions = count
-
-func reset_progress():
-	completed_questions = 0
-	is_active = false
-	visible = false

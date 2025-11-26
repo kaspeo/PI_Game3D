@@ -6,11 +6,13 @@ const TOTAL_COMPUTERS := 18
 const QUESTIONS_TO_ASSIGN := 12
 const QUESTIONS_FILE := "res://Scene/Podsceny/Level_10/questions.json"
 
-var assignments = {} # ścieżka -> pytanie
+var assignments = {} 
 var quiz_scene: Control
 var questions = []
 var bsod_display: Node3D
 var total_questions_completed := 0
+
+signal computers_completed
 
 func _ready():
 	randomize()
@@ -109,9 +111,8 @@ func _on_quiz_answered(correct: bool, comp: Node):
 		_all_questions_completed()
 
 func _all_questions_completed():
-	if bsod_display and bsod_display.has_method("hide_bsod"):
-		var timer = get_tree().create_timer(3.0)
-		timer.timeout.connect(bsod_display.hide_bsod)
+	emit_signal("computers_completed")
+
 
 func start_bsod():
 	if bsod_display and bsod_display.has_method("show_bsod"):

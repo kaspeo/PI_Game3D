@@ -36,6 +36,7 @@ custom_minimum_size = Vector2(900, 0)
 layout_mode = 2
 size_flags_horizontal = 4
 size_flags_vertical = 4
+theme_override_constants/separation = 11
 
 [node name="Label2" type="Label" parent="PanelContainer/VBoxContainer"]
 layout_mode = 2
@@ -51,7 +52,7 @@ layout_mode = 2
 size_flags_horizontal = 3
 theme_override_font_sizes/font_size = 30
 text = "Poziom 1 
-Metoda Biskecji
+Metoda Bisekcji
 "
 
 [node name="Level2" type="Button" parent="PanelContainer/VBoxContainer/HBoxContainer"]
