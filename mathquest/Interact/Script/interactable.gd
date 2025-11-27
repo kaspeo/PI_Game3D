@@ -5,7 +5,7 @@ class_name Interactable
 var is_solved := false
 var has_question := false
 
-
+@onready var tutorial: Control = $"../Tutorialekran"
 @onready var level_21: Control = $"../Level_21"
 @onready var level_22: Control = $"../../MisjaKod2/Level_22"
 @onready var level_3: Control = $"../Level3Wykres"
@@ -61,8 +61,14 @@ func interact(body):
 	
 	if name.begins_with("Level_10_") and (not has_question or is_solved):
 		return  
-	
-	if name == "Level_2_1":
+		
+	if name == "Tutorial":
+		Input.mouse_mode = Input.MOUSE_MODE_VISIBLE
+		Global.can_move = false
+		tutorial.visible = true
+		MusicManager.play_computer_sound()
+		
+	elif name == "Level_2_1":
 		Input.mouse_mode = Input.MOUSE_MODE_VISIBLE
 		Global.can_move = false
 		level_21.visible = true

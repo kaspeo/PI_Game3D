@@ -8,12 +8,12 @@ const STALY_WZOR = "W₃(x) = -8 + 6·(x + 1) - 5·(x + 1)x + 1·(x + 1)x²"
 
 var solutions_data = {
 	"empty": {
-		"title": "EKRAŃ INTERPOLACJI HERMITE'A",
+		"title": "EKRAN 1 INTERPOLACJA HERMITE'A",
 		"key_points": PackedVector2Array(),
 		"line_points": PackedVector2Array()
 	},
 	"correct": {
-		"title": "INTERPOLACJA HERMITE'A - POPRAWNA",
+		"title": "EKRAN 1 POPRAWNE ROZWIĄZANIE",
 		"key_points": PackedVector2Array([
 			Vector2(-1, -8),
 			Vector2(0, -2), 
@@ -23,7 +23,7 @@ var solutions_data = {
 		"color": Color.GREEN
 	},
 	"incorrect": {
-		"title": "INTERPOLACJA HERMITE'A - BŁĘDNA",
+		"title": "EKRAN 1 BŁĘDNE DANE",
 		"key_points": PackedVector2Array([
 			Vector2(-1, 2),
 			Vector2(0, 0),

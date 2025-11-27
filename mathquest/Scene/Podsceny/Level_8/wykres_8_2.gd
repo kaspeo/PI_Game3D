@@ -8,12 +8,12 @@ const STALY_WZOR = "W₃(x) = 1 + 2x + 0·x(x-1) + 1·x(x-1)(x-2)"
 
 var solutions_data = {
 	"empty": {
-		"title": "EKRAŃ 2 INTERPOLACJA HERMITE'A",
+		"title": "EKRAN 2 INTERPOLACJA HERMITE'A",
 		"key_points": PackedVector2Array(),
 		"line_points": PackedVector2Array()
 	},
 	"correct": {
-		"title": "EKRAŃ 2 POPRAWNE ROZWIĄZANIE",
+		"title": "EKRAN 2 POPRAWNE ROZWIĄZANIE",
 		"key_points": PackedVector2Array([
 			Vector2(0, 1),
 			Vector2(1, 3), 
@@ -23,7 +23,7 @@ var solutions_data = {
 		"color": Color.GREEN
 	},
 	"incorrect": {
-		"title": "EKRAŃ 2 BŁĘDNE DANE",
+		"title": "EKRAN 2 BŁĘDNE DANE",
 		"key_points": PackedVector2Array([
 			Vector2(-1, 2),
 			Vector2(0, 0),

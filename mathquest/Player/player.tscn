@@ -84,7 +84,7 @@ blend_shape_mode = 0
 radius = 0.174895
 height = 0.706396
 
-[sub_resource type="CylinderShape3D" id="CylinderShape3D_od3ui"]
+[sub_resource type="SeparationRayShape3D" id="SeparationRayShape3D_od3ui"]
 
 [node name="Player" type="CharacterBody3D"]
 floor_max_angle = 1.309
@@ -171,8 +171,8 @@ script = ExtResource("4_gwnis")
 transform = Transform3D(-1, -9.47304e-16, 8.74228e-08, 2.99003e-08, 0.939693, 0.34202, -8.21506e-08, 0.34202, -0.939693, -1.98952e-13, -0.100002, 1.4)
 
 [node name="SpringArm3D" type="SpringArm3D" parent="SpringArmPivot"]
-transform = Transform3D(1, 0, 0, 0, -0.866026, 0.5, 0, -0.5, -0.866026, 0, 0, 0.1)
-shape = SubResource("CylinderShape3D_od3ui")
+transform = Transform3D(1, 0, 0, 0, -0.866026, 0.5, 0, -0.5, -0.866026, 0, 0, 0.019208051)
+shape = SubResource("SeparationRayShape3D_od3ui")
 spring_length = 3.0
 
 [node name="SpringPosition" type="Node3D" parent="SpringArmPivot/SpringArm3D"]
@@ -245,6 +245,8 @@ anchor_right = 1.0
 offset_left = -74.0
 offset_bottom = 31.0
 grow_horizontal = 0
+theme_override_fonts/font = ExtResource("8_od3ui")
+theme_override_font_sizes/font_size = 35
 text = "aktualny poziom"
 horizontal_alignment = 1
 vertical_alignment = 1
