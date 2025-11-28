@@ -104,9 +104,6 @@ light_color = Color(1, 0.960784, 0.882353, 1)
 transform = Transform3D(1, 0, 0, 0, -0.0237872, 0.999717, 0, -0.999717, -0.0237872, 3.00122, 9.45092, 6.48535)
 light_color = Color(1, 0.960784, 0.882353, 1)
 
-[node name="PauseMenu" parent="." instance=ExtResource("3_r3him")]
-visible = false
-
 [node name="Player" parent="." instance=ExtResource("4_64kyw")]
 transform = Transform3D(0.0218497, 0, -0.999761, 0, 1, 0, 0.999761, 0, 0.0218497, 4.26738, 0.5, 9.164)
 
@@ -201,6 +198,9 @@ mesh = SubResource("QuadMesh_v3n1o")
 skeleton = NodePath("../../..")
 
 [node name="Tutorialekran" parent="Misja2" instance=ExtResource("13_mvu6f")]
+visible = false
+
+[node name="PauseMenu" parent="." instance=ExtResource("3_r3him")]
 visible = false
 
 [node name="Dialogi" type="Node" parent="."]

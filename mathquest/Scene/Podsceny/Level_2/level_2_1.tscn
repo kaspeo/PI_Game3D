@@ -1,6 +1,7 @@
-[gd_scene load_steps=3 format=3 uid="uid://tkpgn83yaejg"]
+[gd_scene load_steps=4 format=3 uid="uid://tkpgn83yaejg"]
 
 [ext_resource type="Script" uid="uid://ddsxgdsasutaw" path="res://Scene/Podsceny/Level_2/level_2_1.gd" id="1_gvajl"]
+[ext_resource type="Texture2D" uid="uid://dnh517ytibf0o" path="res://UI/frame.png" id="2_jbek1"]
 [ext_resource type="Script" uid="uid://d2542yqt0ubtf" path="res://Scene/Podsceny/Level_2/level_2_1graph.gd" id="2_uwq7q"]
 
 [node name="Level2_1" type="Control"]
@@ -14,13 +15,32 @@ grow_horizontal = 2
 grow_vertical = 2
 script = ExtResource("1_gvajl")
 
+[node name="TextureRect" type="TextureRect" parent="."]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = -56.999996
+offset_top = -42.0
+offset_right = -57.0
+offset_bottom = -42.0
+grow_horizontal = 2
+grow_vertical = 2
+scale = Vector2(1.1, 1.088)
+texture = ExtResource("2_jbek1")
+
 [node name="ColorRect" type="ColorRect" parent="."]
 layout_mode = 1
 anchors_preset = 15
 anchor_right = 1.0
 anchor_bottom = 1.0
+offset_left = 289.0
+offset_top = 147.0
+offset_right = 289.0
+offset_bottom = 147.0
 grow_horizontal = 2
 grow_vertical = 2
+scale = Vector2(0.73230344, 0.6994655)
 color = Color(0, 0.247911, 0.223716, 1)
 
 [node name="MarginContainer" type="MarginContainer" parent="."]
@@ -28,8 +48,13 @@ layout_mode = 1
 anchors_preset = 15
 anchor_right = 1.0
 anchor_bottom = 1.0
+offset_left = 289.0
+offset_top = 147.0
+offset_right = 289.0
+offset_bottom = 147.0
 grow_horizontal = 2
 grow_vertical = 2
+scale = Vector2(0.73230344, 0.6994655)
 theme_override_constants/margin_top = 40
 
 [node name="VBoxContainer" type="VBoxContainer" parent="MarginContainer"]

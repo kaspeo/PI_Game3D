@@ -1,6 +1,7 @@
-[gd_scene load_steps=2 format=3 uid="uid://dx321he7ddkjq"]
+[gd_scene load_steps=3 format=3 uid="uid://dx321he7ddkjq"]
 
 [ext_resource type="Script" uid="uid://8resw0fweul1" path="res://Scene/Podsceny/Tutorial/tutorialekran.gd" id="1_g1wwx"]
+[ext_resource type="Texture2D" uid="uid://dnh517ytibf0o" path="res://UI/frame.png" id="2_m840o"]
 
 [node name="Tutorialekran" type="Control"]
 layout_mode = 3
@@ -11,38 +12,42 @@ grow_horizontal = 2
 grow_vertical = 2
 script = ExtResource("1_g1wwx")
 
-[node name="PanelContainer" type="Panel" parent="."]
+[node name="TextureRect" type="TextureRect" parent="."]
 layout_mode = 1
 anchors_preset = 15
 anchor_right = 1.0
 anchor_bottom = 1.0
+offset_left = -56.999996
+offset_top = -42.0
+offset_right = -57.0
+offset_bottom = -42.0
 grow_horizontal = 2
 grow_vertical = 2
+scale = Vector2(1.1, 1.088)
+texture = ExtResource("2_m840o")
+
+[node name="PanelContainer" type="MarginContainer" parent="."]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = 305.0
+offset_top = 149.0
+offset_right = 305.0
+offset_bottom = 149.0
+grow_horizontal = 2
+grow_vertical = 2
+scale = Vector2(0.72166777, 0.68062985)
 
 [node name="Background" type="ColorRect" parent="PanelContainer"]
-layout_mode = 1
-anchors_preset = 15
-anchor_right = 1.0
-anchor_bottom = 1.0
-grow_horizontal = 2
-grow_vertical = 2
+layout_mode = 2
 color = Color(0, 0, 0.6666667, 1)
 
 [node name="Potwierdz" type="Button" parent="PanelContainer"]
 custom_minimum_size = Vector2(400, 80)
-layout_mode = 1
-anchors_preset = 8
-anchor_left = 0.5
-anchor_top = 0.5
-anchor_right = 0.5
-anchor_bottom = 0.5
-offset_left = -513.0
-offset_top = -119.0
-offset_right = 513.0
-offset_bottom = 119.0
-grow_horizontal = 2
-grow_vertical = 2
+layout_mode = 2
 size_flags_horizontal = 4
+size_flags_vertical = 4
 theme_override_colors/font_color = Color(0.88, 0.1584, 0.1584, 1)
 theme_override_colors/font_focus_color = Color(0.6730003, 0, 0.28889927, 1)
 theme_override_constants/outline_size = 40
@@ -53,17 +58,9 @@ użycie komputera i otworzyć drzwi."
 
 [node name="ButtonExit" type="Button" parent="PanelContainer"]
 custom_minimum_size = Vector2(300, 0)
-layout_mode = 1
-anchors_preset = 3
-anchor_left = 1.0
-anchor_top = 1.0
-anchor_right = 1.0
-anchor_bottom = 1.0
-offset_left = -300.0
-offset_top = -48.0
-grow_horizontal = 0
-grow_vertical = 0
-size_flags_horizontal = 4
+layout_mode = 2
+size_flags_horizontal = 8
+size_flags_vertical = 8
 theme_override_font_sizes/font_size = 60
 text = "Wyjdź"
 

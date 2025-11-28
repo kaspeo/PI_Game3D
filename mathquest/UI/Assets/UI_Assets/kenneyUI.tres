@@ -27,6 +27,11 @@ cache/0/76/0/descent = 0.0
 cache/0/76/0/underline_position = 0.0
 cache/0/76/0/underline_thickness = 0.0
 cache/0/76/0/scale = 1.0
+cache/0/60/0/ascent = 0.0
+cache/0/60/0/descent = 0.0
+cache/0/60/0/underline_position = 0.0
+cache/0/60/0/underline_thickness = 0.0
+cache/0/60/0/scale = 1.0
 
 [sub_resource type="StyleBoxTexture" id="1"]
 texture_margin_left = 12.5436

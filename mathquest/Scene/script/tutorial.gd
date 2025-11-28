@@ -58,6 +58,8 @@ func _on_area_popup_body_entered(body: Node3D) -> void:
 func _on_area_skrzynka_body_shape_entered(body_rid: RID, body: Node3D, body_shape_index: int, local_shape_index: int) -> void:
 	if body.name == "Skrzynka":
 		skrzynka_gotowa = true
+		if Global.get_ui():
+			Global.get_ui().ustaw_misje("Wejdź do komputera", false)
 
 		
 func _on_ekran_potwierdzony(correct: bool) -> void:

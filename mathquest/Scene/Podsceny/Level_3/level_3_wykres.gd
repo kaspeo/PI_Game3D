@@ -16,23 +16,23 @@ class SecantResult:
 
 signal function_solved(function_name: String)
 
-@onready var exit: Button = $Exit
-@onready var output_display: TextEdit = $Terminal/VBoxContainer/OutputDisplay
-@onready var select_func: OptionButton = $Terminal/VBoxContainer3/VBoxContainer/GridContainer/SelectFunc
-@onready var x_0: LineEdit = $Terminal/VBoxContainer3/VBoxContainer/GridContainer/X0
-@onready var x_1: LineEdit = $Terminal/VBoxContainer3/VBoxContainer/GridContainer/X1
-@onready var tolerance: LineEdit = $Terminal/VBoxContainer3/VBoxContainer/GridContainer/Tolerance
-@onready var graph_display: FunctionPlotter = $Terminal/VBoxContainer3/GraphDisplay
-@onready var status_label: Label = $Terminal/VBoxContainer/StatusLabel
-@onready var pseudocode_container: VBoxContainer = $Terminal/VBoxContainer2/PseudocodeContainer
-@onready var drag_f_x_1___f_x_0_: Button = $"Terminal/VBoxContainer2/DragItems/Drag(f_x1 - f_x0)"
-@onready var drag_f_x_0___f_x_1_: Button = $"Terminal/VBoxContainer2/DragItems/Drag(f_x0 + f_x1)"
-@onready var drag_x_0___x_1_: Button = $"Terminal/VBoxContainer2/DragItems/Drag(x0 = x1)"
-@onready var drag_x_1___x_2_: Button = $"Terminal/VBoxContainer2/DragItems/Drag(x1 = x2)"
-@onready var drag_x_0___x_2_: Button = $"Terminal/VBoxContainer2/DragItems/Drag(x0 = x2)"
-@onready var drag_x_1___x_0_: Button = $"Terminal/VBoxContainer2/DragItems/Drag(x1 = x0)"
-@onready var drag_error_tolerance1: Button = $"Terminal/VBoxContainer2/DragItems/Drag1(error > tolerance)"
-@onready var drag_error_tolerance2: Button = $"Terminal/VBoxContainer2/DragItems/Drag2(error < tolerance)"
+@onready var exit: Button = $MarginContainer/Exit
+@onready var output_display: TextEdit = $MarginContainer/Terminal/VBoxContainer/OutputDisplay
+@onready var select_func: OptionButton = $MarginContainer/Terminal/VBoxContainer3/VBoxContainer/GridContainer/SelectFunc
+@onready var x_0: LineEdit = $MarginContainer/Terminal/VBoxContainer3/VBoxContainer/GridContainer/X0
+@onready var x_1: LineEdit = $MarginContainer/Terminal/VBoxContainer3/VBoxContainer/GridContainer/X1
+@onready var tolerance: LineEdit = $MarginContainer/Terminal/VBoxContainer3/VBoxContainer/GridContainer/Tolerance
+@onready var graph_display: FunctionPlotter = $MarginContainer/Terminal/VBoxContainer3/GraphDisplay
+@onready var status_label: Label = $MarginContainer/Terminal/VBoxContainer/StatusLabel
+@onready var pseudocode_container: VBoxContainer = $MarginContainer/Terminal/VBoxContainer2/PseudocodeContainer
+@onready var drag_f_x_1___f_x_0_: Button = $"MarginContainer/Terminal/VBoxContainer2/DragItems/Drag(f_x1 - f_x0)"
+@onready var drag_f_x_0___f_x_1_: Button = $"MarginContainer/Terminal/VBoxContainer2/DragItems/Drag(f_x0 + f_x1)"
+@onready var drag_x_0___x_1_: Button = $"MarginContainer/Terminal/VBoxContainer2/DragItems/Drag(x0 = x1)"
+@onready var drag_x_1___x_2_: Button = $"MarginContainer/Terminal/VBoxContainer2/DragItems/Drag(x1 = x2)"
+@onready var drag_x_0___x_2_: Button = $"MarginContainer/Terminal/VBoxContainer2/DragItems/Drag(x0 = x2)"
+@onready var drag_x_1___x_0_: Button = $"MarginContainer/Terminal/VBoxContainer2/DragItems/Drag(x1 = x0)"
+@onready var drag_error_tolerance1: Button = $"MarginContainer/Terminal/VBoxContainer2/DragItems/Drag1(error > tolerance)"
+@onready var drag_error_tolerance2: Button = $"MarginContainer/Terminal/VBoxContainer2/DragItems/Drag2(error < tolerance)"
 
 var available_functions = {
 	"f(x) = x² - 9": {"func": "x**2 - 9", "solution": 3.0, "hint": "Miejsce zerowe w x=3"},
@@ -115,7 +115,13 @@ c) OBLICZENIE BŁĘDU:
    error = |f(x₂)|
 d) AKTUALIZACJA PUNKTÓW:""")
 	create_drop_zone("update_x0")
+
+	var sep := HSeparator.new()
+	sep.custom_minimum_size = Vector2(0, 6)
+	$MarginContainer/Terminal/VBoxContainer2/PseudocodeContainer.add_child(sep)
+
 	create_drop_zone("update_x1")
+
 	create_code_part("""
 e) INKREMENTACJA:  
    iter = iter + 1
@@ -129,13 +135,13 @@ func create_code_part(text: String) -> void:
 	label.text = text
 	label.autowrap_mode = TextServer.AUTOWRAP_WORD_SMART
 	label.add_theme_color_override("font_color", Color.WHITE)
-	label.add_theme_color_override("font_size", 14)
+	label.add_theme_color_override("font_size", 25)
 	pseudocode_container.add_child(label)
 
 func create_drop_zone(zone_name: String, hint: String = "") -> void:
 	var zone_container = PanelContainer.new()
 	zone_container.name = "DropZone_" + zone_name
-	zone_container.custom_minimum_size = Vector2(200, 40)
+	zone_container.custom_minimum_size = Vector2(200, 55)
 	
 	var hbox = HBoxContainer.new()
 	hbox.size_flags_horizontal = Control.SIZE_EXPAND_FILL
@@ -181,7 +187,6 @@ func create_zone_stylebox() -> StyleBoxFlat:
 	stylebox.content_margin_bottom = 8
 	return stylebox
 
-# FUNKCJE OBSŁUGI PRZECIĄGANIA
 func _on_dragf_x_1__f_x_0_gui_input(event: InputEvent) -> void:
 	_handle_drag_input(event, drag_f_x_1___f_x_0_, "f_x1 - f_x0")
 
@@ -222,17 +227,34 @@ func _handle_drag_input(event: InputEvent, button: Button, element_text: String)
 			
 			dragged_item = drag_copy
 			dragged_item_text = element_text
-			
-			highlight_drop_zones(true)
 		else:
 			if dragged_item:
 				check_drop_position()
 				dragged_item.queue_free()
 				dragged_item = null
-				highlight_drop_zones(false)
+			reset_drop_zone_highlights()
 	
 	if event is InputEventMouseMotion and dragged_item:
 		dragged_item.global_position = get_global_mouse_position() - dragged_item.size / 2
+		
+		# podświetlanie tylko jeśli nad strefą
+		for zone_name in drop_targets:
+			var zone_node = drop_targets[zone_name]["node"]
+			if zone_node:
+				var zone_rect = Rect2(zone_node.global_position, zone_node.size)
+				if zone_rect.has_point(dragged_item.global_position + dragged_item.size / 2):
+					var stylebox = zone_node.get_theme_stylebox("panel").duplicate()
+					stylebox.bg_color = Color(0.8, 0.8, 0.2, 0.8) # żółty
+					zone_node.add_theme_stylebox_override("panel", stylebox)
+				else:
+					var stylebox = create_zone_stylebox()
+					zone_node.add_theme_stylebox_override("panel", stylebox)
+
+func reset_drop_zone_highlights() -> void:
+	for zone_name in drop_targets:
+		var zone_node = drop_targets[zone_name]["node"]
+		if zone_node:
+			zone_node.add_theme_stylebox_override("panel", create_zone_stylebox())
 
 func highlight_drop_zones(highlight: bool) -> void:
 	for zone_name in drop_targets:
@@ -254,12 +276,13 @@ func check_drop_position() -> void:
 	for zone_name in drop_targets:
 		var zone_node = drop_targets[zone_name]["node"]
 		if zone_node:
-			var zone_rect = Rect2(zone_node.global_position, zone_node.size)
-			var item_rect = Rect2(dragged_item.global_position, dragged_item.size)
+			var zone_rect = zone_node.get_global_rect()
+			var item_rect = dragged_item.get_global_rect()
 			
 			if zone_rect.intersects(item_rect, true):
 				if dragged_item_text == drop_targets[zone_name]["correct"]:
 					drop_targets[zone_name]["filled"] = true
+					
 					var label = zone_node.get_child(0).get_child(0) as Label
 					label.text = "✓ " + dragged_item_text
 					label.add_theme_color_override("font_color", Color.GREEN)
@@ -270,23 +293,15 @@ func check_drop_position() -> void:
 					output_display.text += "✓ Poprawnie umieszczono element\n"
 					item_dropped = true
 					
-					# Ukryj przeciągnięty przycisk
-					if dragged_item_text == "f_x1 - f_x0":
-						drag_f_x_1___f_x_0_.visible = false
-					elif dragged_item_text == "x0 = x1":
-						drag_x_0___x_1_.visible = false
-					elif dragged_item_text == "x1 = x2":
-						drag_x_1___x_2_.visible = false
-					elif dragged_item_text == "error > tolerance":
-						drag_error_tolerance1.visible = false
-					elif dragged_item_text == "f_x0 + f_x1":
-						drag_f_x_0___f_x_1_.visible = false
-					elif dragged_item_text == "x0 = x2":
-						drag_x_0___x_2_.visible = false
-					elif dragged_item_text == "x1 = x0":
-						drag_x_1___x_0_.visible = false
-					elif dragged_item_text == "error < tolerance":
-						drag_error_tolerance2.visible = false
+					match dragged_item_text:
+						"f_x1 - f_x0": drag_f_x_1___f_x_0_.visible = false
+						"x0 = x1": drag_x_0___x_1_.visible = false
+						"x1 = x2": drag_x_1___x_2_.visible = false
+						"error > tolerance": drag_error_tolerance1.visible = false
+						"f_x0 + f_x1": drag_f_x_0___f_x_1_.visible = false
+						"x0 = x2": drag_x_0___x_2_.visible = false
+						"x1 = x0": drag_x_1___x_0_.visible = false
+						"error < tolerance": drag_error_tolerance2.visible = false
 				else:
 					output_display.text += "❌ Błędny element w tym miejscu!\n"
 					item_dropped = true
@@ -294,6 +309,7 @@ func check_drop_position() -> void:
 	
 	if not item_dropped:
 		output_display.text += "Element upuszczony poza strefą docelową\n"
+
 
 func create_success_stylebox() -> StyleBoxFlat:
 	var stylebox = StyleBoxFlat.new()
@@ -371,7 +387,6 @@ func reset_drag_elements() -> void:
 			label.add_theme_color_override("font_color", Color.WHITE)
 			zone_node.add_theme_stylebox_override("panel", create_zone_stylebox())
 	
-	# Przywróć wszystkie przyciski
 	drag_f_x_1___f_x_0_.visible = true
 	drag_f_x_0___f_x_1_.visible = true
 	drag_x_0___x_1_.visible = true
