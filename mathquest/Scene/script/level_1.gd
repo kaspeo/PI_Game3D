@@ -12,6 +12,7 @@ func _ready() -> void:
 
 	
 func show_misja_dialog() -> void:
+	MusicManager.play_music("res://Sounds/Music/ingame.wav")
 	misja.popup_centered()
 	misja.grab_focus()
 	misja.connect("confirmed", Callable(self, "_on_misja_confirmed"))

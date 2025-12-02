@@ -64,7 +64,7 @@ layout_mode = 2
 [node name="Task Label" type="Label" parent="MarginContainer/VBoxContainer/HBoxContainer"]
 layout_mode = 2
 size_flags_horizontal = 4
-theme_override_font_sizes/font_size = 24
+theme_override_font_sizes/font_size = 27
 text = "Znajdź miejsce zerowe funkcji:  f(x) = sin(4x)⋅cos(2x) + 0.2(x - 2.5) + 0.1⋅sin(8x)
 korzystając z metody Reguły Falsi.
 Uwaga! Funkcja ma kilka miejsc zerowych blisko siebie. 
@@ -92,13 +92,13 @@ alignment = 1
 
 [node name="LabelA" type="Label" parent="MarginContainer/VBoxContainer/HBoxContainer/GridContainer/HBoxContainerA"]
 layout_mode = 2
-theme_override_font_sizes/font_size = 26
+theme_override_font_sizes/font_size = 38
 text = "a:"
 
 [node name="InputA" type="LineEdit" parent="MarginContainer/VBoxContainer/HBoxContainer/GridContainer/HBoxContainerA"]
 layout_mode = 2
 size_flags_horizontal = 4
-theme_override_font_sizes/font_size = 26
+theme_override_font_sizes/font_size = 38
 placeholder_text = "1"
 
 [node name="HBoxContainerB" type="HBoxContainer" parent="MarginContainer/VBoxContainer/HBoxContainer/GridContainer"]
@@ -107,13 +107,13 @@ alignment = 1
 
 [node name="LabelB" type="Label" parent="MarginContainer/VBoxContainer/HBoxContainer/GridContainer/HBoxContainerB"]
 layout_mode = 2
-theme_override_font_sizes/font_size = 26
+theme_override_font_sizes/font_size = 38
 text = "b:"
 
 [node name="InputB" type="LineEdit" parent="MarginContainer/VBoxContainer/HBoxContainer/GridContainer/HBoxContainerB"]
 layout_mode = 2
 size_flags_horizontal = 4
-theme_override_font_sizes/font_size = 26
+theme_override_font_sizes/font_size = 38
 placeholder_text = "3"
 
 [node name="HBoxContainer2" type="HBoxContainer" parent="MarginContainer/VBoxContainer"]
@@ -124,7 +124,7 @@ size_flags_vertical = 4
 [node name="Oblicz" type="Button" parent="MarginContainer/VBoxContainer/HBoxContainer2"]
 layout_mode = 2
 size_flags_horizontal = 4
-theme_override_font_sizes/font_size = 27
+theme_override_font_sizes/font_size = 38
 text = "Oblicz
 "
 
@@ -132,7 +132,7 @@ text = "Oblicz
 layout_mode = 2
 size_flags_horizontal = 4
 size_flags_vertical = 4
-theme_override_font_sizes/font_size = 27
+theme_override_font_sizes/font_size = 38
 text = "Wyjdź"
 
 [node name="VBoxContainer" type="HBoxContainer" parent="MarginContainer/VBoxContainer"]
@@ -142,12 +142,12 @@ size_flags_vertical = 4
 
 [node name="PrzedzialA" type="Button" parent="MarginContainer/VBoxContainer/VBoxContainer"]
 layout_mode = 2
-theme_override_font_sizes/font_size = 27
+theme_override_font_sizes/font_size = 38
 text = "wybór przedziału [a, x]"
 
 [node name="PrzedzialB" type="Button" parent="MarginContainer/VBoxContainer/VBoxContainer"]
 layout_mode = 2
-theme_override_font_sizes/font_size = 27
+theme_override_font_sizes/font_size = 38
 text = "wybór przedziału [x, b]"
 
 [node name="HBoxContainer3" type="HBoxContainer" parent="MarginContainer/VBoxContainer"]

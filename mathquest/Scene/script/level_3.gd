@@ -11,6 +11,7 @@ const LEVEL_4 = "res://Scene/Level_4.tscn"
 var solved_functions = {}
 
 func _ready() -> void:
+	MusicManager.play_music("res://Sounds/Music/ingame.wav")
 	Global.current_level = 3
 	misja.visible = false
 	level_3_wykres.connect("function_solved", Callable(self, "register_solved_function"))

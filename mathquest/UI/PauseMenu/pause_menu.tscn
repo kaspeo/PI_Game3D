@@ -94,7 +94,6 @@ oversampling_override = 1.0
 title = "Notatnik"
 initial_position = 1
 size = Vector2i(1200, 400)
-visible = true
 content_scale_factor = 1.5
 dialog_text = "Metoda Bisekcji: Niezawodna metoda znajdowania miejsc zerowych, działająca przez sukcesywne dzielenie przedziału, w którym funkcja zmienia znak. Gwarantuje zbieżność, lecz wolna."
 dialog_autowrap = true

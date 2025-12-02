@@ -10,6 +10,7 @@ var is_open := false
 @onready var komputer: QuizManager = $Komputer
 
 func _ready() -> void:
+	MusicManager.play_music("res://Sounds/Music/ingame.wav")
 	Global.current_level = 10
 	trigger_bsod()
 	komputer.connect("computers_completed", Callable(self, "_on_all_tasks_finished"))

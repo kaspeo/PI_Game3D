@@ -6,6 +6,7 @@ var popup_shown := false
 
 
 func _ready() -> void:
+	MusicManager.play_music("res://Sounds/Music/ingame.wav")
 	Global.current_level=7
 	
 func show_misja_dialog() -> void:

@@ -9,6 +9,7 @@ var popup_shown := false
 const LEVEL_3 = "res://Scene/Level_3.tscn"
 
 func _ready() -> void:
+	MusicManager.play_music("res://Sounds/Music/ingame.wav")
 	Global.current_level = 2
 	misja.visible = false
 	level_21.connect("level2_1_completed", Callable(self, "_on_scena_completed"))

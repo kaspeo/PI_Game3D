@@ -26,6 +26,7 @@ var placed_boxes_1 = []
 var placed_boxes_2 = []
 
 func _ready() -> void:
+	MusicManager.play_music("res://Sounds/Music/ingame.wav")
 	Global.current_level=8
 	area_ekran_1.body_entered.connect(_on_area_1_body_entered)
 	area_ekran_2.body_entered.connect(_on_area_2_body_entered)

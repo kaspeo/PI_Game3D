@@ -1,7 +1,7 @@
 extends Control
-@onready var aedit: TextEdit = $HBoxContainer/HBoxContainer2/aedit
-@onready var bedit: TextEdit = $HBoxContainer/HBoxContainer/bedit
-@onready var result_label: Label = $HBoxContainer/ResultLabel
+@onready var aedit: TextEdit = $MarginContainer/HBoxContainer/HBoxContainer2/aedit
+@onready var bedit: TextEdit = $MarginContainer/HBoxContainer/HBoxContainer/bedit
+@onready var result_label: Label = $MarginContainer/HBoxContainer/ResultLabel
 
 
 var correct_code_a := "-x + 3"

@@ -9,13 +9,13 @@ var exact_solution: float = 0.0
 var target_accuracy: float = 0.995
 var optimal_range: Array = [16, 20]
 
-@onready var task_label: Label = $Panel/Vbox/TaskLabel
-@onready var function_graph: ColorRect = $"Function Graph"
-@onready var result_label: Label = $Panel/ResultLabel
-@onready var segments_value: Label = $Panel/Vbox/SegmentsValue
-@onready var segments_slider: HSlider = $Panel/Vbox/SegmentsSlider
-@onready var check_button: Button = $Panel/Vbox/CheckButton
-@onready var calculation_label: Label = $Panel/CalculationLabel
+@onready var task_label: Label = $ColorRect/Panel/Vbox/TaskLabel
+@onready var function_graph: ColorRect = $ColorRect/"Function Graph"
+@onready var result_label: Label = $ColorRect/Panel/ResultLabel
+@onready var segments_value: Label = $ColorRect/Panel/Vbox/SegmentsValue
+@onready var segments_slider: HSlider = $ColorRect/Panel/Vbox/SegmentsSlider
+@onready var check_button: Button = $ColorRect/Panel/Vbox/CheckButton
+@onready var calculation_label: Label = $ColorRect/Panel/CalculationLabel
 
 signal level_9_2_completed(function_name: String)
 

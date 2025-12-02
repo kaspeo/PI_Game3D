@@ -103,7 +103,6 @@ func draw_monte_carlo_points(scale_x: float, scale_y: float, margin: float, grap
 		1.0
 	)
 	
-	# Rysuj punkty Monte Carlo
 	for point in monte_carlo_points:
 		var x_pixel = margin + (point["x"] - a) * scale_x
 		var y_pixel = size.y - margin - ((point["y"] + y_offset) * scale_y)

@@ -1,9 +1,9 @@
 extends Control
 
 @onready var level_lagrange: Control = $"."
-@onready var code_edit: TextEdit = $HBoxContainer/CodeEdit
-@onready var result_label: Label = $HBoxContainer/ResultLabel
-@onready var exit_button: Button = $Exit
+@onready var code_edit: TextEdit = $MarginContainer/HBoxContainer/CodeEdit
+@onready var result_label: Label = $MarginContainer/HBoxContainer/ResultLabel
+@onready var exit_button: Button = $MarginContainer/Exit
 
 var correct_code := "L(x) = f0*(x - x1)/(x0 - x1) + f1*(x - x0)/(x1 - x0)"
 var task_done := false
@@ -20,7 +20,6 @@ func _on_exit_pressed() -> void:
 func _on_check_button_pressed() -> void:
 	var entered_code = code_edit.text.strip_edges()
 	
-	# Usuń komentarze i białe znaki dla porównania
 	var clean_entered = entered_code.replace("#", "").strip_edges().replace(" ", "")
 	var clean_correct = correct_code.replace(" ", "")
 	

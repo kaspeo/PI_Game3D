@@ -9,13 +9,13 @@ var exact_solution: float = 0.0
 var target_accuracy: float = 0.98
 var optimal_range: Array = [12, 18]
 
-@onready var task_label: Label = $TaskLabel
-@onready var function_graph: ColorRect = $"Function Graph"
-@onready var result_label: Label = $Panel/ResultLabel
-@onready var rect_count_value: Label = $Panel/Vbox/RectCountValue
-@onready var rect_count_slider: HSlider = $Panel/Vbox/RectCountSlider
-@onready var check_button: Button = $Panel/Vbox/CheckButton
-@onready var calculation_label: Label = $Panel/CalculationLabel
+@onready var task_label: Label = $ColorRect/Panel/Vbox/TaskLabel
+@onready var function_graph: ColorRect = $ColorRect/"Function Graph"
+@onready var result_label: Label = $ColorRect/Panel/ResultLabel
+@onready var rect_count_value: Label = $ColorRect/Panel/Vbox/RectCountValue
+@onready var rect_count_slider: HSlider = $ColorRect/Panel/Vbox/RectCountSlider
+@onready var check_button: Button = $ColorRect/Panel/Vbox/CheckButton
+@onready var calculation_label: Label = $ColorRect/Panel/CalculationLabel
 
 signal level_9_1_completed(function_name: String)
 var is_solved := false
@@ -93,7 +93,7 @@ func show_detailed_calculation():
 	
 	var percentage = accuracy * 100
 	
-	var result_text = "Wynik dla %d prostokątów:\n\n" % num_rectangles
+	var result_text = "Wynik dla %d\nprostokątów:\n" % num_rectangles
 	
 	result_text += "Przybliżony: %.3f\n" % approx_result
 	result_text += "Dokładny:    %.3f\n" % exact_solution

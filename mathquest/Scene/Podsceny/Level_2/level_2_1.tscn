@@ -49,9 +49,9 @@ anchors_preset = 15
 anchor_right = 1.0
 anchor_bottom = 1.0
 offset_left = 289.0
-offset_top = 147.0
+offset_top = 129.5
 offset_right = 289.0
-offset_bottom = 147.0
+offset_bottom = 164.5
 grow_horizontal = 2
 grow_vertical = 2
 scale = Vector2(0.73230344, 0.6994655)
@@ -66,7 +66,7 @@ layout_mode = 2
 [node name="Task Label" type="Label" parent="MarginContainer/VBoxContainer/HBoxContainer"]
 layout_mode = 2
 size_flags_horizontal = 4
-theme_override_font_sizes/font_size = 24
+theme_override_font_sizes/font_size = 27
 text = "Znajdź miejsce zerowe funkcji: f(x) = sin(x² - x + 1/3) + x/2 
 korzystając z metody Reguły Falsi.
 Uwaga! Funkcja ma kilka miejsc zerowych blisko siebie. 
@@ -83,13 +83,13 @@ size_flags_horizontal = 4
 
 [node name="LabelA" type="Label" parent="MarginContainer/VBoxContainer/HBoxContainer/GridContainer/HBoxContainerA"]
 layout_mode = 2
-theme_override_font_sizes/font_size = 26
+theme_override_font_sizes/font_size = 38
 text = "a:"
 
 [node name="InputA" type="LineEdit" parent="MarginContainer/VBoxContainer/HBoxContainer/GridContainer/HBoxContainerA"]
 layout_mode = 2
 size_flags_horizontal = 4
-theme_override_font_sizes/font_size = 26
+theme_override_font_sizes/font_size = 38
 placeholder_text = "-2"
 
 [node name="HBoxContainerB" type="HBoxContainer" parent="MarginContainer/VBoxContainer/HBoxContainer/GridContainer"]
@@ -97,13 +97,13 @@ layout_mode = 2
 
 [node name="LabelB" type="Label" parent="MarginContainer/VBoxContainer/HBoxContainer/GridContainer/HBoxContainerB"]
 layout_mode = 2
-theme_override_font_sizes/font_size = 26
+theme_override_font_sizes/font_size = 38
 text = "b:"
 
 [node name="InputB" type="LineEdit" parent="MarginContainer/VBoxContainer/HBoxContainer/GridContainer/HBoxContainerB"]
 layout_mode = 2
 size_flags_horizontal = 4
-theme_override_font_sizes/font_size = 26
+theme_override_font_sizes/font_size = 38
 placeholder_text = "0"
 
 [node name="HBoxContainer2" type="HBoxContainer" parent="MarginContainer/VBoxContainer"]
@@ -114,7 +114,7 @@ size_flags_vertical = 4
 [node name="Oblicz" type="Button" parent="MarginContainer/VBoxContainer/HBoxContainer2"]
 layout_mode = 2
 size_flags_horizontal = 4
-theme_override_font_sizes/font_size = 27
+theme_override_font_sizes/font_size = 38
 text = "Oblicz
 "
 
@@ -122,7 +122,7 @@ text = "Oblicz
 layout_mode = 2
 size_flags_horizontal = 4
 size_flags_vertical = 4
-theme_override_font_sizes/font_size = 27
+theme_override_font_sizes/font_size = 38
 text = "Wyjdź"
 
 [node name="VBoxContainer" type="HBoxContainer" parent="MarginContainer/VBoxContainer"]
@@ -132,12 +132,12 @@ size_flags_vertical = 4
 
 [node name="PrzedzialA" type="Button" parent="MarginContainer/VBoxContainer/VBoxContainer"]
 layout_mode = 2
-theme_override_font_sizes/font_size = 27
+theme_override_font_sizes/font_size = 38
 text = "wybór przedziału [a, x]"
 
 [node name="PrzedzialB" type="Button" parent="MarginContainer/VBoxContainer/VBoxContainer"]
 layout_mode = 2
-theme_override_font_sizes/font_size = 27
+theme_override_font_sizes/font_size = 38
 text = "wybór przedziału [x, b]"
 
 [node name="HBoxContainer3" type="HBoxContainer" parent="MarginContainer/VBoxContainer"]
