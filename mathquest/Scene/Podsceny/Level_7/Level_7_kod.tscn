@@ -1,7 +1,8 @@
-[gd_scene load_steps=3 format=3 uid="uid://cwdalqtf0aqg5"]
+[gd_scene load_steps=4 format=3 uid="uid://cwdalqtf0aqg5"]
 
 [ext_resource type="Script" uid="uid://to4ddla8ebwa" path="res://Scene/Podsceny/Level_7/level_7_kod.gd" id="1_ca0ul"]
 [ext_resource type="Texture2D" uid="uid://dnh517ytibf0o" path="res://UI/frame.png" id="2_3qa3m"]
+[ext_resource type="Theme" uid="uid://b3klx57slj0l3" path="res://UI/Assets/UI_Assets/soft_retro/soft_retro.tres" id="3_b531v"]
 
 [node name="Level7_kod" type="Control"]
 layout_mode = 3
@@ -25,48 +26,107 @@ grow_horizontal = 2
 grow_vertical = 2
 scale = Vector2(1.1, 1.088)
 texture = ExtResource("2_3qa3m")
+metadata/_edit_use_anchors_ = true
 
 [node name="MarginContainer" type="MarginContainer" parent="."]
 layout_mode = 1
-anchors_preset = 15
-anchor_right = 1.0
-anchor_bottom = 1.0
+anchors_preset = -1
+anchor_left = 0.14114584
+anchor_top = 0.13425925
+anchor_right = 1.1411458
+anchor_bottom = 1.1342592
+offset_right = -470.0
+offset_bottom = -330.0
 grow_horizontal = 2
 grow_vertical = 2
+theme = ExtResource("3_b531v")
+metadata/_edit_use_anchors_ = true
 
 [node name="ColorRect" type="ColorRect" parent="MarginContainer"]
 layout_mode = 2
 color = Color(0, 0.247911, 0.223716, 1)
 
-[node name="HBoxContainer" type="VBoxContainer" parent="MarginContainer"]
-layout_mode = 2
-
-[node name="InfoLabel" type="Label" parent="MarginContainer/HBoxContainer"]
+[node name="VBoxContainer" type="VBoxContainer" parent="MarginContainer"]
 layout_mode = 2
 size_flags_horizontal = 4
-theme_override_font_sizes/font_size = 29
+size_flags_vertical = 4
+
+[node name="InfoLabel" type="Label" parent="MarginContainer/VBoxContainer"]
+layout_mode = 2
+size_flags_horizontal = 4
+theme_override_font_sizes/font_size = 39
 text = "Podaj poprawną funkcję interpolacji 
 liniowej Lagrange’a dla dwóch punktów."
 
-[node name="CodeEdit" type="TextEdit" parent="MarginContainer/HBoxContainer"]
-custom_minimum_size = Vector2(60, 100)
+[node name="Status" type="Label" parent="MarginContainer/VBoxContainer"]
 layout_mode = 2
-theme_override_font_sizes/font_size = 28
-text = "L(x) ="
-placeholder_text = "L(x) ="
 
-[node name="CheckButton" type="Button" parent="MarginContainer/HBoxContainer"]
+[node name="PseudocodeContainer" type="VBoxContainer" parent="MarginContainer/VBoxContainer"]
 layout_mode = 2
 size_flags_horizontal = 4
-theme_override_font_sizes/font_size = 32
-text = "Sprawdz
-"
+size_flags_vertical = 4
 
-[node name="ResultLabel" type="Label" parent="MarginContainer/HBoxContainer"]
+[node name="GridContainer" type="GridContainer" parent="MarginContainer/VBoxContainer"]
 layout_mode = 2
-theme_override_font_sizes/font_size = 34
+size_flags_horizontal = 4
+size_flags_vertical = 3
+columns = 3
 
-[node name="Exit" type="Button" parent="MarginContainer"]
+[node name="(x-x1)" type="Button" parent="MarginContainer/VBoxContainer/GridContainer"]
+layout_mode = 2
+theme_override_font_sizes/font_size = 56
+text = "(x-x1)"
+
+[node name="(x1-x)" type="Button" parent="MarginContainer/VBoxContainer/GridContainer"]
+layout_mode = 2
+theme_override_font_sizes/font_size = 56
+text = "(x1-x)"
+
+[node name="(x+x1)" type="Button" parent="MarginContainer/VBoxContainer/GridContainer"]
+layout_mode = 2
+theme_override_font_sizes/font_size = 56
+text = "(x+x1)"
+
+[node name="f1" type="Button" parent="MarginContainer/VBoxContainer/GridContainer"]
+layout_mode = 2
+theme_override_font_sizes/font_size = 56
+text = "f1"
+
+[node name="(x-x0)" type="Button" parent="MarginContainer/VBoxContainer/GridContainer"]
+layout_mode = 2
+theme_override_font_sizes/font_size = 56
+text = "(x-x0)"
+
+[node name="(x1-x0)" type="Button" parent="MarginContainer/VBoxContainer/GridContainer"]
+layout_mode = 2
+theme_override_font_sizes/font_size = 56
+text = "(x1-x0)"
+
+[node name="(x0-x1)" type="Button" parent="MarginContainer/VBoxContainer/GridContainer"]
+layout_mode = 2
+theme_override_font_sizes/font_size = 56
+text = "(x0-x1)"
+
+[node name="(x0-x)" type="Button" parent="MarginContainer/VBoxContainer/GridContainer"]
+layout_mode = 2
+theme_override_font_sizes/font_size = 56
+text = "(x0-x)"
+
+[node name="f0" type="Button" parent="MarginContainer/VBoxContainer/GridContainer"]
+layout_mode = 2
+theme_override_font_sizes/font_size = 56
+text = "F0"
+
+[node name="OutputDisplay" type="Label" parent="MarginContainer/VBoxContainer"]
+layout_mode = 2
+theme_override_font_sizes/font_size = 25
+
+[node name="HBoxContainer" type="HBoxContainer" parent="MarginContainer"]
+layout_mode = 2
+size_flags_horizontal = 4
+size_flags_vertical = 8
+
+[node name="Exit" type="Button" parent="MarginContainer/HBoxContainer"]
 layout_mode = 2
 size_flags_horizontal = 4
 size_flags_vertical = 8
@@ -74,5 +134,4 @@ theme_override_font_sizes/font_size = 47
 text = "Wyjście
 "
 
-[connection signal="pressed" from="MarginContainer/HBoxContainer/CheckButton" to="." method="_on_check_button_pressed"]
-[connection signal="pressed" from="MarginContainer/Exit" to="." method="_on_exit_pressed"]
+[connection signal="pressed" from="MarginContainer/HBoxContainer/Exit" to="." method="_on_exit_pressed"]

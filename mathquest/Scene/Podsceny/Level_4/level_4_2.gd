@@ -9,6 +9,8 @@ extends Control
 @onready var button_c: Button = $PanelContainer/Panel/VBoxContainer/HBoxContainer/ButtonC
 @onready var button_next = $PanelContainer/Panel/NextIter
 
+signal level_4_2_completed
+
 var iteration := 0
 var x_current := 1.8
 var f = func(x): return x*x*x - 2*x*x - 5*x + 6
@@ -62,6 +64,7 @@ func _complete_task():
 	task_completed = true
 	var final_fx = f.call(correct_x_next)
 	misja_lab.text = "🎉 Zadanie ukończone!"
+	level_4_2_completed.emit("metoda_iteracji_2")
 	obliczenia_lab.text = ""
 	result_lab.text = "Znaleziono pierwiastek: x ≈ %.4f\nf(%.4f) = %.6f\nLiczba iteracji: %d" % [correct_x_next, correct_x_next, final_fx, iteration]
 	button_a.visible = false
