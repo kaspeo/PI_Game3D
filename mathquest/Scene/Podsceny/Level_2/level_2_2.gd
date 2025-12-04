@@ -63,7 +63,7 @@ func _check_show_help_button():
 func _on_przedzal_ab_pressed() -> void:
 	find_good_interval()
 	przedzal_ab.visible = false
-	wrong_interval_count = 0  # Resetuj po pomocy
+	wrong_interval_count = 0
 
 func find_good_interval() -> void:
 	var good_intervals = [
@@ -83,12 +83,9 @@ func find_good_interval() -> void:
 			output.text = "✅ Znaleziono dobry przedział: [%.1f, %.1f]\nKliknij 'Oblicz' aby kontynuować." % [a_test, b_test]
 			return
 	
-	# Jeśli nie znaleziono, użyj pierwszego sprawdzonego
 	input_a.text = "1.2"
 	input_b.text = "2.8"
 	output.text = "✅ Ustawiono sprawdzony przedział [1.2, 2.8]\nKliknij 'Oblicz' aby kontynuować."
-
-# Reszta funkcji pozostaje bez zmian (_on_przedzial_a_pressed, _on_przedzial_b_pressed, _update_interval, calculate_iterations, update_graph, _on_exit_pressed)
 
 func _on_przedzial_a_pressed() -> void:
 	_update_interval(true)

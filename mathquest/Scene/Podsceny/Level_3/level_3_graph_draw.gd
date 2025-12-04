@@ -8,18 +8,14 @@ func _ready() -> void:
 	custom_minimum_size = Vector2(400, 300)
 
 func _draw() -> void:
-	# Tło
 	draw_rect(Rect2(0, 0, size.x, size.y), Color.SKY_BLUE)
 	
-	# Osie
 	draw_line(Vector2(50, size.y/2), Vector2(size.x-50, size.y/2), Color.BLACK, 2.0)
 	draw_line(Vector2(size.x/2, 50), Vector2(size.x/2, size.y-50), Color.BLACK, 2.0)
 	
-	# Funkcja
 	if current_function != null:
 		draw_function()
 	
-	# Miejsca zerowe
 	for root in roots:
 		var x = size.x/2 + root * 50
 		var y = size.y/2
