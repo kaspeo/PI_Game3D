@@ -50,7 +50,6 @@ func _draw():
 			var p1 = line_points_to_draw[i]
 			var p2 = line_points_to_draw[i + 1]
 			
-			# Sprawdź czy któryś z punktów to (2,7)
 			if (abs(p1.x - 2.0) < 0.001 and abs(p1.y - 7.0) < 0.001) or \
 			   (abs(p2.x - 2.0) < 0.001 and abs(p2.y - 7.0) < 0.001):
 				print("Line segment near (2,7): ", p1, " -> ", p2)

@@ -21,7 +21,6 @@ func set_monte_carlo_points(points: Array):
 
 func update_visualization(type: String, count: int):
 	visualization_type = type
-	# Nie generujemy tutaj punktów - punkty są przekazywane z głównego skryptu
 	queue_redraw()
 
 func _draw():
@@ -35,7 +34,6 @@ func _draw():
 	
 	draw_rect(Rect2(0, 0, size.x, size.y), Color(0.1, 0.1, 0.2))
 	
-	# Osie
 	draw_line(Vector2(margin, size.y - margin), Vector2(size.x - margin, size.y - margin), Color.WHITE, 2)
 	draw_line(Vector2(margin, margin), Vector2(margin, size.y - margin), Color.WHITE, 2)
 	
@@ -43,7 +41,6 @@ func _draw():
 	var b = integration_limits[1]
 	var scale_x = graph_width / (b - a)
 	
-	# Skalowanie Y
 	var max_y = find_max_function_value()
 	var min_y = find_min_function_value()
 	var y_range = max_y - min_y
@@ -54,10 +51,8 @@ func _draw():
 	var scale_y = graph_height / (y_range * 1.2)
 	var y_offset = -min_y
 	
-	# Rysuj funkcję
 	draw_function(scale_x, scale_y, margin, graph_height, y_offset)
 	
-	# Rysuj punkty Monte Carlo
 	draw_monte_carlo_points(scale_x, scale_y, margin, graph_height, y_offset)
 
 func draw_function(scale_x: float, scale_y: float, margin: float, graph_height: float, y_offset: float):
@@ -82,7 +77,6 @@ func draw_monte_carlo_points(scale_x: float, scale_y: float, margin: float, grap
 	var max_y = find_max_function_value()
 	var min_y = find_min_function_value()
 	
-	# Rysuj prostokąt całkowania
 	var rect_top = size.y - margin - ((max_y + y_offset) * scale_y)
 	var rect_bottom = size.y - margin - ((min_y + y_offset) * scale_y)
 	var rect_height = rect_bottom - rect_top
@@ -94,7 +88,6 @@ func draw_monte_carlo_points(scale_x: float, scale_y: float, margin: float, grap
 		rect_height
 	), Color(1, 1, 1, 0.1), false, 2.0)
 	
-	# Rysuj oś X
 	var zero_y = size.y - margin - ((0 + y_offset) * scale_y)
 	draw_line(
 		Vector2(margin, zero_y),

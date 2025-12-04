@@ -237,14 +237,13 @@ func _handle_drag_input(event: InputEvent, button: Button, element_text: String)
 	if event is InputEventMouseMotion and dragged_item:
 		dragged_item.global_position = get_global_mouse_position() - dragged_item.size / 2
 		
-		# podświetlanie tylko jeśli nad strefą
 		for zone_name in drop_targets:
 			var zone_node = drop_targets[zone_name]["node"]
 			if zone_node:
 				var zone_rect = Rect2(zone_node.global_position, zone_node.size)
 				if zone_rect.has_point(dragged_item.global_position + dragged_item.size / 2):
 					var stylebox = zone_node.get_theme_stylebox("panel").duplicate()
-					stylebox.bg_color = Color(0.8, 0.8, 0.2, 0.8) # żółty
+					stylebox.bg_color = Color(0.8, 0.8, 0.2, 0.8)
 					zone_node.add_theme_stylebox_override("panel", stylebox)
 				else:
 					var stylebox = create_zone_stylebox()

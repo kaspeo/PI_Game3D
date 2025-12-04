@@ -25,13 +25,12 @@ func _draw():
 		return
 	
 	var size = get_rect().size
-	var margin = 0.0  # brak marginesu
-	var graph_width = size.x - 2 * margin  # czyli size.x
-	var graph_height = size.y - 2 * margin # czyli size.y
+	var margin = 0.0
+	var graph_width = size.x - 2 * margin
+	var graph_height = size.y - 2 * margin
 	
 	draw_rect(Rect2(0, 0, size.x, size.y), Color(0.1, 0.1, 0.2))
 	
-	# Rysuj osie bez marginesów, na krawędziach controla
 	draw_line(Vector2(margin, size.y - margin), Vector2(size.x - margin, size.y - margin), Color.WHITE, 2)
 	draw_line(Vector2(margin, margin), Vector2(margin, size.y - margin), Color.WHITE, 2)
 	
