@@ -40,5 +40,6 @@ func update_mission_status() -> void:
 
 func _on_zmiana_poziomu_body_entered(body: Node3D) -> void:
 	if body is CharacterBody3D:
+		Progess.complete_level(3)
 		var new_scene = load(LEVEL_4)
 		get_tree().change_scene_to_packed(new_scene)

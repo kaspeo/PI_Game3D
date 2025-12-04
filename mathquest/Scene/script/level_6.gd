@@ -25,5 +25,6 @@ func _on_misja_body_entered(body: Node3D) -> void:
 
 func _on_zmiana_poziomu_body_entered(body: Node3D) -> void:
 	if body is CharacterBody3D:
+		Progess.complete_level(6)
 		var new_scene = load(LEVEL_7)
 		get_tree().change_scene_to_packed(new_scene)

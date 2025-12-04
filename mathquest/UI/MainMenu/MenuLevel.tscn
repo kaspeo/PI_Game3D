@@ -72,6 +72,7 @@ size_flags_horizontal = 3
 theme_override_font_sizes/font_size = 30
 text = "Poziom 3
 Metoda Siecznych (Secanta)"
+icon_alignment = 1
 
 [node name="Level4" type="Button" parent="PanelContainer/VBoxContainer/HBoxContainer2"]
 layout_mode = 2

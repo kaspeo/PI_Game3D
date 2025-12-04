@@ -28,5 +28,6 @@ func _on_all_tasks_finished():
 
 func _on_zmiana_poziomu_body_entered(body: Node3D) -> void:
 	if body is CharacterBody3D:
+		Progess.complete_level(10)
 		var new_scene = load(END_GAME)
 		get_tree().change_scene_to_packed(new_scene)

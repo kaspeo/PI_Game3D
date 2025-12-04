@@ -21,7 +21,7 @@ func _on_misja_body_entered(body: Node3D) -> void:
 			popup_shown = true
 			misja.visible = true
 			if Global.get_ui():
-				Global.get_ui().ustaw_misje("Rozwiąż zadanie w komputerze", false)
+				Global.get_ui().ustaw_misje("Rozwiąż zadania na 2 komputerach", false)
 
 func _on_scena_completed():
 	computers_done += 1
@@ -34,5 +34,6 @@ func _on_scena_completed():
 
 func _on_zmiana_poziomu_body_entered(body: Node3D) -> void:
 	if body is CharacterBody3D:
+		Progess.complete_level(2)
 		var new_scene = load(LEVEL_3)
 		get_tree().change_scene_to_packed(new_scene)
