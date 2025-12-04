@@ -1,12 +1,11 @@
 extends Node3D
 
-@onready var start: AcceptDialog = $Dialogi/Start
 @onready var misja: AcceptDialog = $Dialogi/Misja
 var popup_shown := false
+const LEVEL_6 = "res://Scene/level_6.tscn"
 
 func _ready() -> void:
-	start.popup_centered()
-	start.grab_focus()
+	MusicManager.play_music("res://Sounds/Music/ingame.wav")
 	Global.current_level=5
 
 
@@ -22,3 +21,10 @@ func _on_misja_dialog_body_entered(body: Node3D) -> void:
 		if not popup_shown:
 			popup_shown = true
 			show_misja_dialog()
+
+
+func _on_zmiana_poziomu_body_entered(body: Node3D) -> void:
+	if body is CharacterBody3D:
+		Progess.complete_level(5)
+		var new_scene = load(LEVEL_6)
+		get_tree().change_scene_to_packed(new_scene)

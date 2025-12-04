@@ -6,11 +6,13 @@ const TOTAL_COMPUTERS := 18
 const QUESTIONS_TO_ASSIGN := 12
 const QUESTIONS_FILE := "res://Scene/Podsceny/Level_10/questions.json"
 
-var assignments = {} # ścieżka -> pytanie
+var assignments = {} 
 var quiz_scene: Control
 var questions = []
 var bsod_display: Node3D
 var total_questions_completed := 0
+
+signal computers_completed
 
 func _ready():
 	randomize()
@@ -50,7 +52,8 @@ func _assign_questions_to_computers():
 		if node:
 			computers.append(node)
 
-	if computers.size() < QUESTIONS_TO_ASSIGN:
+	if computers.size() < QUESTIONS_TO_ASSIGN or questions.size() < QUESTIONS_TO_ASSIGN:
+		push_warning("Za mało komputerów lub pytań do przypisania.")
 		return
 
 	var chosen_computers = []
@@ -59,19 +62,23 @@ func _assign_questions_to_computers():
 		if idx not in chosen_computers:
 			chosen_computers.append(idx)
 
-	for idx in chosen_computers:
-		var comp = computers[idx]
-		var q = questions[randi() % questions.size()]
+	var shuffled_questions = questions.duplicate()
+	shuffled_questions.shuffle()
+
+	for i in range(QUESTIONS_TO_ASSIGN):
+		var comp = computers[chosen_computers[i]]
+		var q = shuffled_questions[i]
 		assignments[comp.get_path()] = q
 
 		if comp.has_method("set_question_assigned"):
 			comp.set_question_assigned()
-			
+
 	for i in range(computers.size()):
-		var comp = computers[i]
 		if i not in chosen_computers:
+			var comp = computers[i]
 			if comp.has_method("set_no_question"):
 				comp.set_no_question()
+
 
 func show_question_for_computer(path: NodePath):
 	var comp = get_node_or_null(path)
@@ -109,9 +116,8 @@ func _on_quiz_answered(correct: bool, comp: Node):
 		_all_questions_completed()
 
 func _all_questions_completed():
-	if bsod_display and bsod_display.has_method("hide_bsod"):
-		var timer = get_tree().create_timer(3.0)
-		timer.timeout.connect(bsod_display.hide_bsod)
+	emit_signal("computers_completed")
+
 
 func start_bsod():
 	if bsod_display and bsod_display.has_method("show_bsod"):

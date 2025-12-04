@@ -3,13 +3,13 @@ extends Control
 signal answered(correct: bool)
 
 var current_question: Dictionary
-@onready var label_error: Label = $VBoxContainer/LabelError
-@onready var question_lab: Label = $VBoxContainer/QuestionLab
-@onready var buttona: Button = $VBoxContainer/VBoxContainer/GridContainer/ButtonA
-@onready var buttonb: Button = $VBoxContainer/VBoxContainer/GridContainer/ButtonB
-@onready var buttonc: Button = $VBoxContainer/VBoxContainer/GridContainer/ButtonC
-@onready var buttond: Button = $VBoxContainer/VBoxContainer/GridContainer/ButtonD
-@onready var label: Label = $VBoxContainer/QuestionLab
+@onready var label_error: Label = $Panel/VBoxContainer/LabelError
+@onready var question_lab: Label = $Panel/VBoxContainer/QuestionLab
+@onready var buttona: Button = $Panel/VBoxContainer/VBoxContainer/GridContainer/ButtonA
+@onready var buttonb: Button = $Panel/VBoxContainer/VBoxContainer/GridContainer/ButtonB
+@onready var buttonc: Button = $Panel/VBoxContainer/VBoxContainer/GridContainer/ButtonC
+@onready var buttond: Button = $Panel/VBoxContainer/VBoxContainer/GridContainer/ButtonD
+@onready var label: Label = $Panel/VBoxContainer/QuestionLab
 
 func set_question(q: Dictionary) -> void:
 	current_question = q

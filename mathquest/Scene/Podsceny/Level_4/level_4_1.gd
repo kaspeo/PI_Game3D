@@ -1,15 +1,15 @@
 extends Control
 
-@onready var method_lab: Label = $CanvasLayer/Control/Results/VBoxContainer/MethodLab
-@onready var con_lab: Label = $CanvasLayer/Control/Results/VBoxContainer/ConLab
-@onready var root_lab: Label = $CanvasLayer/Control/Results/VBoxContainer/RootLab
-@onready var iter_lab: Label = $CanvasLayer/Control/Results/VBoxContainer/IterLab
-@onready var error_labe: Label = $CanvasLayer/Control/Results/VBoxContainer/ErrorLabe
-@onready var calc_text: Label = $CanvasLayer/Control/Results/VBoxContainer/CalcText
+@onready var method_lab: Label = $MarginContainer/CanvasLayer/Control/Results/VBoxContainer/MethodLab
+@onready var con_lab: Label = $MarginContainer/CanvasLayer/Control/Results/VBoxContainer/ConLab
+@onready var root_lab: Label = $MarginContainer/CanvasLayer/Control/Results/VBoxContainer/RootLab
+@onready var iter_lab: Label = $MarginContainer/CanvasLayer/Control/Results/VBoxContainer/IterLab
+@onready var error_labe: Label = $MarginContainer/CanvasLayer/Control/Results/VBoxContainer/ErrorLabe
+@onready var calc_text: Label = $MarginContainer/CanvasLayer/Control/Results/VBoxContainer/CalcText
 
 signal level_4_1_completed
 
-@onready var graph_drawer: GraphDrawer1 = $Control
+@onready var graph_drawer: GraphDrawer1 = $MarginContainer/VBoxContainer/Control
 
 var current_result: Dictionary
 

@@ -1,9 +1,9 @@
 extends Control
 
-@onready var result_label: Label = $HBoxContainer3/ResultLabel
-@onready var label_2: TextEdit = $HBoxContainer/GridContainer2/Label2
-@onready var label_3: TextEdit = $HBoxContainer/GridContainer2/Label3
-@onready var label_16: TextEdit = $HBoxContainer/GridContainer2/Label16
+@onready var result_label: Label = $MarginContainer/HBoxContainer3/ResultLabel
+@onready var label_2: TextEdit = $MarginContainer/HBoxContainer/GridContainer2/Label2
+@onready var label_3: TextEdit = $MarginContainer/HBoxContainer/GridContainer2/Label3
+@onready var label_16: TextEdit = $MarginContainer/HBoxContainer/GridContainer2/Label16
 @onready var drzwi3: Node3D = $"../drzwi3"
 
 

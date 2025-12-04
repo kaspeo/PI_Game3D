@@ -249,7 +249,7 @@ size = Vector3(1.76, 1.27, 1.52)
 script = ExtResource("1_nctk5")
 
 [node name="Player" parent="." instance=ExtResource("2_t61qd")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.53, -6.13)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.53, -7.59)
 
 [node name="WorldEnvironment" type="WorldEnvironment" parent="."]
 environment = SubResource("Environment_nctk5")
@@ -477,20 +477,10 @@ visible = false
 
 [node name="Dialogi" type="Node" parent="."]
 
-[node name="Start" type="AcceptDialog" parent="Dialogi"]
-auto_translate_mode = 1
-oversampling_override = 1.0
-title = ""
-initial_position = 2
-size = Vector2i(212, 106)
-sharp_corners = true
-dialog_text = "Poziom 4
-Metoda kolejnych przybliżeń i Newtona-Raphsona"
-
 [node name="Misja" type="AcceptDialog" parent="Dialogi"]
 title = "Cel poziomu"
 initial_position = 2
-dialog_text = "W tym etapie bedziesz musiał"
+dialog_text = "Napraw dwa komputery żeby odblokować bramę dla statku kosmicznego i przejść na kolejne poziomy"
 
 [connection signal="interacted" from="wyjscie/ButtonSmall" to="wyjscie/Enter/Enter" method="toggle"]
 [connection signal="body_entered" from="Misja" to="." method="_on_misja_body_entered"]

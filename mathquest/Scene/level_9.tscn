@@ -465,9 +465,6 @@ skeleton = NodePath("../../..")
 [node name="Level93" parent="Zadania/Level_9_3" instance=ExtResource("15_eu35l")]
 visible = false
 
-[node name="PauseMenu" parent="." instance=ExtResource("6_nkuio")]
-visible = false
-
 [node name="Misja" type="Area3D" parent="."]
 transform = Transform3D(0.9203647, -0.017452406, 0.39067158, 0.016065024, 0.9998477, 0.0068191974, -0.3907311, 0, 0.92050487, -6.5828485, 3.6600003, -5.4308686)
 
@@ -476,21 +473,10 @@ transform = Transform3D(0.9205254, 0.0039413692, -0.3906629, -0.0013875756, 0.99
 shape = SubResource("BoxShape3D_eu35l")
 debug_color = Color(0, 0.6, 0.7, 0.42)
 
-[node name="Dialogi" type="Node" parent="."]
+[node name="PauseMenu" parent="." instance=ExtResource("6_nkuio")]
+visible = false
 
-[node name="Start" type="AcceptDialog" parent="Dialogi"]
-auto_translate_mode = 1
-oversampling_override = 1.0
-title = ""
-initial_position = 2
-size = Vector2i(212, 184)
-visible = true
-sharp_corners = true
-dialog_text = "Poziom 9
-Całkowanie numeryczne
--metoda prostokatów
--metoda Simpsona
--metoda Monte Carlo"
+[node name="Dialogi" type="Node" parent="."]
 
 [node name="Misja" type="AcceptDialog" parent="Dialogi"]
 oversampling_override = 1.0

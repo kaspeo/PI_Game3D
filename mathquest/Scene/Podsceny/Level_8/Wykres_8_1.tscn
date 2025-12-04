@@ -32,11 +32,14 @@ grow_vertical = 2
 [node name="Title" type="Label" parent="VBoxContainer"]
 layout_mode = 2
 
-[node name="Graph" type="ColorRect" parent="VBoxContainer"]
-visible = false
-layout_mode = 2
-script = ExtResource("2_8sltu")
-
 [node name="Wzor" type="Label" parent="VBoxContainer"]
 layout_mode = 2
 size_flags_vertical = 8
+text = "wzór\": \"W₃(x) = -8 + 6·(x + 1) - 5·(x + 1)x + 1·(x + 1)x²"
+
+[node name="Graph" type="ColorRect" parent="VBoxContainer"]
+visible = false
+layout_mode = 2
+size_flags_horizontal = 4
+size_flags_vertical = 2
+script = ExtResource("2_8sltu")

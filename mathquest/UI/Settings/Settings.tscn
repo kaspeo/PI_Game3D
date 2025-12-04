@@ -1,0 +1,99 @@
+[gd_scene load_steps=3 format=3 uid="uid://bmmb8qxaqvmxf"]
+
+[ext_resource type="Theme" uid="uid://b3klx57slj0l3" path="res://UI/Assets/UI_Assets/soft_retro/soft_retro.tres" id="1_mvx1u"]
+[ext_resource type="Script" uid="uid://1mrfacro7w20" path="res://UI/Settings/settings.gd" id="1_tgyht"]
+
+[node name="Settings" type="Control"]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+theme = ExtResource("1_mvx1u")
+script = ExtResource("1_tgyht")
+
+[node name="ColorRect" type="ColorRect" parent="."]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+color = Color(0.07590044, 0.39959106, 0.4623711, 1)
+
+[node name="VBoxContainer" type="VBoxContainer" parent="."]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -571.0
+offset_top = -115.0
+offset_right = 571.0
+offset_bottom = 115.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_constants/separation = 34
+metadata/_edit_use_anchors_ = true
+
+[node name="Label" type="Label" parent="VBoxContainer"]
+layout_mode = 2
+theme_override_font_sizes/font_size = 90
+text = "Ustawienia"
+horizontal_alignment = 1
+
+[node name="GridContainer" type="GridContainer" parent="VBoxContainer"]
+layout_mode = 2
+columns = 2
+
+[node name="Screen" type="Label" parent="VBoxContainer/GridContainer"]
+layout_mode = 2
+theme_override_font_sizes/font_size = 45
+text = "Ustawienia ekranu "
+
+[node name="Window" type="OptionButton" parent="VBoxContainer/GridContainer"]
+layout_mode = 2
+size_flags_horizontal = 4
+size_flags_vertical = 4
+theme_override_font_sizes/font_size = 50
+alignment = 1
+selected = 1
+item_count = 3
+popup/item_0/text = "Okno"
+popup/item_0/id = 0
+popup/item_1/text = "Pełen Ekran"
+popup/item_1/id = 1
+popup/item_2/text = "Pełny ekran bez obramowania"
+popup/item_2/id = 2
+
+[node name="HSeparator" type="HSeparator" parent="VBoxContainer/GridContainer"]
+layout_mode = 2
+theme_override_constants/separation = 27
+
+[node name="HSeparator2" type="HSeparator" parent="VBoxContainer/GridContainer"]
+layout_mode = 2
+theme_override_constants/separation = 27
+
+[node name="Audio" type="Label" parent="VBoxContainer/GridContainer"]
+layout_mode = 2
+theme_override_font_sizes/font_size = 45
+text = "Dźwięk"
+
+[node name="VolumeSlider" type="HSlider" parent="VBoxContainer/GridContainer"]
+layout_mode = 2
+scrollable = false
+tick_count = 21
+ticks_on_borders = true
+ticks_position = 3
+
+[node name="Exti_settings" type="Button" parent="VBoxContainer"]
+layout_mode = 2
+size_flags_horizontal = 4
+theme_override_font_sizes/font_size = 76
+text = "Wróć"
+
+[connection signal="item_selected" from="VBoxContainer/GridContainer/Window" to="." method="_on_window_item_selected"]
+[connection signal="value_changed" from="VBoxContainer/GridContainer/VolumeSlider" to="." method="_on_volume_slider_value_changed"]
+[connection signal="pressed" from="VBoxContainer/Exti_settings" to="." method="_on_exti_settings_pressed"]

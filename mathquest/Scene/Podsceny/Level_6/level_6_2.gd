@@ -1,8 +1,8 @@
 extends Control
 
-@onready var result_label: Label = $HBoxContainer3/ResultLabel
-@onready var label_8: TextEdit = $HBoxContainer/GridContainer2/Label8
-@onready var label_18: TextEdit = $HBoxContainer/GridContainer2/Label18
+@onready var result_label: Label = $MarginContainer/HBoxContainer3/ResultLabel
+@onready var label_8: TextEdit = $MarginContainer/HBoxContainer/GridContainer2/Label8
+@onready var label_18: TextEdit = $MarginContainer/HBoxContainer/GridContainer2/Label18
 @onready var drzwi2: Node3D = $"../Drzwi2"
 
 

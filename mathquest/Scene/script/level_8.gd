@@ -3,7 +3,7 @@ extends Node3D
 var playback : AnimationNodeStateMachinePlayback
 var is_open := false
 var popup_shown := false
-
+const LEVEL_9 = "res://Scene/Level_9.tscn"
 @onready var misja: AcceptDialog = $Dialogi/Misja
 
 @onready var box_large_1: RigidBody3D = $Ekrany/Ekran1/BoxLarge_1
@@ -26,8 +26,12 @@ var placed_boxes_1 = []
 var placed_boxes_2 = []
 
 func _ready() -> void:
+	MusicManager.play_music("res://Sounds/Music/ingame.wav")
+	Global.current_level=8
 	area_ekran_1.body_entered.connect(_on_area_1_body_entered)
 	area_ekran_2.body_entered.connect(_on_area_2_body_entered)
+	area_ekran_1.body_exited.connect(_on_area_1_body_exited)
+	area_ekran_2.body_exited.connect(_on_area_2_body_exited)
 	
 	if ekran_1.has_method("show_empty"):
 		ekran_1.show_empty()
@@ -41,10 +45,24 @@ func _on_area_1_body_entered(body: Node) -> void:
 			update_screen_1_display()
 			_check_all_placed()
 
+func _on_area_1_body_exited(body: Node) -> void:
+	if body is RigidBody3D and (body == box_large_1 or body == box_long_1 or body == box_small_1):
+		if placed_boxes_1.has(body):
+			placed_boxes_1.erase(body)
+			update_screen_1_display()
+			_check_all_placed()
+
 func _on_area_2_body_entered(body: Node) -> void:
 	if body is RigidBody3D and (body == box_large_2 or body == box_long_2 or body == box_small_2):
 		if not placed_boxes_2.has(body):
 			placed_boxes_2.append(body)
+			update_screen_2_display()
+			_check_all_placed()
+
+func _on_area_2_body_exited(body: Node) -> void:
+	if body is RigidBody3D and (body == box_large_2 or body == box_long_2 or body == box_small_2):
+		if placed_boxes_2.has(body):
+			placed_boxes_2.erase(body)
 			update_screen_2_display()
 			_check_all_placed()
 
@@ -102,6 +120,7 @@ func _open_door() -> void:
 	if not is_open:
 		is_open = true
 		wyjscie.open_door()
+
 		
 func show_misja_dialog() -> void:
 	misja.popup_centered()
@@ -115,3 +134,10 @@ func _on_misja_body_entered(body: Node3D) -> void:
 		if not popup_shown:
 			popup_shown = true
 			show_misja_dialog()
+
+
+func _on_zmiana_poziomu_body_entered(body: Node3D) -> void:
+	if body is CharacterBody3D:
+		Progess.complete_level(8)
+		var new_scene = load(LEVEL_9)
+		get_tree().change_scene_to_packed(new_scene)

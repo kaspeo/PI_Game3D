@@ -39,46 +39,58 @@ func setup_graph(iterations: Array, method: String, is_convergent: bool):
 	converges = is_convergent
 	
 	if iterations.size() > 0:
-		root_position = iterations[-1].x_new
+		update_viewport()
+	else:
+		root_position = 0.0
+		focus_range = 2.5
+	
+	queue_redraw()
+
+func update_viewport():
+	if iterations_data.size() < 2:
+		if iterations_data.size() == 1:
+			root_position = iterations_data[0].x_new
+		else:
+			root_position = 0.0
+		focus_range = 0.5
+		zoom_scale = 150.0
+		return
+	
+	var min_x = iterations_data[0].x_new
+	var max_x = iterations_data[0].x_new
+	
+	for it in iterations_data:
+		if it.x_new < min_x:
+			min_x = it.x_new
+		if it.x_new > max_x:
+			max_x = it.x_new
+	
+	root_position = (min_x + max_x) / 2.0
+	
+	var range = max_x - min_x
+	range = max(range, 0.2)
+	
+	focus_range = clamp(range * 0.5, 0.2, 3.0)
+	
+	zoom_scale = clamp(120.0 / focus_range, 80.0, 300.0)
 	
 	queue_redraw()
 
 func draw_grid():
 	for x in range(int(graph_width / grid_size) + 1):
 		var x_pos = x * grid_size
-		draw_line(
-			Vector2(x_pos, 0),
-			Vector2(x_pos, graph_height),
-			grid_color,
-			0.3
-		)
+		draw_line(Vector2(x_pos, 0), Vector2(x_pos, graph_height), grid_color, 0.3)
 	
 	for y in range(int(graph_height / grid_size) + 1):
 		var y_pos = y * grid_size
-		draw_line(
-			Vector2(0, y_pos),
-			Vector2(graph_width, y_pos),
-			grid_color,
-			0.3
-		)
+		draw_line(Vector2(0, y_pos), Vector2(graph_width, y_pos), grid_color, 0.3)
 
 func draw_axes():
 	var center_x = graph_width / 2
 	var center_y = graph_height / 2
 	
-	draw_line(
-		Vector2(0, center_y),
-		Vector2(graph_width, center_y),
-		axis_color,
-		3.0
-	)
-	
-	draw_line(
-		Vector2(center_x, 0),
-		Vector2(center_x, graph_height),
-		axis_color,
-		3.0
-	)
+	draw_line(Vector2(0, center_y), Vector2(graph_width, center_y), axis_color, 3.0)
+	draw_line(Vector2(center_x, 0), Vector2(center_x, graph_height), axis_color, 3.0)
 	
 	draw_axis_arrows(center_x, center_y)
 
@@ -177,7 +189,7 @@ func draw_labels():
 	draw_string(font, Vector2(20, 60), range_text, HORIZONTAL_ALIGNMENT_LEFT, -1, font_size)
 
 func function_value(x: float) -> float:
-	return x*x*x - x - 4.5
+	return x * x * x - x - 4.5
 
 func point_in_bounds(point: Vector2) -> bool:
 	return point.x >= 0 and point.x <= graph_width and point.y >= 0 and point.y <= graph_height
@@ -187,4 +199,5 @@ func clear_graph():
 	current_method = ""
 	converges = false
 	root_position = 0.0
+	focus_range = 2.5
 	queue_redraw()

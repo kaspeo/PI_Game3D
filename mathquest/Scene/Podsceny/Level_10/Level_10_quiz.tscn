@@ -1,6 +1,7 @@
-[gd_scene load_steps=2 format=3 uid="uid://bdyf64e6brnua"]
+[gd_scene load_steps=3 format=3 uid="uid://bdyf64e6brnua"]
 
 [ext_resource type="Script" uid="uid://w7v6kqrq11lb" path="res://Scene/Podsceny/Level_10/level_10_quiz.gd" id="1_p00qn"]
+[ext_resource type="Texture2D" uid="uid://dnh517ytibf0o" path="res://UI/frame.png" id="2_s1bdi"]
 
 [node name="Level_10_quiz" type="Control"]
 layout_mode = 3
@@ -11,88 +12,103 @@ grow_horizontal = 2
 grow_vertical = 2
 script = ExtResource("1_p00qn")
 
-[node name="Background" type="ColorRect" parent="."]
+[node name="TextureRect" type="TextureRect" parent="."]
 layout_mode = 1
 anchors_preset = 15
 anchor_right = 1.0
 anchor_bottom = 1.0
+offset_left = -56.999996
+offset_top = -42.0
+offset_right = -57.0
+offset_bottom = -42.0
 grow_horizontal = 2
 grow_vertical = 2
-color = Color(0, 0, 0.6666667, 1)
-metadata/_edit_use_anchors_ = true
+scale = Vector2(1.1, 1.088)
+texture = ExtResource("2_s1bdi")
 
-[node name="VBoxContainer" type="VBoxContainer" parent="."]
+[node name="Panel" type="PanelContainer" parent="."]
 layout_mode = 1
 anchors_preset = 15
 anchor_right = 1.0
 anchor_bottom = 1.0
+offset_left = 301.0
+offset_top = 149.0
+offset_right = 301.0
+offset_bottom = 149.0
 grow_horizontal = 2
 grow_vertical = 2
+scale = Vector2(0.7231449, 0.7002815)
+
+[node name="Background" type="ColorRect" parent="Panel"]
+layout_mode = 2
+color = Color(0, 0, 0.6666667, 1)
+
+[node name="VBoxContainer" type="VBoxContainer" parent="Panel"]
+layout_mode = 2
 theme_override_constants/separation = 10
 alignment = 1
-metadata/_edit_use_anchors_ = true
 
-[node name="QuestionLab" type="Label" parent="VBoxContainer"]
+[node name="QuestionLab" type="Label" parent="Panel/VBoxContainer"]
 layout_mode = 2
 theme_override_font_sizes/font_size = 28
 horizontal_alignment = 1
 
-[node name="VBoxContainer" type="VBoxContainer" parent="VBoxContainer"]
+[node name="VBoxContainer" type="VBoxContainer" parent="Panel/VBoxContainer"]
 layout_mode = 2
 theme_override_constants/separation = 20
 
-[node name="GridContainer" type="GridContainer" parent="VBoxContainer/VBoxContainer"]
+[node name="GridContainer" type="GridContainer" parent="Panel/VBoxContainer/VBoxContainer"]
 layout_mode = 2
 size_flags_horizontal = 4
 theme_override_constants/h_separation = 10
 theme_override_constants/v_separation = 10
 columns = 2
 
-[node name="ButtonA" type="Button" parent="VBoxContainer/VBoxContainer/GridContainer"]
+[node name="ButtonA" type="Button" parent="Panel/VBoxContainer/VBoxContainer/GridContainer"]
 custom_minimum_size = Vector2(400, 80)
 layout_mode = 2
 size_flags_horizontal = 4
-theme_override_font_sizes/font_size = 29
+theme_override_font_sizes/font_size = 70
 text = "A"
 alignment = 0
 autowrap_mode = 2
 
-[node name="ButtonB" type="Button" parent="VBoxContainer/VBoxContainer/GridContainer"]
+[node name="ButtonB" type="Button" parent="Panel/VBoxContainer/VBoxContainer/GridContainer"]
 custom_minimum_size = Vector2(400, 80)
 layout_mode = 2
 size_flags_horizontal = 4
-theme_override_font_sizes/font_size = 29
+theme_override_font_sizes/font_size = 70
 text = "B"
 alignment = 0
 autowrap_mode = 2
 
-[node name="ButtonC" type="Button" parent="VBoxContainer/VBoxContainer/GridContainer"]
+[node name="ButtonC" type="Button" parent="Panel/VBoxContainer/VBoxContainer/GridContainer"]
 custom_minimum_size = Vector2(400, 80)
 layout_mode = 2
 size_flags_horizontal = 4
-theme_override_font_sizes/font_size = 29
+theme_override_font_sizes/font_size = 70
 text = "C"
 alignment = 0
 autowrap_mode = 2
 
-[node name="ButtonD" type="Button" parent="VBoxContainer/VBoxContainer/GridContainer"]
+[node name="ButtonD" type="Button" parent="Panel/VBoxContainer/VBoxContainer/GridContainer"]
 custom_minimum_size = Vector2(400, 80)
 layout_mode = 2
 size_flags_horizontal = 4
-theme_override_font_sizes/font_size = 29
+theme_override_font_sizes/font_size = 70
 text = "D"
 alignment = 0
 autowrap_mode = 2
 
-[node name="ButtonExit" type="Button" parent="VBoxContainer/VBoxContainer"]
+[node name="ButtonExit" type="Button" parent="Panel/VBoxContainer/VBoxContainer"]
 custom_minimum_size = Vector2(300, 0)
 layout_mode = 2
 size_flags_horizontal = 4
-theme_override_font_sizes/font_size = 29
+theme_override_font_sizes/font_size = 70
 text = "Wyjdź"
 
-[connection signal="pressed" from="VBoxContainer/VBoxContainer/GridContainer/ButtonA" to="." method="_on_button_a_pressed"]
-[connection signal="pressed" from="VBoxContainer/VBoxContainer/GridContainer/ButtonB" to="." method="_on_button_b_pressed"]
-[connection signal="pressed" from="VBoxContainer/VBoxContainer/GridContainer/ButtonC" to="." method="_on_button_c_pressed"]
-[connection signal="pressed" from="VBoxContainer/VBoxContainer/GridContainer/ButtonD" to="." method="_on_button_d_pressed"]
-[connection signal="pressed" from="VBoxContainer/VBoxContainer/ButtonExit" to="." method="_on_button_exit_pressed"]
+[connection signal="pressed" from="Panel/VBoxContainer/VBoxContainer/GridContainer/ButtonA" to="." method="_on_button_a_pressed"]
+[connection signal="pressed" from="Panel/VBoxContainer/VBoxContainer/GridContainer/ButtonB" to="." method="_on_button_b_pressed"]
+[connection signal="pressed" from="Panel/VBoxContainer/VBoxContainer/GridContainer/ButtonC" to="." method="_on_button_c_pressed"]
+[connection signal="pressed" from="Panel/VBoxContainer/VBoxContainer/GridContainer/ButtonD" to="." method="_on_button_d_pressed"]
+[connection signal="pressed" from="Panel/VBoxContainer/VBoxContainer/ButtonExit" to="." method="_on_button_exit_pressed"]

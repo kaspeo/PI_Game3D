@@ -1,5 +1,6 @@
-[gd_scene load_steps=2 format=3 uid="uid://l2domsp5u3mu"]
+[gd_scene load_steps=3 format=3 uid="uid://l2domsp5u3mu"]
 
+[ext_resource type="Theme" uid="uid://diir8laqqumkc" path="res://UI/Assets/UI_Assets/soft_retro.tres" id="1_fh7kf"]
 [ext_resource type="Script" uid="uid://ca67eoccyrt45" path="res://UI/MainMenu/Script/menu_level.gd" id="1_kqtij"]
 
 [node name="MenuLevel" type="Control"]
@@ -10,6 +11,7 @@ anchor_right = 1.0
 anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
+theme = ExtResource("1_fh7kf")
 script = ExtResource("1_kqtij")
 
 [node name="ColorRect" type="ColorRect" parent="."]
@@ -34,6 +36,7 @@ custom_minimum_size = Vector2(900, 0)
 layout_mode = 2
 size_flags_horizontal = 4
 size_flags_vertical = 4
+theme_override_constants/separation = 11
 
 [node name="Label2" type="Label" parent="PanelContainer/VBoxContainer"]
 layout_mode = 2
@@ -49,7 +52,7 @@ layout_mode = 2
 size_flags_horizontal = 3
 theme_override_font_sizes/font_size = 30
 text = "Poziom 1 
-Metoda Biskecji
+Metoda Bisekcji
 "
 
 [node name="Level2" type="Button" parent="PanelContainer/VBoxContainer/HBoxContainer"]
@@ -69,6 +72,7 @@ size_flags_horizontal = 3
 theme_override_font_sizes/font_size = 30
 text = "Poziom 3
 Metoda Siecznych (Secanta)"
+icon_alignment = 1
 
 [node name="Level4" type="Button" parent="PanelContainer/VBoxContainer/HBoxContainer2"]
 layout_mode = 2

@@ -4,7 +4,6 @@ var popup_shown := false
 var computers_done = 0
 const LEVEL_10 = "res://Scene/Level_10.tscn"
 @onready var misja: AcceptDialog = $Dialogi/Misja
-@onready var start: AcceptDialog = $Dialogi/Start
 @onready var level_91: RectangleMethodComputer = $Zadania/Level_9_1/Level91
 @onready var level_92: SimpsonMethodComputer = $Zadania/Level_9_2/Level92
 @onready var level_93: MonteCarloMethodComputer = $Zadania/Level_9_3/Level93
@@ -13,6 +12,7 @@ const LEVEL_10 = "res://Scene/Level_10.tscn"
 var solved_functions = {}
 
 func _ready() -> void:
+	MusicManager.play_music("res://Sounds/Music/ingame.wav")
 	Global.current_level = 9
 	misja.visible = false
 	level_91.connect("level_9_1_completed", Callable(self, "register_solved_function"))
@@ -22,6 +22,7 @@ func _ready() -> void:
 
 func _on_zmiana_poziomu_body_entered(body: Node3D) -> void:
 	if body is CharacterBody3D:
+		Progess.complete_level(9)
 		var new_scene = load(LEVEL_10)
 		get_tree().change_scene_to_packed(new_scene)
 

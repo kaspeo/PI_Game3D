@@ -1,0 +1,66 @@
+[gd_scene load_steps=3 format=3 uid="uid://djjq7kmi0xvin"]
+
+[ext_resource type="Script" uid="uid://cjqaakpd38wda" path="res://UI/KoniecPoziomu/koniec_gry.gd" id="1_kto34"]
+[ext_resource type="FontFile" uid="uid://8xqmbre1fr22" path="res://UI/Assets/Font/Kenney Future Narrow.ttf" id="2_hg0yq"]
+
+[node name="KoniecGry" type="Control"]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("1_kto34")
+
+[node name="ColorRect" type="ColorRect" parent="."]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+color = Color(0.270588, 0.294118, 1, 1)
+
+[node name="Container" type="MarginContainer" parent="."]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="HBoxContainer" type="VBoxContainer" parent="Container"]
+layout_mode = 2
+size_flags_horizontal = 4
+size_flags_vertical = 4
+
+[node name="Label2" type="Label" parent="Container/HBoxContainer"]
+layout_mode = 2
+theme_override_fonts/font = ExtResource("2_hg0yq")
+theme_override_font_sizes/font_size = 60
+text = "Koniec gry"
+horizontal_alignment = 1
+
+[node name="Label" type="Label" parent="Container/HBoxContainer"]
+layout_mode = 2
+size_flags_horizontal = 4
+theme_override_colors/font_shadow_color = Color(0, 0, 0, 1)
+theme_override_font_sizes/font_size = 22
+text = "Gratulacje, ukończyłeś grę! 
+Zdobytą wiedzę z metod numerycznych możesz teraz wykorzystać w praktyce. 
+Dziękuję za wspólną naukową przygodę!"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="HSeparator" type="HSeparator" parent="Container/HBoxContainer"]
+layout_mode = 2
+theme_override_constants/separation = 33
+
+[node name="DoMenu" type="Button" parent="Container/HBoxContainer"]
+layout_mode = 2
+size_flags_horizontal = 4
+size_flags_vertical = 4
+theme_override_font_sizes/font_size = 41
+text = "Przejdź do Menu"
+
+[connection signal="pressed" from="Container/HBoxContainer/DoMenu" to="." method="_on_do_menu_pressed"]

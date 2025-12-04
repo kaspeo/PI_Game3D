@@ -1,7 +1,7 @@
 [gd_scene load_steps=3 format=3 uid="uid://snlst2rk0vsr"]
 
 [ext_resource type="Script" uid="uid://clf5djvro1i4t" path="res://Scene/Podsceny/Level_8/wykres_8_2.gd" id="1_2ql4s"]
-[ext_resource type="Script" uid="uid://bt00tsw160qnj" path="res://Scene/Podsceny/Level_8/graph.gd" id="1_hk746"]
+[ext_resource type="Script" uid="uid://bv84ua8e5adyn" path="res://Scene/Podsceny/Level_8/graph2.gd" id="2_2ql4s"]
 
 [node name="Wykres82" type="Control"]
 layout_mode = 3
@@ -32,11 +32,12 @@ grow_vertical = 2
 [node name="Title" type="Label" parent="VBoxContainer"]
 layout_mode = 2
 
-[node name="Graph" type="ColorRect" parent="VBoxContainer"]
-visible = false
-layout_mode = 2
-script = ExtResource("1_hk746")
-
 [node name="Wzor" type="Label" parent="VBoxContainer"]
 layout_mode = 2
 size_flags_vertical = 8
+
+[node name="Graph" type="ColorRect" parent="VBoxContainer"]
+layout_mode = 2
+size_flags_horizontal = 4
+size_flags_vertical = 6
+script = ExtResource("2_2ql4s")

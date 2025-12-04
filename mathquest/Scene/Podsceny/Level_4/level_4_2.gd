@@ -1,13 +1,15 @@
 extends Control
 
-@onready var misja_lab: Label = $Panel/MisjaLab
-@onready var result_lab: Label = $Panel/ResultLab
-@onready var obliczenia_lab: Label = $Panel/VBoxContainer/CalcLab
-@onready var wykres: GraphDrawer2 = $Level4_2_wykres
-@onready var button_a: Button = $Panel/VBoxContainer/HBoxContainer/ButtonA
-@onready var button_b: Button = $Panel/VBoxContainer/HBoxContainer/ButtonB
-@onready var button_c: Button = $Panel/VBoxContainer/HBoxContainer/ButtonC
-@onready var button_next = $Panel/NextIter
+@onready var misja_lab: Label = $PanelContainer/Panel/MisjaLab
+@onready var result_lab: Label = $PanelContainer/Panel/ResultLab
+@onready var obliczenia_lab: Label = $PanelContainer/Panel/VBoxContainer/CalcLab
+@onready var wykres: GraphDrawer2 = $MarginContainer/Level4_2_wykres
+@onready var button_a: Button = $PanelContainer/Panel/VBoxContainer/HBoxContainer/ButtonA
+@onready var button_b: Button = $PanelContainer/Panel/VBoxContainer/HBoxContainer/ButtonB
+@onready var button_c: Button = $PanelContainer/Panel/VBoxContainer/HBoxContainer/ButtonC
+@onready var button_next = $PanelContainer/Panel/NextIter
+
+signal level_4_2_completed
 
 var iteration := 0
 var x_current := 1.8
@@ -20,7 +22,6 @@ var task_completed := false
 func _ready():
 	if wykres and wykres is GraphDrawer2:
 		wykres.function = f
-		wykres.derivative = df
 		wykres.queue_redraw()
 	await get_tree().process_frame
 	_new_iteration()
@@ -63,6 +64,7 @@ func _complete_task():
 	task_completed = true
 	var final_fx = f.call(correct_x_next)
 	misja_lab.text = "🎉 Zadanie ukończone!"
+	level_4_2_completed.emit("metoda_iteracji_2")
 	obliczenia_lab.text = ""
 	result_lab.text = "Znaleziono pierwiastek: x ≈ %.4f\nf(%.4f) = %.6f\nLiczba iteracji: %d" % [correct_x_next, correct_x_next, final_fx, iteration]
 	button_a.visible = false

@@ -1,0 +1,108 @@
+[gd_scene load_steps=4 format=3 uid="uid://di8w1cu7ciavm"]
+
+[ext_resource type="Theme" uid="uid://diir8laqqumkc" path="res://UI/Assets/UI_Assets/soft_retro.tres" id="1_jesmc"]
+[ext_resource type="Script" uid="uid://d1tqpdjhx1qan" path="res://UI/PauseMenu/pause_menu.gd" id="1_t3iro"]
+[ext_resource type="PackedScene" uid="uid://bmmb8qxaqvmxf" path="res://UI/Settings/Settings.tscn" id="2_w5vkt"]
+
+[node name="PauseMenu" type="Control"]
+process_mode = 3
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+theme = ExtResource("1_jesmc")
+script = ExtResource("1_t3iro")
+
+[node name="ColorRect" type="ColorRect" parent="."]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+color = Color(0.355314, 0.355314, 0.355314, 1)
+
+[node name="PanelContainer" type="PanelContainer" parent="."]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="VBoxContainer" type="VBoxContainer" parent="PanelContainer"]
+layout_mode = 2
+size_flags_horizontal = 4
+size_flags_vertical = 4
+
+[node name="Resume" type="Button" parent="PanelContainer/VBoxContainer"]
+layout_mode = 2
+theme_override_font_sizes/font_size = 76
+text = "Wznów"
+
+[node name="Ustawienia" type="Button" parent="PanelContainer/VBoxContainer"]
+layout_mode = 2
+theme_override_font_sizes/font_size = 76
+text = "Ustawienia"
+
+[node name="Exit" type="Button" parent="PanelContainer/VBoxContainer"]
+layout_mode = 2
+theme_override_font_sizes/font_size = 76
+text = "Wyjdź
+"
+
+[node name="notes_panel" type="Control" parent="PanelContainer"]
+layout_mode = 2
+
+[node name="Notatki" type="Label" parent="PanelContainer/notes_panel"]
+visible = false
+layout_mode = 0
+offset_left = 959.0
+offset_top = 528.0
+offset_right = 960.0
+offset_bottom = 551.0
+size_flags_horizontal = 4
+
+[node name="PanelContainer2" type="PanelContainer" parent="."]
+layout_mode = 1
+anchors_preset = 3
+anchor_left = 1.0
+anchor_top = 1.0
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = -148.0
+offset_top = -40.0
+grow_horizontal = 0
+grow_vertical = 0
+
+[node name="ExitTutorial" type="Button" parent="PanelContainer2"]
+layout_mode = 2
+size_flags_horizontal = 4
+theme_override_font_sizes/font_size = 50
+text = "Pomiń samouczek"
+
+[node name="Podpowiedz" type="PanelContainer" parent="."]
+layout_mode = 1
+anchors_preset = 2
+anchor_top = 1.0
+anchor_bottom = 1.0
+offset_top = -73.0
+offset_right = 441.0
+grow_vertical = 0
+
+[node name="Podpowiedz" type="Button" parent="Podpowiedz"]
+layout_mode = 2
+theme_override_font_sizes/font_size = 50
+text = "Podpowiedź"
+
+[node name="Settings" parent="." instance=ExtResource("2_w5vkt")]
+visible = false
+layout_mode = 1
+
+[connection signal="pressed" from="PanelContainer/VBoxContainer/Resume" to="." method="_on_resume_pressed"]
+[connection signal="pressed" from="PanelContainer/VBoxContainer/Ustawienia" to="." method="_on_ustawienia_pressed"]
+[connection signal="pressed" from="PanelContainer/VBoxContainer/Exit" to="." method="_on_exit_pressed"]
+[connection signal="pressed" from="PanelContainer2/ExitTutorial" to="." method="_on_exit_tutorial_pressed"]
+[connection signal="pressed" from="Podpowiedz/Podpowiedz" to="." method="_on_podpowiedz_pressed"]

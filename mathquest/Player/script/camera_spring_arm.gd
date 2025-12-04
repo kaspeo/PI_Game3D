@@ -4,8 +4,8 @@ extends Node3D
 @export_range(0.0, 90.0, 0.1, "radians_as_degrees") var max_vertical_angle: float = PI / 4
 @onready var spring_arm := $SpringArm3D
 var rotation_input: Vector2 = Vector2.ZERO
-@export var min_zoom: float = 1.0
-@export var max_zoom: float = 2.5
+@export var min_zoom: float = 0.5
+@export var max_zoom: float = 3
 
 func _ready() -> void:
 	Input.set_mouse_mode(Input.MOUSE_MODE_CAPTURED)

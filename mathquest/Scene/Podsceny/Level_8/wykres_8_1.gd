@@ -4,38 +4,36 @@ extends Control
 @onready var graph: ColorRect = $VBoxContainer/Graph
 @onready var wzor: Label = $VBoxContainer/Wzor
 
+const STALY_WZOR = "W₃(x) = -8 + 6·(x + 1) - 5·(x + 1)x + 1·(x + 1)x²"
+
 var solutions_data = {
 	"empty": {
-		"title": "EKRAŃ INTERPOLACJI HERMITE'A",
-		"wzor": "Umieść 3 pudełka z danymi w obszarze ekranu",
+		"title": "EKRAN 1 INTERPOLACJA HERMITE'A",
 		"key_points": PackedVector2Array(),
 		"line_points": PackedVector2Array()
 	},
 	"correct": {
-		"title": "INTERPOLACJA HERMITE'A - POPRAWNA",
-		"wzor": "W₃(x) = -8 + 6·(x + 1) - 5·(x + 1)x + 1·(x + 1)x²",
+		"title": "EKRAN 1 POPRAWNE ROZWIĄZANIE",
 		"key_points": PackedVector2Array([
 			Vector2(-1, -8),
 			Vector2(0, -2), 
 			Vector2(1, -4)
 		]),
-		"line_points": generate_line_points_ekran1(),
+		"line_points": PackedVector2Array(),
 		"color": Color.GREEN
 	},
 	"incorrect": {
-		"title": "INTERPOLACJA HERMITE'A - BŁĘDNA",
-		"wzor": "Kombinacja pudełek jest niepoprawna",
+		"title": "EKRAN 1 BŁĘDNE DANE",
 		"key_points": PackedVector2Array([
 			Vector2(-1, 2),
 			Vector2(0, 0),
 			Vector2(1, 1)
 		]),
-		"line_points": generate_random_points(),
+		"line_points": PackedVector2Array(),
 		"color": Color.RED
 	},
 	"too_many": {
 		"title": "ZA DUŻO PUDEŁEK!",
-		"wzor": "Możesz umieścić tylko 3 pudełka na ekranie",
 		"key_points": PackedVector2Array(),
 		"line_points": PackedVector2Array(),
 		"color": Color.ORANGE
@@ -43,12 +41,15 @@ var solutions_data = {
 }
 
 func _ready():
+	solutions_data["correct"]["line_points"] = generate_line_points_ekran1()
+	solutions_data["incorrect"]["line_points"] = generate_random_points()
+	
 	show_empty()
 
 func show_empty():
 	var data = solutions_data["empty"]
 	title.text = data["title"]
-	wzor.text = data["wzor"]
+	wzor.text = STALY_WZOR
 	
 	if graph.has_method("clear_solution"):
 		graph.clear_solution()
@@ -57,7 +58,7 @@ func show_empty():
 func show_correct_solution():
 	var data = solutions_data["correct"]
 	title.text = data["title"]
-	wzor.text = data["wzor"]
+	wzor.text = STALY_WZOR
 	
 	if graph.has_method("draw_solution"):
 		graph.draw_solution(data["key_points"], data["line_points"], data["color"])
@@ -66,7 +67,7 @@ func show_correct_solution():
 func show_incorrect_solution():
 	var data = solutions_data["incorrect"]
 	title.text = data["title"]
-	wzor.text = data["wzor"]
+	wzor.text = STALY_WZOR  
 	
 	if graph.has_method("draw_solution"):
 		graph.draw_solution(data["key_points"], data["line_points"], data["color"])
@@ -75,7 +76,7 @@ func show_incorrect_solution():
 func show_too_many_boxes():
 	var data = solutions_data["too_many"]
 	title.text = data["title"]
-	wzor.text = data["wzor"]
+	wzor.text = STALY_WZOR  
 	
 	if graph.has_method("clear_solution"):
 		graph.clear_solution()

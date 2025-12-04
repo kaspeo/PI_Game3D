@@ -19,6 +19,7 @@ config/icon="uid://co1fwwkqd5eau"
 
 Global="*res://Global/global.gd"
 MusicManager="*res://Sounds/Music/music_manager.gd"
+Progess="*res://Global/Progress.gd"
 
 [debug]
 

@@ -11,6 +11,7 @@ const LEVEL_4 = "res://Scene/Level_4.tscn"
 var solved_functions = {}
 
 func _ready() -> void:
+	MusicManager.play_music("res://Sounds/Music/ingame.wav")
 	Global.current_level = 3
 	misja.visible = false
 	level_3_wykres.connect("function_solved", Callable(self, "register_solved_function"))
@@ -39,5 +40,6 @@ func update_mission_status() -> void:
 
 func _on_zmiana_poziomu_body_entered(body: Node3D) -> void:
 	if body is CharacterBody3D:
+		Progess.complete_level(3)
 		var new_scene = load(LEVEL_4)
 		get_tree().change_scene_to_packed(new_scene)
