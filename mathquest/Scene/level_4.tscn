@@ -480,7 +480,7 @@ visible = false
 [node name="Misja" type="AcceptDialog" parent="Dialogi"]
 title = "Cel poziomu"
 initial_position = 2
-dialog_text = "Napraw dwa komputery żeby odblokować bramę dla statku kosmicznego i przejść na kolejne poziomy"
+dialog_text = "Napraw dwa komputery przy pomocy metody iteracji, żeby odblokować bramę dla statku kosmicznego i przejść na kolejne poziomy."
 
 [connection signal="interacted" from="wyjscie/ButtonSmall" to="wyjscie/Enter/Enter" method="toggle"]
 [connection signal="body_entered" from="Misja" to="." method="_on_misja_body_entered"]
