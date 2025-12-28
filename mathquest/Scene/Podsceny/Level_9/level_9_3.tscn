@@ -95,7 +95,7 @@ theme_override_constants/separation = 23
 
 [node name="TaskLabel" type="Label" parent="ColorRect/Panel/Vbox"]
 layout_mode = 2
-theme_override_font_sizes/font_size = 35
+theme_override_font_sizes/font_size = 29
 horizontal_alignment = 1
 metadata/_edit_use_anchors_ = true
 

@@ -66,12 +66,12 @@ size_flags_horizontal = 4
 size_flags_vertical = 1
 theme_override_font_sizes/font_size = 21
 text = "METODA SIECZNYCH
- CEL: Popraw Pseudokod o rozwiąż 2 różne funkcjeużywając 
+CEL: Popraw pseudokod o rozwiąż 2 różne funkcje używając 
 metody siecznych
 
 KROKI:
 1. Wybierz funkcję z listy
-2. Uzupełnij pseudo-kod po lewej stronie
+2. Uzupełnij pseudokod po lewej stronie
 3. Wprowadź przedział [x₀, x₁]
 4. Kliknij OBLICZ
 5. Powtórz dla drugiej funkcji
