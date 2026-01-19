@@ -687,7 +687,7 @@ visible = false
 [node name="Misja" type="AcceptDialog" parent="Dialogi"]
 title = "Cel poziomu"
 initial_position = 2
-dialog_text = "W tym etapie bedziesz musiał"
+dialog_text = "Użyj metody Regula Falsi na dwóch komputerach, aby przejść dalej."
 
 [connection signal="body_entered" from="Misja" to="." method="_on_misja_body_entered"]
 [connection signal="interacted" from="Tunnel/ButtonSmall" to="Tunnel/Enter/Enter" method="toggle"]

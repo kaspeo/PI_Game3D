@@ -9,6 +9,7 @@ func _ready():
 	_block_level_buttons()
 
 func _block_level_buttons():
+	unlocked_levels = 11
 	if unlocked_levels < 2:
 		$PanelContainer/VBoxContainer/HBoxContainer/Level2.disabled = true
 		$PanelContainer/VBoxContainer/HBoxContainer/Level2.text = "🔒"

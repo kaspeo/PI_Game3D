@@ -289,6 +289,11 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 11.001635, 3.157164, -1.54651
 light_color = Color(1, 0.9607843, 0.88235295, 1)
 light_energy = 4.699
 
+[node name="OmniLight3D6" type="OmniLight3D" parent="Lights"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 6.6916347, 2.017164, 7.493483)
+light_color = Color(1, 0.9607843, 0.88235295, 1)
+light_energy = 2.459
+
 [node name="Word" type="Node3D" parent="."]
 
 [node name="Floor" type="GridMap" parent="Word"]
@@ -327,9 +332,9 @@ metadata/_editor_floor_ = Vector3(1, 0, 0)
 mesh_library = ExtResource("2_louwq")
 cell_size = Vector3(0.25, 0.5, 0.25)
 data = {
-"cells": PackedInt32Array(65549, 65518, 655410, 65549, 65501, 655410, 65557, 65526, 50, 65561, 25, 655410, 65556, 40, 1048626, 65562, 65528, 1441841, 65572, 65528, 655409, 65573, 65524, 49, 65577, 65526, 49, 65578, 65528, 1441841, 65579, 65529, 1441841, 65580, 65527, 49, 65581, 65525, 49, 65582, 65524, 49, 65580, 65524, 49, 65577, 65532, 1441841, 65574, 65531, 1441841, 65584, 65525, 1441843, 65590, 65525, 1441843, 65579, 13, 655376, 196651, 18, 655385)
+"cells": PackedInt32Array(65549, 65518, 655410, 65549, 65501, 655410, 65557, 65526, 50, 65561, 25, 655410, 65556, 40, 1048626, 65562, 65528, 1441841, 65572, 65528, 655409, 65573, 65524, 49, 65577, 65526, 49, 65578, 65528, 1441841, 65579, 65529, 1441841, 65580, 65527, 49, 65581, 65525, 49, 65582, 65524, 49, 65580, 65524, 49, 65577, 65532, 1441841, 65574, 65531, 1441841, 65584, 65525, 1441843, 65590, 65525, 1441843, 65579, 13, 655376, 196651, 18, 655385, 65561, 7, 50, 65592, 14, 49, 65594, 12, 49, 65591, 14, 1441841, 65588, 18, 1441841, 65594, 14, 1441841, 65588, 15, 1441841)
 }
-metadata/_editor_floor_ = Vector3(4, 3, 0)
+metadata/_editor_floor_ = Vector3(4, 1, 0)
 
 [node name="Collision" type="Node3D" parent="."]
 
@@ -486,7 +491,7 @@ visible = false
 auto_translate_mode = 1
 title = "Cel poziomu"
 size = Vector2i(1107, 100)
-dialog_text = "Komputer stacji kosmicznej został zainfekowany wirusem. Napraw funkcję oraz podaj poprawne dane, aby przywrócić jego działanie."
+dialog_text = "Błąd czujników torowych. System nie widzi położenia składów. Użyj interpolacji Lagrange'a, aby uzupełnić brakujące dane i zrestartować logistykę kopalni."
 
 [connection signal="body_entered" from="Misja" to="." method="_on_misja_body_entered"]
 [connection signal="interacted" from="Wyjscie/ButtonSmall" to="Wyjscie/Enter/Enter" method="toggle"]

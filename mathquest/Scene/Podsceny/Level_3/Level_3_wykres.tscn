@@ -54,8 +54,8 @@ anchors_preset = 13
 anchor_left = 0.5
 anchor_right = 0.5
 anchor_bottom = 1.0
-offset_left = -284.5
-offset_right = 284.5
+offset_left = -303.5
+offset_right = 303.5
 grow_horizontal = 2
 grow_vertical = 2
 theme_override_constants/separation = 70
@@ -132,15 +132,16 @@ script = ExtResource("2_3bmyu")
 [node name="VBoxContainer2" type="VBoxContainer" parent="MarginContainer/Terminal"]
 layout_mode = 0
 offset_left = 11.0
-offset_right = 587.0
+offset_right = 621.0
 offset_bottom = 852.0
+metadata/_edit_use_anchors_ = true
 
 [node name="PseudocodeContainer" type="VBoxContainer" parent="MarginContainer/Terminal/VBoxContainer2"]
 layout_mode = 2
 
 [node name="DragItems" type="GridContainer" parent="MarginContainer/Terminal/VBoxContainer2"]
 layout_mode = 2
-theme_override_constants/h_separation = 50
+theme_override_constants/h_separation = 40
 theme_override_constants/v_separation = 10
 columns = 4
 
