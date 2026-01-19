@@ -1,9 +1,10 @@
-[gd_scene load_steps=5 format=3 uid="uid://bqnnet11lljgu"]
+[gd_scene load_steps=6 format=3 uid="uid://bqnnet11lljgu"]
 
 [ext_resource type="Script" uid="uid://dxattflvo4v2s" path="res://UI/MainMenu/Script/main_menu.gd" id="1_fw0vt"]
 [ext_resource type="Theme" uid="uid://diir8laqqumkc" path="res://UI/Assets/UI_Assets/soft_retro.tres" id="1_nahvw"]
 [ext_resource type="FontFile" uid="uid://8xqmbre1fr22" path="res://UI/Assets/Font/Kenney Future Narrow.ttf" id="2_8x0bb"]
 [ext_resource type="PackedScene" uid="uid://bmmb8qxaqvmxf" path="res://UI/Settings/Settings.tscn" id="3_8x0bb"]
+[ext_resource type="PackedScene" uid="uid://bnupfleit5dfh" path="res://UI/MainMenu/AutorsMenu.tscn" id="5_4elqj"]
 
 [node name="MainMenu" type="Control"]
 layout_mode = 3
@@ -72,6 +73,11 @@ layout_mode = 2
 theme_override_font_sizes/font_size = 70
 text = "Ustawienia"
 
+[node name="Autor" type="Button" parent="PanelContainer/VBoxContainer"]
+layout_mode = 2
+theme_override_font_sizes/font_size = 70
+text = "Autorzy"
+
 [node name="Exit" type="Button" parent="PanelContainer/VBoxContainer"]
 layout_mode = 2
 theme_override_font_sizes/font_size = 70
@@ -82,7 +88,12 @@ text = "Wyjście z gry
 visible = false
 layout_mode = 1
 
+[node name="AutorsMenu" parent="." instance=ExtResource("5_4elqj")]
+visible = false
+layout_mode = 1
+
 [connection signal="pressed" from="PanelContainer/VBoxContainer/StartGame" to="." method="_on_start_game_pressed"]
 [connection signal="pressed" from="PanelContainer/VBoxContainer/SelectLevel" to="." method="_on_select_level_pressed"]
 [connection signal="pressed" from="PanelContainer/VBoxContainer/Settings" to="." method="_on_settings_pressed"]
+[connection signal="pressed" from="PanelContainer/VBoxContainer/Autor" to="." method="_on_autor_pressed"]
 [connection signal="pressed" from="PanelContainer/VBoxContainer/Exit" to="." method="_on_exit_pressed"]

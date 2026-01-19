@@ -1330,7 +1330,7 @@ visible = false
 auto_translate_mode = 1
 title = "Cel poziomu"
 size = Vector2i(1107, 100)
-dialog_text = "Kolejne drzwi się zamknęły. Aby otworzyć każde z nich i przejść dalej, rozwiąż układ równań metodą Gaussa!"
+dialog_text = "Kolejne drzwi się zamknęły. Aby otworzyć każde z nich i przejść dalej, rozwiąż układ równań metodą Gaussa."
 
 [connection signal="body_entered" from="Misja_dialog" to="." method="_on_misja_dialog_body_entered"]
 [connection signal="interacted" from="Tunnel/ButtonSmall" to="Tunnel/Enter/Enter" method="toggle"]

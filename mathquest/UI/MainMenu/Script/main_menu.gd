@@ -1,6 +1,7 @@
 extends Control
 
 @onready var settings: Control = $Settings
+@onready var autors: Control = $AutorsMenu
 
 func _ready() -> void:
 	MusicManager.play_music("res://Sounds/Music/menu.wav")
@@ -21,3 +22,7 @@ func _on_select_level_pressed() -> void:
 
 func _on_settings_pressed() -> void:
 	settings.visible=true
+
+
+func _on_autor_pressed() -> void:
+	autors.visible=true

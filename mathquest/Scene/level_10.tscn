@@ -527,9 +527,6 @@ light_color = Color(1, 0.960784, 0.882353, 1)
 omni_range = 4096.0
 omni_attenuation = 0.394
 
-[node name="PauseMenu" parent="." instance=ExtResource("5_8ls38")]
-visible = false
-
 [node name="Alarm" type="OmniLight3D" parent="."]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.14714599, 4.1829367, 0)
 light_color = Color(1, 0.13333334, 0.047058824, 1)
@@ -938,6 +935,9 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 10.454931, 0.66676676, 6.0197
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.0060739517, 0.29577148, 0.36153698)
 shape = SubResource("BoxShape3D_6oy3h")
 
+[node name="PauseMenu" parent="." instance=ExtResource("5_8ls38")]
+visible = false
+
 [node name="Dialogi" type="Node" parent="."]
 
 [node name="Misja" type="AcceptDialog" parent="Dialogi"]
@@ -946,7 +946,7 @@ title = "Cel poziomu"
 initial_position = 2
 size = Vector2i(761, 100)
 visible = true
-dialog_text = "Odpowiedz na 12 pytań. Jeden komputer to jedno pytanie."
+dialog_text = "Napraw 12 terminali oznaczonych symbolem 'X', aby otworzyć przejście do rakiety kosmicznej."
 
 [connection signal="interacted" from="Word/Tunnel/Enter/ButtonSmall" to="Word/Tunnel/Enter/enter" method="toggle"]
 [connection signal="body_entered" from="Koniec gry/ZmianaPoziomu" to="." method="_on_zmiana_poziomu_body_entered"]

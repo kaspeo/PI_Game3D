@@ -1,0 +1,73 @@
+[gd_scene load_steps=2 format=3 uid="uid://bnupfleit5dfh"]
+
+[ext_resource type="Script" uid="uid://ddcg7mepawpd2" path="res://UI/MainMenu/Script/autors_menu.gd" id="1_xg5j8"]
+
+[node name="AutorsMenu" type="Control"]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("1_xg5j8")
+
+[node name="ColorRect" type="ColorRect" parent="."]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+color = Color(0.07590044, 0.39959106, 0.4623711, 1)
+
+[node name="VBoxContainer" type="VBoxContainer" parent="."]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -571.0
+offset_top = -115.0
+offset_right = 571.0
+offset_bottom = 115.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_constants/separation = 34
+metadata/_edit_use_anchors_ = true
+
+[node name="Autorzy" type="Label" parent="VBoxContainer"]
+layout_mode = 2
+theme_override_font_sizes/font_size = 90
+text = "Autorzy i licencje"
+horizontal_alignment = 1
+
+[node name="RichTextLabel" type="RichTextLabel" parent="VBoxContainer"]
+layout_mode = 2
+theme_override_font_sizes/normal_font_size = 33
+text = "MathQuest
+Praca inżynierska
+
+AUTOR:
+Kacper Krawczyk
+
+OPIEKUN PRACY:
+dr hab. inż. Marta Łabuda
+
+UCZELNIA:
+Politechnika Gdańska
+Wydział Fizyki Technicznej i Matematyki Stosowanej
+
+GRAFIKA I ZASOBY 3D:
+Kenney (www.kenney.nl)
+Licencja: CC0 1.0 Universal"
+fit_content = true
+horizontal_alignment = 1
+
+[node name="Exti_settings" type="Button" parent="VBoxContainer"]
+layout_mode = 2
+size_flags_horizontal = 4
+theme_override_font_sizes/font_size = 76
+text = "Wróć"
+
+[connection signal="pressed" from="VBoxContainer/Exti_settings" to="." method="_on_exti_settings_pressed"]
