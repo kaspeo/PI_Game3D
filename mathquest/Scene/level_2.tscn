@@ -685,8 +685,10 @@ visible = false
 [node name="Dialogi" type="Node" parent="."]
 
 [node name="Misja" type="AcceptDialog" parent="Dialogi"]
+oversampling_override = 1.0
 title = "Cel poziomu"
-initial_position = 2
+initial_position = 1
+size = Vector2i(535, 100)
 dialog_text = "Użyj metody Regula Falsi na dwóch komputerach, aby przejść dalej."
 
 [connection signal="body_entered" from="Misja" to="." method="_on_misja_body_entered"]

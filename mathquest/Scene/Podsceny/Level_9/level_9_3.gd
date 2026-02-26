@@ -11,7 +11,7 @@ var optimal_range: Array = [800, 1200]
 var current_points: Array = []
 
 @onready var task_label: Label = $ColorRect/Panel/Vbox/TaskLabel
-@onready var function_graph: ColorRect = $ColorRect/MonteCarlo
+@onready var function_graph: ColorRect = $ColorRect/Panel/MonteCarlo
 @onready var result_label: Label = $ColorRect/Panel/ResultLabel
 @onready var points_value: Label = $ColorRect/Panel/Vbox/PointsValue
 @onready var points_slider: HSlider = $ColorRect/Panel/Vbox/PointsSlider

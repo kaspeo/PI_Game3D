@@ -1,5 +1,6 @@
-[gd_scene load_steps=4 format=3 uid="uid://mqwmybu2dkjp"]
+[gd_scene load_steps=5 format=3 uid="uid://mqwmybu2dkjp"]
 
+[ext_resource type="Theme" uid="uid://b3klx57slj0l3" path="res://UI/Assets/UI_Assets/soft_retro/soft_retro.tres" id="1_m26eg"]
 [ext_resource type="Script" uid="uid://hkv7p0mnrbpk" path="res://Scene/Podsceny/Level_9/level_9_1.gd" id="1_tcu54"]
 [ext_resource type="Script" uid="uid://7cm2ngheymx6" path="res://Scene/Podsceny/Level_9/FunctionGraph9.gd" id="2_ffr6p"]
 [ext_resource type="Texture2D" uid="uid://dnh517ytibf0o" path="res://UI/frame.png" id="2_m26eg"]
@@ -11,6 +12,7 @@ anchor_right = 1.0
 anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
+theme = ExtResource("1_m26eg")
 script = ExtResource("1_tcu54")
 metadata/_edit_use_anchors_ = true
 
@@ -32,14 +34,15 @@ metadata/_edit_use_anchors_ = true
 [node name="ColorRect" type="ColorRect" parent="."]
 layout_mode = 1
 anchors_preset = -1
-anchor_left = 0.021875
-anchor_top = 0.009259259
-anchor_right = 0.021875
-anchor_bottom = 0.009259259
+anchor_left = 0.019270834
+anchor_top = 0.015740741
+anchor_right = 0.019270834
+anchor_bottom = 0.015740741
 offset_left = 258.0
 offset_top = 132.0
 offset_right = 1758.0
 offset_bottom = 882.0
+scale = Vector2(0.95053643, 0.96228045)
 color = Color(0, 0, 0, 1)
 metadata/_edit_use_anchors_ = true
 

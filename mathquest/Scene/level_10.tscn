@@ -1,4 +1,4 @@
-[gd_scene load_steps=53 format=4 uid="uid://dt0yjksb0bmbs"]
+[gd_scene load_steps=54 format=4 uid="uid://dt0yjksb0bmbs"]
 
 [ext_resource type="Script" uid="uid://c81y7jd6h152v" path="res://Scene/script/level_10.gd" id="1_8ls38"]
 [ext_resource type="Texture2D" uid="uid://bfgjqm6ivawoj" path="res://Texture/Panorama_Mars_01-2048x1024.png" id="1_fx88e"]
@@ -280,6 +280,9 @@ size = Vector3(1.223999, 1.5524902, 0.66)
 
 [sub_resource type="BoxShape3D" id="BoxShape3D_6oy3h"]
 size = Vector3(1.76, 1.591543, 1.1140039)
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_embyp"]
+size = Vector3(6.3789063, 2.803711, 1)
 
 [node name="Level_10" type="Node3D"]
 script = ExtResource("1_8ls38")
@@ -935,8 +938,13 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 10.454931, 0.66676676, 6.0197
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.0060739517, 0.29577148, 0.36153698)
 shape = SubResource("BoxShape3D_6oy3h")
 
-[node name="PauseMenu" parent="." instance=ExtResource("5_8ls38")]
-visible = false
+[node name="Misja" type="Area3D" parent="."]
+transform = Transform3D(0.99980897, 0, 0.019546444, 0, 1, 0, -0.019546444, 0, 0.99980897, -3.6295412, 1.463617, -0.9227557)
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="Misja"]
+transform = Transform3D(0.028567197, 0, -0.999592, 0, 1, 0, 0.999592, 0, 0.028567197, 0.28794384, 0.9548582, 0.0056293607)
+shape = SubResource("BoxShape3D_embyp")
+debug_color = Color(0, 0.6, 0.7, 0.42)
 
 [node name="Dialogi" type="Node" parent="."]
 
@@ -945,8 +953,11 @@ oversampling_override = 1.0
 title = "Cel poziomu"
 initial_position = 2
 size = Vector2i(761, 100)
-visible = true
 dialog_text = "Napraw 12 terminali oznaczonych symbolem 'X', aby otworzyć przejście do rakiety kosmicznej."
+
+[node name="PauseMenu" parent="." instance=ExtResource("5_8ls38")]
+visible = false
 
 [connection signal="interacted" from="Word/Tunnel/Enter/ButtonSmall" to="Word/Tunnel/Enter/enter" method="toggle"]
 [connection signal="body_entered" from="Koniec gry/ZmianaPoziomu" to="." method="_on_zmiana_poziomu_body_entered"]
+[connection signal="body_entered" from="Misja" to="." method="_on_misja_body_entered"]
