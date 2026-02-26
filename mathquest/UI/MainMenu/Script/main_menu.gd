@@ -2,8 +2,10 @@ extends Control
 
 @onready var settings: Control = $Settings
 @onready var autors: Control = $AutorsMenu
+@onready var game_version: Label = $GameVersion
 
 func _ready() -> void:
+	game_version.text = "Version " + str(Global.game_version)
 	MusicManager.play_music("res://Sounds/Music/menu.wav")
 	settings.visible=false
 	pass
