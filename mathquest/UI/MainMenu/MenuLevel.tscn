@@ -1,9 +1,9 @@
-[gd_scene load_steps=3 format=3 uid="uid://l2domsp5u3mu"]
+[gd_scene format=3 uid="uid://l2domsp5u3mu"]
 
 [ext_resource type="Theme" uid="uid://diir8laqqumkc" path="res://UI/Assets/UI_Assets/soft_retro.tres" id="1_fh7kf"]
 [ext_resource type="Script" uid="uid://ca67eoccyrt45" path="res://UI/MainMenu/Script/menu_level.gd" id="1_kqtij"]
 
-[node name="MenuLevel" type="Control"]
+[node name="MenuLevel" type="Control" unique_id=1666604074]
 custom_minimum_size = Vector2(1920, 1080)
 layout_mode = 3
 anchors_preset = 15
@@ -14,7 +14,7 @@ grow_vertical = 2
 theme = ExtResource("1_fh7kf")
 script = ExtResource("1_kqtij")
 
-[node name="ColorRect" type="ColorRect" parent="."]
+[node name="ColorRect" type="ColorRect" parent="." unique_id=1762034034]
 layout_mode = 1
 anchors_preset = 15
 anchor_right = 1.0
@@ -23,7 +23,7 @@ grow_horizontal = 2
 grow_vertical = 2
 color = Color(0.105327, 0.379555, 0.541179, 1)
 
-[node name="PanelContainer" type="MarginContainer" parent="."]
+[node name="PanelContainer" type="MarginContainer" parent="." unique_id=1856445509]
 layout_mode = 1
 anchors_preset = 15
 anchor_right = 1.0
@@ -31,23 +31,23 @@ anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
 
-[node name="VBoxContainer" type="VBoxContainer" parent="PanelContainer"]
+[node name="VBoxContainer" type="VBoxContainer" parent="PanelContainer" unique_id=1043447384]
 custom_minimum_size = Vector2(900, 0)
 layout_mode = 2
 size_flags_horizontal = 4
 size_flags_vertical = 4
 theme_override_constants/separation = 11
 
-[node name="Label2" type="Label" parent="PanelContainer/VBoxContainer"]
+[node name="Label2" type="Label" parent="PanelContainer/VBoxContainer" unique_id=562967072]
 layout_mode = 2
 theme_override_font_sizes/font_size = 35
 text = "Rozdział 1: Metody znajdowania pierwiastków równań"
 horizontal_alignment = 1
 
-[node name="HBoxContainer" type="HBoxContainer" parent="PanelContainer/VBoxContainer"]
+[node name="HBoxContainer" type="HBoxContainer" parent="PanelContainer/VBoxContainer" unique_id=126132982]
 layout_mode = 2
 
-[node name="Level1" type="Button" parent="PanelContainer/VBoxContainer/HBoxContainer"]
+[node name="Level1" type="Button" parent="PanelContainer/VBoxContainer/HBoxContainer" unique_id=1981131694]
 layout_mode = 2
 size_flags_horizontal = 3
 theme_override_font_sizes/font_size = 30
@@ -55,7 +55,7 @@ text = "Poziom 1
 Metoda Bisekcji
 "
 
-[node name="Level2" type="Button" parent="PanelContainer/VBoxContainer/HBoxContainer"]
+[node name="Level2" type="Button" parent="PanelContainer/VBoxContainer/HBoxContainer" unique_id=1526321862]
 layout_mode = 2
 size_flags_horizontal = 3
 theme_override_font_sizes/font_size = 30
@@ -63,10 +63,10 @@ text = "Poziom 2
 Metoda Regula Falsi
 "
 
-[node name="HBoxContainer2" type="HBoxContainer" parent="PanelContainer/VBoxContainer"]
+[node name="HBoxContainer2" type="HBoxContainer" parent="PanelContainer/VBoxContainer" unique_id=1282282460]
 layout_mode = 2
 
-[node name="Level3" type="Button" parent="PanelContainer/VBoxContainer/HBoxContainer2"]
+[node name="Level3" type="Button" parent="PanelContainer/VBoxContainer/HBoxContainer2" unique_id=1514978239]
 layout_mode = 2
 size_flags_horizontal = 3
 theme_override_font_sizes/font_size = 30
@@ -74,7 +74,7 @@ text = "Poziom 3
 Metoda Siecznych (Secanta)"
 icon_alignment = 1
 
-[node name="Level4" type="Button" parent="PanelContainer/VBoxContainer/HBoxContainer2"]
+[node name="Level4" type="Button" parent="PanelContainer/VBoxContainer/HBoxContainer2" unique_id=572880164]
 layout_mode = 2
 size_flags_horizontal = 3
 theme_override_font_sizes/font_size = 30
@@ -82,92 +82,92 @@ text = "Poziom 4
 Metoda kolejnych przybliżeń i 
 Newtona–Raphsona"
 
-[node name="Label3" type="Label" parent="PanelContainer/VBoxContainer"]
+[node name="Label3" type="Label" parent="PanelContainer/VBoxContainer" unique_id=2137239904]
 layout_mode = 2
 theme_override_font_sizes/font_size = 35
 text = "Rozdział 2: Metody rozwiązywania układów równań liniowych"
 horizontal_alignment = 1
 
-[node name="HBoxContainer3" type="HBoxContainer" parent="PanelContainer/VBoxContainer"]
+[node name="HBoxContainer3" type="HBoxContainer" parent="PanelContainer/VBoxContainer" unique_id=1884762652]
 layout_mode = 2
 
-[node name="Level5" type="Button" parent="PanelContainer/VBoxContainer/HBoxContainer3"]
+[node name="Level5" type="Button" parent="PanelContainer/VBoxContainer/HBoxContainer3" unique_id=1131093286]
 layout_mode = 2
 size_flags_horizontal = 3
 theme_override_font_sizes/font_size = 30
 text = "Poziom 5
 Metoda Gaussa"
 
-[node name="Level6" type="Button" parent="PanelContainer/VBoxContainer/HBoxContainer3"]
+[node name="Level6" type="Button" parent="PanelContainer/VBoxContainer/HBoxContainer3" unique_id=1357170780]
 layout_mode = 2
 size_flags_horizontal = 3
 theme_override_font_sizes/font_size = 30
 text = "Poziom 6
 Metoda Jordana"
 
-[node name="Label4" type="Label" parent="PanelContainer/VBoxContainer"]
+[node name="Label4" type="Label" parent="PanelContainer/VBoxContainer" unique_id=1285673671]
 layout_mode = 2
 theme_override_font_sizes/font_size = 35
 text = "Rozdział 3: Interpolacja i aproksymacja"
 horizontal_alignment = 1
 
-[node name="HBoxContainer4" type="HBoxContainer" parent="PanelContainer/VBoxContainer"]
+[node name="HBoxContainer4" type="HBoxContainer" parent="PanelContainer/VBoxContainer" unique_id=19136450]
 layout_mode = 2
 
-[node name="Level7" type="Button" parent="PanelContainer/VBoxContainer/HBoxContainer4"]
+[node name="Level7" type="Button" parent="PanelContainer/VBoxContainer/HBoxContainer4" unique_id=1292416381]
 layout_mode = 2
 size_flags_horizontal = 3
 theme_override_font_sizes/font_size = 30
 text = "Poziom 7
 Metoda Lagrange’a"
 
-[node name="Level8" type="Button" parent="PanelContainer/VBoxContainer/HBoxContainer4"]
+[node name="Level8" type="Button" parent="PanelContainer/VBoxContainer/HBoxContainer4" unique_id=845717219]
 layout_mode = 2
 size_flags_horizontal = 3
 theme_override_font_sizes/font_size = 30
 text = "Poziom 8
 Interpolacja Hermite'a"
 
-[node name="HBoxContainer5" type="HBoxContainer" parent="PanelContainer/VBoxContainer"]
+[node name="HBoxContainer5" type="HBoxContainer" parent="PanelContainer/VBoxContainer" unique_id=240191723]
 layout_mode = 2
 size_flags_horizontal = 4
 
-[node name="VBoxContainer" type="VBoxContainer" parent="PanelContainer/VBoxContainer/HBoxContainer5"]
+[node name="VBoxContainer" type="VBoxContainer" parent="PanelContainer/VBoxContainer/HBoxContainer5" unique_id=1132702181]
 layout_mode = 2
 
-[node name="Label" type="Label" parent="PanelContainer/VBoxContainer/HBoxContainer5/VBoxContainer"]
+[node name="Label" type="Label" parent="PanelContainer/VBoxContainer/HBoxContainer5/VBoxContainer" unique_id=943673144]
 layout_mode = 2
 theme_override_font_sizes/font_size = 35
 text = "Rozdział 4: Całkowanie numeryczne"
 
-[node name="Level9" type="Button" parent="PanelContainer/VBoxContainer/HBoxContainer5/VBoxContainer"]
+[node name="Level9" type="Button" parent="PanelContainer/VBoxContainer/HBoxContainer5/VBoxContainer" unique_id=1077156710]
 layout_mode = 2
 size_flags_horizontal = 3
 theme_override_font_sizes/font_size = 30
 text = "Poziom 9
 Całkowanie numeryczne"
 
-[node name="HBoxContainer7" type="HBoxContainer" parent="PanelContainer/VBoxContainer"]
+[node name="HBoxContainer7" type="HBoxContainer" parent="PanelContainer/VBoxContainer" unique_id=991302958]
 layout_mode = 2
 size_flags_horizontal = 4
 
-[node name="VBoxContainer" type="VBoxContainer" parent="PanelContainer/VBoxContainer/HBoxContainer7"]
+[node name="VBoxContainer" type="VBoxContainer" parent="PanelContainer/VBoxContainer/HBoxContainer7" unique_id=1510777379]
 layout_mode = 2
 size_flags_horizontal = 4
 
-[node name="Label" type="Label" parent="PanelContainer/VBoxContainer/HBoxContainer7/VBoxContainer"]
+[node name="Label" type="Label" parent="PanelContainer/VBoxContainer/HBoxContainer7/VBoxContainer" unique_id=1098770887]
 layout_mode = 2
 theme_override_font_sizes/font_size = 35
 text = "Rozdział 5: Podsumowanie"
 
-[node name="Level10" type="Button" parent="PanelContainer/VBoxContainer/HBoxContainer7/VBoxContainer"]
+[node name="Level10" type="Button" parent="PanelContainer/VBoxContainer/HBoxContainer7/VBoxContainer" unique_id=766017681]
 layout_mode = 2
 size_flags_horizontal = 3
 theme_override_font_sizes/font_size = 30
 text = "Poziom 10
 Końcowy quiz"
 
-[node name="Exit" type="Button" parent="PanelContainer/VBoxContainer"]
+[node name="Exit" type="Button" parent="PanelContainer/VBoxContainer" unique_id=916129117]
 layout_mode = 2
 size_flags_horizontal = 4
 size_flags_vertical = 8

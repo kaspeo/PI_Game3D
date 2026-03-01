@@ -13,5 +13,3 @@ func get_ui() -> Node:
 	return ui
 
 var can_move = true
-
-var game_version = 1.5
