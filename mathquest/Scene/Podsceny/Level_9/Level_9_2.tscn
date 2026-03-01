@@ -1,5 +1,6 @@
-[gd_scene load_steps=4 format=3 uid="uid://c5kpvt825l2uc"]
+[gd_scene load_steps=5 format=3 uid="uid://c5kpvt825l2uc"]
 
+[ext_resource type="Theme" uid="uid://b3klx57slj0l3" path="res://UI/Assets/UI_Assets/soft_retro/soft_retro.tres" id="1_q87g2"]
 [ext_resource type="Script" uid="uid://c7e8bktfaqscw" path="res://Scene/Podsceny/Level_9/level_9_2.gd" id="1_sy255"]
 [ext_resource type="Script" uid="uid://7cm2ngheymx6" path="res://Scene/Podsceny/Level_9/FunctionGraph9.gd" id="2_fgy25"]
 [ext_resource type="Texture2D" uid="uid://dnh517ytibf0o" path="res://UI/frame.png" id="2_q87g2"]
@@ -11,6 +12,7 @@ anchor_right = 1.0
 anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
+theme = ExtResource("1_q87g2")
 script = ExtResource("1_sy255")
 
 [node name="TextureRect" type="TextureRect" parent="."]
@@ -79,9 +81,9 @@ anchor_left = 0.5
 anchor_top = 0.5
 anchor_right = 0.5
 anchor_bottom = 0.5
-offset_left = -398.5
+offset_left = -375.0
 offset_top = -227.0
-offset_right = 398.5
+offset_right = 375.0
 offset_bottom = 227.0
 grow_horizontal = 2
 grow_vertical = 2

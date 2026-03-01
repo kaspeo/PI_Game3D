@@ -1,4 +1,4 @@
-[gd_resource type="MeshLibrary" load_steps=1296 format=4 uid="uid://diqtuc1tsfim"]
+[gd_resource type="MeshLibrary" format=4 uid="uid://diqtuc1tsfim"]
 
 [sub_resource type="StandardMaterial3D" id="StandardMaterial3D_8imrl"]
 resource_name = "crystal"

@@ -53,7 +53,6 @@ func _new_iteration():
 	button_b.text = "%.4f" % options[1]
 	button_c.text = "%.4f" % options[2]
 	misja_lab.text = "Iteracja %d: Znajdź x%d\nAktualny x%d = %.4f" % [iteration, iteration, iteration-1, x_current]
-	obliczenia_lab.text = "Wzór metody Newtona:\nxₙ₊₁ = xₙ - f(xₙ)/f'(xₙ)"
 	result_lab.text = ""
 	button_next.visible = false
 	button_a.disabled = false
@@ -79,10 +78,8 @@ func _check_answer(selected: float):
 		return
 	if abs(selected - correct_x_next) < 0.01:
 		result_lab.text = "✅ Dobrze! x%d ≈ %.4f" % [iteration, correct_x_next]
-		obliczenia_lab.text = "Wzór metody Newtona:\nxₙ₊₁ = xₙ - f(xₙ)/f'(xₙ)"
 	else:
 		result_lab.text = "❌ Źle! Poprawne: %.4f" % correct_x_next
-		obliczenia_lab.text = "Wzór metody Newtona:\nxₙ₊₁ = xₙ - f(xₙ)/f'(xₙ)"
 	button_a.disabled = true
 	button_b.disabled = true
 	button_c.disabled = true

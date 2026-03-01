@@ -2,8 +2,11 @@ extends Control
 
 @onready var settings: Control = $Settings
 @onready var autors: Control = $AutorsMenu
+@onready var game_version: Label = $GameVersion
 
 func _ready() -> void:
+	var app_version = ProjectSettings.get_setting("application/config/version")
+	game_version.text = "Version " + str(app_version)
 	MusicManager.play_music("res://Sounds/Music/menu.wav")
 	settings.visible=false
 	pass

@@ -1,5 +1,6 @@
-[gd_scene load_steps=4 format=3 uid="uid://bb4d6m8gue8gt"]
+[gd_scene load_steps=5 format=3 uid="uid://bb4d6m8gue8gt"]
 
+[ext_resource type="Theme" uid="uid://b3klx57slj0l3" path="res://UI/Assets/UI_Assets/soft_retro/soft_retro.tres" id="1_a51oq"]
 [ext_resource type="Script" uid="uid://db4sdpn0p2rl8" path="res://Scene/Podsceny/Level_4/level_4_2.gd" id="1_gpvkc"]
 [ext_resource type="Texture2D" uid="uid://dnh517ytibf0o" path="res://UI/frame.png" id="2_cxqpa"]
 [ext_resource type="PackedScene" uid="uid://dbfug3g7hwfq4" path="res://Scene/Podsceny/Level_4/level_4_2_wykres.tscn" id="2_ti7jv"]
@@ -11,6 +12,7 @@ anchor_right = 1.0
 anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
+theme = ExtResource("1_a51oq")
 script = ExtResource("1_gpvkc")
 
 [node name="TextureRect" type="TextureRect" parent="."]
@@ -63,6 +65,7 @@ horizontal_alignment = 1
 
 [node name="HBoxContainer" type="HBoxContainer" parent="PanelContainer/Panel/VBoxContainer"]
 layout_mode = 2
+theme_override_constants/separation = 20
 alignment = 1
 
 [node name="ButtonA" type="Button" parent="PanelContainer/Panel/VBoxContainer/HBoxContainer"]
@@ -82,6 +85,7 @@ text = "C"
 
 [node name="ResultLab" type="Label" parent="PanelContainer/Panel"]
 layout_mode = 2
+theme_override_font_sizes/font_size = 30
 horizontal_alignment = 1
 
 [node name="NextIter" type="Button" parent="PanelContainer/Panel"]
