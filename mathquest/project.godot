@@ -15,7 +15,7 @@ compatibility/default_parent_skeleton_in_mesh_instance_3d=true
 [application]
 
 config/name="MathQuest"
-config/version="1.5"
+config/version="1.6"
 run/main_scene="uid://bqnnet11lljgu"
 config/features=PackedStringArray("4.6", "Forward Plus")
 config/icon="uid://co1fwwkqd5eau"

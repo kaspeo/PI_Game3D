@@ -1,10 +1,10 @@
-[gd_scene load_steps=4 format=3 uid="uid://ysafwuffa01r"]
+[gd_scene format=3 uid="uid://ysafwuffa01r"]
 
 [ext_resource type="Script" uid="uid://c7tuvggqknlcr" path="res://Scene/Podsceny/Level_7/level_7_dane.gd" id="1_r4nch"]
 [ext_resource type="Texture2D" uid="uid://dnh517ytibf0o" path="res://UI/frame.png" id="2_x4fm5"]
 [ext_resource type="Theme" uid="uid://b3klx57slj0l3" path="res://UI/Assets/UI_Assets/soft_retro/soft_retro.tres" id="3_14b6k"]
 
-[node name="Level7Dane" type="Control"]
+[node name="Level7Dane" type="Control" unique_id=892033513]
 layout_mode = 3
 anchors_preset = 15
 anchor_right = 1.0
@@ -13,7 +13,7 @@ grow_horizontal = 2
 grow_vertical = 2
 script = ExtResource("1_r4nch")
 
-[node name="TextureRect" type="TextureRect" parent="."]
+[node name="TextureRect" type="TextureRect" parent="." unique_id=1324317478]
 layout_mode = 1
 anchors_preset = 15
 anchor_right = 1.0
@@ -27,7 +27,7 @@ grow_vertical = 2
 scale = Vector2(1.1, 1.088)
 texture = ExtResource("2_x4fm5")
 
-[node name="MarginContainer" type="MarginContainer" parent="."]
+[node name="MarginContainer" type="MarginContainer" parent="." unique_id=594965786]
 layout_mode = 1
 anchors_preset = 15
 anchor_right = 1.0
@@ -41,94 +41,94 @@ grow_vertical = 2
 scale = Vector2(0.72490776, 0.7071198)
 theme = ExtResource("3_14b6k")
 
-[node name="ColorRect" type="ColorRect" parent="MarginContainer"]
+[node name="ColorRect" type="ColorRect" parent="MarginContainer" unique_id=1285344244]
 layout_mode = 2
 color = Color(0, 0.247911, 0.223716, 1)
 
-[node name="HBoxContainer" type="VBoxContainer" parent="MarginContainer"]
+[node name="HBoxContainer" type="VBoxContainer" parent="MarginContainer" unique_id=157928301]
 layout_mode = 2
 size_flags_horizontal = 4
 size_flags_vertical = 0
 
-[node name="InfoLabel" type="Label" parent="MarginContainer/HBoxContainer"]
+[node name="InfoLabel" type="Label" parent="MarginContainer/HBoxContainer" unique_id=1072749881]
 layout_mode = 2
 size_flags_horizontal = 4
 theme_override_font_sizes/font_size = 60
 text = "Oblicz wielomian interpolacyjny Lagrange’a dla punktów:"
 
-[node name="HSeparator" type="HSeparator" parent="MarginContainer/HBoxContainer"]
+[node name="HSeparator" type="HSeparator" parent="MarginContainer/HBoxContainer" unique_id=717980286]
 layout_mode = 2
 theme_override_constants/separation = 22
 
-[node name="alabel" type="Label" parent="MarginContainer/HBoxContainer"]
+[node name="alabel" type="Label" parent="MarginContainer/HBoxContainer" unique_id=1364601923]
 layout_mode = 2
 size_flags_horizontal = 4
 theme_override_font_sizes/font_size = 60
 text = "a) (-1,4),(3,0)"
 
-[node name="HBoxContainer2" type="HBoxContainer" parent="MarginContainer/HBoxContainer"]
+[node name="HBoxContainer2" type="HBoxContainer" parent="MarginContainer/HBoxContainer" unique_id=210322146]
 layout_mode = 2
 size_flags_horizontal = 4
 
-[node name="al" type="Label" parent="MarginContainer/HBoxContainer/HBoxContainer2"]
+[node name="al" type="Label" parent="MarginContainer/HBoxContainer/HBoxContainer2" unique_id=453687942]
 layout_mode = 2
 size_flags_horizontal = 4
 theme_override_font_sizes/font_size = 60
 text = "L(x)="
 
-[node name="aedit" type="TextEdit" parent="MarginContainer/HBoxContainer/HBoxContainer2"]
-custom_minimum_size = Vector2(180, 57)
+[node name="aedit" type="TextEdit" parent="MarginContainer/HBoxContainer/HBoxContainer2" unique_id=2088850883]
+custom_minimum_size = Vector2(280, 57)
 layout_mode = 2
 size_flags_horizontal = 4
 theme_override_font_sizes/font_size = 60
 placeholder_text = "Dane a"
 
-[node name="HSeparator2" type="HSeparator" parent="MarginContainer/HBoxContainer"]
+[node name="HSeparator2" type="HSeparator" parent="MarginContainer/HBoxContainer" unique_id=23450769]
 layout_mode = 2
 theme_override_constants/separation = 22
 
-[node name="blabel" type="Label" parent="MarginContainer/HBoxContainer"]
+[node name="blabel" type="Label" parent="MarginContainer/HBoxContainer" unique_id=1466321776]
 layout_mode = 2
 size_flags_horizontal = 4
 theme_override_font_sizes/font_size = 60
 text = "b) (2,5),(4,1)"
 
-[node name="HBoxContainer" type="HBoxContainer" parent="MarginContainer/HBoxContainer"]
+[node name="HBoxContainer" type="HBoxContainer" parent="MarginContainer/HBoxContainer" unique_id=2118815597]
 layout_mode = 2
 size_flags_horizontal = 4
 
-[node name="bl" type="Label" parent="MarginContainer/HBoxContainer/HBoxContainer"]
+[node name="bl" type="Label" parent="MarginContainer/HBoxContainer/HBoxContainer" unique_id=1257281606]
 layout_mode = 2
 size_flags_horizontal = 4
 theme_override_font_sizes/font_size = 60
 text = "L(x)="
 
-[node name="bedit" type="TextEdit" parent="MarginContainer/HBoxContainer/HBoxContainer"]
-custom_minimum_size = Vector2(180, 57)
+[node name="bedit" type="TextEdit" parent="MarginContainer/HBoxContainer/HBoxContainer" unique_id=1044838204]
+custom_minimum_size = Vector2(280, 57)
 layout_mode = 2
 size_flags_horizontal = 4
 theme_override_font_sizes/font_size = 60
 placeholder_text = "Dane b
 "
 
-[node name="HSeparator3" type="HSeparator" parent="MarginContainer/HBoxContainer"]
+[node name="HSeparator3" type="HSeparator" parent="MarginContainer/HBoxContainer" unique_id=957084269]
 layout_mode = 2
 theme_override_constants/separation = 22
 
-[node name="CheckButton" type="Button" parent="MarginContainer/HBoxContainer"]
+[node name="CheckButton" type="Button" parent="MarginContainer/HBoxContainer" unique_id=299104994]
 layout_mode = 2
 size_flags_horizontal = 4
 size_flags_vertical = 4
 theme_override_font_sizes/font_size = 48
 text = "Sprawdz"
 
-[node name="ResultLabel" type="Label" parent="MarginContainer/HBoxContainer"]
+[node name="ResultLabel" type="Label" parent="MarginContainer/HBoxContainer" unique_id=298198623]
 custom_minimum_size = Vector2(200, 100)
 layout_mode = 2
 size_flags_horizontal = 4
 theme_override_font_sizes/font_size = 40
 
-[node name="Exit" type="Button" parent="MarginContainer"]
+[node name="Exit" type="Button" parent="MarginContainer" unique_id=1203861480]
 layout_mode = 2
 size_flags_horizontal = 4
 size_flags_vertical = 8

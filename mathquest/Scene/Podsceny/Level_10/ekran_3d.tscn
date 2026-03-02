@@ -1,4 +1,4 @@
-[gd_scene load_steps=6 format=3 uid="uid://b1211a2k74wor"]
+[gd_scene format=3 uid="uid://b1211a2k74wor"]
 
 [ext_resource type="Script" uid="uid://c6khp5ncoquyu" path="res://Scene/Podsceny/Level_10/ekran_3d.gd" id="1_fspgp"]
 [ext_resource type="PackedScene" uid="uid://c1heqmpcmy5yq" path="res://Scene/Podsceny/Level_10/level_10_ekran.tscn" id="2_no381"]
@@ -14,13 +14,13 @@ albedo_texture = SubResource("ViewportTexture_fspgp")
 resource_local_to_scene = true
 material = SubResource("StandardMaterial3D_no381")
 
-[node name="Ekran_3d" type="Node3D"]
+[node name="Ekran_3d" type="Node3D" unique_id=2006415754]
 script = ExtResource("1_fspgp")
 
-[node name="SubViewport" type="SubViewport" parent="."]
+[node name="SubViewport" type="SubViewport" parent="." unique_id=750955556]
 transparent_bg = true
 
-[node name="Level_10_ekran" parent="SubViewport" instance=ExtResource("2_no381")]
+[node name="Level_10_ekran" parent="SubViewport" unique_id=1184899683 instance=ExtResource("2_no381")]
 
-[node name="Sprite3D" type="MeshInstance3D" parent="."]
+[node name="Sprite3D" type="MeshInstance3D" parent="." unique_id=1304019056]
 mesh = SubResource("PlaneMesh_c7cr4")

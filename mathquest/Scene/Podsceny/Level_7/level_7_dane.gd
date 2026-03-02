@@ -28,7 +28,7 @@ func _on_check_button_pressed() -> void:
 		aedit.editable = false
 		bedit.editable = false
 	else:
-		var msg = "❌ Kod nadal zawiera błędy:\n"
+		var msg = "❌ Błędne dane:\n"
 		if not a_ok:
 			msg += "- Podpunkt a) niepoprawny.\n"
 		if not b_ok:

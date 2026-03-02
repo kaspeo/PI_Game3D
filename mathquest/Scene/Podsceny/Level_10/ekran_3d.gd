@@ -3,7 +3,7 @@ extends Node3D
 @onready var viewport: SubViewport = $SubViewport
 @onready var bsod_ui: Control = $SubViewport/Level_10_ekran
 
-var total_questions := 10
+var total_questions := 12
 var completed_questions := 0
 var is_active := false
 
