@@ -1,11 +1,11 @@
-[gd_scene load_steps=5 format=3 uid="uid://tkpgn83yaejg"]
+[gd_scene format=3 uid="uid://tkpgn83yaejg"]
 
 [ext_resource type="Script" uid="uid://ddsxgdsasutaw" path="res://Scene/Podsceny/Level_2/level_2_1.gd" id="1_gvajl"]
 [ext_resource type="Texture2D" uid="uid://dnh517ytibf0o" path="res://UI/frame.png" id="2_jbek1"]
 [ext_resource type="Script" uid="uid://d2542yqt0ubtf" path="res://Scene/Podsceny/Level_2/level_2_1graph.gd" id="2_uwq7q"]
 [ext_resource type="Theme" uid="uid://b3klx57slj0l3" path="res://UI/Assets/UI_Assets/soft_retro/soft_retro.tres" id="3_3ue3h"]
 
-[node name="Level2_1" type="Control"]
+[node name="Level2_1" type="Control" unique_id=152342972]
 clip_contents = true
 custom_minimum_size = Vector2(1920, 1080)
 layout_mode = 3
@@ -16,7 +16,7 @@ grow_horizontal = 2
 grow_vertical = 2
 script = ExtResource("1_gvajl")
 
-[node name="TextureRect" type="TextureRect" parent="."]
+[node name="TextureRect" type="TextureRect" parent="." unique_id=2141292160]
 layout_mode = 1
 anchors_preset = 15
 anchor_right = 1.0
@@ -30,7 +30,7 @@ grow_vertical = 2
 scale = Vector2(1.1, 1.088)
 texture = ExtResource("2_jbek1")
 
-[node name="ColorRect" type="ColorRect" parent="."]
+[node name="ColorRect" type="ColorRect" parent="." unique_id=685909720]
 layout_mode = 1
 anchors_preset = 15
 anchor_right = 1.0
@@ -44,7 +44,7 @@ grow_vertical = 2
 scale = Vector2(0.73230344, 0.6994655)
 color = Color(0, 0.247911, 0.223716, 1)
 
-[node name="MarginContainer" type="MarginContainer" parent="."]
+[node name="MarginContainer" type="MarginContainer" parent="." unique_id=1790085048]
 layout_mode = 1
 anchors_preset = 15
 anchor_right = 1.0
@@ -58,14 +58,14 @@ grow_vertical = 2
 scale = Vector2(0.73230344, 0.6759622)
 theme_override_constants/margin_top = 40
 
-[node name="VBoxContainer" type="VBoxContainer" parent="MarginContainer"]
+[node name="VBoxContainer" type="VBoxContainer" parent="MarginContainer" unique_id=272952222]
 layout_mode = 2
 
-[node name="HBoxContainer" type="HBoxContainer" parent="MarginContainer/VBoxContainer"]
+[node name="HBoxContainer" type="HBoxContainer" parent="MarginContainer/VBoxContainer" unique_id=130401529]
 layout_mode = 2
 theme = ExtResource("3_3ue3h")
 
-[node name="Task Label" type="Label" parent="MarginContainer/VBoxContainer/HBoxContainer"]
+[node name="Task Label" type="Label" parent="MarginContainer/VBoxContainer/HBoxContainer" unique_id=1557641211]
 layout_mode = 2
 size_flags_horizontal = 4
 theme_override_font_sizes/font_size = 33
@@ -74,98 +74,100 @@ korzystając z metody Reguły Falsi.
 Uwaga! Funkcja ma kilka miejsc zerowych blisko siebie. 
 Wybieraj ostrożnie przedział [a,x] lub [x,b]."
 
-[node name="GridContainer" type="GridContainer" parent="MarginContainer/VBoxContainer/HBoxContainer"]
+[node name="GridContainer" type="GridContainer" parent="MarginContainer/VBoxContainer/HBoxContainer" unique_id=2133791906]
 layout_mode = 2
 size_flags_horizontal = 6
 theme_override_constants/v_separation = 38
 
-[node name="HBoxContainerA" type="HBoxContainer" parent="MarginContainer/VBoxContainer/HBoxContainer/GridContainer"]
+[node name="HBoxContainerA" type="HBoxContainer" parent="MarginContainer/VBoxContainer/HBoxContainer/GridContainer" unique_id=1177437384]
 layout_mode = 2
 size_flags_horizontal = 4
 
-[node name="LabelA" type="Label" parent="MarginContainer/VBoxContainer/HBoxContainer/GridContainer/HBoxContainerA"]
+[node name="LabelA" type="Label" parent="MarginContainer/VBoxContainer/HBoxContainer/GridContainer/HBoxContainerA" unique_id=227632846]
 layout_mode = 2
 theme_override_font_sizes/font_size = 50
 text = "a:"
 
-[node name="InputA" type="LineEdit" parent="MarginContainer/VBoxContainer/HBoxContainer/GridContainer/HBoxContainerA"]
+[node name="InputA" type="LineEdit" parent="MarginContainer/VBoxContainer/HBoxContainer/GridContainer/HBoxContainerA" unique_id=665581499]
 layout_mode = 2
 size_flags_horizontal = 4
 theme_override_font_sizes/font_size = 50
 placeholder_text = "-2"
 
-[node name="HBoxContainerB" type="HBoxContainer" parent="MarginContainer/VBoxContainer/HBoxContainer/GridContainer"]
+[node name="HBoxContainerB" type="HBoxContainer" parent="MarginContainer/VBoxContainer/HBoxContainer/GridContainer" unique_id=1551264022]
 layout_mode = 2
 
-[node name="LabelB" type="Label" parent="MarginContainer/VBoxContainer/HBoxContainer/GridContainer/HBoxContainerB"]
+[node name="LabelB" type="Label" parent="MarginContainer/VBoxContainer/HBoxContainer/GridContainer/HBoxContainerB" unique_id=602032976]
 layout_mode = 2
 theme_override_font_sizes/font_size = 50
 text = "b:"
 
-[node name="InputB" type="LineEdit" parent="MarginContainer/VBoxContainer/HBoxContainer/GridContainer/HBoxContainerB"]
+[node name="InputB" type="LineEdit" parent="MarginContainer/VBoxContainer/HBoxContainer/GridContainer/HBoxContainerB" unique_id=294852208]
 layout_mode = 2
 size_flags_horizontal = 4
 theme_override_font_sizes/font_size = 50
 placeholder_text = "0"
 
-[node name="HBoxContainer2" type="HBoxContainer" parent="MarginContainer/VBoxContainer"]
+[node name="HBoxContainer2" type="HBoxContainer" parent="MarginContainer/VBoxContainer" unique_id=1920392556]
 layout_mode = 2
 size_flags_horizontal = 4
 size_flags_vertical = 4
 
-[node name="Oblicz" type="Button" parent="MarginContainer/VBoxContainer/HBoxContainer2"]
+[node name="Oblicz" type="Button" parent="MarginContainer/VBoxContainer/HBoxContainer2" unique_id=387954062]
 layout_mode = 2
 size_flags_horizontal = 4
 theme_override_font_sizes/font_size = 40
 text = "Oblicz
 "
 
-[node name="Exit" type="Button" parent="MarginContainer/VBoxContainer/HBoxContainer2"]
+[node name="Exit" type="Button" parent="MarginContainer/VBoxContainer/HBoxContainer2" unique_id=1065283971]
 layout_mode = 2
 size_flags_horizontal = 4
 size_flags_vertical = 4
 theme_override_font_sizes/font_size = 40
 text = "Wyjdź"
 
-[node name="VBoxContainer" type="HBoxContainer" parent="MarginContainer/VBoxContainer"]
+[node name="VBoxContainer" type="HBoxContainer" parent="MarginContainer/VBoxContainer" unique_id=1521318099]
 layout_mode = 2
 size_flags_horizontal = 4
 size_flags_vertical = 4
 
-[node name="PrzedzialA" type="Button" parent="MarginContainer/VBoxContainer/VBoxContainer"]
+[node name="PrzedzialA" type="Button" parent="MarginContainer/VBoxContainer/VBoxContainer" unique_id=1207292478]
 layout_mode = 2
 theme_override_font_sizes/font_size = 40
 text = "wybór przedziału [a, x]"
 
-[node name="PrzedzialB" type="Button" parent="MarginContainer/VBoxContainer/VBoxContainer"]
+[node name="PrzedzialB" type="Button" parent="MarginContainer/VBoxContainer/VBoxContainer" unique_id=1267414434]
 layout_mode = 2
 theme_override_font_sizes/font_size = 40
 text = "wybór przedziału [x, b]"
 
-[node name="HBoxContainer3" type="HBoxContainer" parent="MarginContainer/VBoxContainer"]
+[node name="HBoxContainer3" type="HBoxContainer" parent="MarginContainer/VBoxContainer" unique_id=429816139]
 layout_mode = 2
 
-[node name="Wynik" type="Label" parent="MarginContainer/VBoxContainer/HBoxContainer3"]
-layout_mode = 2
-size_flags_vertical = 8
-theme_override_font_sizes/font_size = 30
-
-[node name="HBoxContainer4" type="HBoxContainer" parent="MarginContainer/VBoxContainer"]
+[node name="HBoxContainer4" type="HBoxContainer" parent="MarginContainer/VBoxContainer" unique_id=410112520]
 layout_mode = 2
 
-[node name="RichTextLabel" type="RichTextLabel" parent="MarginContainer/VBoxContainer/HBoxContainer4"]
-custom_minimum_size = Vector2(1920, 200)
+[node name="RichTextLabel" type="RichTextLabel" parent="MarginContainer/VBoxContainer/HBoxContainer4" unique_id=1543954447]
+custom_minimum_size = Vector2(650, 200)
 layout_mode = 2
 size_flags_vertical = 8
 text = "
 "
+autowrap_mode = 2
 
-[node name="PanelContainer" type="PanelContainer" parent="MarginContainer/VBoxContainer"]
+[node name="Wynik" type="Label" parent="MarginContainer/VBoxContainer/HBoxContainer4" unique_id=2052995020]
+layout_mode = 2
+size_flags_horizontal = 8
+size_flags_vertical = 8
+theme_override_font_sizes/font_size = 30
+
+[node name="PanelContainer" type="PanelContainer" parent="MarginContainer/VBoxContainer" unique_id=78413010]
 custom_minimum_size = Vector2(0, 550)
 layout_mode = 2
 size_flags_vertical = 10
 
-[node name="Graph" type="Panel" parent="MarginContainer/VBoxContainer/PanelContainer"]
+[node name="Graph" type="Panel" parent="MarginContainer/VBoxContainer/PanelContainer" unique_id=1093374583]
 clip_contents = true
 layout_mode = 2
 script = ExtResource("2_uwq7q")

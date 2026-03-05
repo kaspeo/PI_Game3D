@@ -1,9 +1,9 @@
-[gd_scene load_steps=3 format=3 uid="uid://df5ya1dgxr3yq"]
+[gd_scene format=3 uid="uid://df5ya1dgxr3yq"]
 
 [ext_resource type="Script" uid="uid://rhpux48oihr7" path="res://Scene/Podsceny/Level_5/level_5_3.gd" id="1_55apl"]
 [ext_resource type="Texture2D" uid="uid://dnh517ytibf0o" path="res://UI/frame.png" id="2_kblwv"]
 
-[node name="Level43" type="Control"]
+[node name="Level43" type="Control" unique_id=467470817]
 layout_mode = 3
 anchors_preset = 15
 anchor_right = 1.0
@@ -12,7 +12,7 @@ grow_horizontal = 2
 grow_vertical = 2
 script = ExtResource("1_55apl")
 
-[node name="TextureRect" type="TextureRect" parent="."]
+[node name="TextureRect" type="TextureRect" parent="." unique_id=1684974685]
 layout_mode = 1
 anchors_preset = 15
 anchor_right = 1.0
@@ -26,286 +26,296 @@ grow_vertical = 2
 scale = Vector2(1.1, 1.088)
 texture = ExtResource("2_kblwv")
 
-[node name="MarginContainer" type="MarginContainer" parent="."]
+[node name="MarginContainer" type="MarginContainer" parent="." unique_id=2102237619]
 layout_mode = 1
 anchors_preset = 15
 anchor_right = 1.0
 anchor_bottom = 1.0
+offset_left = 300.0
+offset_top = 134.00002
+offset_right = 300.0
+offset_bottom = 134.0
 grow_horizontal = 2
 grow_vertical = 2
+scale = Vector2(0.728, 0.728)
 
-[node name="ColorRect" type="ColorRect" parent="MarginContainer"]
+[node name="ColorRect" type="ColorRect" parent="MarginContainer" unique_id=1807363007]
 layout_mode = 2
 color = Color(0, 0.247911, 0.223716, 1)
 
-[node name="HBoxContainer" type="HBoxContainer" parent="MarginContainer"]
+[node name="HBoxContainer" type="HBoxContainer" parent="MarginContainer" unique_id=847708236]
 layout_mode = 2
 size_flags_horizontal = 4
 size_flags_vertical = 4
+theme_override_constants/separation = 0
 
-[node name="GridContainer1" type="GridContainer" parent="MarginContainer/HBoxContainer"]
+[node name="GridContainer1" type="GridContainer" parent="MarginContainer/HBoxContainer" unique_id=410059463]
 layout_mode = 2
 theme_override_constants/h_separation = 15
+theme_override_constants/v_separation = 33
 columns = 11
 
-[node name="Ramka" type="Label" parent="MarginContainer/HBoxContainer/GridContainer1"]
+[node name="Ramka" type="Label" parent="MarginContainer/HBoxContainer/GridContainer1" unique_id=573171880]
 layout_mode = 2
 theme_override_font_sizes/font_size = 50
 text = "["
 horizontal_alignment = 1
 
-[node name="Label" type="Label" parent="MarginContainer/HBoxContainer/GridContainer1"]
+[node name="Label" type="Label" parent="MarginContainer/HBoxContainer/GridContainer1" unique_id=1576606016]
 layout_mode = 2
 theme_override_font_sizes/font_size = 50
 text = "3"
 horizontal_alignment = 1
 
-[node name="Label2" type="Label" parent="MarginContainer/HBoxContainer/GridContainer1"]
+[node name="Label2" type="Label" parent="MarginContainer/HBoxContainer/GridContainer1" unique_id=715629232]
 layout_mode = 2
 theme_override_font_sizes/font_size = 50
 text = "3"
 horizontal_alignment = 1
 
-[node name="Label3" type="Label" parent="MarginContainer/HBoxContainer/GridContainer1"]
+[node name="Label3" type="Label" parent="MarginContainer/HBoxContainer/GridContainer1" unique_id=302157453]
 layout_mode = 2
 theme_override_font_sizes/font_size = 50
 text = "0"
 horizontal_alignment = 1
 
-[node name="Ramka4" type="Label" parent="MarginContainer/HBoxContainer/GridContainer1"]
+[node name="Ramka4" type="Label" parent="MarginContainer/HBoxContainer/GridContainer1" unique_id=1085273449]
 layout_mode = 2
 theme_override_font_sizes/font_size = 50
 text = "]"
 horizontal_alignment = 1
 
-[node name="kropka" type="Label" parent="MarginContainer/HBoxContainer/GridContainer1"]
+[node name="kropka" type="Label" parent="MarginContainer/HBoxContainer/GridContainer1" unique_id=561185980]
 layout_mode = 2
 theme_override_font_sizes/font_size = 50
 horizontal_alignment = 1
 
-[node name="Label4" type="Label" parent="MarginContainer/HBoxContainer/GridContainer1"]
+[node name="Label4" type="Label" parent="MarginContainer/HBoxContainer/GridContainer1" unique_id=780435313]
 layout_mode = 2
 theme_override_font_sizes/font_size = 50
 text = "x₁"
 horizontal_alignment = 1
 
-[node name="rowna" type="Label" parent="MarginContainer/HBoxContainer/GridContainer1"]
+[node name="rowna" type="Label" parent="MarginContainer/HBoxContainer/GridContainer1" unique_id=1062059273]
 layout_mode = 2
 theme_override_font_sizes/font_size = 50
 horizontal_alignment = 1
 
-[node name="Label5" type="Label" parent="MarginContainer/HBoxContainer/GridContainer1"]
+[node name="Label5" type="Label" parent="MarginContainer/HBoxContainer/GridContainer1" unique_id=803413977]
 layout_mode = 2
 theme_override_font_sizes/font_size = 50
 text = "["
 horizontal_alignment = 1
 
-[node name="Label16" type="Label" parent="MarginContainer/HBoxContainer/GridContainer1"]
+[node name="Label16" type="Label" parent="MarginContainer/HBoxContainer/GridContainer1" unique_id=1226929465]
 layout_mode = 2
 theme_override_font_sizes/font_size = 50
 text = "3"
 horizontal_alignment = 1
 
-[node name="Label17" type="Label" parent="MarginContainer/HBoxContainer/GridContainer1"]
+[node name="Label17" type="Label" parent="MarginContainer/HBoxContainer/GridContainer1" unique_id=821953808]
 layout_mode = 2
 theme_override_font_sizes/font_size = 50
 text = "]"
 horizontal_alignment = 1
 
-[node name="Ramka2" type="Label" parent="MarginContainer/HBoxContainer/GridContainer1"]
+[node name="Ramka2" type="Label" parent="MarginContainer/HBoxContainer/GridContainer1" unique_id=1538185350]
 layout_mode = 2
 theme_override_font_sizes/font_size = 50
 text = "["
 horizontal_alignment = 1
 
-[node name="Label6" type="Label" parent="MarginContainer/HBoxContainer/GridContainer1"]
+[node name="Label6" type="Label" parent="MarginContainer/HBoxContainer/GridContainer1" unique_id=371270895]
 layout_mode = 2
 theme_override_font_sizes/font_size = 50
 text = "0"
 horizontal_alignment = 1
 
-[node name="Label7" type="Label" parent="MarginContainer/HBoxContainer/GridContainer1"]
+[node name="Label7" type="Label" parent="MarginContainer/HBoxContainer/GridContainer1" unique_id=801447067]
 layout_mode = 2
 theme_override_font_sizes/font_size = 50
 text = "-1"
 horizontal_alignment = 1
 
-[node name="Label8" type="Label" parent="MarginContainer/HBoxContainer/GridContainer1"]
+[node name="Label8" type="Label" parent="MarginContainer/HBoxContainer/GridContainer1" unique_id=2075950351]
 layout_mode = 2
 theme_override_font_sizes/font_size = 50
 text = "1"
 horizontal_alignment = 1
 
-[node name="Ramka5" type="Label" parent="MarginContainer/HBoxContainer/GridContainer1"]
+[node name="Ramka5" type="Label" parent="MarginContainer/HBoxContainer/GridContainer1" unique_id=1104863541]
 layout_mode = 2
 theme_override_font_sizes/font_size = 50
 text = "]"
 horizontal_alignment = 1
 
-[node name="kropka2" type="Label" parent="MarginContainer/HBoxContainer/GridContainer1"]
+[node name="kropka2" type="Label" parent="MarginContainer/HBoxContainer/GridContainer1" unique_id=491388388]
 layout_mode = 2
 theme_override_font_sizes/font_size = 50
 text = "*"
 horizontal_alignment = 1
 
-[node name="Label9" type="Label" parent="MarginContainer/HBoxContainer/GridContainer1"]
+[node name="Label9" type="Label" parent="MarginContainer/HBoxContainer/GridContainer1" unique_id=1518784380]
 layout_mode = 2
 theme_override_font_sizes/font_size = 50
 text = "x₂"
 horizontal_alignment = 1
 
-[node name="rowna3" type="Label" parent="MarginContainer/HBoxContainer/GridContainer1"]
+[node name="rowna3" type="Label" parent="MarginContainer/HBoxContainer/GridContainer1" unique_id=1480855995]
 layout_mode = 2
 theme_override_font_sizes/font_size = 50
 text = "="
 horizontal_alignment = 1
 
-[node name="Label10" type="Label" parent="MarginContainer/HBoxContainer/GridContainer1"]
+[node name="Label10" type="Label" parent="MarginContainer/HBoxContainer/GridContainer1" unique_id=798665242]
 layout_mode = 2
 theme_override_font_sizes/font_size = 50
 text = "["
 horizontal_alignment = 1
 
-[node name="Label18" type="Label" parent="MarginContainer/HBoxContainer/GridContainer1"]
+[node name="Label18" type="Label" parent="MarginContainer/HBoxContainer/GridContainer1" unique_id=2005723257]
 layout_mode = 2
 theme_override_font_sizes/font_size = 50
 text = "1"
 horizontal_alignment = 1
 
-[node name="Label19" type="Label" parent="MarginContainer/HBoxContainer/GridContainer1"]
+[node name="Label19" type="Label" parent="MarginContainer/HBoxContainer/GridContainer1" unique_id=915559797]
 layout_mode = 2
 theme_override_font_sizes/font_size = 50
 text = "]"
 horizontal_alignment = 1
 
-[node name="Ramka3" type="Label" parent="MarginContainer/HBoxContainer/GridContainer1"]
+[node name="Ramka3" type="Label" parent="MarginContainer/HBoxContainer/GridContainer1" unique_id=723079163]
 layout_mode = 2
 theme_override_font_sizes/font_size = 50
 text = "["
 horizontal_alignment = 1
 
-[node name="Label11" type="Label" parent="MarginContainer/HBoxContainer/GridContainer1"]
+[node name="Label11" type="Label" parent="MarginContainer/HBoxContainer/GridContainer1" unique_id=1454237703]
 layout_mode = 2
 theme_override_font_sizes/font_size = 50
 text = "0"
 horizontal_alignment = 1
 
-[node name="Label12" type="Label" parent="MarginContainer/HBoxContainer/GridContainer1"]
+[node name="Label12" type="Label" parent="MarginContainer/HBoxContainer/GridContainer1" unique_id=668685677]
 layout_mode = 2
 theme_override_font_sizes/font_size = 50
 text = "0"
 horizontal_alignment = 1
 
-[node name="Label13" type="Label" parent="MarginContainer/HBoxContainer/GridContainer1"]
+[node name="Label13" type="Label" parent="MarginContainer/HBoxContainer/GridContainer1" unique_id=515476257]
 layout_mode = 2
 theme_override_font_sizes/font_size = 50
 text = "4"
 horizontal_alignment = 1
 
-[node name="Ramka6" type="Label" parent="MarginContainer/HBoxContainer/GridContainer1"]
+[node name="Ramka6" type="Label" parent="MarginContainer/HBoxContainer/GridContainer1" unique_id=920055630]
 layout_mode = 2
 theme_override_font_sizes/font_size = 50
 text = "]"
 horizontal_alignment = 1
 
-[node name="kropka3" type="Label" parent="MarginContainer/HBoxContainer/GridContainer1"]
+[node name="kropka3" type="Label" parent="MarginContainer/HBoxContainer/GridContainer1" unique_id=1315952389]
 layout_mode = 2
 theme_override_font_sizes/font_size = 50
 horizontal_alignment = 1
 
-[node name="Label14" type="Label" parent="MarginContainer/HBoxContainer/GridContainer1"]
+[node name="Label14" type="Label" parent="MarginContainer/HBoxContainer/GridContainer1" unique_id=1491278593]
 layout_mode = 2
 theme_override_font_sizes/font_size = 50
 text = "x₃"
 horizontal_alignment = 1
 
-[node name="rowna2" type="Label" parent="MarginContainer/HBoxContainer/GridContainer1"]
+[node name="rowna2" type="Label" parent="MarginContainer/HBoxContainer/GridContainer1" unique_id=968283251]
 layout_mode = 2
 theme_override_font_sizes/font_size = 50
 horizontal_alignment = 1
 
-[node name="Label15" type="Label" parent="MarginContainer/HBoxContainer/GridContainer1"]
+[node name="Label15" type="Label" parent="MarginContainer/HBoxContainer/GridContainer1" unique_id=1040095860]
 layout_mode = 2
 theme_override_font_sizes/font_size = 50
 text = "["
 horizontal_alignment = 1
 
-[node name="Label20" type="Label" parent="MarginContainer/HBoxContainer/GridContainer1"]
+[node name="Label20" type="Label" parent="MarginContainer/HBoxContainer/GridContainer1" unique_id=1634036280]
 layout_mode = 2
 theme_override_font_sizes/font_size = 50
 text = "3"
 horizontal_alignment = 1
 
-[node name="Label21" type="Label" parent="MarginContainer/HBoxContainer/GridContainer1"]
+[node name="Label21" type="Label" parent="MarginContainer/HBoxContainer/GridContainer1" unique_id=1631889187]
 layout_mode = 2
 theme_override_font_sizes/font_size = 50
 text = "]"
 horizontal_alignment = 1
 
-[node name="Label" type="Label" parent="MarginContainer/HBoxContainer"]
+[node name="Label" type="Label" parent="MarginContainer/HBoxContainer" unique_id=2082911744]
 layout_mode = 2
 theme_override_font_sizes/font_size = 180
 text = "→"
 
-[node name="GridContainer2" type="GridContainer" parent="MarginContainer/HBoxContainer"]
+[node name="GridContainer2" type="GridContainer" parent="MarginContainer/HBoxContainer" unique_id=798659030]
 layout_mode = 2
 theme_override_constants/v_separation = 25
 columns = 2
 
-[node name="Label" type="Label" parent="MarginContainer/HBoxContainer/GridContainer2"]
+[node name="Label" type="Label" parent="MarginContainer/HBoxContainer/GridContainer2" unique_id=491473338]
 layout_mode = 2
-theme_override_font_sizes/font_size = 30
+theme_override_font_sizes/font_size = 50
 text = "x₁="
 
-[node name="TextEdit" type="TextEdit" parent="MarginContainer/HBoxContainer/GridContainer2"]
+[node name="TextEdit" type="LineEdit" parent="MarginContainer/HBoxContainer/GridContainer2" unique_id=483220046]
+custom_minimum_size = Vector2(100, 0)
 layout_mode = 2
-theme_override_font_sizes/font_size = 30
-scroll_fit_content_height = true
-scroll_fit_content_width = true
+theme_override_font_sizes/font_size = 50
+alignment = 1
+max_length = 4
 
-[node name="Label2" type="Label" parent="MarginContainer/HBoxContainer/GridContainer2"]
+[node name="Label2" type="Label" parent="MarginContainer/HBoxContainer/GridContainer2" unique_id=1360262208]
 layout_mode = 2
-theme_override_font_sizes/font_size = 30
+theme_override_font_sizes/font_size = 50
 text = "x₂="
 
-[node name="TextEdit2" type="TextEdit" parent="MarginContainer/HBoxContainer/GridContainer2"]
+[node name="TextEdit2" type="LineEdit" parent="MarginContainer/HBoxContainer/GridContainer2" unique_id=547140664]
+custom_minimum_size = Vector2(100, 0)
 layout_mode = 2
-theme_override_font_sizes/font_size = 30
-scroll_fit_content_height = true
-scroll_fit_content_width = true
+theme_override_font_sizes/font_size = 50
+alignment = 1
+max_length = 4
 
-[node name="Label3" type="Label" parent="MarginContainer/HBoxContainer/GridContainer2"]
+[node name="Label3" type="Label" parent="MarginContainer/HBoxContainer/GridContainer2" unique_id=1015124247]
 layout_mode = 2
-theme_override_font_sizes/font_size = 30
+theme_override_font_sizes/font_size = 50
 text = "x₃="
 
-[node name="TextEdit3" type="TextEdit" parent="MarginContainer/HBoxContainer/GridContainer2"]
+[node name="TextEdit3" type="LineEdit" parent="MarginContainer/HBoxContainer/GridContainer2" unique_id=440762531]
+custom_minimum_size = Vector2(100, 0)
 layout_mode = 2
-theme_override_font_sizes/font_size = 30
-scroll_fit_content_height = true
-scroll_fit_content_width = true
+theme_override_font_sizes/font_size = 50
+alignment = 1
+max_length = 4
 
-[node name="HBoxContainer2" type="HBoxContainer" parent="MarginContainer"]
+[node name="HBoxContainer2" type="HBoxContainer" parent="MarginContainer" unique_id=1576015445]
 layout_mode = 2
 size_flags_horizontal = 4
 size_flags_vertical = 8
 
-[node name="Sprawdź" type="Button" parent="MarginContainer/HBoxContainer2"]
+[node name="Sprawdź" type="Button" parent="MarginContainer/HBoxContainer2" unique_id=1623583603]
 layout_mode = 2
 theme_override_font_sizes/font_size = 53
 text = "Sprawdź"
 
-[node name="Wyjdz" type="Button" parent="MarginContainer/HBoxContainer2"]
+[node name="Wyjdz" type="Button" parent="MarginContainer/HBoxContainer2" unique_id=1362558776]
 layout_mode = 2
 theme_override_font_sizes/font_size = 53
 text = "Wyjdz"
 
-[node name="HBoxContainer3" type="HBoxContainer" parent="MarginContainer"]
+[node name="HBoxContainer3" type="HBoxContainer" parent="MarginContainer" unique_id=1033796597]
 layout_mode = 2
 size_flags_horizontal = 4
 size_flags_vertical = 0
 
-[node name="ResultLabel" type="Label" parent="MarginContainer/HBoxContainer3"]
+[node name="ResultLabel" type="Label" parent="MarginContainer/HBoxContainer3" unique_id=1380057199]
 process_mode = 2
 layout_mode = 2
 size_flags_horizontal = 4

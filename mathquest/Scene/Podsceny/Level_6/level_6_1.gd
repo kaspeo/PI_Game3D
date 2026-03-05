@@ -19,7 +19,7 @@ func _on_sprawdź_pressed() -> void:
 
 	if ok:
 		result_label.text = "✅ Poprawnie!"
-		Global.get_ui().ustaw_misje("Macierz zadanie", true)
+		Global.get_ui().ustaw_misje("Macierz zadanie 1/4", false)
 		drzwi1.open_door()
 	else:
 		result_label.text = "❌ Coś się nie zgadza, spróbuj ponownie."

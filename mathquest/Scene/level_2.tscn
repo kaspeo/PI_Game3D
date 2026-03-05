@@ -1,4 +1,4 @@
-[gd_scene load_steps=60 format=4 uid="uid://by3wdlg0m85nk"]
+[gd_scene format=4 uid="uid://by3wdlg0m85nk"]
 
 [ext_resource type="Script" uid="uid://cixfxqu8yf0jx" path="res://Scene/script/level_2.gd" id="1_f3pwq"]
 [ext_resource type="PackedScene" uid="uid://di80n2exvk435" path="res://Player/player.tscn" id="1_ps88n"]
@@ -431,15 +431,15 @@ size = Vector3(2.05, 0.96999997, 0.66)
 [sub_resource type="BoxShape3D" id="BoxShape3D_f3pwq"]
 size = Vector3(1.4147949, 1.0899658, 1.52)
 
-[node name="Level2" type="Node3D"]
+[node name="Level2" type="Node3D" unique_id=2002073256]
 script = ExtResource("1_f3pwq")
 
-[node name="Player" parent="." instance=ExtResource("1_ps88n")]
+[node name="Player" parent="." unique_id=947420217 instance=ExtResource("1_ps88n")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.5531138, -10.736758)
 
-[node name="Word" type="Node3D" parent="."]
+[node name="Word" type="Node3D" parent="." unique_id=15407307]
 
-[node name="Floor" type="GridMap" parent="Word"]
+[node name="Floor" type="GridMap" parent="Word" unique_id=642651092]
 mesh_library = ExtResource("2_wo0id")
 cell_size = Vector3(1, 1, 1)
 data = {
@@ -447,7 +447,7 @@ data = {
 }
 metadata/_editor_floor_ = Vector3(0, 2, 0)
 
-[node name="Wall" type="GridMap" parent="Word"]
+[node name="Wall" type="GridMap" parent="Word" unique_id=293669819]
 mesh_library = ExtResource("3_t8mw1")
 cell_size = Vector3(0.25, 1, 0.25)
 data = {
@@ -455,14 +455,14 @@ data = {
 }
 metadata/_editor_floor_ = Vector3(0, 0, 0)
 
-[node name="Objects" type="GridMap" parent="Word"]
+[node name="Objects" type="GridMap" parent="Word" unique_id=1715520092]
 mesh_library = ExtResource("3_t8mw1")
 cell_size = Vector3(0.1, 1, 0.1)
 data = {
 "cells": PackedInt32Array(65512, 65526, 1048632, 65512, 65531, 1048640, 65512, 5, 1048629, 65512, 65521, 1048630, 65520, 20, 1441911, 65514, 19, 1048586, 65502, 65526, 1048615, 65502, 65525, 1048615, 65501, 65525, 1048615, 65501, 65532, 1048615, 65425, 65531, 39, 65424, 65531, 39, 65424, 65525, 39, 65434, 65532, 39, 65446, 65532, 39, 65443, 65532, 39, 65455, 65531, 39, 65462, 65532, 39, 65472, 65531, 39, 65482, 65530, 39)
 }
 
-[node name="wall2" type="GridMap" parent="Word"]
+[node name="wall2" type="GridMap" parent="Word" unique_id=1864119750]
 mesh_library = ExtResource("6_wo0id")
 cell_size = Vector3(0.215, 0.5, 0.25)
 data = {
@@ -470,7 +470,7 @@ data = {
 }
 metadata/_editor_floor_ = Vector3(0, 1, 0)
 
-[node name="Wall3" type="GridMap" parent="Word"]
+[node name="Wall3" type="GridMap" parent="Word" unique_id=865407256]
 mesh_library = ExtResource("3_t8mw1")
 cell_size = Vector3(0.115, 1, 0.25)
 data = {
@@ -478,82 +478,80 @@ data = {
 }
 metadata/_editor_floor_ = Vector3(0, 0, 0)
 
-[node name="DirectionalLight3D" type="OmniLight3D" parent="Word"]
+[node name="DirectionalLight3D" type="OmniLight3D" parent="Word" unique_id=1538538811]
 transform = Transform3D(1, 0, 0, 0, -0.63945264, 0.76883054, 0, -0.76883054, -0.63945264, -0.0221002, 2.49541, -3.8700001)
 light_color = Color(1, 0.960784, 0.882353, 1)
 
-[node name="DirectionalLight3D3" type="OmniLight3D" parent="Word"]
+[node name="DirectionalLight3D3" type="OmniLight3D" parent="Word" unique_id=1296547577]
 transform = Transform3D(1, 0, 0, 0, -0.63945264, 0.76883054, 0, -0.76883054, -0.63945264, 0.40789977, 2.49541, 0.74999964)
 light_color = Color(1, 0.960784, 0.882353, 1)
 
-[node name="DirectionalLight3D2" type="OmniLight3D" parent="Word"]
+[node name="DirectionalLight3D2" type="OmniLight3D" parent="Word" unique_id=1076574221]
 transform = Transform3D(0.06322086, 0.42485535, 0.903051, -0.02948037, -0.9036713, 0.427211, 0.9975641, -0.053630926, -0.044605978, -7.2021, 2.18541, -0.80000013)
 light_color = Color(1, 0.960784, 0.882353, 1)
 
-[node name="Misja" type="Area3D" parent="."]
+[node name="Misja" type="Area3D" parent="." unique_id=108579197]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.28284845, 0, -4.920869)
 
-[node name="CollisionShape3D" type="CollisionShape3D" parent="Misja"]
+[node name="CollisionShape3D" type="CollisionShape3D" parent="Misja" unique_id=1300726425]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.7783203, 1.935312, 2.1327734)
 shape = SubResource("BoxShape3D_67jix")
 debug_color = Color(0, 0.6, 0.7, 0.42)
 
-[node name="Wyjscie" type="Node3D" parent="."]
+[node name="Wyjscie" type="Node3D" parent="." unique_id=104565887]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -4.84, 0.84999996, -0.75999993)
 script = ExtResource("10_67jix")
 
-[node name="wall-doorway-wide2" type="StaticBody3D" parent="Wyjscie"]
+[node name="wall-doorway-wide2" type="StaticBody3D" parent="Wyjscie" unique_id=1785336522]
 
-[node name="wall-doorway-wide" type="MeshInstance3D" parent="Wyjscie/wall-doorway-wide2"]
+[node name="wall-doorway-wide" type="MeshInstance3D" parent="Wyjscie/wall-doorway-wide2" unique_id=757062103]
 mesh = SubResource("ArrayMesh_i1imf")
 skeleton = NodePath("")
 
-[node name="CollisionShapeDoorway" type="CollisionShape3D" parent="Wyjscie/wall-doorway-wide2"]
+[node name="CollisionShapeDoorway" type="CollisionShape3D" parent="Wyjscie/wall-doorway-wide2" unique_id=604695891]
 shape = SubResource("ConcavePolygonShape3D_k7iup")
 debug_color = Color(0, 0.6, 0.7, 0.42)
 
-[node name="door-sliding-double2" type="Node3D" parent="Wyjscie"]
+[node name="door-sliding-double2" type="Node3D" parent="Wyjscie" unique_id=9848864]
 
-[node name="door-sliding-double" type="Node3D" parent="Wyjscie/door-sliding-double2"]
+[node name="door-sliding-double" type="Node3D" parent="Wyjscie/door-sliding-double2" unique_id=1942279093]
 
-[node name="door-right" type="MeshInstance3D" parent="Wyjscie/door-sliding-double2/door-sliding-double"]
+[node name="door-right" type="MeshInstance3D" parent="Wyjscie/door-sliding-double2/door-sliding-double" unique_id=406080516]
 mesh = SubResource("ArrayMesh_tkdup")
 skeleton = NodePath("")
 
-[node name="StaticBody3D" type="StaticBody3D" parent="Wyjscie/door-sliding-double2/door-sliding-double/door-right"]
+[node name="StaticBody3D" type="StaticBody3D" parent="Wyjscie/door-sliding-double2/door-sliding-double/door-right" unique_id=2049718062]
 
-[node name="CollisionShape3D" type="CollisionShape3D" parent="Wyjscie/door-sliding-double2/door-sliding-double/door-right/StaticBody3D"]
+[node name="CollisionShape3D" type="CollisionShape3D" parent="Wyjscie/door-sliding-double2/door-sliding-double/door-right/StaticBody3D" unique_id=436331930]
 shape = SubResource("ConcavePolygonShape3D_r7m6m")
 debug_color = Color(0, 0.6, 0.7, 0.42)
 
-[node name="door-left" type="MeshInstance3D" parent="Wyjscie/door-sliding-double2/door-sliding-double"]
+[node name="door-left" type="MeshInstance3D" parent="Wyjscie/door-sliding-double2/door-sliding-double" unique_id=578113161]
 mesh = SubResource("ArrayMesh_u2a4d")
 skeleton = NodePath("")
 
-[node name="StaticBody3D" type="StaticBody3D" parent="Wyjscie/door-sliding-double2/door-sliding-double/door-left"]
+[node name="StaticBody3D" type="StaticBody3D" parent="Wyjscie/door-sliding-double2/door-sliding-double/door-left" unique_id=1398277333]
 
-[node name="CollisionShape3D2" type="CollisionShape3D" parent="Wyjscie/door-sliding-double2/door-sliding-double/door-left/StaticBody3D"]
+[node name="CollisionShape3D2" type="CollisionShape3D" parent="Wyjscie/door-sliding-double2/door-sliding-double/door-left/StaticBody3D" unique_id=1329219970]
 shape = SubResource("ConcavePolygonShape3D_pxw2u")
 debug_color = Color(0, 0.6, 0.7, 0.42)
 
-[node name="AnimationPlayer" type="AnimationPlayer" parent="Wyjscie/door-sliding-double2"]
-libraries = {
-&"": SubResource("AnimationLibrary_2qre6")
-}
+[node name="AnimationPlayer" type="AnimationPlayer" parent="Wyjscie/door-sliding-double2" unique_id=657103735]
+libraries/ = SubResource("AnimationLibrary_2qre6")
 
-[node name="AnimationTree" type="AnimationTree" parent="Wyjscie/door-sliding-double2"]
+[node name="AnimationTree" type="AnimationTree" parent="Wyjscie/door-sliding-double2" unique_id=1525657364]
 tree_root = SubResource("AnimationNodeStateMachine_uk24f")
 anim_player = NodePath("../AnimationPlayer")
 
-[node name="double-door3" parent="." instance=ExtResource("5_4qayw")]
+[node name="double-door3" parent="." unique_id=752749938 instance=ExtResource("5_4qayw")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -10.65, 0.84999996, -0.75999993)
 
-[node name="Tunnel" type="Node3D" parent="."]
+[node name="Tunnel" type="Node3D" parent="." unique_id=1298420663]
 transform = Transform3D(-4.371139e-08, 0, 1, 0, 1, 0, -1, 0, -4.371139e-08, -0.021474898, -0.19221914, -10.984539)
 
-[node name="Enter" type="Node3D" parent="Tunnel"]
+[node name="Enter" type="Node3D" parent="Tunnel" unique_id=664486346]
 
-[node name="Floor" type="GridMap" parent="Tunnel/Enter"]
+[node name="Floor" type="GridMap" parent="Tunnel/Enter" unique_id=1314977307]
 mesh_library = ExtResource("2_wo0id")
 cell_size = Vector3(1, 1, 1)
 data = {
@@ -561,7 +559,7 @@ data = {
 }
 metadata/_editor_floor_ = Vector3(0, 0, 0)
 
-[node name="Wall" type="GridMap" parent="Tunnel/Enter"]
+[node name="Wall" type="GridMap" parent="Tunnel/Enter" unique_id=1897756700]
 mesh_library = ExtResource("6_wo0id")
 cell_size = Vector3(0.25, 1, 0.25)
 data = {
@@ -569,122 +567,121 @@ data = {
 }
 metadata/_editor_floor_ = Vector3(0, 2, 0)
 
-[node name="objects" type="GridMap" parent="Tunnel/Enter"]
+[node name="objects" type="GridMap" parent="Tunnel/Enter" unique_id=55126674]
 mesh_library = ExtResource("3_t8mw1")
 cell_size = Vector3(0.1, 1, 0.1)
 
-[node name="door" parent="Tunnel/Enter" instance=ExtResource("5_4qayw")]
+[node name="door" parent="Tunnel/Enter" unique_id=553892598 instance=ExtResource("5_4qayw")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 2.8700001, 0.7, 0)
 
-[node name="Enter" type="Node3D" parent="Tunnel/Enter"]
+[node name="Enter" type="Node3D" parent="Tunnel/Enter" unique_id=2395835]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -2.8700001, 0.7, 0)
 script = ExtResource("10_67jix")
 
-[node name="wall-doorway-wide2" type="StaticBody3D" parent="Tunnel/Enter/Enter"]
+[node name="wall-doorway-wide2" type="StaticBody3D" parent="Tunnel/Enter/Enter" unique_id=1091090745]
 
-[node name="wall-doorway-wide" type="MeshInstance3D" parent="Tunnel/Enter/Enter/wall-doorway-wide2"]
+[node name="wall-doorway-wide" type="MeshInstance3D" parent="Tunnel/Enter/Enter/wall-doorway-wide2" unique_id=761918801]
 mesh = SubResource("ArrayMesh_nquh6")
 skeleton = NodePath("")
 
-[node name="CollisionShapeDoorway" type="CollisionShape3D" parent="Tunnel/Enter/Enter/wall-doorway-wide2"]
+[node name="CollisionShapeDoorway" type="CollisionShape3D" parent="Tunnel/Enter/Enter/wall-doorway-wide2" unique_id=40621656]
 shape = SubResource("ConcavePolygonShape3D_vg3ep")
 debug_color = Color(0, 0.6, 0.7, 0.42)
 
-[node name="door-sliding-double2" type="Node3D" parent="Tunnel/Enter/Enter"]
+[node name="door-sliding-double2" type="Node3D" parent="Tunnel/Enter/Enter" unique_id=1235028387]
 
-[node name="door-sliding-double" type="Node3D" parent="Tunnel/Enter/Enter/door-sliding-double2"]
+[node name="door-sliding-double" type="Node3D" parent="Tunnel/Enter/Enter/door-sliding-double2" unique_id=1626310542]
 
-[node name="door-right" type="MeshInstance3D" parent="Tunnel/Enter/Enter/door-sliding-double2/door-sliding-double"]
+[node name="door-right" type="MeshInstance3D" parent="Tunnel/Enter/Enter/door-sliding-double2/door-sliding-double" unique_id=86725927]
 mesh = SubResource("ArrayMesh_cyyqc")
 skeleton = NodePath("")
 
-[node name="StaticBody3D" type="StaticBody3D" parent="Tunnel/Enter/Enter/door-sliding-double2/door-sliding-double/door-right"]
+[node name="StaticBody3D" type="StaticBody3D" parent="Tunnel/Enter/Enter/door-sliding-double2/door-sliding-double/door-right" unique_id=325973939]
 
-[node name="CollisionShape3D" type="CollisionShape3D" parent="Tunnel/Enter/Enter/door-sliding-double2/door-sliding-double/door-right/StaticBody3D"]
+[node name="CollisionShape3D" type="CollisionShape3D" parent="Tunnel/Enter/Enter/door-sliding-double2/door-sliding-double/door-right/StaticBody3D" unique_id=1115302077]
 shape = SubResource("ConcavePolygonShape3D_jg8n8")
 debug_color = Color(0, 0.6, 0.7, 0.42)
 
-[node name="door-left" type="MeshInstance3D" parent="Tunnel/Enter/Enter/door-sliding-double2/door-sliding-double"]
+[node name="door-left" type="MeshInstance3D" parent="Tunnel/Enter/Enter/door-sliding-double2/door-sliding-double" unique_id=1049629020]
 mesh = SubResource("ArrayMesh_3j24k")
 skeleton = NodePath("")
 
-[node name="StaticBody3D" type="StaticBody3D" parent="Tunnel/Enter/Enter/door-sliding-double2/door-sliding-double/door-left"]
+[node name="StaticBody3D" type="StaticBody3D" parent="Tunnel/Enter/Enter/door-sliding-double2/door-sliding-double/door-left" unique_id=128868592]
 
-[node name="CollisionShape3D2" type="CollisionShape3D" parent="Tunnel/Enter/Enter/door-sliding-double2/door-sliding-double/door-left/StaticBody3D"]
+[node name="CollisionShape3D2" type="CollisionShape3D" parent="Tunnel/Enter/Enter/door-sliding-double2/door-sliding-double/door-left/StaticBody3D" unique_id=1061670571]
 shape = SubResource("ConcavePolygonShape3D_fpecg")
 debug_color = Color(0, 0.6, 0.7, 0.42)
 
-[node name="AnimationPlayer" type="AnimationPlayer" parent="Tunnel/Enter/Enter/door-sliding-double2"]
-libraries = {
-&"": SubResource("AnimationLibrary_j7j4q")
-}
+[node name="AnimationPlayer" type="AnimationPlayer" parent="Tunnel/Enter/Enter/door-sliding-double2" unique_id=629816928]
+libraries/ = SubResource("AnimationLibrary_j7j4q")
 
-[node name="AnimationTree" type="AnimationTree" parent="Tunnel/Enter/Enter/door-sliding-double2"]
+[node name="AnimationTree" type="AnimationTree" parent="Tunnel/Enter/Enter/door-sliding-double2" unique_id=1814505002]
 tree_root = SubResource("AnimationNodeStateMachine_5pns7")
 anim_player = NodePath("../AnimationPlayer")
 
-[node name="DirectionalLight3D" type="DirectionalLight3D" parent="Tunnel/Enter"]
+[node name="DirectionalLight3D" type="DirectionalLight3D" parent="Tunnel/Enter" unique_id=1586343252]
 transform = Transform3D(0.12186933, 0.7630998, 0.63468623, 0, -0.63945264, 0.76883054, 0.9925462, -0.093696855, -0.07792966, 1.6978998, 1.68541, 0.15999973)
 light_color = Color(1, 0.960784, 0.882353, 1)
 
-[node name="ButtonSmall" parent="Tunnel" instance=ExtResource("12_ccfm3")]
+[node name="ButtonSmall" parent="Tunnel" unique_id=1787085322 instance=ExtResource("12_ccfm3")]
 transform = Transform3D(-4.3711385e-08, 0.99999994, 0, -0.99999994, -4.3711385e-08, 0, 0, 0, 1, -2.7863479, 1.1522086, -0.77)
+prompt_message = "Otwórz dzwi"
 
-[node name="MisjaKod" type="Node3D" parent="."]
+[node name="MisjaKod" type="Node3D" parent="." unique_id=1288573147]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.42, 0.52, -0.86)
 
-[node name="Level_2_1" type="StaticBody3D" parent="MisjaKod"]
+[node name="Level_2_1" type="StaticBody3D" parent="MisjaKod" unique_id=949692815]
 transform = Transform3D(1, 0, 0, 0, 0.76604444, -0.6427876, 0, 0.6427876, 0.76604444, 0, 0.28999996, 3.83)
 script = ExtResource("6_t8mw1")
 prompt_message = "Wejdz do komputera"
 
-[node name="Ekran" type="MeshInstance3D" parent="MisjaKod/Level_2_1"]
+[node name="Ekran" type="MeshInstance3D" parent="MisjaKod/Level_2_1" unique_id=363834307]
 transform = Transform3D(0.7521247, 0, 0, 0, 0.38259834, -0.067462355, 0, 0.067462355, 0.38259834, -0.06999999, 0.021748543, -0.005195141)
 mesh = SubResource("QuadMesh_o7kde")
 skeleton = NodePath("../..")
 
-[node name="CollisionShapeEkran" type="CollisionShape3D" parent="MisjaKod/Level_2_1"]
+[node name="CollisionShapeEkran" type="CollisionShape3D" parent="MisjaKod/Level_2_1" unique_id=1615660502]
 transform = Transform3D(0.356328, 0, 0, 0, 0.34468323, -0.06077692, 0, 0.06077692, 0.34468323, -0.048104286, -0.04308629, -0.0075974464)
 shape = SubResource("BoxShape3D_4qayw")
 debug_color = Color(0, 0.6, 0.7, 0.42)
 
-[node name="Level_21" parent="MisjaKod" instance=ExtResource("8_o7kde")]
+[node name="Level_21" parent="MisjaKod" unique_id=108827788 instance=ExtResource("8_o7kde")]
 visible = false
 
-[node name="MisjaKod2" type="Node3D" parent="."]
+[node name="MisjaKod2" type="Node3D" parent="." unique_id=1137643631]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 2.41, 0.52, -0.86)
 
-[node name="Level_2_2" type="StaticBody3D" parent="MisjaKod2"]
+[node name="Level_2_2" type="StaticBody3D" parent="MisjaKod2" unique_id=1280537309]
 transform = Transform3D(1, 0, 0, 0, 0.76604444, -0.6427876, 0, 0.6427876, 0.76604444, 0, 0.28999996, 3.83)
 script = ExtResource("6_t8mw1")
 prompt_message = "Wejdz do komputera"
 
-[node name="Ekran" type="MeshInstance3D" parent="MisjaKod2/Level_2_2"]
+[node name="Ekran" type="MeshInstance3D" parent="MisjaKod2/Level_2_2" unique_id=1359155263]
 transform = Transform3D(0.7521247, 0, 0, 0, 0.38259834, -0.067462355, 0, 0.067462355, 0.38259834, -0.06999999, 0.021748543, -0.005195141)
 mesh = SubResource("QuadMesh_o7kde")
 skeleton = NodePath("../..")
 
-[node name="CollisionShapeEkran" type="CollisionShape3D" parent="MisjaKod2/Level_2_2"]
+[node name="CollisionShapeEkran" type="CollisionShape3D" parent="MisjaKod2/Level_2_2" unique_id=1762892890]
 transform = Transform3D(0.356328, 0, 0, 0, 0.34468323, -0.06077692, 0, 0.06077692, 0.34468323, -0.048104286, -0.04308629, -0.0075974464)
 shape = SubResource("BoxShape3D_4qayw")
 debug_color = Color(0, 0.6, 0.7, 0.42)
 
-[node name="Level_22" parent="MisjaKod2" instance=ExtResource("12_f3pwq")]
+[node name="Level_22" parent="MisjaKod2" unique_id=1591539069 instance=ExtResource("12_f3pwq")]
 visible = false
 
-[node name="ZmianaPoziomu" type="Area3D" parent="."]
+[node name="ZmianaPoziomu" type="Area3D" parent="." unique_id=1851017320]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -9.027238, 1.1926149, -0.9156976)
 
-[node name="CollisionShape3D" type="CollisionShape3D" parent="ZmianaPoziomu"]
+[node name="CollisionShape3D" type="CollisionShape3D" parent="ZmianaPoziomu" unique_id=604216705]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.06652832, 0.04498291, 0.15853947)
 shape = SubResource("BoxShape3D_f3pwq")
 
-[node name="PauseMenu" parent="." instance=ExtResource("4_o7kde")]
+[node name="PauseMenu" parent="." unique_id=1252738088 instance=ExtResource("4_o7kde")]
 visible = false
 
-[node name="Dialogi" type="Node" parent="."]
+[node name="Dialogi" type="Node" parent="." unique_id=228908117]
 
-[node name="Misja" type="AcceptDialog" parent="Dialogi"]
+[node name="Misja" type="AcceptDialog" parent="Dialogi" unique_id=1370080684]
 oversampling_override = 1.0
 title = "Cel poziomu"
 initial_position = 1

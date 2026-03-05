@@ -1,4 +1,4 @@
-[gd_scene load_steps=108 format=4 uid="uid://7cj3ttux1ik4"]
+[gd_scene format=4 uid="uid://7cj3ttux1ik4"]
 
 [ext_resource type="Script" uid="uid://ltq8ryb5fsy6" path="res://Scene/script/level_5.gd" id="1_ewc76"]
 [ext_resource type="MeshLibrary" uid="uid://w6ev0b2ct1rg" path="res://Objects/Room/Tile/FloorTiles.tres" id="1_jylhg"]
@@ -853,15 +853,15 @@ transitions = ["Start", "close", SubResource("AnimationNodeStateMachineTransitio
 [sub_resource type="BoxShape3D" id="BoxShape3D_0ghtb"]
 size = Vector3(2.04, 1.3299999, 1.05)
 
-[node name="Level5" type="Node3D"]
+[node name="Level5" type="Node3D" unique_id=1887595743]
 script = ExtResource("1_ewc76")
 
-[node name="WorldEnvironment" type="WorldEnvironment" parent="."]
+[node name="WorldEnvironment" type="WorldEnvironment" parent="." unique_id=2052948277]
 environment = SubResource("Environment_53mt6")
 
-[node name="Word" type="Node3D" parent="."]
+[node name="Word" type="Node3D" parent="." unique_id=616581479]
 
-[node name="Floor" type="GridMap" parent="Word"]
+[node name="Floor" type="GridMap" parent="Word" unique_id=1666455089]
 mesh_library = ExtResource("1_jylhg")
 cell_size = Vector3(1, 1, 1)
 data = {
@@ -869,7 +869,7 @@ data = {
 }
 metadata/_editor_floor_ = Vector3(0, 3, 0)
 
-[node name="Wall" type="GridMap" parent="Word"]
+[node name="Wall" type="GridMap" parent="Word" unique_id=1635270237]
 mesh_library = ExtResource("4_kxdlq")
 cell_size = Vector3(0.25, 1, 0.25)
 data = {
@@ -877,7 +877,7 @@ data = {
 }
 metadata/_editor_floor_ = Vector3(0, 1, 0)
 
-[node name="Beds" type="GridMap" parent="Word"]
+[node name="Beds" type="GridMap" parent="Word" unique_id=1340134177]
 mesh_library = ExtResource("4_kxdlq")
 cell_size = Vector3(0.1, 1, 0.1)
 data = {
@@ -885,7 +885,7 @@ data = {
 }
 metadata/_editor_floor_ = Vector3(0, 0, 0)
 
-[node name="GridMap" type="GridMap" parent="Word"]
+[node name="GridMap" type="GridMap" parent="Word" unique_id=41840245]
 mesh_library = ExtResource("4_kxdlq")
 cell_size = Vector3(0.1, 0.2, 0.1)
 data = {
@@ -893,267 +893,261 @@ data = {
 }
 metadata/_editor_floor_ = Vector3(0, 3, 0)
 
-[node name="Terrain" type="GridMap" parent="Word"]
+[node name="Terrain" type="GridMap" parent="Word" unique_id=508096379]
 mesh_library = ExtResource("5_1oke1")
 cell_size = Vector3(1, 1, 1)
 data = {
 "cells": PackedInt32Array(65507, 65524, 655510, 65507, 65525, 655510, 65507, 65526, 655510, 65507, 65527, 655510, 65507, 65528, 655510, 65507, 65529, 655510, 65507, 65530, 655510, 65507, 65531, 655510, 65507, 65532, 655510, 65507, 65533, 655510, 65507, 65534, 655510, 65507, 65535, 655510, 65507, 0, 655510, 65507, 1, 655510, 65507, 2, 655510, 65507, 3, 655510, 65508, 65524, 655510, 65508, 65525, 655510, 65508, 65526, 655510, 65508, 65527, 655510, 65508, 65528, 655510, 65508, 65529, 655510, 65508, 65530, 655510, 65508, 65531, 655510, 65508, 65532, 655510, 65508, 65533, 655510, 65508, 65534, 655510, 65508, 65535, 655510, 65508, 0, 655510, 65508, 1, 655510, 65508, 2, 655510, 65508, 3, 655510, 65509, 65524, 655510, 65509, 65525, 655510, 65509, 65526, 655510, 65509, 65527, 655510, 65509, 65528, 655510, 65509, 65529, 655510, 65509, 65530, 655510, 65509, 65531, 655510, 65509, 65532, 655510, 65509, 65533, 655510, 65509, 65534, 655510, 65509, 65535, 655510, 65509, 0, 655510, 65509, 1, 655510, 65509, 2, 655510, 65509, 3, 655510, 65510, 65524, 655510, 65510, 65525, 655510, 65510, 65526, 655510, 65510, 65527, 655510, 65510, 65528, 655510, 65510, 65529, 655510, 65510, 65530, 655510, 65510, 65531, 655510, 65510, 65532, 655510, 65510, 65533, 655510, 65510, 65534, 655510, 65510, 65535, 655510, 65510, 0, 655510, 65510, 1, 655510, 65510, 2, 655510, 65510, 3, 655510, 65511, 65524, 655510, 65511, 65525, 655510, 65511, 65526, 655510, 65511, 65527, 655510, 65511, 65528, 655510, 65511, 65529, 655510, 65511, 65530, 655510, 65511, 65531, 655510, 65511, 65532, 655510, 65511, 65533, 655510, 65511, 65534, 655510, 65511, 65535, 655510, 65511, 0, 655510, 65511, 1, 655510, 65511, 2, 655510, 65511, 3, 655510, 65512, 65524, 655510, 65512, 65525, 655510, 65512, 65526, 655510, 65512, 65527, 655510, 65512, 65528, 655510, 65512, 65529, 655510, 65512, 65530, 655510, 65512, 65531, 655510, 65512, 65532, 655510, 65512, 65533, 655510, 65512, 65534, 655510, 65512, 65535, 655510, 65512, 0, 655510, 65512, 1, 655510, 65512, 2, 655510, 65512, 3, 655510, 65513, 65524, 655510, 65513, 65525, 655510, 65513, 65526, 655510, 65513, 65527, 655510, 65513, 65528, 655510, 65513, 65529, 655510, 65513, 65530, 655510, 65513, 65531, 655510, 65513, 65532, 655510, 65513, 65533, 655510, 65513, 65534, 655510, 65513, 65535, 655510, 65513, 0, 655510, 65513, 1, 655510, 65513, 2, 655510, 65513, 3, 655510, 65514, 65524, 655510, 65514, 65525, 655510, 65514, 65526, 655510, 65514, 65527, 655510, 65514, 65528, 655510, 65514, 65529, 655510, 65514, 65530, 655510, 65514, 65531, 655510, 65514, 65532, 655510, 65514, 65533, 655510, 65514, 65534, 655510, 65514, 65535, 655510, 65514, 0, 655510, 65514, 1, 655510, 65514, 2, 655510, 65514, 3, 655510, 65515, 65524, 655510, 65515, 65525, 655510, 65515, 65526, 655510, 65515, 65527, 655510, 65515, 65528, 655510, 65515, 65529, 655510, 65515, 65530, 655510, 65515, 65531, 655510, 65515, 65532, 655510, 65515, 65533, 655510, 65515, 65534, 655510, 65515, 65535, 655510, 65515, 0, 655510, 65515, 1, 655510, 65515, 2, 655510, 65515, 3, 655510, 65516, 65524, 655510, 65516, 65525, 655510, 65516, 65526, 655510, 65516, 65527, 655510, 65516, 65528, 655510, 65516, 65529, 655510, 65516, 65530, 655510, 65516, 65531, 655510, 65516, 65532, 655510, 65516, 65533, 655510, 65516, 65534, 655510, 65516, 65535, 655510, 65516, 0, 655510, 65516, 1, 655510, 65516, 2, 655510, 65516, 3, 655510, 65517, 65524, 655510, 65517, 65525, 655510, 65517, 65526, 655510, 65517, 65527, 655510, 65517, 65528, 655510, 65517, 65529, 655510, 65517, 65530, 655510, 65517, 65531, 655510, 65517, 65532, 655510, 65517, 65533, 655510, 65517, 65534, 655510, 65517, 65535, 655510, 65517, 0, 655510, 65517, 1, 655510, 65517, 2, 655510, 65517, 3, 655510, 65518, 65524, 655510, 65518, 65525, 655510, 65518, 65526, 655510, 65518, 65527, 655510, 65518, 65528, 655510, 65518, 65529, 655510, 65518, 65530, 655510, 65518, 65531, 655510, 65518, 65532, 655510, 65518, 65533, 655510, 65518, 65534, 655510, 65518, 65535, 655510, 65518, 0, 655510, 65518, 1, 655510, 65518, 2, 655510, 65518, 3, 655510, 65519, 65524, 655510, 65519, 65525, 655510, 65519, 65526, 655510, 65519, 65527, 655510, 65519, 65528, 655510, 65519, 65529, 655510, 65519, 65530, 655510, 65519, 65531, 655510, 65519, 65532, 655510, 65519, 65533, 655510, 65519, 65534, 655510, 65519, 65535, 655510, 65519, 0, 655510, 65519, 1, 655510, 65519, 2, 655510, 65519, 3, 655510, 65520, 65524, 655510, 65520, 65525, 655510, 65520, 65526, 655510, 65520, 65527, 655510, 65520, 65528, 655510, 65520, 65529, 655510, 65520, 65530, 655510, 65520, 65531, 655510, 65520, 65532, 655510, 65520, 65533, 655510, 65520, 65534, 655510, 65520, 65535, 655510, 65520, 0, 655510, 65520, 1, 655510, 65520, 2, 655510, 65520, 3, 655510, 65521, 65524, 655510, 65521, 65525, 655510, 65521, 65526, 655510, 65521, 65527, 655510, 65521, 65528, 655510, 65521, 65529, 655510, 65521, 65530, 655510, 65521, 65531, 655510, 65521, 65532, 655510, 65521, 65533, 655510, 65521, 65534, 655510, 65521, 65535, 655510, 65521, 0, 655510, 65521, 1, 655510, 65521, 2, 655510, 65521, 3, 655510, 65522, 65524, 655510, 65522, 65525, 655510, 65522, 65526, 655510, 65522, 65527, 655510, 65522, 65528, 655510, 65522, 65529, 655510, 65522, 65530, 655510, 65522, 65531, 655510, 65522, 65532, 655510, 65522, 65533, 655510, 65522, 65534, 655510, 65522, 65535, 655510, 65522, 0, 655510, 65522, 1, 655510, 65522, 2, 655510, 65522, 3, 655510, 65523, 65524, 655510, 65523, 65525, 655510, 65523, 65526, 655510, 65523, 65527, 655510, 65523, 65528, 655510, 65523, 65529, 655510, 65523, 65530, 655510, 65523, 65531, 655510, 65523, 65532, 655510, 65523, 65533, 655510, 65523, 65534, 655510, 65523, 65535, 655510, 65523, 0, 655510, 65523, 1, 655510, 65523, 2, 655510, 65523, 3, 655510, 65524, 65524, 655510, 65524, 65525, 655510, 65524, 65526, 655510, 65524, 65527, 655510, 65524, 65528, 655510, 65524, 65529, 655510, 65524, 65530, 655510, 65524, 65531, 655510, 65524, 65532, 655510, 65524, 65533, 655510, 65524, 65534, 655510, 65524, 65535, 655510, 65524, 0, 655510, 65524, 1, 655510, 65524, 2, 655510, 65524, 3, 655510, 65525, 65524, 655510, 65525, 65525, 655510, 65525, 65526, 655510, 65525, 65527, 655510, 65525, 65528, 655510, 65525, 65529, 655510, 65525, 65530, 655510, 65525, 65531, 655510, 65525, 65532, 655510, 65525, 65533, 655510, 65525, 65534, 655510, 65525, 65535, 655510, 65525, 0, 655510, 65525, 1, 655510, 65525, 2, 655510, 65525, 3, 655510, 65526, 65524, 655510, 65526, 65525, 655510, 65526, 65526, 655510, 65526, 65527, 655510, 65526, 65528, 655510, 65526, 65529, 655510, 65526, 65530, 655510, 65526, 65531, 655510, 65526, 65532, 655510, 65526, 65533, 655510, 65526, 65534, 655510, 65526, 65535, 655510, 65526, 0, 655510, 65526, 1, 655510, 65526, 2, 655510, 65526, 3, 655510, 65527, 65524, 655510, 65527, 65525, 655510, 65527, 65526, 655510, 65527, 65527, 655510, 65527, 65528, 655510, 65527, 65529, 655510, 65527, 65530, 655510, 65527, 65531, 655510, 65527, 65532, 655510, 65527, 65533, 655510, 65527, 65534, 655510, 65527, 65535, 655510, 65527, 0, 655510, 65527, 1, 655510, 65527, 2, 655510, 65527, 3, 655510, 65528, 65524, 655510, 65528, 65525, 655510, 65528, 65526, 655510, 65528, 65527, 655510, 65528, 65528, 655510, 65528, 65529, 655510, 65528, 65530, 655510, 65528, 65531, 655510, 65528, 65532, 655510, 65528, 65533, 655510, 65528, 65534, 655510, 65528, 65535, 655510, 65528, 0, 655510, 65528, 1, 655510, 65528, 2, 655510, 65528, 3, 655510, 65529, 65524, 655510, 65529, 65525, 655510, 65529, 65526, 655510, 65529, 65527, 655510, 65529, 65528, 655510, 65529, 65529, 655510, 65529, 65530, 655510, 65529, 65531, 655510, 65529, 65532, 655510, 65529, 65533, 655510, 65529, 65534, 655510, 65529, 65535, 655510, 65529, 0, 655510, 65529, 1, 655510, 65529, 2, 655510, 65529, 3, 655510, 65530, 65524, 655510, 65530, 65525, 655510, 65530, 65526, 655510, 65530, 65527, 655510, 65530, 65528, 655510, 65530, 65529, 655510, 65530, 65530, 655510, 65530, 65531, 655510, 65530, 65532, 655510, 65530, 65533, 655510, 65530, 65534, 655510, 65530, 65535, 655510, 65530, 0, 655510, 65530, 1, 655510, 65530, 2, 655510, 65530, 3, 655510, 65531, 65524, 655510, 65531, 65525, 655510, 65531, 65526, 655510, 65531, 65527, 655510, 65531, 65528, 655510, 65531, 65529, 655510, 65531, 65530, 655510, 65531, 65531, 655510, 65531, 65532, 655510, 65531, 65533, 655510, 65531, 65534, 655510, 65531, 65535, 655510, 65531, 0, 655510, 65531, 1, 655510, 65531, 2, 655510, 65531, 3, 655510, 65532, 65524, 655510, 65532, 65525, 655510, 65532, 65526, 655510, 65532, 65527, 655510, 65532, 65528, 655510, 65532, 65529, 655510, 65532, 65530, 655510, 65532, 65531, 655510, 65532, 65532, 655510, 65532, 65533, 655510, 65532, 65534, 655510, 65532, 65535, 655510, 65532, 0, 655510, 65532, 1, 655510, 65532, 2, 655510, 65532, 3, 655510, 65533, 65524, 655510, 65533, 65525, 655510, 65533, 65526, 655510, 65533, 65527, 655510, 65533, 65528, 655510, 65533, 65529, 655510, 65533, 65530, 655510, 65533, 65531, 655510, 65533, 65532, 655510, 65533, 65533, 655510, 65533, 65534, 655510, 65533, 65535, 655510, 65533, 0, 655510, 65533, 1, 655510, 65533, 2, 655510, 65533, 3, 655510, 65507, 4, 655510, 65507, 5, 655510, 65507, 6, 655510, 65507, 7, 655510, 65507, 8, 655510, 65507, 9, 655510, 65507, 10, 655510, 65507, 11, 655510, 65507, 12, 655510, 65508, 4, 655510, 65508, 5, 655510, 65508, 6, 655510, 65508, 7, 655510, 65508, 8, 655510, 65508, 9, 655510, 65508, 10, 655510, 65508, 11, 655510, 65508, 12, 655510, 65509, 4, 655510, 65509, 5, 655510, 65509, 6, 655510, 65509, 7, 655510, 65509, 8, 655510, 65509, 9, 655510, 65509, 10, 655510, 65509, 11, 655510, 65509, 12, 655510, 65510, 4, 655510, 65510, 5, 655510, 65510, 6, 655510, 65510, 7, 655510, 65510, 8, 655510, 65510, 9, 655510, 65510, 10, 655510, 65510, 11, 655510, 65510, 12, 655510, 65511, 4, 655510, 65511, 5, 655510, 65511, 6, 655510, 65511, 7, 655510, 65511, 8, 655510, 65511, 9, 655510, 65511, 10, 655510, 65511, 11, 655510, 65511, 12, 655510, 65512, 4, 655510, 65512, 5, 655510, 65512, 6, 655510, 65512, 7, 655510, 65512, 8, 655510, 65512, 9, 655510, 65512, 10, 655510, 65512, 11, 655510, 65512, 12, 655510, 65513, 4, 655510, 65513, 5, 655510, 65513, 6, 655510, 65513, 7, 655510, 65513, 8, 655510, 65513, 9, 655510, 65513, 10, 655510, 65513, 11, 655510, 65513, 12, 655510, 65514, 4, 655510, 65514, 5, 655510, 65514, 6, 655510, 65514, 7, 655510, 65514, 8, 655510, 65514, 9, 655510, 65514, 10, 655510, 65514, 11, 655510, 65514, 12, 655510, 65515, 4, 655510, 65515, 5, 655510, 65515, 6, 655510, 65515, 7, 655510, 65515, 8, 655510, 65515, 9, 655510, 65515, 10, 655510, 65515, 11, 655510, 65515, 12, 655510, 65516, 4, 655510, 65516, 5, 655510, 65516, 6, 655510, 65516, 7, 655510, 65516, 8, 655510, 65516, 9, 655510, 65516, 10, 655510, 65516, 11, 655510, 65516, 12, 655510, 65517, 4, 655510, 65517, 5, 655510, 65517, 6, 655510, 65517, 7, 655510, 65517, 8, 655510, 65517, 9, 655510, 65517, 10, 655510, 65517, 11, 655510, 65517, 12, 655510, 65518, 4, 655510, 65518, 5, 655510, 65518, 6, 655510, 65518, 7, 655510, 65518, 8, 655510, 65518, 9, 655510, 65518, 10, 655510, 65518, 11, 655510, 65518, 12, 655510, 65519, 4, 655510, 65519, 5, 655510, 65519, 6, 655510, 65519, 7, 655510, 65519, 8, 655510, 65519, 9, 655510, 65519, 10, 655510, 65519, 11, 655510, 65519, 12, 655510, 65520, 4, 655510, 65520, 5, 655510, 65520, 6, 655510, 65520, 7, 655510, 65520, 8, 655510, 65520, 9, 655510, 65520, 10, 655510, 65520, 11, 655510, 65520, 12, 655510, 65521, 4, 655510, 65521, 5, 655510, 65521, 6, 655510, 65521, 7, 655510, 65521, 8, 655510, 65521, 9, 655510, 65521, 10, 655510, 65521, 11, 655510, 65521, 12, 655510, 65522, 4, 655510, 65522, 5, 655510, 65522, 6, 655510, 65522, 7, 655510, 65522, 8, 655510, 65522, 9, 655510, 65522, 10, 655510, 65522, 11, 655510, 65522, 12, 655510, 65523, 4, 655510, 65523, 5, 655510, 65523, 6, 655510, 65523, 7, 655510, 65523, 8, 655510, 65523, 9, 655510, 65523, 10, 655510, 65523, 11, 655510, 65523, 12, 655510, 65524, 4, 655510, 65524, 5, 655510, 65524, 6, 655510, 65524, 7, 655510, 65524, 8, 655510, 65524, 9, 655510, 65524, 10, 655510, 65524, 11, 655510, 65524, 12, 655510, 65525, 4, 655510, 65525, 5, 655510, 65525, 6, 655510, 65525, 7, 655510, 65525, 8, 655510, 65525, 9, 655510, 65525, 10, 655510, 65525, 11, 655510, 65525, 12, 655510, 65526, 4, 655510, 65526, 5, 655510, 65526, 6, 655510, 65526, 7, 655510, 65526, 8, 655510, 65526, 9, 655510, 65526, 10, 655510, 65526, 11, 655510, 65526, 12, 655510, 65527, 4, 655510, 65527, 5, 655510, 65527, 6, 655510, 65527, 7, 655510, 65527, 8, 655510, 65527, 9, 655510, 65527, 10, 655510, 65527, 11, 655510, 65527, 12, 655510, 65528, 4, 655510, 65528, 5, 655510, 65528, 6, 655510, 65528, 7, 655510, 65528, 8, 655510, 65528, 9, 655510, 65528, 10, 655510, 65528, 11, 655510, 65528, 12, 655510, 65529, 4, 655510, 65529, 5, 655510, 65529, 6, 655510, 65529, 7, 655510, 65529, 8, 655510, 65529, 9, 655510, 65529, 10, 655510, 65529, 11, 655510, 65529, 12, 655510, 65530, 4, 655510, 65530, 5, 655510, 65530, 6, 655510, 65530, 7, 655510, 65530, 8, 655510, 65530, 9, 655510, 65530, 10, 655510, 65530, 11, 655510, 65530, 12, 655510, 65531, 4, 655510, 65531, 5, 655510, 65531, 6, 655510, 65531, 7, 655510, 65531, 8, 655510, 65531, 9, 655510, 65531, 10, 655510, 65531, 11, 655510, 65531, 12, 655510, 65532, 4, 655510, 65532, 5, 655510, 65532, 6, 655510, 65532, 7, 655510, 65532, 8, 655510, 65532, 9, 655510, 65532, 10, 655510, 65532, 11, 655510, 65532, 12, 655510, 65533, 4, 655510, 65533, 5, 655510, 65533, 6, 655510, 65533, 7, 655510, 65533, 8, 655510, 65533, 9, 655510, 65533, 10, 655510, 65533, 11, 655510, 65533, 12, 655510)
 }
 
-[node name="Lights" type="Node3D" parent="."]
+[node name="Lights" type="Node3D" parent="." unique_id=1821571590]
 
-[node name="OmniLight3D" type="OmniLight3D" parent="Lights"]
+[node name="OmniLight3D" type="OmniLight3D" parent="Lights" unique_id=1007042907]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 1.1016357, 2.487164, -1.5765173)
 light_color = Color(1, 0.9607843, 0.88235295, 1)
 light_energy = 4.699
 
-[node name="OmniLight3D3" type="OmniLight3D" parent="Lights"]
+[node name="OmniLight3D3" type="OmniLight3D" parent="Lights" unique_id=1242871538]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.46095347, 2.487164, 10.38915)
 light_color = Color(1, 0.9607843, 0.88235295, 1)
 light_energy = 4.699
 
-[node name="OmniLight3D4" type="OmniLight3D" parent="Lights"]
+[node name="OmniLight3D4" type="OmniLight3D" parent="Lights" unique_id=381810547]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.37820554, 2.487164, 15.807334)
 light_color = Color(1, 0.9607843, 0.88235295, 1)
 light_energy = 4.699
 
-[node name="OmniLight3D5" type="OmniLight3D" parent="Lights"]
+[node name="OmniLight3D5" type="OmniLight3D" parent="Lights" unique_id=246883693]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 4.7136374, 2.487164, -1.5765173)
 light_color = Color(1, 0.9607843, 0.88235295, 1)
 light_energy = 4.699
 
-[node name="OmniLight3D7" type="OmniLight3D" parent="Lights"]
+[node name="OmniLight3D7" type="OmniLight3D" parent="Lights" unique_id=787213130]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 4.7136374, 2.487164, 10.168525)
 light_color = Color(1, 0.9607843, 0.88235295, 1)
 light_energy = 4.699
 
-[node name="OmniLight3D8" type="OmniLight3D" parent="Lights"]
+[node name="OmniLight3D8" type="OmniLight3D" parent="Lights" unique_id=335881646]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 4.7136374, 2.487164, 15.934975)
 light_color = Color(1, 0.9607843, 0.88235295, 1)
 light_energy = 4.699
 
-[node name="OmniLight3D2" type="OmniLight3D" parent="Lights"]
+[node name="OmniLight3D2" type="OmniLight3D" parent="Lights" unique_id=992998002]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.41964102, 2.568973, 4.202566)
 light_color = Color(1, 0.9607843, 0.88235295, 1)
 light_energy = 2.372
 
-[node name="OmniLight3D6" type="OmniLight3D" parent="Lights"]
+[node name="OmniLight3D6" type="OmniLight3D" parent="Lights" unique_id=670011838]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 4.678054, 2.568973, 4.202566)
 light_color = Color(1, 0.9607843, 0.88235295, 1)
 light_energy = 2.663
 
-[node name="OmniLight3D10" type="OmniLight3D" parent="Lights"]
+[node name="OmniLight3D10" type="OmniLight3D" parent="Lights" unique_id=749879083]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 2.598054, 2.9489732, -4.7374334)
 light_color = Color(1, 0.9607843, 0.88235295, 1)
 light_energy = 2.663
 omni_range = 3.886
 
-[node name="Player" parent="." instance=ExtResource("2_5mtfs")]
+[node name="Player" parent="." unique_id=2138796365 instance=ExtResource("2_5mtfs")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 2.59, 0.516707, -9.657459)
 
-[node name="Drzwi1" type="Node3D" parent="."]
+[node name="Drzwi1" type="Node3D" parent="." unique_id=321517967]
 
-[node name="Level_5_1" type="StaticBody3D" parent="Drzwi1"]
+[node name="Level_5_1" type="StaticBody3D" parent="Drzwi1" unique_id=906486646]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 1.50458, 0.575365, -1.3105)
 script = ExtResource("7_3frc5")
 prompt_message = "Wejdz do komputera"
 
-[node name="Ekran" type="MeshInstance3D" parent="Drzwi1/Level_5_1"]
+[node name="Ekran" type="MeshInstance3D" parent="Drzwi1/Level_5_1" unique_id=875879555]
 transform = Transform3D(0.356328, 0, 0, 0, 0.344683, -0.0607768, 0, 0.0607768, 0.344683, 0.0433873, 0.355377, 2.11449)
 mesh = SubResource("QuadMesh_1sdim")
 skeleton = NodePath("../..")
 
-[node name="CollisionShapeEkran" type="CollisionShape3D" parent="Drzwi1/Level_5_1"]
+[node name="CollisionShapeEkran" type="CollisionShape3D" parent="Drzwi1/Level_5_1" unique_id=651199593]
 transform = Transform3D(0.356328, 0, 0, 0, 0.343307, -0.0681199, 0, 0.0681199, 0.343307, 0.0441052, 0.351761, 2.18784)
 shape = SubResource("BoxShape3D_nctk5")
 
-[node name="drzwi1" type="Node3D" parent="Drzwi1"]
+[node name="drzwi1" type="Node3D" parent="Drzwi1" unique_id=1571007179]
 transform = Transform3D(-4.37114e-08, 0, -1, 0, 1, 0, 1, 0, -4.37114e-08, 2.37471, 0.503359, 1.11243)
 script = ExtResource("7_nctk5")
 
-[node name="wall-doorway-wide2" type="StaticBody3D" parent="Drzwi1/drzwi1"]
+[node name="wall-doorway-wide2" type="StaticBody3D" parent="Drzwi1/drzwi1" unique_id=1171957635]
 
-[node name="wall-doorway-wide" type="MeshInstance3D" parent="Drzwi1/drzwi1/wall-doorway-wide2"]
+[node name="wall-doorway-wide" type="MeshInstance3D" parent="Drzwi1/drzwi1/wall-doorway-wide2" unique_id=504814142]
 mesh = SubResource("ArrayMesh_i1imf")
 skeleton = NodePath("")
 
-[node name="CollisionShapeDoorway" type="CollisionShape3D" parent="Drzwi1/drzwi1/wall-doorway-wide2"]
+[node name="CollisionShapeDoorway" type="CollisionShape3D" parent="Drzwi1/drzwi1/wall-doorway-wide2" unique_id=2120155377]
 shape = SubResource("ConcavePolygonShape3D_k7iup")
 
-[node name="door-sliding-double2" type="Node3D" parent="Drzwi1/drzwi1"]
+[node name="door-sliding-double2" type="Node3D" parent="Drzwi1/drzwi1" unique_id=137593491]
 
-[node name="door-sliding-double" type="Node3D" parent="Drzwi1/drzwi1/door-sliding-double2"]
+[node name="door-sliding-double" type="Node3D" parent="Drzwi1/drzwi1/door-sliding-double2" unique_id=2028909713]
 
-[node name="door-right" type="MeshInstance3D" parent="Drzwi1/drzwi1/door-sliding-double2/door-sliding-double"]
+[node name="door-right" type="MeshInstance3D" parent="Drzwi1/drzwi1/door-sliding-double2/door-sliding-double" unique_id=1831419629]
 mesh = SubResource("ArrayMesh_tkdup")
 skeleton = NodePath("")
 
-[node name="StaticBody3D" type="StaticBody3D" parent="Drzwi1/drzwi1/door-sliding-double2/door-sliding-double/door-right"]
+[node name="StaticBody3D" type="StaticBody3D" parent="Drzwi1/drzwi1/door-sliding-double2/door-sliding-double/door-right" unique_id=588122489]
 
-[node name="CollisionShape3D" type="CollisionShape3D" parent="Drzwi1/drzwi1/door-sliding-double2/door-sliding-double/door-right/StaticBody3D"]
+[node name="CollisionShape3D" type="CollisionShape3D" parent="Drzwi1/drzwi1/door-sliding-double2/door-sliding-double/door-right/StaticBody3D" unique_id=1967422875]
 shape = SubResource("ConcavePolygonShape3D_r7m6m")
 
-[node name="door-left" type="MeshInstance3D" parent="Drzwi1/drzwi1/door-sliding-double2/door-sliding-double"]
+[node name="door-left" type="MeshInstance3D" parent="Drzwi1/drzwi1/door-sliding-double2/door-sliding-double" unique_id=2135730117]
 mesh = SubResource("ArrayMesh_u2a4d")
 skeleton = NodePath("")
 
-[node name="StaticBody3D" type="StaticBody3D" parent="Drzwi1/drzwi1/door-sliding-double2/door-sliding-double/door-left"]
+[node name="StaticBody3D" type="StaticBody3D" parent="Drzwi1/drzwi1/door-sliding-double2/door-sliding-double/door-left" unique_id=989071396]
 
-[node name="CollisionShape3D2" type="CollisionShape3D" parent="Drzwi1/drzwi1/door-sliding-double2/door-sliding-double/door-left/StaticBody3D"]
+[node name="CollisionShape3D2" type="CollisionShape3D" parent="Drzwi1/drzwi1/door-sliding-double2/door-sliding-double/door-left/StaticBody3D" unique_id=872155237]
 shape = SubResource("ConcavePolygonShape3D_pxw2u")
 
-[node name="AnimationPlayer" type="AnimationPlayer" parent="Drzwi1/drzwi1/door-sliding-double2"]
-libraries = {
-&"": SubResource("AnimationLibrary_2qre6")
-}
+[node name="AnimationPlayer" type="AnimationPlayer" parent="Drzwi1/drzwi1/door-sliding-double2" unique_id=2089215514]
+libraries/ = SubResource("AnimationLibrary_2qre6")
 
-[node name="AnimationTree" type="AnimationTree" parent="Drzwi1/drzwi1/door-sliding-double2"]
+[node name="AnimationTree" type="AnimationTree" parent="Drzwi1/drzwi1/door-sliding-double2" unique_id=1265455095]
 tree_root = SubResource("AnimationNodeStateMachine_uk24f")
 anim_player = NodePath("../AnimationPlayer")
 
-[node name="Level51" parent="Drzwi1" instance=ExtResource("8_3frc5")]
+[node name="Level51" parent="Drzwi1" unique_id=839198213 instance=ExtResource("8_3frc5")]
 visible = false
 
-[node name="Drzwi2" type="Node3D" parent="."]
+[node name="Drzwi2" type="Node3D" parent="." unique_id=1164306773]
 
-[node name="Level_5_2" type="StaticBody3D" parent="Drzwi2"]
+[node name="Level_5_2" type="StaticBody3D" parent="Drzwi2" unique_id=611633087]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 1.50367, 0.575365, 5.29249)
 script = ExtResource("7_3frc5")
 prompt_message = "Wejdz do komputera"
 
-[node name="Ekran" type="MeshInstance3D" parent="Drzwi2/Level_5_2"]
+[node name="Ekran" type="MeshInstance3D" parent="Drzwi2/Level_5_2" unique_id=636935129]
 transform = Transform3D(0.356328, 0, 0, 0, 0.344683, -0.0607768, 0, 0.0607768, 0.344683, 0.0433873, 0.355377, 2.11449)
 mesh = SubResource("QuadMesh_1sdim")
 skeleton = NodePath("../..")
 
-[node name="CollisionShapeEkran" type="CollisionShape3D" parent="Drzwi2/Level_5_2"]
+[node name="CollisionShapeEkran" type="CollisionShape3D" parent="Drzwi2/Level_5_2" unique_id=1420055057]
 transform = Transform3D(0.356328, 0, 0, 0, 0.343307, -0.0681199, 0, 0.0681199, 0.343307, 0.0441052, 0.351761, 2.18784)
 shape = SubResource("BoxShape3D_nctk5")
 
-[node name="Drzwi2" type="Node3D" parent="Drzwi2"]
+[node name="Drzwi2" type="Node3D" parent="Drzwi2" unique_id=557321998]
 transform = Transform3D(-4.37114e-08, 0, -1, 0, 1, 0, 1, 0, -4.37114e-08, 2.37471, 0.503359, 7.62333)
 script = ExtResource("7_nctk5")
 
-[node name="wall-doorway-wide2" type="StaticBody3D" parent="Drzwi2/Drzwi2"]
+[node name="wall-doorway-wide2" type="StaticBody3D" parent="Drzwi2/Drzwi2" unique_id=42135724]
 
-[node name="wall-doorway-wide" type="MeshInstance3D" parent="Drzwi2/Drzwi2/wall-doorway-wide2"]
+[node name="wall-doorway-wide" type="MeshInstance3D" parent="Drzwi2/Drzwi2/wall-doorway-wide2" unique_id=1492452717]
 mesh = SubResource("ArrayMesh_i1imf")
 skeleton = NodePath("")
 
-[node name="CollisionShapeDoorway" type="CollisionShape3D" parent="Drzwi2/Drzwi2/wall-doorway-wide2"]
+[node name="CollisionShapeDoorway" type="CollisionShape3D" parent="Drzwi2/Drzwi2/wall-doorway-wide2" unique_id=386416844]
 shape = SubResource("ConcavePolygonShape3D_k7iup")
 
-[node name="door-sliding-double2" type="Node3D" parent="Drzwi2/Drzwi2"]
+[node name="door-sliding-double2" type="Node3D" parent="Drzwi2/Drzwi2" unique_id=946608023]
 
-[node name="door-sliding-double" type="Node3D" parent="Drzwi2/Drzwi2/door-sliding-double2"]
+[node name="door-sliding-double" type="Node3D" parent="Drzwi2/Drzwi2/door-sliding-double2" unique_id=2122278746]
 
-[node name="door-right" type="MeshInstance3D" parent="Drzwi2/Drzwi2/door-sliding-double2/door-sliding-double"]
+[node name="door-right" type="MeshInstance3D" parent="Drzwi2/Drzwi2/door-sliding-double2/door-sliding-double" unique_id=908842676]
 mesh = SubResource("ArrayMesh_tkdup")
 skeleton = NodePath("")
 
-[node name="StaticBody3D" type="StaticBody3D" parent="Drzwi2/Drzwi2/door-sliding-double2/door-sliding-double/door-right"]
+[node name="StaticBody3D" type="StaticBody3D" parent="Drzwi2/Drzwi2/door-sliding-double2/door-sliding-double/door-right" unique_id=447877681]
 
-[node name="CollisionShape3D" type="CollisionShape3D" parent="Drzwi2/Drzwi2/door-sliding-double2/door-sliding-double/door-right/StaticBody3D"]
+[node name="CollisionShape3D" type="CollisionShape3D" parent="Drzwi2/Drzwi2/door-sliding-double2/door-sliding-double/door-right/StaticBody3D" unique_id=1460579453]
 shape = SubResource("ConcavePolygonShape3D_r7m6m")
 
-[node name="door-left" type="MeshInstance3D" parent="Drzwi2/Drzwi2/door-sliding-double2/door-sliding-double"]
+[node name="door-left" type="MeshInstance3D" parent="Drzwi2/Drzwi2/door-sliding-double2/door-sliding-double" unique_id=387852551]
 mesh = SubResource("ArrayMesh_u2a4d")
 skeleton = NodePath("")
 
-[node name="StaticBody3D" type="StaticBody3D" parent="Drzwi2/Drzwi2/door-sliding-double2/door-sliding-double/door-left"]
+[node name="StaticBody3D" type="StaticBody3D" parent="Drzwi2/Drzwi2/door-sliding-double2/door-sliding-double/door-left" unique_id=1512306471]
 
-[node name="CollisionShape3D2" type="CollisionShape3D" parent="Drzwi2/Drzwi2/door-sliding-double2/door-sliding-double/door-left/StaticBody3D"]
+[node name="CollisionShape3D2" type="CollisionShape3D" parent="Drzwi2/Drzwi2/door-sliding-double2/door-sliding-double/door-left/StaticBody3D" unique_id=256908206]
 shape = SubResource("ConcavePolygonShape3D_pxw2u")
 
-[node name="AnimationPlayer" type="AnimationPlayer" parent="Drzwi2/Drzwi2/door-sliding-double2"]
-libraries = {
-&"": SubResource("AnimationLibrary_2qre6")
-}
+[node name="AnimationPlayer" type="AnimationPlayer" parent="Drzwi2/Drzwi2/door-sliding-double2" unique_id=2070753090]
+libraries/ = SubResource("AnimationLibrary_2qre6")
 
-[node name="AnimationTree" type="AnimationTree" parent="Drzwi2/Drzwi2/door-sliding-double2"]
+[node name="AnimationTree" type="AnimationTree" parent="Drzwi2/Drzwi2/door-sliding-double2" unique_id=658342068]
 tree_root = SubResource("AnimationNodeStateMachine_uk24f")
 anim_player = NodePath("../AnimationPlayer")
 
-[node name="Level52" parent="Drzwi2" instance=ExtResource("10_sjlp6")]
+[node name="Level52" parent="Drzwi2" unique_id=821300035 instance=ExtResource("10_sjlp6")]
 visible = false
 
-[node name="Drzwi3" type="Node3D" parent="."]
+[node name="Drzwi3" type="Node3D" parent="." unique_id=91080233]
 
-[node name="Level_5_3" type="StaticBody3D" parent="Drzwi3"]
+[node name="Level_5_3" type="StaticBody3D" parent="Drzwi3" unique_id=991510871]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 1.50367, 0.575365, 11.5933)
 script = ExtResource("7_3frc5")
 prompt_message = "Wejdz do komputera"
 
-[node name="Ekran" type="MeshInstance3D" parent="Drzwi3/Level_5_3"]
+[node name="Ekran" type="MeshInstance3D" parent="Drzwi3/Level_5_3" unique_id=37081078]
 transform = Transform3D(0.356328, 0, 0, 0, 0.344683, -0.0607768, 0, 0.0607768, 0.344683, 0.0433873, 0.355377, 2.11449)
 mesh = SubResource("QuadMesh_1sdim")
 skeleton = NodePath("../..")
 
-[node name="CollisionShapeEkran" type="CollisionShape3D" parent="Drzwi3/Level_5_3"]
+[node name="CollisionShapeEkran" type="CollisionShape3D" parent="Drzwi3/Level_5_3" unique_id=371156110]
 transform = Transform3D(0.356328, 0, 0, 0, 0.343307, -0.0681199, 0, 0.0681199, 0.343307, 0.0441052, 0.351761, 2.18784)
 shape = SubResource("BoxShape3D_nctk5")
 
-[node name="drzwi3" type="Node3D" parent="Drzwi3"]
+[node name="drzwi3" type="Node3D" parent="Drzwi3" unique_id=2022092650]
 transform = Transform3D(-4.37114e-08, 0, -1, 0, 1, 0, 1, 0, -4.37114e-08, 2.37471, 0.503359, 13.8639)
 script = ExtResource("7_nctk5")
 
-[node name="wall-doorway-wide2" type="StaticBody3D" parent="Drzwi3/drzwi3"]
+[node name="wall-doorway-wide2" type="StaticBody3D" parent="Drzwi3/drzwi3" unique_id=825105701]
 
-[node name="wall-doorway-wide" type="MeshInstance3D" parent="Drzwi3/drzwi3/wall-doorway-wide2"]
+[node name="wall-doorway-wide" type="MeshInstance3D" parent="Drzwi3/drzwi3/wall-doorway-wide2" unique_id=1664713842]
 mesh = SubResource("ArrayMesh_u0nsa")
 skeleton = NodePath("")
 
-[node name="CollisionShapeDoorway" type="CollisionShape3D" parent="Drzwi3/drzwi3/wall-doorway-wide2"]
+[node name="CollisionShapeDoorway" type="CollisionShape3D" parent="Drzwi3/drzwi3/wall-doorway-wide2" unique_id=802507055]
 shape = SubResource("ConcavePolygonShape3D_53mt6")
 
-[node name="door-sliding-double2" type="Node3D" parent="Drzwi3/drzwi3"]
+[node name="door-sliding-double2" type="Node3D" parent="Drzwi3/drzwi3" unique_id=226281667]
 
-[node name="door-sliding-double" type="Node3D" parent="Drzwi3/drzwi3/door-sliding-double2"]
+[node name="door-sliding-double" type="Node3D" parent="Drzwi3/drzwi3/door-sliding-double2" unique_id=1183591585]
 
-[node name="door-right" type="MeshInstance3D" parent="Drzwi3/drzwi3/door-sliding-double2/door-sliding-double"]
+[node name="door-right" type="MeshInstance3D" parent="Drzwi3/drzwi3/door-sliding-double2/door-sliding-double" unique_id=1757257343]
 mesh = SubResource("ArrayMesh_8rfld")
 skeleton = NodePath("")
 
-[node name="StaticBody3D" type="StaticBody3D" parent="Drzwi3/drzwi3/door-sliding-double2/door-sliding-double/door-right"]
+[node name="StaticBody3D" type="StaticBody3D" parent="Drzwi3/drzwi3/door-sliding-double2/door-sliding-double/door-right" unique_id=172911413]
 
-[node name="CollisionShape3D" type="CollisionShape3D" parent="Drzwi3/drzwi3/door-sliding-double2/door-sliding-double/door-right/StaticBody3D"]
+[node name="CollisionShape3D" type="CollisionShape3D" parent="Drzwi3/drzwi3/door-sliding-double2/door-sliding-double/door-right/StaticBody3D" unique_id=1016433328]
 shape = SubResource("ConcavePolygonShape3D_8wkkr")
 
-[node name="door-left" type="MeshInstance3D" parent="Drzwi3/drzwi3/door-sliding-double2/door-sliding-double"]
+[node name="door-left" type="MeshInstance3D" parent="Drzwi3/drzwi3/door-sliding-double2/door-sliding-double" unique_id=1487308895]
 mesh = SubResource("ArrayMesh_p38qx")
 skeleton = NodePath("")
 
-[node name="StaticBody3D" type="StaticBody3D" parent="Drzwi3/drzwi3/door-sliding-double2/door-sliding-double/door-left"]
+[node name="StaticBody3D" type="StaticBody3D" parent="Drzwi3/drzwi3/door-sliding-double2/door-sliding-double/door-left" unique_id=1277436412]
 
-[node name="CollisionShape3D2" type="CollisionShape3D" parent="Drzwi3/drzwi3/door-sliding-double2/door-sliding-double/door-left/StaticBody3D"]
+[node name="CollisionShape3D2" type="CollisionShape3D" parent="Drzwi3/drzwi3/door-sliding-double2/door-sliding-double/door-left/StaticBody3D" unique_id=1123127581]
 shape = SubResource("ConcavePolygonShape3D_yu0y4")
 
-[node name="AnimationPlayer" type="AnimationPlayer" parent="Drzwi3/drzwi3/door-sliding-double2"]
-libraries = {
-&"": SubResource("AnimationLibrary_2pkl0")
-}
+[node name="AnimationPlayer" type="AnimationPlayer" parent="Drzwi3/drzwi3/door-sliding-double2" unique_id=895863316]
+libraries/ = SubResource("AnimationLibrary_2pkl0")
 
-[node name="AnimationTree" type="AnimationTree" parent="Drzwi3/drzwi3/door-sliding-double2"]
+[node name="AnimationTree" type="AnimationTree" parent="Drzwi3/drzwi3/door-sliding-double2" unique_id=1322702634]
 tree_root = SubResource("AnimationNodeStateMachine_n4c53")
 anim_player = NodePath("../AnimationPlayer")
 
-[node name="Level53" parent="Drzwi3" instance=ExtResource("11_1apdv")]
+[node name="Level53" parent="Drzwi3" unique_id=830389559 instance=ExtResource("11_1apdv")]
 visible = false
 
-[node name="Misja_dialog" type="Area3D" parent="."]
+[node name="Misja_dialog" type="Area3D" parent="." unique_id=650564240]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 2.02, 1.1199999, -2.57)
 priority = 1
 
-[node name="CollisionShape3D" type="CollisionShape3D" parent="Misja_dialog"]
+[node name="CollisionShape3D" type="CollisionShape3D" parent="Misja_dialog" unique_id=1008021892]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.35500002, 0.14499998, 0)
 shape = SubResource("BoxShape3D_4d63i")
 
-[node name="Tunnel" type="Node3D" parent="."]
+[node name="Tunnel" type="Node3D" parent="." unique_id=1028533701]
 transform = Transform3D(-4.371139e-08, 0, 1, 0, 1, 0, -1, 0, -4.371139e-08, 2.62, -0.18999998, -8.5199995)
 
-[node name="Enter" type="Node3D" parent="Tunnel"]
+[node name="Enter" type="Node3D" parent="Tunnel" unique_id=988964963]
 
-[node name="Floor" type="GridMap" parent="Tunnel/Enter"]
+[node name="Floor" type="GridMap" parent="Tunnel/Enter" unique_id=962690580]
 mesh_library = ExtResource("1_jylhg")
 cell_size = Vector3(1, 1, 1)
 data = {
@@ -1161,7 +1155,7 @@ data = {
 }
 metadata/_editor_floor_ = Vector3(0, 0, 0)
 
-[node name="Wall" type="GridMap" parent="Tunnel/Enter"]
+[node name="Wall" type="GridMap" parent="Tunnel/Enter" unique_id=1097300152]
 mesh_library = ExtResource("14_0ghtb")
 cell_size = Vector3(0.25, 1, 0.25)
 data = {
@@ -1169,74 +1163,73 @@ data = {
 }
 metadata/_editor_floor_ = Vector3(0, 2, 0)
 
-[node name="objects" type="GridMap" parent="Tunnel/Enter"]
+[node name="objects" type="GridMap" parent="Tunnel/Enter" unique_id=1957490551]
 mesh_library = ExtResource("4_kxdlq")
 cell_size = Vector3(0.1, 1, 0.1)
 
-[node name="door" parent="Tunnel/Enter" instance=ExtResource("5_nb8bt")]
+[node name="door" parent="Tunnel/Enter" unique_id=2008624093 instance=ExtResource("5_nb8bt")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 2.8700001, 0.7, 0)
 
-[node name="Enter" type="Node3D" parent="Tunnel/Enter"]
+[node name="Enter" type="Node3D" parent="Tunnel/Enter" unique_id=1340202001]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -2.8700001, 0.7, 0)
 script = ExtResource("7_nctk5")
 
-[node name="wall-doorway-wide2" type="StaticBody3D" parent="Tunnel/Enter/Enter"]
+[node name="wall-doorway-wide2" type="StaticBody3D" parent="Tunnel/Enter/Enter" unique_id=2108802087]
 
-[node name="wall-doorway-wide" type="MeshInstance3D" parent="Tunnel/Enter/Enter/wall-doorway-wide2"]
+[node name="wall-doorway-wide" type="MeshInstance3D" parent="Tunnel/Enter/Enter/wall-doorway-wide2" unique_id=1795353206]
 mesh = SubResource("ArrayMesh_6g8rq")
 skeleton = NodePath("")
 
-[node name="CollisionShapeDoorway" type="CollisionShape3D" parent="Tunnel/Enter/Enter/wall-doorway-wide2"]
+[node name="CollisionShapeDoorway" type="CollisionShape3D" parent="Tunnel/Enter/Enter/wall-doorway-wide2" unique_id=1149439886]
 shape = SubResource("ConcavePolygonShape3D_owf7w")
 
-[node name="door-sliding-double2" type="Node3D" parent="Tunnel/Enter/Enter"]
+[node name="door-sliding-double2" type="Node3D" parent="Tunnel/Enter/Enter" unique_id=269212325]
 
-[node name="door-sliding-double" type="Node3D" parent="Tunnel/Enter/Enter/door-sliding-double2"]
+[node name="door-sliding-double" type="Node3D" parent="Tunnel/Enter/Enter/door-sliding-double2" unique_id=829287432]
 
-[node name="door-right" type="MeshInstance3D" parent="Tunnel/Enter/Enter/door-sliding-double2/door-sliding-double"]
+[node name="door-right" type="MeshInstance3D" parent="Tunnel/Enter/Enter/door-sliding-double2/door-sliding-double" unique_id=143076740]
 mesh = SubResource("ArrayMesh_aid4e")
 skeleton = NodePath("")
 
-[node name="StaticBody3D" type="StaticBody3D" parent="Tunnel/Enter/Enter/door-sliding-double2/door-sliding-double/door-right"]
+[node name="StaticBody3D" type="StaticBody3D" parent="Tunnel/Enter/Enter/door-sliding-double2/door-sliding-double/door-right" unique_id=599421882]
 
-[node name="CollisionShape3D" type="CollisionShape3D" parent="Tunnel/Enter/Enter/door-sliding-double2/door-sliding-double/door-right/StaticBody3D"]
+[node name="CollisionShape3D" type="CollisionShape3D" parent="Tunnel/Enter/Enter/door-sliding-double2/door-sliding-double/door-right/StaticBody3D" unique_id=936761878]
 shape = SubResource("ConcavePolygonShape3D_kuosl")
 
-[node name="door-left" type="MeshInstance3D" parent="Tunnel/Enter/Enter/door-sliding-double2/door-sliding-double"]
+[node name="door-left" type="MeshInstance3D" parent="Tunnel/Enter/Enter/door-sliding-double2/door-sliding-double" unique_id=1518998171]
 mesh = SubResource("ArrayMesh_j6ml1")
 skeleton = NodePath("")
 
-[node name="StaticBody3D" type="StaticBody3D" parent="Tunnel/Enter/Enter/door-sliding-double2/door-sliding-double/door-left"]
+[node name="StaticBody3D" type="StaticBody3D" parent="Tunnel/Enter/Enter/door-sliding-double2/door-sliding-double/door-left" unique_id=1814693664]
 
-[node name="CollisionShape3D2" type="CollisionShape3D" parent="Tunnel/Enter/Enter/door-sliding-double2/door-sliding-double/door-left/StaticBody3D"]
+[node name="CollisionShape3D2" type="CollisionShape3D" parent="Tunnel/Enter/Enter/door-sliding-double2/door-sliding-double/door-left/StaticBody3D" unique_id=290587156]
 shape = SubResource("ConcavePolygonShape3D_pmjwv")
 
-[node name="AnimationPlayer" type="AnimationPlayer" parent="Tunnel/Enter/Enter/door-sliding-double2"]
-libraries = {
-&"": SubResource("AnimationLibrary_xasmh")
-}
+[node name="AnimationPlayer" type="AnimationPlayer" parent="Tunnel/Enter/Enter/door-sliding-double2" unique_id=635871439]
+libraries/ = SubResource("AnimationLibrary_xasmh")
 
-[node name="AnimationTree" type="AnimationTree" parent="Tunnel/Enter/Enter/door-sliding-double2"]
+[node name="AnimationTree" type="AnimationTree" parent="Tunnel/Enter/Enter/door-sliding-double2" unique_id=1948450924]
 tree_root = SubResource("AnimationNodeStateMachine_3nemc")
 anim_player = NodePath("../AnimationPlayer")
 
-[node name="DirectionalLight3D" type="OmniLight3D" parent="Tunnel/Enter"]
+[node name="DirectionalLight3D" type="OmniLight3D" parent="Tunnel/Enter" unique_id=661543644]
 transform = Transform3D(0.12186933, 0.7630998, 0.63468623, 0, -0.63945264, 0.76883054, 0.9925462, -0.09369686, -0.07792965, 1.6978998, 3.01541, 0.15999961)
 light_color = Color(1, 0.960784, 0.882353, 1)
 
-[node name="DirectionalLight3D2" type="OmniLight3D" parent="Tunnel/Enter"]
+[node name="DirectionalLight3D2" type="OmniLight3D" parent="Tunnel/Enter" unique_id=1566791708]
 transform = Transform3D(0.12186933, 0.7630998, 0.63468623, 0, -0.63945264, 0.76883054, 0.9925462, -0.09369686, -0.07792965, -0.4321003, 3.01541, 0.15999937)
 light_color = Color(1, 0.960784, 0.882353, 1)
 
-[node name="ButtonSmall" parent="Tunnel" instance=ExtResource("15_1oke1")]
+[node name="ButtonSmall" parent="Tunnel" unique_id=442618838 instance=ExtResource("15_1oke1")]
 transform = Transform3D(-4.3711385e-08, 0.99999994, 0, -0.99999994, -4.3711385e-08, 0, 0, 0, 1, -2.7863479, 1.1522086, -0.77)
+prompt_message = "Otwórz dzwi"
 
-[node name="Wyjscie" type="Node3D" parent="."]
+[node name="Wyjscie" type="Node3D" parent="." unique_id=2005425009]
 transform = Transform3D(-4.371139e-08, 0, 1, 0, 1, 0, -1, 0, -4.371139e-08, 2.35, -0.17999999, 21.800001)
 
-[node name="Enter" type="Node3D" parent="Wyjscie"]
+[node name="Enter" type="Node3D" parent="Wyjscie" unique_id=1315524678]
 
-[node name="Floor" type="GridMap" parent="Wyjscie/Enter"]
+[node name="Floor" type="GridMap" parent="Wyjscie/Enter" unique_id=582399680]
 mesh_library = ExtResource("1_jylhg")
 cell_size = Vector3(1, 1, 1)
 data = {
@@ -1244,7 +1237,7 @@ data = {
 }
 metadata/_editor_floor_ = Vector3(0, 0, 0)
 
-[node name="Wall" type="GridMap" parent="Wyjscie/Enter"]
+[node name="Wall" type="GridMap" parent="Wyjscie/Enter" unique_id=1026288668]
 mesh_library = ExtResource("14_0ghtb")
 cell_size = Vector3(0.25, 1, 0.25)
 data = {
@@ -1252,81 +1245,79 @@ data = {
 }
 metadata/_editor_floor_ = Vector3(0, -1, 0)
 
-[node name="objects" type="GridMap" parent="Wyjscie/Enter"]
+[node name="objects" type="GridMap" parent="Wyjscie/Enter" unique_id=67019919]
 mesh_library = ExtResource("4_kxdlq")
 cell_size = Vector3(0.1, 1, 0.1)
 
-[node name="door" parent="Wyjscie/Enter" instance=ExtResource("5_nb8bt")]
+[node name="door" parent="Wyjscie/Enter" unique_id=613655702 instance=ExtResource("5_nb8bt")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 2.8700001, 0.7, 0)
 
-[node name="Enter" type="Node3D" parent="Wyjscie/Enter"]
+[node name="Enter" type="Node3D" parent="Wyjscie/Enter" unique_id=1184528555]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -2.8700001, 0.7, 0)
 script = ExtResource("7_nctk5")
 
-[node name="wall-doorway-wide2" type="StaticBody3D" parent="Wyjscie/Enter/Enter"]
+[node name="wall-doorway-wide2" type="StaticBody3D" parent="Wyjscie/Enter/Enter" unique_id=1053159588]
 
-[node name="wall-doorway-wide" type="MeshInstance3D" parent="Wyjscie/Enter/Enter/wall-doorway-wide2"]
+[node name="wall-doorway-wide" type="MeshInstance3D" parent="Wyjscie/Enter/Enter/wall-doorway-wide2" unique_id=1915570108]
 mesh = SubResource("ArrayMesh_gk025")
 skeleton = NodePath("")
 
-[node name="CollisionShapeDoorway" type="CollisionShape3D" parent="Wyjscie/Enter/Enter/wall-doorway-wide2"]
+[node name="CollisionShapeDoorway" type="CollisionShape3D" parent="Wyjscie/Enter/Enter/wall-doorway-wide2" unique_id=1284529439]
 shape = SubResource("ConcavePolygonShape3D_bp30r")
 
-[node name="door-sliding-double2" type="Node3D" parent="Wyjscie/Enter/Enter"]
+[node name="door-sliding-double2" type="Node3D" parent="Wyjscie/Enter/Enter" unique_id=1605652734]
 
-[node name="door-sliding-double" type="Node3D" parent="Wyjscie/Enter/Enter/door-sliding-double2"]
+[node name="door-sliding-double" type="Node3D" parent="Wyjscie/Enter/Enter/door-sliding-double2" unique_id=1772025781]
 
-[node name="door-right" type="MeshInstance3D" parent="Wyjscie/Enter/Enter/door-sliding-double2/door-sliding-double"]
+[node name="door-right" type="MeshInstance3D" parent="Wyjscie/Enter/Enter/door-sliding-double2/door-sliding-double" unique_id=179301264]
 mesh = SubResource("ArrayMesh_bsxjh")
 skeleton = NodePath("")
 
-[node name="StaticBody3D" type="StaticBody3D" parent="Wyjscie/Enter/Enter/door-sliding-double2/door-sliding-double/door-right"]
+[node name="StaticBody3D" type="StaticBody3D" parent="Wyjscie/Enter/Enter/door-sliding-double2/door-sliding-double/door-right" unique_id=1686026411]
 
-[node name="CollisionShape3D" type="CollisionShape3D" parent="Wyjscie/Enter/Enter/door-sliding-double2/door-sliding-double/door-right/StaticBody3D"]
+[node name="CollisionShape3D" type="CollisionShape3D" parent="Wyjscie/Enter/Enter/door-sliding-double2/door-sliding-double/door-right/StaticBody3D" unique_id=1360995617]
 shape = SubResource("ConcavePolygonShape3D_s8b4a")
 
-[node name="door-left" type="MeshInstance3D" parent="Wyjscie/Enter/Enter/door-sliding-double2/door-sliding-double"]
+[node name="door-left" type="MeshInstance3D" parent="Wyjscie/Enter/Enter/door-sliding-double2/door-sliding-double" unique_id=1009788457]
 mesh = SubResource("ArrayMesh_pmjwv")
 skeleton = NodePath("")
 
-[node name="StaticBody3D" type="StaticBody3D" parent="Wyjscie/Enter/Enter/door-sliding-double2/door-sliding-double/door-left"]
+[node name="StaticBody3D" type="StaticBody3D" parent="Wyjscie/Enter/Enter/door-sliding-double2/door-sliding-double/door-left" unique_id=1591662687]
 
-[node name="CollisionShape3D2" type="CollisionShape3D" parent="Wyjscie/Enter/Enter/door-sliding-double2/door-sliding-double/door-left/StaticBody3D"]
+[node name="CollisionShape3D2" type="CollisionShape3D" parent="Wyjscie/Enter/Enter/door-sliding-double2/door-sliding-double/door-left/StaticBody3D" unique_id=297386586]
 shape = SubResource("ConcavePolygonShape3D_cnw88")
 
-[node name="AnimationPlayer" type="AnimationPlayer" parent="Wyjscie/Enter/Enter/door-sliding-double2"]
-libraries = {
-&"": SubResource("AnimationLibrary_je3v8")
-}
+[node name="AnimationPlayer" type="AnimationPlayer" parent="Wyjscie/Enter/Enter/door-sliding-double2" unique_id=1391937138]
+libraries/ = SubResource("AnimationLibrary_je3v8")
 
-[node name="AnimationTree" type="AnimationTree" parent="Wyjscie/Enter/Enter/door-sliding-double2"]
+[node name="AnimationTree" type="AnimationTree" parent="Wyjscie/Enter/Enter/door-sliding-double2" unique_id=625278987]
 tree_root = SubResource("AnimationNodeStateMachine_5wqpi")
 anim_player = NodePath("../AnimationPlayer")
 
-[node name="OmniLight" type="OmniLight3D" parent="Wyjscie/Enter"]
+[node name="OmniLight" type="OmniLight3D" parent="Wyjscie/Enter" unique_id=1062300390]
 transform = Transform3D(0.12186933, 0.7630998, 0.63468623, 0, -0.63945264, 0.76883054, 0.9925462, -0.093696855, -0.07792966, 1.6978998, 2.70541, 0.029999733)
 light_color = Color(1, 0.960784, 0.882353, 1)
 
-[node name="OmniLight2" type="OmniLight3D" parent="Wyjscie/Enter"]
+[node name="OmniLight2" type="OmniLight3D" parent="Wyjscie/Enter" unique_id=762349417]
 transform = Transform3D(0.12186933, 0.7630998, 0.63468623, 0, -0.63945264, 0.76883054, 0.9925462, -0.093696855, -0.07792966, 0.22789991, 2.74541, 0.15999973)
 light_color = Color(1, 0.960784, 0.882353, 1)
 
-[node name="ButtonSmall" parent="Wyjscie" instance=ExtResource("15_1oke1")]
+[node name="ButtonSmall" parent="Wyjscie" unique_id=1410682524 instance=ExtResource("15_1oke1")]
 transform = Transform3D(-4.3711385e-08, 0.99999994, 0, -0.99999994, -4.3711385e-08, 0, 0, 0, 1, -2.7863479, 1.1522086, -0.77)
 
-[node name="ZmianaPoziomu" type="Area3D" parent="."]
+[node name="ZmianaPoziomu" type="Area3D" parent="." unique_id=250530237]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 2.3527613, 1.0526149, 22.864304)
 
-[node name="CollisionShape3D" type="CollisionShape3D" parent="ZmianaPoziomu"]
+[node name="CollisionShape3D" type="CollisionShape3D" parent="ZmianaPoziomu" unique_id=889617034]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.0039258003, 0.1349659, -0.6764622)
 shape = SubResource("BoxShape3D_0ghtb")
 
-[node name="PauseMenu" parent="." instance=ExtResource("3_5mtfs")]
+[node name="PauseMenu" parent="." unique_id=1534664376 instance=ExtResource("3_5mtfs")]
 visible = false
 
-[node name="Dialogi" type="Node" parent="."]
+[node name="Dialogi" type="Node" parent="." unique_id=1039165700]
 
-[node name="Misja" type="AcceptDialog" parent="Dialogi"]
+[node name="Misja" type="AcceptDialog" parent="Dialogi" unique_id=493774543]
 auto_translate_mode = 1
 title = "Cel poziomu"
 size = Vector2i(1107, 100)

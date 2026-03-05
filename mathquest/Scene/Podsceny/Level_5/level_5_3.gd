@@ -1,7 +1,7 @@
 extends Control
-@onready var text_edit: TextEdit = $MarginContainer/HBoxContainer/GridContainer2/TextEdit
-@onready var text_edit_2: TextEdit = $MarginContainer/HBoxContainer/GridContainer2/TextEdit2
-@onready var text_edit_3: TextEdit = $MarginContainer/HBoxContainer/GridContainer2/TextEdit3
+@onready var text_edit: LineEdit = $MarginContainer/HBoxContainer/GridContainer2/TextEdit
+@onready var text_edit_2: LineEdit = $MarginContainer/HBoxContainer/GridContainer2/TextEdit2
+@onready var text_edit_3: LineEdit = $MarginContainer/HBoxContainer/GridContainer2/TextEdit3
 @onready var result_label: Label = $MarginContainer/HBoxContainer3/ResultLabel
 @onready var drzwi3: Node3D = $"../drzwi3"
 @onready var wyjscie: Node3D = $"../../Wyjscie/Enter/door"
@@ -19,7 +19,7 @@ func _on_sprawdź_pressed() -> void:
 		
 	if ok:
 		result_label.text = "✅ Poprawnie!"
-		Global.get_ui().ustaw_misje("Macierz zadanie", true)
+		Global.get_ui().ustaw_misje("Macierz zadanie 3/3", true)
 		drzwi3.open_door()
 		wyjscie.open_door()
 	else:
