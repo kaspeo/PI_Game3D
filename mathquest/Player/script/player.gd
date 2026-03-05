@@ -46,7 +46,6 @@ func _process(delta):
 	var move_direction := Vector3(input_dir.x, 0, input_dir.y).normalized()
 	move_direction = move_direction.rotated(Vector3.UP, camera.global_rotation.y)
 
-	var was_walking = is_walking
 	is_walking = move_direction != Vector3.ZERO and is_on_floor()
 
 	if move_direction != Vector3.ZERO:

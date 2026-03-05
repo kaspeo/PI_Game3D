@@ -461,7 +461,7 @@ func secant_method(func_callable: Callable, x0: float, x1: float,
 	output_display.text += "Przedział: [" + str(x0) + ", " + str(x1) + "]\n"
 	output_display.text += "Tolerancja: " + str(tolerance_val) + "\n"
 	output_display.text += "Maks. iteracji: " + str(MAX_ITERATIONS) + "\n\n"
-	output_display.text += "Iter\tx\t\tf(x)\t\tBłąd\n"
+	output_display.text += "Iter\t\tx\t\t\tf(x)\t\t\t   Błąd\n"
 	
 	if graph_display and graph_display.has_method("clear_secants"):
 		graph_display.clear_secants()

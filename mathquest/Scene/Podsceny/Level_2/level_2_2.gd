@@ -4,7 +4,7 @@ signal level2_2_completed
 
 @onready var input_a: LineEdit = $MarginContainer/VBoxContainer/HBoxContainer/GridContainer/HBoxContainerA/InputA
 @onready var input_b: LineEdit = $MarginContainer/VBoxContainer/HBoxContainer/GridContainer/HBoxContainerB/InputB
-@onready var output: Label = $MarginContainer/VBoxContainer/HBoxContainer3/Wynik
+@onready var output: Label = $MarginContainer/VBoxContainer/HBoxContainer4/Wynik
 @onready var results_label: RichTextLabel = $MarginContainer/VBoxContainer/HBoxContainer4/RichTextLabel
 @onready var graph: Panel = $MarginContainer/VBoxContainer/PanelContainer/Graph
 @onready var przedzal_ab: Button = $MarginContainer/VBoxContainer/HBoxContainer/GridContainer/HBoxContainer/PrzedzalAB

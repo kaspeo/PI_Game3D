@@ -1,11 +1,11 @@
-[gd_scene load_steps=5 format=3 uid="uid://df2dbcbohgj0g"]
+[gd_scene format=3 uid="uid://df2dbcbohgj0g"]
 
 [ext_resource type="Script" uid="uid://bkioq0jfurlh8" path="res://Scene/Podsceny/Level_2/level_2_2.gd" id="1_1hjwv"]
 [ext_resource type="Theme" uid="uid://b3klx57slj0l3" path="res://UI/Assets/UI_Assets/soft_retro/soft_retro.tres" id="1_oy6k1"]
 [ext_resource type="Script" uid="uid://d2542yqt0ubtf" path="res://Scene/Podsceny/Level_2/level_2_1graph.gd" id="2_oedrk"]
 [ext_resource type="Texture2D" uid="uid://dnh517ytibf0o" path="res://UI/frame.png" id="2_oy6k1"]
 
-[node name="Level2_2" type="Control"]
+[node name="Level2_2" type="Control" unique_id=1883738689]
 layout_mode = 3
 anchors_preset = 15
 anchor_right = 1.0
@@ -15,7 +15,7 @@ grow_vertical = 2
 theme = ExtResource("1_oy6k1")
 script = ExtResource("1_1hjwv")
 
-[node name="TextureRect" type="TextureRect" parent="."]
+[node name="TextureRect" type="TextureRect" parent="." unique_id=2099619353]
 layout_mode = 1
 anchors_preset = 15
 anchor_right = 1.0
@@ -29,7 +29,7 @@ grow_vertical = 2
 scale = Vector2(1.1, 1.088)
 texture = ExtResource("2_oy6k1")
 
-[node name="ColorRect" type="ColorRect" parent="."]
+[node name="ColorRect" type="ColorRect" parent="." unique_id=1047131051]
 layout_mode = 1
 anchors_preset = 15
 anchor_right = 1.0
@@ -43,7 +43,7 @@ grow_vertical = 2
 scale = Vector2(0.72542995, 0.69440895)
 color = Color(0.24964118, 0.44229612, 0.4149804, 1)
 
-[node name="MarginContainer" type="MarginContainer" parent="."]
+[node name="MarginContainer" type="MarginContainer" parent="." unique_id=615804024]
 layout_mode = 1
 anchors_preset = 15
 anchor_right = 1.0
@@ -56,14 +56,15 @@ grow_horizontal = 2
 grow_vertical = 2
 scale = Vector2(0.7286931, 0.67659265)
 theme_override_constants/margin_top = 40
+metadata/_edit_use_anchors_ = true
 
-[node name="VBoxContainer" type="VBoxContainer" parent="MarginContainer"]
+[node name="VBoxContainer" type="VBoxContainer" parent="MarginContainer" unique_id=580980695]
 layout_mode = 2
 
-[node name="HBoxContainer" type="HBoxContainer" parent="MarginContainer/VBoxContainer"]
+[node name="HBoxContainer" type="HBoxContainer" parent="MarginContainer/VBoxContainer" unique_id=41338001]
 layout_mode = 2
 
-[node name="Task Label" type="Label" parent="MarginContainer/VBoxContainer/HBoxContainer"]
+[node name="Task Label" type="Label" parent="MarginContainer/VBoxContainer/HBoxContainer" unique_id=220985990]
 layout_mode = 2
 size_flags_horizontal = 4
 theme_override_font_sizes/font_size = 33
@@ -72,110 +73,107 @@ korzystając z metody Reguły Falsi.
 Uwaga! Funkcja ma kilka miejsc zerowych blisko siebie. 
 Wybieraj ostrożnie przedział [a,x] lub [x,b]."
 
-[node name="GridContainer" type="GridContainer" parent="MarginContainer/VBoxContainer/HBoxContainer"]
+[node name="GridContainer" type="GridContainer" parent="MarginContainer/VBoxContainer/HBoxContainer" unique_id=1018708607]
 layout_mode = 2
 size_flags_horizontal = 6
 theme_override_constants/v_separation = 38
 
-[node name="HBoxContainer" type="HBoxContainer" parent="MarginContainer/VBoxContainer/HBoxContainer/GridContainer"]
+[node name="HBoxContainer" type="HBoxContainer" parent="MarginContainer/VBoxContainer/HBoxContainer/GridContainer" unique_id=982007504]
 layout_mode = 2
 alignment = 1
 
-[node name="PrzedzalAB" type="Button" parent="MarginContainer/VBoxContainer/HBoxContainer/GridContainer/HBoxContainer"]
+[node name="PrzedzalAB" type="Button" parent="MarginContainer/VBoxContainer/HBoxContainer/GridContainer/HBoxContainer" unique_id=1997006711]
 visible = false
 layout_mode = 2
 theme_override_font_sizes/font_size = 27
 text = "Sprawdz mozliwe a i b"
 
-[node name="HBoxContainerA" type="HBoxContainer" parent="MarginContainer/VBoxContainer/HBoxContainer/GridContainer"]
+[node name="HBoxContainerA" type="HBoxContainer" parent="MarginContainer/VBoxContainer/HBoxContainer/GridContainer" unique_id=667991777]
 layout_mode = 2
 size_flags_horizontal = 4
 alignment = 1
 
-[node name="LabelA" type="Label" parent="MarginContainer/VBoxContainer/HBoxContainer/GridContainer/HBoxContainerA"]
+[node name="LabelA" type="Label" parent="MarginContainer/VBoxContainer/HBoxContainer/GridContainer/HBoxContainerA" unique_id=1846817073]
 layout_mode = 2
 theme_override_font_sizes/font_size = 50
 text = "a:"
 
-[node name="InputA" type="LineEdit" parent="MarginContainer/VBoxContainer/HBoxContainer/GridContainer/HBoxContainerA"]
+[node name="InputA" type="LineEdit" parent="MarginContainer/VBoxContainer/HBoxContainer/GridContainer/HBoxContainerA" unique_id=1504063406]
 layout_mode = 2
 size_flags_horizontal = 4
 theme_override_font_sizes/font_size = 50
 placeholder_text = "1"
 
-[node name="HBoxContainerB" type="HBoxContainer" parent="MarginContainer/VBoxContainer/HBoxContainer/GridContainer"]
+[node name="HBoxContainerB" type="HBoxContainer" parent="MarginContainer/VBoxContainer/HBoxContainer/GridContainer" unique_id=802971479]
 layout_mode = 2
 alignment = 1
 
-[node name="LabelB" type="Label" parent="MarginContainer/VBoxContainer/HBoxContainer/GridContainer/HBoxContainerB"]
+[node name="LabelB" type="Label" parent="MarginContainer/VBoxContainer/HBoxContainer/GridContainer/HBoxContainerB" unique_id=137903215]
 layout_mode = 2
 theme_override_font_sizes/font_size = 50
 text = "b:"
 
-[node name="InputB" type="LineEdit" parent="MarginContainer/VBoxContainer/HBoxContainer/GridContainer/HBoxContainerB"]
+[node name="InputB" type="LineEdit" parent="MarginContainer/VBoxContainer/HBoxContainer/GridContainer/HBoxContainerB" unique_id=1898610403]
 layout_mode = 2
 size_flags_horizontal = 4
 theme_override_font_sizes/font_size = 50
 placeholder_text = "3"
 
-[node name="HBoxContainer2" type="HBoxContainer" parent="MarginContainer/VBoxContainer"]
+[node name="HBoxContainer2" type="HBoxContainer" parent="MarginContainer/VBoxContainer" unique_id=1257563114]
 layout_mode = 2
 size_flags_horizontal = 4
 size_flags_vertical = 4
 
-[node name="Oblicz" type="Button" parent="MarginContainer/VBoxContainer/HBoxContainer2"]
+[node name="Oblicz" type="Button" parent="MarginContainer/VBoxContainer/HBoxContainer2" unique_id=1928904129]
 layout_mode = 2
 size_flags_horizontal = 4
 theme_override_font_sizes/font_size = 40
 text = "Oblicz
 "
 
-[node name="Exit" type="Button" parent="MarginContainer/VBoxContainer/HBoxContainer2"]
+[node name="Exit" type="Button" parent="MarginContainer/VBoxContainer/HBoxContainer2" unique_id=1829631803]
 layout_mode = 2
 size_flags_horizontal = 4
 size_flags_vertical = 4
 theme_override_font_sizes/font_size = 40
 text = "Wyjdź"
 
-[node name="VBoxContainer" type="HBoxContainer" parent="MarginContainer/VBoxContainer"]
+[node name="VBoxContainer" type="HBoxContainer" parent="MarginContainer/VBoxContainer" unique_id=967186063]
 layout_mode = 2
 size_flags_horizontal = 4
 size_flags_vertical = 4
 
-[node name="PrzedzialA" type="Button" parent="MarginContainer/VBoxContainer/VBoxContainer"]
+[node name="PrzedzialA" type="Button" parent="MarginContainer/VBoxContainer/VBoxContainer" unique_id=1523329326]
 layout_mode = 2
 theme_override_font_sizes/font_size = 40
 text = "wybór przedziału [a, x]"
 
-[node name="PrzedzialB" type="Button" parent="MarginContainer/VBoxContainer/VBoxContainer"]
+[node name="PrzedzialB" type="Button" parent="MarginContainer/VBoxContainer/VBoxContainer" unique_id=366302565]
 layout_mode = 2
 theme_override_font_sizes/font_size = 40
 text = "wybór przedziału [x, b]"
 
-[node name="HBoxContainer3" type="HBoxContainer" parent="MarginContainer/VBoxContainer"]
+[node name="HBoxContainer4" type="HBoxContainer" parent="MarginContainer/VBoxContainer" unique_id=1349817725]
 layout_mode = 2
 
-[node name="Wynik" type="Label" parent="MarginContainer/VBoxContainer/HBoxContainer3"]
-layout_mode = 2
-size_flags_vertical = 8
-theme_override_font_sizes/font_size = 30
-
-[node name="HBoxContainer4" type="HBoxContainer" parent="MarginContainer/VBoxContainer"]
-layout_mode = 2
-
-[node name="RichTextLabel" type="RichTextLabel" parent="MarginContainer/VBoxContainer/HBoxContainer4"]
-custom_minimum_size = Vector2(1920, 200)
+[node name="RichTextLabel" type="RichTextLabel" parent="MarginContainer/VBoxContainer/HBoxContainer4" unique_id=943361666]
+custom_minimum_size = Vector2(650, 200)
 layout_mode = 2
 size_flags_vertical = 8
 text = "
 "
 
-[node name="PanelContainer" type="PanelContainer" parent="MarginContainer/VBoxContainer"]
+[node name="Wynik" type="Label" parent="MarginContainer/VBoxContainer/HBoxContainer4" unique_id=1316603338]
+layout_mode = 2
+size_flags_vertical = 8
+theme_override_font_sizes/font_size = 30
+
+[node name="PanelContainer" type="PanelContainer" parent="MarginContainer/VBoxContainer" unique_id=206631369]
 custom_minimum_size = Vector2(0, 550)
 layout_mode = 2
 size_flags_vertical = 10
 
-[node name="Graph" type="Panel" parent="MarginContainer/VBoxContainer/PanelContainer"]
+[node name="Graph" type="Panel" parent="MarginContainer/VBoxContainer/PanelContainer" unique_id=166468303]
 clip_contents = true
 layout_mode = 2
 script = ExtResource("2_oedrk")

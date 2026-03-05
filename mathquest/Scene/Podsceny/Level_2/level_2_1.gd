@@ -4,7 +4,7 @@ signal level2_1_completed
 
 @onready var input_a: LineEdit = $MarginContainer/VBoxContainer/HBoxContainer/GridContainer/HBoxContainerA/InputA
 @onready var input_b: LineEdit = $MarginContainer/VBoxContainer/HBoxContainer/GridContainer/HBoxContainerB/InputB
-@onready var output: Label = $MarginContainer/VBoxContainer/HBoxContainer3/Wynik
+@onready var output: Label = $MarginContainer/VBoxContainer/HBoxContainer4/Wynik
 @onready var results_label: RichTextLabel = $MarginContainer/VBoxContainer/HBoxContainer4/RichTextLabel
 @onready var graph: Panel = $MarginContainer/VBoxContainer/PanelContainer/Graph
 
@@ -90,7 +90,7 @@ func _update_interval(use_left: bool) -> void:
 	input_b.text = "%.4f" % b
 
 	if abs(f(x)) < tolerance:
-		output.text += "\n🎉 Znalazłeś rozwiązanie: x = %.4f (iteracja: %d)" % [x, iteration_count]
+		output.text += "🎉 Znalazłeś rozwiązanie: x = %.4f (iteracja: %d)" % [x, iteration_count]
 		emit_signal("level2_1_completed")
 
 	results_label.text = calculate_iterations(a, b)

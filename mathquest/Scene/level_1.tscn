@@ -1,4 +1,4 @@
-[gd_scene load_steps=46 format=4 uid="uid://bc2e0obqkdpcs"]
+[gd_scene format=4 uid="uid://bc2e0obqkdpcs"]
 
 [ext_resource type="Script" uid="uid://f3ge8vd3bl7d" path="res://Scene/script/level_1.gd" id="1_2ceuy"]
 [ext_resource type="MeshLibrary" uid="uid://w6ev0b2ct1rg" path="res://Objects/Room/Tile/FloorTiles.tres" id="1_6544n"]
@@ -252,12 +252,12 @@ size = Vector3(7.51215, 1, 1)
 [sub_resource type="BoxShape3D" id="BoxShape3D_sq6mb"]
 size = Vector3(1.4147949, 1.0899658, 1)
 
-[node name="Level1" type="Node3D"]
+[node name="Level1" type="Node3D" unique_id=84847644]
 script = ExtResource("1_2ceuy")
 
-[node name="Word" type="Node3D" parent="."]
+[node name="Word" type="Node3D" parent="." unique_id=1214156545]
 
-[node name="Floor" type="GridMap" parent="Word"]
+[node name="Floor" type="GridMap" parent="Word" unique_id=1035901454]
 mesh_library = ExtResource("1_6544n")
 cell_size = Vector3(1, 1, 1)
 data = {
@@ -265,7 +265,7 @@ data = {
 }
 metadata/_editor_floor_ = Vector3(0, 8, 0)
 
-[node name="Wall" type="GridMap" parent="Word"]
+[node name="Wall" type="GridMap" parent="Word" unique_id=1293040559]
 mesh_library = ExtResource("2_6544n")
 cell_size = Vector3(0.4, 1, 0.4)
 data = {
@@ -273,7 +273,7 @@ data = {
 }
 metadata/_editor_floor_ = Vector3(0, 0, 0)
 
-[node name="Wall2" type="GridMap" parent="Word"]
+[node name="Wall2" type="GridMap" parent="Word" unique_id=236246218]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 2, 0)
 mesh_library = ExtResource("2_6544n")
 cell_size = Vector3(0.4, 1, 0.4)
@@ -282,27 +282,27 @@ data = {
 }
 metadata/_editor_floor_ = Vector3(0, 5, 0)
 
-[node name="Lights" type="Node3D" parent="."]
+[node name="Lights" type="Node3D" parent="." unique_id=1999925061]
 
-[node name="DirectionalLight3D" type="DirectionalLight3D" parent="Lights"]
+[node name="DirectionalLight3D" type="DirectionalLight3D" parent="Lights" unique_id=5514324]
 transform = Transform3D(1, 0, 0, 0, 0.757553, 0.652773, 0, -0.652773, 0.757553, 3.3779, 5.60541, 5.96999)
 light_color = Color(1, 0.960784, 0.882353, 1)
 
-[node name="DirectionalLight3D2" type="DirectionalLight3D" parent="Lights"]
+[node name="DirectionalLight3D2" type="DirectionalLight3D" parent="Lights" unique_id=459916161]
 transform = Transform3D(0.685056, -0.573047, 0.449795, 0, 0.617434, 0.786623, -0.728491, -0.538881, 0.422977, 5.42052, 9.2129, -0.998387)
 light_color = Color(1, 0.960784, 0.882353, 1)
 
-[node name="DirectionalLight3D4" type="DirectionalLight3D" parent="Lights"]
+[node name="DirectionalLight3D4" type="DirectionalLight3D" parent="Lights" unique_id=1335364406]
 transform = Transform3D(0.555947, 0.653855, -0.513222, 0, 0.617434, 0.786623, 0.831217, -0.437321, 0.343261, 1.00903, 9.2129, -0.998387)
 light_color = Color(1, 0.960784, 0.882353, 1)
 
-[node name="DirectionalLight3D3" type="DirectionalLight3D" parent="Lights"]
+[node name="DirectionalLight3D3" type="DirectionalLight3D" parent="Lights" unique_id=1957977923]
 transform = Transform3D(1, 0, 0, 0, 0.757553, 0.652773, 0, -0.652773, 0.757553, 3.3779, 4.99053, 11.374)
 light_color = Color(1, 0.960784, 0.882353, 1)
 
-[node name="Zadanie_bisekcji" type="Node3D" parent="."]
+[node name="Zadanie_bisekcji" type="Node3D" parent="." unique_id=1947338007]
 
-[node name="Schody" type="GridMap" parent="Zadanie_bisekcji"]
+[node name="Schody" type="GridMap" parent="Zadanie_bisekcji" unique_id=1887920767]
 mesh_library = ExtResource("2_6544n")
 cell_size = Vector3(0.1, 1, 0.1)
 data = {
@@ -310,215 +310,215 @@ data = {
 }
 metadata/_editor_floor_ = Vector3(0, 7, 0)
 
-[node name="Skrzynki" type="Node3D" parent="Zadanie_bisekcji"]
+[node name="Skrzynki" type="Node3D" parent="Zadanie_bisekcji" unique_id=103577869]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 3.78519, 0, -1.1137)
 
-[node name="Crate1" type="RigidBody3D" parent="Zadanie_bisekcji/Skrzynki"]
+[node name="Crate1" type="RigidBody3D" parent="Zadanie_bisekcji/Skrzynki" unique_id=1734984360]
 transform = Transform3D(0.8, 0, 0, 0, 0.8, 0, 0, 0, 0.8, -0.426676, 1.09219, 2.95122)
 lock_rotation = true
 
-[node name="crate-color" type="MeshInstance3D" parent="Zadanie_bisekcji/Skrzynki/Crate1"]
+[node name="crate-color" type="MeshInstance3D" parent="Zadanie_bisekcji/Skrzynki/Crate1" unique_id=1719618668]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.00396222, -2.98023e-08, -0.00216466)
 material_override = SubResource("StandardMaterial3D_ii0ob")
 mesh = SubResource("BoxMesh_8te7y")
 skeleton = NodePath("")
 
-[node name="CollisionShape3D" type="CollisionShape3D" parent="Zadanie_bisekcji/Skrzynki/Crate1"]
+[node name="CollisionShape3D" type="CollisionShape3D" parent="Zadanie_bisekcji/Skrzynki/Crate1" unique_id=1853113325]
 shape = SubResource("BoxShape3D_x5itf")
 debug_color = Color(0, 0.6, 0.7, 0.42)
 
-[node name="Label3D" type="Label3D" parent="Zadanie_bisekcji/Skrzynki/Crate1"]
+[node name="Label3D" type="Label3D" parent="Zadanie_bisekcji/Skrzynki/Crate1" unique_id=1584904409]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.00879189, 0.0177894, 0.503335)
 modulate = Color(1, 0, 0, 1)
 text = "X=(A+B)/2
 Y=F(X)"
 
-[node name="CSGPolygon3D" type="CSGPolygon3D" parent="Zadanie_bisekcji/Skrzynki/Crate1"]
+[node name="CSGPolygon3D" type="CSGPolygon3D" parent="Zadanie_bisekcji/Skrzynki/Crate1" unique_id=737747946]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 0.995552, 0, -0.0173415, 0.498143)
 visible = false
 polygon = PackedVector2Array(0.00142177, -0.350337, -0.492108, 0.02703, 0.00102985, 0.397065, 0.50215, 0.0265749)
 material = SubResource("StandardMaterial3D_b2jrg")
 
-[node name="MeshInstance3D" type="MeshInstance3D" parent="Zadanie_bisekcji/Skrzynki/Crate1"]
+[node name="MeshInstance3D" type="MeshInstance3D" parent="Zadanie_bisekcji/Skrzynki/Crate1" unique_id=605066103]
 transform = Transform3D(0.992287, 0, 0, 0, 0.637784, 0, 0, 0, 0.637784, 0.0073657, 0, 0.182163)
 mesh = SubResource("BoxMesh_q3af6")
 
-[node name="Crate2" type="RigidBody3D" parent="Zadanie_bisekcji/Skrzynki"]
+[node name="Crate2" type="RigidBody3D" parent="Zadanie_bisekcji/Skrzynki" unique_id=1487815621]
 transform = Transform3D(0.8, 0, 0, 0, 0.8, 0, 0, 0, 0.8, -3.40448, 1.09219, 2.95122)
 lock_rotation = true
 
-[node name="crate-color" type="MeshInstance3D" parent="Zadanie_bisekcji/Skrzynki/Crate2"]
+[node name="crate-color" type="MeshInstance3D" parent="Zadanie_bisekcji/Skrzynki/Crate2" unique_id=317905159]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.00396222, -2.98023e-08, -0.00216466)
 material_override = SubResource("StandardMaterial3D_ii0ob")
 mesh = SubResource("BoxMesh_8te7y")
 skeleton = NodePath("")
 
-[node name="CollisionShape3D" type="CollisionShape3D" parent="Zadanie_bisekcji/Skrzynki/Crate2"]
+[node name="CollisionShape3D" type="CollisionShape3D" parent="Zadanie_bisekcji/Skrzynki/Crate2" unique_id=1345842025]
 shape = SubResource("BoxShape3D_x5itf")
 debug_color = Color(0, 0.6, 0.7, 0.42)
 
-[node name="Label3D" type="Label3D" parent="Zadanie_bisekcji/Skrzynki/Crate2"]
+[node name="Label3D" type="Label3D" parent="Zadanie_bisekcji/Skrzynki/Crate2" unique_id=276145624]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.0146453, -0.0928477, 0.503335)
 modulate = Color(1, 0, 0, 1)
 text = "YA * Y < 0
 ?"
 
-[node name="CSGPolygon3D" type="CSGPolygon3D" parent="Zadanie_bisekcji/Skrzynki/Crate2"]
+[node name="CSGPolygon3D" type="CSGPolygon3D" parent="Zadanie_bisekcji/Skrzynki/Crate2" unique_id=1296174435]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 0.995552, 0, -0.0173415, 0.498143)
 polygon = PackedVector2Array(0.00142177, -0.350337, -0.492108, 0.02703, 0.00102985, 0.397065, 0.50215, 0.0265749)
 material = SubResource("StandardMaterial3D_b2jrg")
 
-[node name="MeshInstance3D" type="MeshInstance3D" parent="Zadanie_bisekcji/Skrzynki/Crate2"]
+[node name="MeshInstance3D" type="MeshInstance3D" parent="Zadanie_bisekcji/Skrzynki/Crate2" unique_id=1431261456]
 transform = Transform3D(0.992287, 0, 0, 0, 0.637784, 0, 0, 0, 0.637784, 0, 0, 0.182163)
 visible = false
 mesh = SubResource("BoxMesh_q3af6")
 
-[node name="Crate3" type="RigidBody3D" parent="Zadanie_bisekcji/Skrzynki"]
+[node name="Crate3" type="RigidBody3D" parent="Zadanie_bisekcji/Skrzynki" unique_id=1379481171]
 transform = Transform3D(0.8, 0, 0, 0, 0.8, 0, 0, 0, 0.8, 2.2351, 1.09219, 2.95122)
 lock_rotation = true
 
-[node name="crate-color" type="MeshInstance3D" parent="Zadanie_bisekcji/Skrzynki/Crate3"]
+[node name="crate-color" type="MeshInstance3D" parent="Zadanie_bisekcji/Skrzynki/Crate3" unique_id=1776896602]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.00396222, -2.98023e-08, -0.00216466)
 material_override = SubResource("StandardMaterial3D_ii0ob")
 mesh = SubResource("BoxMesh_8te7y")
 skeleton = NodePath("")
 
-[node name="CollisionShape3D" type="CollisionShape3D" parent="Zadanie_bisekcji/Skrzynki/Crate3"]
+[node name="CollisionShape3D" type="CollisionShape3D" parent="Zadanie_bisekcji/Skrzynki/Crate3" unique_id=541995535]
 shape = SubResource("BoxShape3D_x5itf")
 debug_color = Color(0, 0.6, 0.7, 0.42)
 
-[node name="Label3D" type="Label3D" parent="Zadanie_bisekcji/Skrzynki/Crate3"]
+[node name="Label3D" type="Label3D" parent="Zadanie_bisekcji/Skrzynki/Crate3" unique_id=644022164]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.00879189, 0.0177894, 0.503335)
 modulate = Color(1, 0, 0, 1)
 text = "A=X
 YA=Y"
 
-[node name="CSGPolygon3D" type="CSGPolygon3D" parent="Zadanie_bisekcji/Skrzynki/Crate3"]
+[node name="CSGPolygon3D" type="CSGPolygon3D" parent="Zadanie_bisekcji/Skrzynki/Crate3" unique_id=1309087915]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 0.995552, 0, -0.0173415, 0.498143)
 visible = false
 polygon = PackedVector2Array(0.00142177, -0.350337, -0.492108, 0.02703, 0.00102985, 0.397065, 0.50215, 0.0265749)
 material = SubResource("StandardMaterial3D_b2jrg")
 
-[node name="MeshInstance3D" type="MeshInstance3D" parent="Zadanie_bisekcji/Skrzynki/Crate3"]
+[node name="MeshInstance3D" type="MeshInstance3D" parent="Zadanie_bisekcji/Skrzynki/Crate3" unique_id=1919054949]
 transform = Transform3D(0.992287, 0, 0, 0, 0.637784, 0, 0, 0, 0.637784, 0.0073657, 0, 0.182163)
 mesh = SubResource("BoxMesh_q3af6")
 
-[node name="Crate4" type="RigidBody3D" parent="Zadanie_bisekcji/Skrzynki"]
+[node name="Crate4" type="RigidBody3D" parent="Zadanie_bisekcji/Skrzynki" unique_id=421488476]
 transform = Transform3D(0.8, 0, 0, 0, 0.8, 0, 0, 0, 0.8, 0.988423, 1.09219, 2.95122)
 lock_rotation = true
 
-[node name="crate-color" type="MeshInstance3D" parent="Zadanie_bisekcji/Skrzynki/Crate4"]
+[node name="crate-color" type="MeshInstance3D" parent="Zadanie_bisekcji/Skrzynki/Crate4" unique_id=1271159952]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.00396222, -2.98023e-08, -0.00216466)
 material_override = SubResource("StandardMaterial3D_ii0ob")
 mesh = SubResource("BoxMesh_8te7y")
 skeleton = NodePath("")
 
-[node name="CollisionShape3D" type="CollisionShape3D" parent="Zadanie_bisekcji/Skrzynki/Crate4"]
+[node name="CollisionShape3D" type="CollisionShape3D" parent="Zadanie_bisekcji/Skrzynki/Crate4" unique_id=810883149]
 shape = SubResource("BoxShape3D_x5itf")
 debug_color = Color(0, 0.6, 0.7, 0.42)
 
-[node name="Label3D" type="Label3D" parent="Zadanie_bisekcji/Skrzynki/Crate4"]
+[node name="Label3D" type="Label3D" parent="Zadanie_bisekcji/Skrzynki/Crate4" unique_id=2016287393]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.00879189, 0.0177894, 0.503335)
 modulate = Color(1, 0, 0, 1)
 text = "B=X
 YB=Y"
 
-[node name="CSGPolygon3D" type="CSGPolygon3D" parent="Zadanie_bisekcji/Skrzynki/Crate4"]
+[node name="CSGPolygon3D" type="CSGPolygon3D" parent="Zadanie_bisekcji/Skrzynki/Crate4" unique_id=1769041395]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 0.995552, 0, -0.0173415, 0.498143)
 visible = false
 polygon = PackedVector2Array(0.00142177, -0.350337, -0.492108, 0.02703, 0.00102985, 0.397065, 0.50215, 0.0265749)
 material = SubResource("StandardMaterial3D_b2jrg")
 
-[node name="MeshInstance3D" type="MeshInstance3D" parent="Zadanie_bisekcji/Skrzynki/Crate4"]
+[node name="MeshInstance3D" type="MeshInstance3D" parent="Zadanie_bisekcji/Skrzynki/Crate4" unique_id=1234258510]
 transform = Transform3D(0.992287, 0, 0, 0, 0.637784, 0, 0, 0, 0.637784, 0.0073657, 0, 0.182163)
 mesh = SubResource("BoxMesh_q3af6")
 
-[node name="Crate5" type="RigidBody3D" parent="Zadanie_bisekcji/Skrzynki"]
+[node name="Crate5" type="RigidBody3D" parent="Zadanie_bisekcji/Skrzynki" unique_id=1144358352]
 transform = Transform3D(0.8, 0, 0, 0, 0.8, 0, 0, 0, 0.8, -1.83231, 1.09219, 2.95122)
 lock_rotation = true
 
-[node name="crate-color" type="MeshInstance3D" parent="Zadanie_bisekcji/Skrzynki/Crate5"]
+[node name="crate-color" type="MeshInstance3D" parent="Zadanie_bisekcji/Skrzynki/Crate5" unique_id=151778586]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.00396222, -2.98023e-08, -0.00216466)
 material_override = SubResource("StandardMaterial3D_ii0ob")
 mesh = SubResource("BoxMesh_8te7y")
 skeleton = NodePath("")
 
-[node name="CollisionShape3D" type="CollisionShape3D" parent="Zadanie_bisekcji/Skrzynki/Crate5"]
+[node name="CollisionShape3D" type="CollisionShape3D" parent="Zadanie_bisekcji/Skrzynki/Crate5" unique_id=648099377]
 shape = SubResource("BoxShape3D_x5itf")
 debug_color = Color(0, 0.6, 0.7, 0.42)
 
-[node name="Label3D" type="Label3D" parent="Zadanie_bisekcji/Skrzynki/Crate5"]
+[node name="Label3D" type="Label3D" parent="Zadanie_bisekcji/Skrzynki/Crate5" unique_id=1384551219]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.00879189, 0.0177894, 0.503335)
 modulate = Color(1, 0, 0, 1)
 text = "|B-A|<EPS"
 
-[node name="CSGPolygon3D" type="CSGPolygon3D" parent="Zadanie_bisekcji/Skrzynki/Crate5"]
+[node name="CSGPolygon3D" type="CSGPolygon3D" parent="Zadanie_bisekcji/Skrzynki/Crate5" unique_id=1503190978]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 0.995552, 0, -0.0173415, 0.498143)
 polygon = PackedVector2Array(0.00142177, -0.350337, -0.492108, 0.02703, 0.00102985, 0.397065, 0.50215, 0.0265749)
 material = SubResource("StandardMaterial3D_b2jrg")
 
-[node name="MeshInstance3D" type="MeshInstance3D" parent="Zadanie_bisekcji/Skrzynki/Crate5"]
+[node name="MeshInstance3D" type="MeshInstance3D" parent="Zadanie_bisekcji/Skrzynki/Crate5" unique_id=2032285772]
 transform = Transform3D(0.992287, 0, 0, 0, 0.637784, 0, 0, 0, 0.637784, 0, 0, 0.182163)
 visible = false
 mesh = SubResource("BoxMesh_q3af6")
 
-[node name="Labele" type="Node3D" parent="Zadanie_bisekcji"]
+[node name="Labele" type="Node3D" parent="Zadanie_bisekcji" unique_id=1213910907]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 3.78519, 0, -1.1137)
 
-[node name="Stop1" type="Label3D" parent="Zadanie_bisekcji/Labele"]
+[node name="Stop1" type="Label3D" parent="Zadanie_bisekcji/Labele" unique_id=1100622001]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 2.60702, 3.06657, -2.45724)
 modulate = Color(1, 0, 0, 1)
 text = "Stop 1"
 font_size = 50
 
-[node name="Stop2" type="Label3D" parent="Zadanie_bisekcji/Labele"]
+[node name="Stop2" type="Label3D" parent="Zadanie_bisekcji/Labele" unique_id=829546043]
 transform = Transform3D(1, 0, 0, 0, -4.37114e-08, 1, 0, -1, -4.37114e-08, -1.40731, 0.538444, 1.10896)
 modulate = Color(1, 0, 0, 1)
 text = "Stop 2"
 font_size = 50
 
-[node name="Rama" type="MeshInstance3D" parent="Zadanie_bisekcji/Labele"]
+[node name="Rama" type="MeshInstance3D" parent="Zadanie_bisekcji/Labele" unique_id=1242071860]
 transform = Transform3D(1, 0, 0, 0, -4.37114e-08, -1, 0, 1, -4.37114e-08, -1.39316, 1.05159, 0.617969)
 mesh = SubResource("PlaneMesh_sq6mb")
 
-[node name="Tablica" type="MeshInstance3D" parent="Zadanie_bisekcji/Labele/Rama"]
+[node name="Tablica" type="MeshInstance3D" parent="Zadanie_bisekcji/Labele/Rama" unique_id=985058864]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.00213695, 0.00165594, 0.00224733)
 mesh = SubResource("PlaneMesh_a6c3k")
 skeleton = NodePath("../..")
 
-[node name="Label3D" type="Label3D" parent="Zadanie_bisekcji/Labele/Rama"]
+[node name="Label3D" type="Label3D" parent="Zadanie_bisekcji/Labele/Rama" unique_id=1416338903]
 transform = Transform3D(1, 0, 0, 0, -4.37114e-08, 1, 0, -1, -4.37114e-08, -0.00600266, 0.0215203, -0.000866652)
 modulate = Color(1, 0, 0, 1)
 text = "Druk
 A,B,YA,YB"
 font_size = 50
 
-[node name="Rama4" type="MeshInstance3D" parent="Zadanie_bisekcji/Labele"]
+[node name="Rama4" type="MeshInstance3D" parent="Zadanie_bisekcji/Labele" unique_id=1354745825]
 transform = Transform3D(1, 0, 0, 0, -4.37114e-08, -1, 0, 1, -4.37114e-08, -1.39316, 5.08779, -6.46669)
 mesh = SubResource("PlaneMesh_sq6mb")
 
-[node name="Tablica" type="MeshInstance3D" parent="Zadanie_bisekcji/Labele/Rama4"]
+[node name="Tablica" type="MeshInstance3D" parent="Zadanie_bisekcji/Labele/Rama4" unique_id=1368881348]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.00213695, 0.00165594, 0.00224733)
 mesh = SubResource("PlaneMesh_a6c3k")
 skeleton = NodePath("../..")
 
-[node name="Label3D" type="Label3D" parent="Zadanie_bisekcji/Labele/Rama4"]
+[node name="Label3D" type="Label3D" parent="Zadanie_bisekcji/Labele/Rama4" unique_id=1633005416]
 transform = Transform3D(1, 0, 0, 0, -4.37114e-08, 1, 0, -1, -4.37114e-08, -0.00600266, 0.0215203, -0.000866652)
 modulate = Color(1, 0, 0, 1)
 text = "Y=0
 ?"
 font_size = 50
 
-[node name="Rama2" type="MeshInstance3D" parent="Zadanie_bisekcji/Labele"]
+[node name="Rama2" type="MeshInstance3D" parent="Zadanie_bisekcji/Labele" unique_id=1803645226]
 transform = Transform3D(1.2164, 0, 0, 0, -5.31704e-08, -1.2164, 0, 1.2164, -5.31704e-08, -1.44742, 7.50749, -10.4687)
 mesh = SubResource("PlaneMesh_sq6mb")
 
-[node name="Tablica" type="MeshInstance3D" parent="Zadanie_bisekcji/Labele/Rama2"]
+[node name="Tablica" type="MeshInstance3D" parent="Zadanie_bisekcji/Labele/Rama2" unique_id=1020326747]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.00213695, 0.00165594, 0.00224733)
 mesh = SubResource("PlaneMesh_a6c3k")
 skeleton = NodePath("../..")
 
-[node name="Label3D" type="Label3D" parent="Zadanie_bisekcji/Labele/Rama2"]
+[node name="Label3D" type="Label3D" parent="Zadanie_bisekcji/Labele/Rama2" unique_id=816423530]
 transform = Transform3D(1, 0, 0, 0, -4.37114e-08, 1, 0, -1, -4.37114e-08, -0.00600266, 0.0215203, -0.000866652)
 modulate = Color(1, 0, 0, 1)
 text = "Czytanie
@@ -526,16 +526,16 @@ A,B,YA
 YB,EPS"
 font_size = 34
 
-[node name="Rama3" type="MeshInstance3D" parent="Zadanie_bisekcji/Labele"]
+[node name="Rama3" type="MeshInstance3D" parent="Zadanie_bisekcji/Labele" unique_id=2132430535]
 transform = Transform3D(1, 0, 0, 0, -4.37114e-08, -1, 0, 1, -4.37114e-08, 2.45536, 4.06854, -4.4981)
 mesh = SubResource("PlaneMesh_sq6mb")
 
-[node name="Tablica" type="MeshInstance3D" parent="Zadanie_bisekcji/Labele/Rama3"]
+[node name="Tablica" type="MeshInstance3D" parent="Zadanie_bisekcji/Labele/Rama3" unique_id=1121745123]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.00213695, 0.00165594, 0.00224733)
 mesh = SubResource("PlaneMesh_a6c3k")
 skeleton = NodePath("../..")
 
-[node name="Label3D" type="Label3D" parent="Zadanie_bisekcji/Labele/Rama3"]
+[node name="Label3D" type="Label3D" parent="Zadanie_bisekcji/Labele/Rama3" unique_id=418908189]
 transform = Transform3D(0.762072, 0, 0, 0, -3.33112e-08, 0.762072, 0, -0.762072, -3.33112e-08, -0.00600243, 0.0215201, -0.0216289)
 modulate = Color(1, 0, 0, 1)
 text = "Druk
@@ -543,7 +543,7 @@ X-jest
 pierwiastkiem"
 font_size = 42
 
-[node name="Cele" type="GridMap" parent="Zadanie_bisekcji"]
+[node name="Cele" type="GridMap" parent="Zadanie_bisekcji" unique_id=1603368002]
 mesh_library = ExtResource("2_6544n")
 cell_size = Vector3(0.1, 1, 0.1)
 data = {
@@ -551,249 +551,247 @@ data = {
 }
 metadata/_editor_floor_ = Vector3(0, 3, 0)
 
-[node name="Area1" type="Area3D" parent="Zadanie_bisekcji/Cele"]
+[node name="Area1" type="Area3D" parent="Zadanie_bisekcji/Cele" unique_id=1720010915]
 transform = Transform3D(1, 0, 0, 0, 0.999609, 0.0279565, 0, -0.0279565, 0.999609, 2.31448, 5.76728, -9.97113)
 
-[node name="CollisionShape3D" type="CollisionShape3D" parent="Zadanie_bisekcji/Cele/Area1"]
+[node name="CollisionShape3D" type="CollisionShape3D" parent="Zadanie_bisekcji/Cele/Area1" unique_id=882305222]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.0434651, -0.0885018, -0.310707)
 shape = SubResource("BoxShape3D_3rcer")
 debug_color = Color(0, 0.6, 0.7, 0.42)
 
-[node name="Area2" type="Area3D" parent="Zadanie_bisekcji/Cele"]
+[node name="Area2" type="Area3D" parent="Zadanie_bisekcji/Cele" unique_id=2005236764]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 2.42383, 3.71453, -5.97389)
 
-[node name="CollisionShape3D" type="CollisionShape3D" parent="Zadanie_bisekcji/Cele/Area2"]
+[node name="CollisionShape3D" type="CollisionShape3D" parent="Zadanie_bisekcji/Cele/Area2" unique_id=1004094114]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.0434651, -0.0885018, -0.310707)
 shape = SubResource("BoxShape3D_3rcer")
 debug_color = Color(0, 0.6, 0.7, 0.42)
 
-[node name="Area3" type="Area3D" parent="Zadanie_bisekcji/Cele"]
+[node name="Area3" type="Area3D" parent="Zadanie_bisekcji/Cele" unique_id=1849432411]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.805568, 2.71982, -3.96155)
 
-[node name="CollisionShape3D" type="CollisionShape3D" parent="Zadanie_bisekcji/Cele/Area3"]
+[node name="CollisionShape3D" type="CollisionShape3D" parent="Zadanie_bisekcji/Cele/Area3" unique_id=922766475]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.0434651, -0.0885018, -0.310707)
 shape = SubResource("BoxShape3D_3rcer")
 debug_color = Color(0, 0.6, 0.7, 0.42)
 
-[node name="Area4" type="Area3D" parent="Zadanie_bisekcji/Cele"]
+[node name="Area4" type="Area3D" parent="Zadanie_bisekcji/Cele" unique_id=1455903423]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 3.92065, 2.71982, -3.96155)
 
-[node name="CollisionShape3D" type="CollisionShape3D" parent="Zadanie_bisekcji/Cele/Area4"]
+[node name="CollisionShape3D" type="CollisionShape3D" parent="Zadanie_bisekcji/Cele/Area4" unique_id=1017733304]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.0434651, -0.0885018, -0.310707)
 shape = SubResource("BoxShape3D_3rcer")
 debug_color = Color(0, 0.6, 0.7, 0.42)
 
-[node name="Area5" type="Area3D" parent="Zadanie_bisekcji/Cele"]
+[node name="Area5" type="Area3D" parent="Zadanie_bisekcji/Cele" unique_id=1856743417]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 2.31611, 1.72577, -1.9704)
 
-[node name="CollisionShape3D" type="CollisionShape3D" parent="Zadanie_bisekcji/Cele/Area5"]
+[node name="CollisionShape3D" type="CollisionShape3D" parent="Zadanie_bisekcji/Cele/Area5" unique_id=1844548244]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.0434651, -0.0885018, -0.310707)
 shape = SubResource("BoxShape3D_3rcer")
 debug_color = Color(0, 0.6, 0.7, 0.42)
 
-[node name="double-door" type="Node3D" parent="Zadanie_bisekcji"]
+[node name="double-door" type="Node3D" parent="Zadanie_bisekcji" unique_id=1237197271]
 transform = Transform3D(-4.37114e-08, 0, -1, 0, 1, 0, 1, 0, -4.37114e-08, 4.89793, 6.49855, -11.7583)
 script = ExtResource("4_246mo")
 
-[node name="wall-doorway-wide2" type="StaticBody3D" parent="Zadanie_bisekcji/double-door"]
+[node name="wall-doorway-wide2" type="StaticBody3D" parent="Zadanie_bisekcji/double-door" unique_id=1094389021]
 
-[node name="wall-doorway-wide" type="MeshInstance3D" parent="Zadanie_bisekcji/double-door/wall-doorway-wide2"]
+[node name="wall-doorway-wide" type="MeshInstance3D" parent="Zadanie_bisekcji/double-door/wall-doorway-wide2" unique_id=352238323]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.008833885, 0, 0)
 mesh = SubResource("ArrayMesh_i1imf")
 skeleton = NodePath("")
 
-[node name="CollisionShapeDoorway" type="CollisionShape3D" parent="Zadanie_bisekcji/double-door/wall-doorway-wide2"]
+[node name="CollisionShapeDoorway" type="CollisionShape3D" parent="Zadanie_bisekcji/double-door/wall-doorway-wide2" unique_id=44818492]
 shape = SubResource("ConcavePolygonShape3D_k7iup")
 debug_color = Color(0, 0.6, 0.7, 0.42)
 
-[node name="door-sliding-double2" type="Node3D" parent="Zadanie_bisekcji/double-door"]
+[node name="door-sliding-double2" type="Node3D" parent="Zadanie_bisekcji/double-door" unique_id=750254070]
 
-[node name="door-sliding-double" type="Node3D" parent="Zadanie_bisekcji/double-door/door-sliding-double2"]
+[node name="door-sliding-double" type="Node3D" parent="Zadanie_bisekcji/double-door/door-sliding-double2" unique_id=1792466262]
 
-[node name="door-right" type="MeshInstance3D" parent="Zadanie_bisekcji/double-door/door-sliding-double2/door-sliding-double"]
+[node name="door-right" type="MeshInstance3D" parent="Zadanie_bisekcji/double-door/door-sliding-double2/door-sliding-double" unique_id=1962202076]
 mesh = SubResource("ArrayMesh_tkdup")
 skeleton = NodePath("")
 
-[node name="StaticBody3D" type="StaticBody3D" parent="Zadanie_bisekcji/double-door/door-sliding-double2/door-sliding-double/door-right"]
+[node name="StaticBody3D" type="StaticBody3D" parent="Zadanie_bisekcji/double-door/door-sliding-double2/door-sliding-double/door-right" unique_id=1810277837]
 
-[node name="CollisionShape3D" type="CollisionShape3D" parent="Zadanie_bisekcji/double-door/door-sliding-double2/door-sliding-double/door-right/StaticBody3D"]
+[node name="CollisionShape3D" type="CollisionShape3D" parent="Zadanie_bisekcji/double-door/door-sliding-double2/door-sliding-double/door-right/StaticBody3D" unique_id=1372915336]
 shape = SubResource("ConcavePolygonShape3D_r7m6m")
 debug_color = Color(0, 0.6, 0.7, 0.42)
 
-[node name="door-left" type="MeshInstance3D" parent="Zadanie_bisekcji/double-door/door-sliding-double2/door-sliding-double"]
+[node name="door-left" type="MeshInstance3D" parent="Zadanie_bisekcji/double-door/door-sliding-double2/door-sliding-double" unique_id=407414144]
 mesh = SubResource("ArrayMesh_u2a4d")
 skeleton = NodePath("")
 
-[node name="StaticBody3D" type="StaticBody3D" parent="Zadanie_bisekcji/double-door/door-sliding-double2/door-sliding-double/door-left"]
+[node name="StaticBody3D" type="StaticBody3D" parent="Zadanie_bisekcji/double-door/door-sliding-double2/door-sliding-double/door-left" unique_id=184188216]
 
-[node name="CollisionShape3D2" type="CollisionShape3D" parent="Zadanie_bisekcji/double-door/door-sliding-double2/door-sliding-double/door-left/StaticBody3D"]
+[node name="CollisionShape3D2" type="CollisionShape3D" parent="Zadanie_bisekcji/double-door/door-sliding-double2/door-sliding-double/door-left/StaticBody3D" unique_id=1879523228]
 shape = SubResource("ConcavePolygonShape3D_pxw2u")
 debug_color = Color(0, 0.6, 0.7, 0.42)
 
-[node name="AnimationPlayer" type="AnimationPlayer" parent="Zadanie_bisekcji/double-door/door-sliding-double2"]
-libraries = {
-&"": SubResource("AnimationLibrary_2qre6")
-}
+[node name="AnimationPlayer" type="AnimationPlayer" parent="Zadanie_bisekcji/double-door/door-sliding-double2" unique_id=614615302]
+libraries/ = SubResource("AnimationLibrary_2qre6")
 
-[node name="AnimationTree" type="AnimationTree" parent="Zadanie_bisekcji/double-door/door-sliding-double2"]
+[node name="AnimationTree" type="AnimationTree" parent="Zadanie_bisekcji/double-door/door-sliding-double2" unique_id=1185725225]
 tree_root = SubResource("AnimationNodeStateMachine_uk24f")
 anim_player = NodePath("../AnimationPlayer")
 
-[node name="double-door2" type="Node3D" parent="Zadanie_bisekcji"]
+[node name="double-door2" type="Node3D" parent="Zadanie_bisekcji" unique_id=829199189]
 transform = Transform3D(-4.37114e-08, 0, -1, 0, 1, 0, 1, 0, -4.37114e-08, 4.89793, 6.49855, -17.985756)
 
-[node name="wall-doorway-wide2" type="StaticBody3D" parent="Zadanie_bisekcji/double-door2"]
+[node name="wall-doorway-wide2" type="StaticBody3D" parent="Zadanie_bisekcji/double-door2" unique_id=1058083350]
 
-[node name="wall-doorway-wide" type="MeshInstance3D" parent="Zadanie_bisekcji/double-door2/wall-doorway-wide2"]
+[node name="wall-doorway-wide" type="MeshInstance3D" parent="Zadanie_bisekcji/double-door2/wall-doorway-wide2" unique_id=1820859040]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.008833885, 0, 0)
 mesh = SubResource("ArrayMesh_i1imf")
 skeleton = NodePath("")
 
-[node name="CollisionShapeDoorway" type="CollisionShape3D" parent="Zadanie_bisekcji/double-door2/wall-doorway-wide2"]
+[node name="CollisionShapeDoorway" type="CollisionShape3D" parent="Zadanie_bisekcji/double-door2/wall-doorway-wide2" unique_id=627630741]
 shape = SubResource("ConcavePolygonShape3D_k7iup")
 debug_color = Color(0, 0.6, 0.7, 0.42)
 
-[node name="door-sliding-double2" type="Node3D" parent="Zadanie_bisekcji/double-door2"]
+[node name="door-sliding-double2" type="Node3D" parent="Zadanie_bisekcji/double-door2" unique_id=493953632]
 
-[node name="door-sliding-double" type="Node3D" parent="Zadanie_bisekcji/double-door2/door-sliding-double2"]
+[node name="door-sliding-double" type="Node3D" parent="Zadanie_bisekcji/double-door2/door-sliding-double2" unique_id=1249226555]
 
-[node name="door-right" type="MeshInstance3D" parent="Zadanie_bisekcji/double-door2/door-sliding-double2/door-sliding-double"]
+[node name="door-right" type="MeshInstance3D" parent="Zadanie_bisekcji/double-door2/door-sliding-double2/door-sliding-double" unique_id=1187665723]
 mesh = SubResource("ArrayMesh_tkdup")
 skeleton = NodePath("")
 
-[node name="StaticBody3D" type="StaticBody3D" parent="Zadanie_bisekcji/double-door2/door-sliding-double2/door-sliding-double/door-right"]
+[node name="StaticBody3D" type="StaticBody3D" parent="Zadanie_bisekcji/double-door2/door-sliding-double2/door-sliding-double/door-right" unique_id=574808309]
 
-[node name="CollisionShape3D" type="CollisionShape3D" parent="Zadanie_bisekcji/double-door2/door-sliding-double2/door-sliding-double/door-right/StaticBody3D"]
+[node name="CollisionShape3D" type="CollisionShape3D" parent="Zadanie_bisekcji/double-door2/door-sliding-double2/door-sliding-double/door-right/StaticBody3D" unique_id=1397952773]
 shape = SubResource("ConcavePolygonShape3D_r7m6m")
 debug_color = Color(0, 0.6, 0.7, 0.42)
 
-[node name="door-left" type="MeshInstance3D" parent="Zadanie_bisekcji/double-door2/door-sliding-double2/door-sliding-double"]
+[node name="door-left" type="MeshInstance3D" parent="Zadanie_bisekcji/double-door2/door-sliding-double2/door-sliding-double" unique_id=1763210658]
 mesh = SubResource("ArrayMesh_u2a4d")
 skeleton = NodePath("")
 
-[node name="StaticBody3D" type="StaticBody3D" parent="Zadanie_bisekcji/double-door2/door-sliding-double2/door-sliding-double/door-left"]
+[node name="StaticBody3D" type="StaticBody3D" parent="Zadanie_bisekcji/double-door2/door-sliding-double2/door-sliding-double/door-left" unique_id=119709678]
 
-[node name="CollisionShape3D2" type="CollisionShape3D" parent="Zadanie_bisekcji/double-door2/door-sliding-double2/door-sliding-double/door-left/StaticBody3D"]
+[node name="CollisionShape3D2" type="CollisionShape3D" parent="Zadanie_bisekcji/double-door2/door-sliding-double2/door-sliding-double/door-left/StaticBody3D" unique_id=157649660]
 shape = SubResource("ConcavePolygonShape3D_pxw2u")
 debug_color = Color(0, 0.6, 0.7, 0.42)
 
-[node name="ButtonSmall" parent="Zadanie_bisekcji/double-door2" instance=ExtResource("5_ufara")]
+[node name="ButtonSmall" parent="Zadanie_bisekcji/double-door2" unique_id=1712896778 instance=ExtResource("5_ufara")]
 transform = Transform3D(-4.371139e-08, 1, 0, -1, -4.371139e-08, 0, 0, 0, 1, 0.12375355, 0.39265537, -0.61866426)
 
-[node name="Arrows" type="Node3D" parent="Zadanie_bisekcji"]
+[node name="Arrows" type="Node3D" parent="Zadanie_bisekcji" unique_id=154355932]
 
-[node name="Sprite3D" type="Sprite3D" parent="Zadanie_bisekcji/Arrows"]
+[node name="Sprite3D" type="Sprite3D" parent="Zadanie_bisekcji/Arrows" unique_id=403090800]
 transform = Transform3D(-1.06275e-08, -0.243129, 1.06275e-08, 0, -1.06275e-08, -0.243129, 0.243129, -1.06275e-08, 4.64543e-16, 2.40221, 1.54671, -1.22797)
 texture = ExtResource("6_sq6mb")
 
-[node name="Sprite3D6" type="Sprite3D" parent="Zadanie_bisekcji/Arrows"]
+[node name="Sprite3D6" type="Sprite3D" parent="Zadanie_bisekcji/Arrows" unique_id=125577167]
 transform = Transform3D(-1.06275e-08, -0.243129, 1.06275e-08, -0.0491123, -8.26166e-09, -0.238117, 0.238117, -1.25552e-08, -0.0491123, 2.40221, 4.68163, -7.28664)
 texture = ExtResource("6_sq6mb")
 
-[node name="Sprite3D9" type="Sprite3D" parent="Zadanie_bisekcji/Arrows"]
+[node name="Sprite3D9" type="Sprite3D" parent="Zadanie_bisekcji/Arrows" unique_id=1181637920]
 transform = Transform3D(0.199742, -0.132353, -0.0411974, -0.11957, -0.127955, -0.168649, 0.0701268, 0.158814, -0.170212, 4.52548, 4.9772, -6.96037)
 texture = ExtResource("6_sq6mb")
 
-[node name="Sprite3D7" type="Sprite3D" parent="Zadanie_bisekcji/Arrows"]
+[node name="Sprite3D7" type="Sprite3D" parent="Zadanie_bisekcji/Arrows" unique_id=352921438]
 transform = Transform3D(-1.06275e-08, -0.243129, 1.06275e-08, 0, -1.06275e-08, -0.243129, 0.243129, -1.06275e-08, 4.64543e-16, 2.40221, 5.50447, -8.35244)
 texture = ExtResource("6_sq6mb")
 
-[node name="Sprite3D8" type="Sprite3D" parent="Zadanie_bisekcji/Arrows"]
+[node name="Sprite3D8" type="Sprite3D" parent="Zadanie_bisekcji/Arrows" unique_id=1531200264]
 transform = Transform3D(-1.06275e-08, -0.243129, 1.06275e-08, -0.120239, -3.98108e-09, -0.211315, 0.211315, -1.44927e-08, -0.120239, 2.40221, 6.7692, -11.0862)
 texture = ExtResource("6_sq6mb")
 
-[node name="Sprite3D2" type="Sprite3D" parent="Zadanie_bisekcji/Arrows"]
+[node name="Sprite3D2" type="Sprite3D" parent="Zadanie_bisekcji/Arrows" unique_id=26192613]
 transform = Transform3D(0.171918, -0.171918, 7.51478e-09, 0, -1.06275e-08, -0.243129, 0.171918, 0.171918, -7.51478e-09, 1.60732, 2.51202, -3.13912)
 texture = ExtResource("6_sq6mb")
 
-[node name="Sprite3D3" type="Sprite3D" parent="Zadanie_bisekcji/Arrows"]
+[node name="Sprite3D3" type="Sprite3D" parent="Zadanie_bisekcji/Arrows" unique_id=273496536]
 transform = Transform3D(-0.172858, -0.170973, 7.47348e-09, 0, -1.06275e-08, -0.243129, 0.170973, -0.172858, 7.55585e-09, 3.14638, 2.51032, -3.1421)
 texture = ExtResource("6_sq6mb")
 
-[node name="Sprite3D10" type="Sprite3D" parent="Zadanie_bisekcji/Arrows"]
+[node name="Sprite3D10" type="Sprite3D" parent="Zadanie_bisekcji/Arrows" unique_id=600724382]
 transform = Transform3D(0.0192787, -0.242363, 1.14785e-08, -0.093307, -0.00742209, -0.224389, 0.223682, 0.0177928, -0.0936017, 6.41649, 3.76082, -4.54478)
 texture = ExtResource("6_sq6mb")
 
-[node name="Sprite3D4" type="Sprite3D" parent="Zadanie_bisekcji/Arrows"]
+[node name="Sprite3D4" type="Sprite3D" parent="Zadanie_bisekcji/Arrows" unique_id=407770516]
 transform = Transform3D(-0.172858, -0.170973, 2.54929e-08, -0.107314, 0.108497, -0.189272, 0.1331, -0.134567, -0.152603, 1.26033, 3.85241, -5.19771)
 texture = ExtResource("6_sq6mb")
 
-[node name="Sprite3D5" type="Sprite3D" parent="Zadanie_bisekcji/Arrows"]
+[node name="Sprite3D5" type="Sprite3D" parent="Zadanie_bisekcji/Arrows" unique_id=744178042]
 transform = Transform3D(0.166368, -0.177294, 2.10675e-08, -0.111642, -0.104762, -0.188872, 0.137729, 0.129241, -0.153098, 3.54721, 3.85042, -5.10358)
 texture = ExtResource("6_sq6mb")
 
-[node name="Label3D" type="Label3D" parent="Zadanie_bisekcji/Arrows"]
+[node name="Label3D" type="Label3D" parent="Zadanie_bisekcji/Arrows" unique_id=1466795730]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 4.50371, 5.63259, -7.27446)
 text = "TAK"
 font_size = 50
 
-[node name="Label3D2" type="Label3D" parent="Zadanie_bisekcji/Arrows"]
+[node name="Label3D2" type="Label3D" parent="Zadanie_bisekcji/Arrows" unique_id=1053074108]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 1.5217, 4.94037, -6.71382)
 text = "NIE"
 font_size = 50
 
-[node name="Label3D3" type="Label3D" parent="Zadanie_bisekcji/Arrows"]
+[node name="Label3D3" type="Label3D" parent="Zadanie_bisekcji/Arrows" unique_id=980036630]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.546997, 3.70488, -4.63965)
 text = "TAK
 "
 font_size = 50
 
-[node name="Label3D4" type="Label3D" parent="Zadanie_bisekcji/Arrows"]
+[node name="Label3D4" type="Label3D" parent="Zadanie_bisekcji/Arrows" unique_id=977203985]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 4.21847, 3.70488, -4.63965)
 text = "NIE"
 font_size = 50
 
-[node name="Label3D5" type="Label3D" parent="Zadanie_bisekcji/Arrows"]
+[node name="Label3D5" type="Label3D" parent="Zadanie_bisekcji/Arrows" unique_id=1504144404]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 1.68454, 1.68748, -0.845356)
 text = "TAK"
 font_size = 50
 
-[node name="OmniLight3D" type="OmniLight3D" parent="Zadanie_bisekcji"]
+[node name="OmniLight3D" type="OmniLight3D" parent="Zadanie_bisekcji" unique_id=868269567]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 4.8779426, 8.723447, -14.817396)
 
-[node name="Player" parent="." instance=ExtResource("2_au1pm")]
+[node name="Player" parent="." unique_id=376905934 instance=ExtResource("2_au1pm")]
 transform = Transform3D(0.0218497, 0, -0.999761, 0, 1, 0, 0.999761, 0, 0.0218497, 4.26738, 0.5, 8.56661)
 
-[node name="Door1" type="Node3D" parent="."]
+[node name="Door1" type="Node3D" parent="." unique_id=1017460730]
 
-[node name="ButtonSmall" parent="Door1" instance=ExtResource("5_ufara")]
+[node name="ButtonSmall" parent="Door1" unique_id=686612217 instance=ExtResource("5_ufara")]
 transform = Transform3D(1, 0, 0, 0, -4.37114e-08, -1, 0, 1, -4.37114e-08, 2.96099, 0.926535, 7.09929)
 prompt_message = "Otwórz drzwi"
 
-[node name="ButtonSmall2" parent="Door1" instance=ExtResource("5_ufara")]
+[node name="ButtonSmall2" parent="Door1" unique_id=1777332881 instance=ExtResource("5_ufara")]
 transform = Transform3D(-1, 8.74228e-08, -3.82137e-15, 0, -4.37114e-08, -1, -8.74228e-08, -1, 4.37114e-08, 2.96099, 0.926535, 6.92118)
 prompt_message = "Otwórz drzwi"
 
-[node name="double-door" parent="Door1" instance=ExtResource("5_poeaa")]
+[node name="double-door" parent="Door1" unique_id=2064430103 instance=ExtResource("5_poeaa")]
 transform = Transform3D(-4.37114e-08, 0, 1, 0, 1, 0, -1, 0, -4.37114e-08, 2.15284, 0.501, 7.002)
 
-[node name="Misja" type="Area3D" parent="Door1"]
+[node name="Misja" type="Area3D" parent="Door1" unique_id=1140618004]
 
-[node name="CollisionShape3D" type="CollisionShape3D" parent="Door1/Misja"]
+[node name="CollisionShape3D" type="CollisionShape3D" parent="Door1/Misja" unique_id=1941439692]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 3.21019, 0.991206, 5.53945)
 shape = SubResource("BoxShape3D_246mo")
 debug_color = Color(0, 0.6, 0.7, 0.42)
 
-[node name="number-12" parent="." instance=ExtResource("8_3rcer")]
+[node name="number-12" parent="." unique_id=1259038642 instance=ExtResource("8_3rcer")]
 transform = Transform3D(-4.37114e-08, 0, 1, 0, 1, 0, -1, 0, -4.37114e-08, 2.15938, 1.50624, 7.11357)
 
-[node name="ZmianaPoziomu" type="Area3D" parent="."]
+[node name="ZmianaPoziomu" type="Area3D" parent="." unique_id=1393544661]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 4.932761, 7.062615, -14.405697)
 
-[node name="CollisionShape3D" type="CollisionShape3D" parent="ZmianaPoziomu"]
+[node name="CollisionShape3D" type="CollisionShape3D" parent="ZmianaPoziomu" unique_id=1207292460]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.06652832, 0.04498291, -0.6814604)
 shape = SubResource("BoxShape3D_sq6mb")
 
-[node name="Dialogi" type="Node" parent="."]
+[node name="Dialogi" type="Node" parent="." unique_id=2110407082]
 
-[node name="Misja" type="AcceptDialog" parent="Dialogi"]
+[node name="Misja" type="AcceptDialog" parent="Dialogi" unique_id=1915104575]
 oversampling_override = 1.0
 title = "Cel poziomu"
 initial_position = 2
 size = Vector2i(1107, 100)
 dialog_text = "Poziom przedstawia nie pełne działanie kodu metody biskecji, wstaw skrzynki w odpowiednie miejsca żeby otworzyć drzwi na kolejny poziom."
 
-[node name="PauseMenu" parent="." instance=ExtResource("3_5exfe")]
+[node name="PauseMenu" parent="." unique_id=1082083187 instance=ExtResource("3_5exfe")]
 visible = false
 
 [connection signal="interacted" from="Door1/ButtonSmall" to="Door1/double-door" method="toggle"]
